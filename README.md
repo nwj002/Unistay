@@ -1,17 +1,20 @@
- unistay
+# UniStay
 
-UniStay: A Flutter and Firebase-powered hostel app, offering students a seamless and convenient way to search, book, and manage accommodations.
-Simplifying hostel booking with a beautiful UI and real-time updates.
+UniStay is a hostel application built using Flutter and Firebase, designed to provide a seamless and convenient experience for students looking for accommodation.
 
-## Getting Started
+## Team Members
 
-This project is a starting point for a Flutter application.
+- Pramesh Pathak (Scrum Master)
+- Kehar Ojha
+- Madhu Kumari 
+- Nawaraj Shrestha
+- Parash Hamal
+- Shadip Kumar Joshi
+- Smriti Khadgi
 
-A few resources to get you started if this is your first Flutter project:
+## Tools Used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=ffffff)
+- ![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=ffffff)
+- ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=ffffff)
+- ![Microsoft Teams](https://img.shields.io/badge/-Microsoft%20Teams-6264A7?style=flat-square&logo=microsoft-teams&logoColor=ffffff)
