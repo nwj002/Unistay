@@ -1,6 +1,7 @@
  unistay
 
-A new Flutter project.
+UniStay: A Flutter and Firebase-powered hostel app, offering students a seamless and convenient way to search, book, and manage accommodations.
+Simplifying hostel booking with a beautiful UI and real-time updates.
 
 ## Getting Started
 
