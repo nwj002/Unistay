@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:unistay/screens/AddHostel.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
 import 'firebase_options.dart';
 
@@ -21,14 +22,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/register",
+      initialRoute: "/addhostel",
       routes: {
+
         // "/login": (context) => LoginScreen(),
-        "/register": (context) => RegisterScreen(),
+        // "/register": (context) => RegisterScreen(),
         // "/verify":(context)=>Verify(),
         // "/input":(context)=> BurgerMenu(),
         // "/forget-password": (context) => ForgetScreen(),
         // "/dashboard": (context) => DashBoardScreen(),
+        "/addhostel": (context) => AddHostel(),
       },
     );
   }
