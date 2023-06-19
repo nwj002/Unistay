@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/addhostel",
+      initialRoute: "/register",
       routes: {
         // Uncomment the routes you need
         // "/login": (context) => LoginScreen(),
