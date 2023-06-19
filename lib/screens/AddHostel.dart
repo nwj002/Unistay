@@ -49,6 +49,7 @@ class _AddHostelState extends State<AddHostel> {
                     Navigator.pop(context); // Close the dialog
                     setState(() {
                       _isSaving = false; // Reset the saving state
+                      pickedImage = null; // Clear the picked image
                     });
                   },
                   child: Text('OK'),
