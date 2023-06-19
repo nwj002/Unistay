@@ -6,6 +6,8 @@ import 'package:unistay/screens/register_screen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/screens/login_as_admin.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
+import 'package:unistay/screens/AddHostel.dart';
+import 'package:unistay/screens/RegisterScreen.dart';
 import 'firebase_options.dart';
 
 
@@ -21,10 +23,10 @@ Future<void> main() async {
 
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -47,6 +49,18 @@ class MyApp extends StatelessWidget {
           // "/dashboard": (context) => DashBoardScreen(),
         },
       ),
+
+      initialRoute: "/register",
+      routes: {
+        // Uncomment the routes you need
+        // "/login": (context) => LoginScreen(),
+        "/register": (context) => RegisterScreen(),
+        // "/verify": (context) => Verify(),
+        // "/input": (context) => BurgerMenu(),
+        // "/forget-password": (context) => ForgetScreen(),
+        // "/dashboard": (context) => DashBoardScreen(),
+        "/addhostel": (context) => AddHostel(),
+      },
     );
   }
 }
