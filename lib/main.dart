@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:unistay/screens/AddHostel.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
+import 'package:unistay/screens/verify_screen.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // Uncomment the routes you need
         // "/login": (context) => LoginScreen(),
         "/register": (context) => RegisterScreen(),
-        // "/verify": (context) => Verify(),
+        "/verify": (context) => Verify(),
         // "/input": (context) => BurgerMenu(),
         // "/forget-password": (context) => ForgetScreen(),
         // "/dashboard": (context) => DashBoardScreen(),

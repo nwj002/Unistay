@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:unistay/screens/verify_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -297,6 +298,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 20)),
                                 ),
                                 onPressed: (){
+                                  Navigator.push(context,MaterialPageRoute(builder: (cpntxt)=>Verify()) );
                                   register();
                                 }, child: Text("Sign Up", style: TextStyle(
                                 fontSize: 20
