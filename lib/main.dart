@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
         // Uncomment the routes you need
         // "/login": (context) => LoginScreen(),
         "/register": (context) => RegisterScreen(),
-        "/verify": (context) => Verify(),
+        //"/verify": (context) => Verify(),
         // "/input": (context) => BurgerMenu(),
         // "/forget-password": (context) => ForgetScreen(),
         // "/dashboard": (context) => DashBoardScreen(),
