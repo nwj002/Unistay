@@ -4,93 +4,88 @@ import 'package:unistay/screens/register_screen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 
-
 class LoginAsAdminScreen extends StatefulWidget {
-const  LoginAsAdminScreen({super.key});
+  const LoginAsAdminScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginAsAdminScreen> createState() => _LoginAsAdminScreenState();
+  _LoginAsAdminScreenState createState() => _LoginAsAdminScreenState();
 }
 
 class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
   final emailCtrl = TextEditingController();
-
   final passwordCtrl = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  bool valueFirst = false;
 
-  final _formkey = GlobalKey<FormState>();
-
-  bool valuefirst=false;
+  @override
+  void dispose() {
+    emailCtrl.dispose();
+    passwordCtrl.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-            gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-          Colors.deepOrangeAccent.shade100,
-          Colors.orange.shade300,
-          Colors.orange.shade300,
-          Colors.orange.shade100,
-        ])),
-        
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            colors: [
+              Colors.deepOrangeAccent.shade100,
+              Colors.orange.shade300,
+              Colors.orange.shade300,
+              Colors.orange.shade100,
+            ],
+          ),
+        ),
         child: Column(
-          
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
-          
           children: [
-           
-           const SizedBox(
+            SizedBox(
               height: 200,
               width: 252,
               child: Center(
-                
-                
                 child: Text(
                   "Sign In As Admin",
                   style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500,
-                      ),
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-                
-                
               ),
-              
             ),
-          const Text("We are delighted to see you again - Sign in ",
-           style: TextStyle(
-             color: Colors.black87,
-             fontSize: 17,
-             fontWeight: FontWeight.normal,
-           ),),
-          const SizedBox(height: 15,),
+            Text(
+              "We are delighted to see you again - Sign in",
+              style: TextStyle(
+                color: Colors.black87,
+                fontSize: 17,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+            SizedBox(height: 15),
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
-                  decoration:const BoxDecoration(
-                    color: Colors.white70, 
+                  decoration: BoxDecoration(
+                    color: Colors.white70,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),
                     ),
-              
                   ),
-                   
                   child: Column(
                     children: [
                       SizedBox(
                         height: 170,
-                       
-                        
                         child: Form(
-                          key: _formkey,
+                          key: _formKey,
                           child: Column(
                             children: [
-                             const SizedBox(height: 20,),
+                              SizedBox(height: 20),
                               TextFormField(
                                 controller: emailCtrl,
                                 keyboardType: TextInputType.emailAddress,
@@ -99,35 +94,38 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                     return "Email is required";
                                   }
                                   if (!RegExp(
-                                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                                       .hasMatch(value)) {
                                     return "Enter a valid email";
                                   }
                                   return null;
                                 },
-                                style: const TextStyle(
-                                    fontFamily: 'WorkSansSemiBold',
-                                    fontSize: 16.0,
-                                    color: Colors.black),
+                                style: TextStyle(
+                                  fontFamily: 'WorkSansSemiBold',
+                                  fontSize: 16.0,
+                                  color: Colors.black,
+                                ),
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
                                   focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
                                   border: InputBorder.none,
-                                  prefixIcon:const Icon(
-                          Icons.email,
-                          color: Colors.black,
-                          size: 22.0,
-                        ),
+                                  prefixIcon: Icon(
+                                    Icons.email,
+                                    color: Colors.black,
+                                    size: 22.0,
+                                  ),
                                   hintText: 'Email Address',
-                                  hintStyle: const TextStyle(
-                                      fontFamily: 'WorkSansSemiBold', fontSize: 17.0),
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'WorkSansSemiBold',
+                                    fontSize: 17.0,
+                                  ),
                                 ),
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
+                              SizedBox(height: 20),
                               TextFormField(
                                 controller: passwordCtrl,
                                 validator: (value) {
@@ -136,218 +134,224 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                   }
                                   return null;
                                 },
-                                style: const TextStyle(
-                                    fontFamily: 'WorkSansSemiBold',
-                                    fontSize: 16.0,
-                                    color: Colors.black),
+                                style: TextStyle(
+                                  fontFamily: 'WorkSansSemiBold',
+                                  fontSize: 16.0,
+                                  color: Colors.black,
+                                ),
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
                                   focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                      prefixIcon: const Icon(
-                          Icons.lock,
-                          size: 22.0,
-                          color: Colors.black,
-                        ),
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  prefixIcon: Icon(
+                                    Icons.lock,
+                                    size: 22.0,
+                                    color: Colors.black,
+                                  ),
                                   hintText: 'Password',
-                                  hintStyle: const TextStyle(
-                                      fontFamily: 'WorkSansSemiBold', fontSize: 17.0),
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'WorkSansSemiBold',
+                                    fontSize: 17.0,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ),
-                  // const SizedBox(
-                  //   height: 10,
-                  // ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Checkbox(  
-                            checkColor: Colors.greenAccent,  
-                            activeColor: Colors.blueGrey,  
-                            value: valuefirst,  
-                            onChanged: (bool? value) {  
-                              setState(() {  
-                                valuefirst = value ?? true;  
-                              });  
-                            },  
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Checkbox(
+                            checkColor: Colors.greenAccent,
+                            activeColor: Colors.blueGrey,
+                            value: valueFirst,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                valueFirst = value ?? true;
+                              });
+                            },
                           ),
-                        const Text("Agree the term and conditions",),
-                    ],
-                  ),  
-                  
-                  SizedBox(
-                    width: 200,
-                    height: 50,
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(Colors.orange.shade200),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          Text("Agree to the terms and conditions"),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 200,
+                        height: 50,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(Colors.orange.shade200),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
-                            
-                                  borderRadius: BorderRadius.circular(10),
-                                  side:  BorderSide(color: Colors.orange.shade200,))),
-                          padding: MaterialStateProperty.all<EdgeInsets>(
-                              const EdgeInsets.symmetric(vertical: 10)),
-                        ),
-                        onPressed: () async {
-                          String email = emailCtrl.text.trim();
-                          String pass = passwordCtrl.text.trim();
-                
-                          if (_formkey.currentState!.validate()) {
-                            final res = await context
-                                .read<AuthProvider>()
-                                .loginAsAdmin(email: email, password: pass);
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Logged In As Admin!")));
-                            if (res == "OK") {
-                            } else {
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(content: Text(res)));
-                            }
-                          } else {
-                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                content: Text("Please enter all the details")));
-                          }
-                        },
-                        child: const Text(
-                          "Sign In",
-                          style: TextStyle(fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2,
-                          color: Colors.black,
-                          
+                                borderRadius: BorderRadius.circular(10),
+                                side: BorderSide(color: Colors.orange.shade200),
+                              ),
+                            ),
+                            padding: MaterialStateProperty.all<EdgeInsets>(
+                              EdgeInsets.symmetric(vertical: 10),
+                            ),
                           ),
-                        )),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                   Align(
-                      alignment: Alignment.center,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
+                          onPressed: () async {
+                            String email = emailCtrl.text.trim();
+                            String pass = passwordCtrl.text.trim();
+
+                            if (_formKey.currentState!.validate()) {
+                              final res = await context
+                                  .read<AuthProvider>()
+                                  .loginAsAdmin(email: email, password: pass);
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(SnackBar(content: Text("Logged In As Admin!")));
+                              if (res == "OK") {
+                                // Handle success
+                              } else {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(content: Text(res)));
+                              }
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text("Please enter all the details")),
+                              );
+                            }
+                          },
+                          child: Text(
+                            "Sign In",
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      Align(
+                        alignment: Alignment.center,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const ForgotPasswordScreen()));
-                        },
-                        child: const Text(
-                          "Forgot password?",
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.black,
-                            letterSpacing: 1,
-                            height: 1,
+                                builder: (context) => ForgotPasswordScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Forgot password?",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.black,
+                              letterSpacing: 1,
+                              height: 1,
+                            ),
                           ),
                         ),
-                      )),
-                      const SizedBox(height: 15,),
-                      const Text("OR",
-                      style:TextStyle(
-                        color: Colors.black,
-              
-                      ) ,),
-                      const SizedBox(height: 15,),
+                      ),
+                      SizedBox(height: 15),
+                      Text(
+                        "OR",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 15),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
-                            onTap: (){
-              
-                            },
+                            onTap: () {},
                             child: Container(
                               height: 50,
                               width: 200,
-                              
                               decoration: BoxDecoration(
                                 color: Colors.grey.shade200,
-                                borderRadius:BorderRadius.circular(10) ,
-                                image:const DecorationImage(
-                                 
-                                  
-                                  image: NetworkImage('https://w7.pngwing.com/pngs/989/129/png-transparent-google-logo-google-search-meng-meng-company-text-logo-thumbnail.png'),
-                                
-                                alignment: Alignment.topLeft,
-                                ),
-                          
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              child:const Center(
-                                child:  Text("    Google",
-                                style: TextStyle(color: Colors.blueGrey,
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 2,
-                                
-                                ),),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network(
+                                      'https://w7.pngwing.com/pngs/989/129/png-transparent-google-logo-google-search-meng-meng-company-text-logo-thumbnail.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      "Google",
+                                      style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          const SizedBox(height: 15,),
-              
-                          
+                          SizedBox(height: 15),
                         ],
-              
                       ),
-                      const SizedBox(height: 15,),
-              
-                 const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                       Text(
-                        "New Here? ",
-                        
-                        style:  TextStyle(color: Colors.black,
-                        letterSpacing: 2,
-                        height: 1,
-                        decoration: TextDecoration.underline),
+                      SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "New Here? ",
+                            style: TextStyle(
+                              color: Colors.black,
+                              letterSpacing: 2,
+                              height: 1,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                        ],
                       ),
-                       SizedBox(height: 15,),
-                     
-                    ],
-                  ),
-              
-                  const  SizedBox(height: 15,),
-                   InkWell(
-                    onTap: (){
-                      Navigator.pushReplacement(
-                                    context, MaterialPageRoute(
-                                      builder: (_)=> RegisterScreen()));
-              
-                    },
-                     child: Container(
+                      SizedBox(height: 15),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (_) => RegisterScreen()),
+                          );
+                        },
+                        child: Container(
                           height: 50,
                           width: 200,
                           decoration: BoxDecoration(
                             color: Colors.orange.shade200,
-                            borderRadius:BorderRadius.circular(10) ,
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          child:const Center(
-                            child:  Text("Create an account",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                          letterSpacing: 2,
-                              
-                            ),),
+                          child: Center(
+                            child: Text(
+                              "Create an account",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2,
+                              ),
+                            ),
                           ),
                         ),
-                   ),
-                   SizedBox(height: 50,)
+                      ),
+                      SizedBox(height: 50),
                     ],
                   ),
                 ),
               ),
             ),
-            
           ],
         ),
       ),
     );
   }
 }
-
-
