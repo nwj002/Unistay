@@ -1,21 +1,28 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import '../models/hostel.dart';
 
 class HostelRepository {
-  final CollectionReference hostelsCollection =
+  final CollectionReference _hostelsCollection =
   FirebaseFirestore.instance.collection('hostels');
+  final FirebaseStorage _storage = FirebaseStorage.instance;
 
-  Future<void> addHostel(Hostel hostel) async {
-    try {
-      await hostelsCollection.add({
-        'name': hostel.name,
-        'address': hostel.address,
-        'capacity': hostel.capacity,
-      });
-      print('Hostel saved to Firestore successfully');
-    } catch (error) {
-      print('Error saving hostel to Firestore: $error');
-    }
+  Future<void> addHostel(Hostel hostel, File imageFile) async {
+    final String imageName = DateTime.now().millisecondsSinceEpoch.toString();
+    final Reference storageRef = _storage.ref().child('hostel_images/$imageName');
+
+    // Upload image to Firebase Storage
+    final TaskSnapshot storageTask = await storageRef.putFile(imageFile);
+    final imageUrl = await storageTask.ref.getDownloadURL();
+
+    // Save hostel data to Firestore
+    await _hostelsCollection.add({
+      'name': hostel.name,
+      'address': hostel.address,
+      'capacity': hostel.capacity,
+      'imageUrl': imageUrl,
+    });
   }
 }

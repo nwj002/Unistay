@@ -1,6 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:image_picker/image_picker.dart';
+import 'package:get/get.dart';
 import '../models/hostel.dart';
 import '../viewmodels/hostel_view_model.dart';
 
@@ -15,19 +16,22 @@ class _AddHostelState extends State<AddHostel> {
   final TextEditingController _capacityController = TextEditingController();
   final HostelViewModel _hostelViewModel = HostelViewModel();
   bool _isSaving = false;
+  File? pickedImage;
 
-  void _submitForm(BuildContext context) {
+  void _submitForm(BuildContext context) async {
     final String name = _nameController.text;
     final String address = _addressController.text;
     final int capacity = int.tryParse(_capacityController.text) ?? 0;
 
-    if (name.isNotEmpty && address.isNotEmpty && capacity > 0) {
-      final Hostel hostel = Hostel(name: name, address: address, capacity: capacity);
+    if (name.isNotEmpty && address.isNotEmpty && capacity > 0 && pickedImage != null) {
+      final Hostel hostel = Hostel(name: name, address: address, capacity: capacity, imageUrl: '');
       setState(() {
         _isSaving = true;
       });
 
-      _saveHostelToFirestore(hostel).then((_) {
+      try {
+        await _hostelViewModel.addHostel(hostel, pickedImage!);
+
         // Clear input fields
         _nameController.clear();
         _addressController.clear();
@@ -45,6 +49,7 @@ class _AddHostelState extends State<AddHostel> {
                     Navigator.pop(context); // Close the dialog
                     setState(() {
                       _isSaving = false; // Reset the saving state
+                      pickedImage = null; // Clear the picked image
                     });
                   },
                   child: Text('OK'),
@@ -53,7 +58,7 @@ class _AddHostelState extends State<AddHostel> {
             );
           },
         );
-      }).catchError((error) {
+      } catch (error) {
         showDialog(
           context: context,
           builder: (context) {
@@ -71,14 +76,14 @@ class _AddHostelState extends State<AddHostel> {
             );
           },
         );
-      });
+      }
     } else {
       showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
             title: Text('Invalid Data'),
-            content: Text('Please fill in all the fields with valid data.'),
+            content: Text('Please fill in all the fields and select an image.'),
             actions: [
               TextButton(
                 onPressed: () {
@@ -93,18 +98,49 @@ class _AddHostelState extends State<AddHostel> {
     }
   }
 
-  Future<void> _saveHostelToFirestore(Hostel hostel) async {
+  void imagePickerOption() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Pick Image From'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  pickImage(ImageSource.gallery);
+                  Navigator.pop(context); // Close the dialog
+                },
+                icon: Icon(Icons.image),
+                label: Text("Gallery"),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  pickImage(ImageSource.camera);
+                  Navigator.pop(context); // Close the dialog
+                },
+                icon: Icon(Icons.camera),
+                label: Text("Camera"),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  pickImage(ImageSource imageType) async {
     try {
-      final CollectionReference hostelsCollection = FirebaseFirestore.instance.collection('hostels');
-      await hostelsCollection.add({
-        'name': hostel.name,
-        'address': hostel.address,
-        'capacity': hostel.capacity,
+      final photo = await ImagePicker().pickImage(source: imageType);
+      if (photo == null) return;
+      final tempImage = File(photo.path);
+      setState(() {
+        pickedImage = tempImage;
       });
-      print('Hostel saved to Firestore successfully');
+      Get.back();
     } catch (error) {
-      print('Error saving hostel to Firestore: $error');
-      throw error; // Propagate the error to the caller
+      debugPrint(error.toString());
     }
   }
 
@@ -119,72 +155,115 @@ class _AddHostelState extends State<AddHostel> {
             Navigator.pop(context);
           },
         ),
+        title: Text(
+          'Add Hostel',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true, // Center the title horizontally
       ),
-      body: Container(
-        color: Colors.orange.shade100,
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              'Add Hostel',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              controller: _nameController,
-              decoration: InputDecoration(
-                labelText: 'Name',
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.grey.shade100,
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start, // Align elements from top to bottom
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Align(
+                alignment: Alignment.topCenter, // Align the image to the top center
+                child: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Colors.orange.shade300, // Use the color of the "Add" button
+                      ),
+                      child: ClipRect(
+                        child: pickedImage != null
+                            ? Image.file(
+                          pickedImage!,
+                          width: 500,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        )
+                            : Image.asset('Assets/Images/insert_image.jpg'),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              controller: _addressController,
-              decoration: InputDecoration(
-                labelText: 'Address',
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+              SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                child: ElevatedButton.icon(
+                  onPressed: () => imagePickerOption(),
+                  icon: const Icon(Icons.add_a_photo_sharp),
+                  label: const Text('Hostel Image'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.orange.shade300,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 20),
-            TextFormField(
-              controller: _capacityController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: 'Capacity',
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _nameController,
+                decoration: InputDecoration(
+                  labelText: 'Hostel Name',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _isSaving ? null : () => _submitForm(context),
-              child: _isSaving ? CircularProgressIndicator() : Text('Add'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.orange.shade300,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _addressController,
+                decoration: InputDecoration(
+                  labelText: 'Address',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 16),
               ),
-            ),
-          ],
+              SizedBox(height: 20),
+              TextFormField(
+                controller: _capacityController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: 'Total Capacity',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _isSaving ? null : () => _submitForm(context),
+                child: _isSaving
+                    ? CircularProgressIndicator()
+                    : Text(
+                  'Save',
+                  style: TextStyle(fontSize: 20),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orange.shade300,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
