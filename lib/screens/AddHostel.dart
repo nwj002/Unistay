@@ -49,6 +49,7 @@ class _AddHostelState extends State<AddHostel> {
                     Navigator.pop(context); // Close the dialog
                     setState(() {
                       _isSaving = false; // Reset the saving state
+                      pickedImage = null; // Clear the picked image
                     });
                   },
                   child: Text('OK'),
@@ -162,7 +163,7 @@ class _AddHostelState extends State<AddHostel> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.orange.shade100,
+          color: Colors.grey.shade100,
           padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start, // Align elements from top to bottom
