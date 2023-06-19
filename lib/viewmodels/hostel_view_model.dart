@@ -1,18 +1,19 @@
 import 'dart:io';
-import '../repositories/hostel_repository.dart';
-import '../models/hostel.dart';
 
-class HostelViewModel {
-  final HostelRepository _hostelRepository = HostelRepository();
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import '../models/hostel.dart';
+import '../repositories/hostel_repository.dart';
+
+class HostelViewModel extends ChangeNotifier {
+  final HostelRepository _repository = HostelRepository();
 
   Future<void> addHostel(Hostel hostel, File imageFile) async {
     try {
-      final imageUrl = await _hostelRepository.uploadImage(imageFile);
-      final hostelWithImage = hostel.copyWith(imageUrl: imageUrl);
-      // Save hostel data to Firestore or perform other operations
-      print('Hostel with image: $hostelWithImage');
+      await _repository.addHostel(hostel, imageFile);
+      // Add any additional logic or error handling if required
     } catch (error) {
-      print('Error adding hostel with image: $error');
+      // Handle the error
       throw error;
     }
   }

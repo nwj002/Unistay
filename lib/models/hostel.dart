@@ -10,18 +10,4 @@ class Hostel {
     required this.capacity,
     required this.imageUrl,
   });
-
-  Hostel copyWith({
-    String? name,
-    String? address,
-    int? capacity,
-    String? imageUrl,
-  }) {
-    return Hostel(
-      name: name ?? this.name,
-      address: address ?? this.address,
-      capacity: capacity ?? this.capacity,
-      imageUrl: imageUrl ?? this.imageUrl,
-    );
-  }
 }
