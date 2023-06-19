@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '233117944548',
     projectId: 'unistay-68d5e',
     authDomain: 'unistay-68d5e.firebaseapp.com',
+    databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
     measurementId: 'G-F3WCR0B0YF',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:233117944548:android:e240b6599d97043d4fbaf1',
     messagingSenderId: '233117944548',
     projectId: 'unistay-68d5e',
+    databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:233117944548:ios:7f21b154c801c9d94fbaf1',
     messagingSenderId: '233117944548',
     projectId: 'unistay-68d5e',
+    databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
     androidClientId: '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
     iosClientId: '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
@@ -77,6 +80,7 @@ class DefaultFirebaseOptions {
     appId: '1:233117944548:ios:7f21b154c801c9d94fbaf1',
     messagingSenderId: '233117944548',
     projectId: 'unistay-68d5e',
+    databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
     androidClientId: '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
     iosClientId: '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',

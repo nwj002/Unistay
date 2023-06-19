@@ -1,6 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD:lib/screens/RegisterScreen.dart
+import 'package:unistay/screens/verify_screen.dart';
+=======
 import 'package:unistay/screens/login_as_admin.dart';
+>>>>>>> 9dd3b7063a0af9ae27d5b7b9c418d46f136d780f:lib/screens/register_screen.dart
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -297,6 +301,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 20)),
                                 ),
                                 onPressed: (){
+                                  Navigator.push(context,MaterialPageRoute(builder: (cpntxt)=>Verify()) );
                                   register();
                                   
                                 }, child: Text("Sign Up", style: TextStyle(

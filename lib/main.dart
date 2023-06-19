@@ -8,6 +8,7 @@ import 'package:unistay/screens/login_as_admin.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 import 'package:unistay/screens/AddHostel.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
+import 'package:unistay/screens/verify_screen.dart';
 import 'firebase_options.dart';
 
 
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
         // Uncomment the routes you need
         // "/login": (context) => LoginScreen(),
         "/register": (context) => RegisterScreen(),
-        // "/verify": (context) => Verify(),
+        //"/verify": (context) => Verify(),
         // "/input": (context) => BurgerMenu(),
         // "/forget-password": (context) => ForgetScreen(),
         // "/dashboard": (context) => DashBoardScreen(),
