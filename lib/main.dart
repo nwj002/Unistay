@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/AdminRegisterScreen.dart';
 import 'package:unistay/screens/add_rooms_screen.dart';
-import 'package:unistay/screens/register_screen.dart';
+import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/screens/login_as_admin.dart';
+import 'package:unistay/screens/verify_screen.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 import 'package:unistay/screens/AddHostel.dart';
 import 'firebase_options.dart';
-
 
 User ? currentUser;
 
@@ -45,11 +45,11 @@ class MyApp extends StatelessWidget {
           // "/login-as-admin": (context) => const LoginAsAdminScreen(),
           "/register": (context) => const RegisterScreen(),
           "/admin-register": (context) => AdminRegisterScreen(),
-          // "/verify":(context)=>Verify(),
+          "/verify":(context)=>Verify(),
           // "/input":(context)=> BurgerMenu(),
           // "/forget-password": (context) => const ForgotPasswordScreen(),
-          // "/dashboard": (context) => DashBoardScreen(),
-          // "/addhostel": (context) => AddHostel(),
+          // "/dashboard": (context) => Dashboard(),
+          "/addhostel": (context) => AddHostel(),
           "/add-rooms": (context) => AddRoomsScreen(),
 
         },
