@@ -10,7 +10,7 @@ import 'package:unistay/screens/AddHostel.dart';
 import 'package:unistay/screens/verify_screen.dart';
 import 'firebase_options.dart';
 
-
+//hi
 User ? currentUser;
 
 Future<void> main() async {
