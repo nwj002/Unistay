@@ -46,7 +46,10 @@ dependencies:
   firebase_storage: ^11.2.3
   get: ^4.3.8
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05e2588ee110030001d8159a5adf1d7573e162fd
 
 dev_dependencies:
   flutter_test:
