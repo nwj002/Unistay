@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/screens/register_screen.dart';
+import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 
