@@ -40,10 +40,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
 
         ),
-        initialRoute: "/admin-register",
+        initialRoute: "/register",
         routes: {
           // "/login-as-admin": (context) => const LoginAsAdminScreen(),
-          // "/register": (context) => const RegisterScreen(),
+          "/register": (context) => const RegisterScreen(),
           "/admin-register": (context) => AdminRegisterScreen(),
           // "/verify":(context)=>Verify(),
           // "/input":(context)=> BurgerMenu(),
