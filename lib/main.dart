@@ -7,7 +7,6 @@ import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/screens/login_as_admin.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 import 'package:unistay/screens/AddHostel.dart';
-import 'package:unistay/screens/verify_screen.dart';
 import 'firebase_options.dart';
 
 
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           
         ),
-        initialRoute: "/register",
+        initialRoute: "/addhostel",
         routes: {
           "/login-as-admin": (context) =>const LoginAsAdminScreen(),
           "/register": (context) =>const RegisterScreen(),
