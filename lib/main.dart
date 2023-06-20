@@ -11,11 +11,6 @@ import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 import 'package:unistay/screens/AddHostel.dart';
 import 'firebase_options.dart';
 
-<<<<<<< HEAD
-//main okay
-=======
-//hi
->>>>>>> 0518833a26d208966cda97330f7e3bb2b7290acf
 User ? currentUser;
 
 Future<void> main() async {
