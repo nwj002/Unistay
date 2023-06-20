@@ -23,8 +23,12 @@ class _AddHostelState extends State<AddHostel> {
     final String address = _addressController.text;
     final int capacity = int.tryParse(_capacityController.text) ?? 0;
 
-    if (name.isNotEmpty && address.isNotEmpty && capacity > 0 && pickedImage != null) {
-      final Hostel hostel = Hostel(name: name, address: address, capacity: capacity, imageUrl: '');
+    if (name.isNotEmpty &&
+        address.isNotEmpty &&
+        capacity > 0 &&
+        pickedImage != null) {
+      final Hostel hostel = Hostel(
+          name: name, address: address, capacity: capacity, imageUrl: '');
       setState(() {
         _isSaving = true;
       });
@@ -166,26 +170,29 @@ class _AddHostelState extends State<AddHostel> {
           color: Colors.grey.shade100,
           padding: EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start, // Align elements from top to bottom
+            mainAxisAlignment:
+                MainAxisAlignment.start, // Align elements from top to bottom
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(
-                alignment: Alignment.topCenter, // Align the image to the top center
+                alignment:
+                    Alignment.topCenter, // Align the image to the top center
                 child: Stack(
                   children: [
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: Colors.orange.shade300, // Use the color of the "Add" button
+                        color: Colors.orange
+                            .shade300, // Use the color of the "Add" button
                       ),
                       child: ClipRect(
                         child: pickedImage != null
                             ? Image.file(
-                          pickedImage!,
-                          width: 500,
-                          height: 200,
-                          fit: BoxFit.cover,
-                        )
+                                pickedImage!,
+                                width: 500,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              )
                             : Image.asset('Assets/Images/insert_image.jpg'),
                       ),
                     ),
@@ -194,7 +201,8 @@ class _AddHostelState extends State<AddHostel> {
               ),
               SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                 child: ElevatedButton.icon(
                   onPressed: () => imagePickerOption(),
                   icon: const Icon(Icons.add_a_photo_sharp),
@@ -251,9 +259,9 @@ class _AddHostelState extends State<AddHostel> {
                 child: _isSaving
                     ? CircularProgressIndicator()
                     : Text(
-                  'Save',
-                  style: TextStyle(fontSize: 20),
-                ),
+                        'Save',
+                        style: TextStyle(fontSize: 20),
+                      ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.orange.shade300,
                   shape: RoundedRectangleBorder(

@@ -6,12 +6,13 @@ import '../models/hostel.dart';
 
 class HostelRepository {
   final CollectionReference _hostelsCollection =
-  FirebaseFirestore.instance.collection('hostels');
+      FirebaseFirestore.instance.collection('hostels');
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
   Future<void> addHostel(Hostel hostel, File imageFile) async {
     final String imageName = DateTime.now().millisecondsSinceEpoch.toString();
-    final Reference storageRef = _storage.ref().child('hostel_images/$imageName');
+    final Reference storageRef =
+        _storage.ref().child('hostel_images/$imageName');
 
     // Upload image to Firebase Storage
     final TaskSnapshot storageTask = await storageRef.putFile(imageFile);

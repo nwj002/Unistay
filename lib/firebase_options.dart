@@ -70,8 +70,10 @@ class DefaultFirebaseOptions {
     projectId: 'unistay-68d5e',
     databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
-    androidClientId: '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
-    iosClientId: '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
+    androidClientId:
+        '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
+    iosClientId:
+        '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
     iosBundleId: 'com.example.unistay',
   );
 
@@ -82,8 +84,10 @@ class DefaultFirebaseOptions {
     projectId: 'unistay-68d5e',
     databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
-    androidClientId: '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
-    iosClientId: '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
+    androidClientId:
+        '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
+    iosClientId:
+        '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
     iosBundleId: 'com.example.unistay',
   );
 }
