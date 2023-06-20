@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(),
-        initialRoute: "/forgetpassword",
+        initialRoute: "/addrooms",
         routes: {
           "/loginadmin": (context) => const LoginAsAdminScreen(),
           "/register": (context) => const RegisterScreen(),
