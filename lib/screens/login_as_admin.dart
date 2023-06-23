@@ -15,7 +15,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
   final emailCtrl = TextEditingController();
   final passwordCtrl = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  bool valueFirst = false;
+   
 
   @override
   void dispose() {
@@ -169,24 +169,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           ),
                         ),
                       ),
-                    //  const SizedBox(height: 10),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.center,
-                      //   children: [
-                      //     Checkbox(
-                      //       checkColor: Colors.greenAccent,
-                      //       activeColor: Colors.blueGrey,
-                      //       value: valueFirst,
-                      //       onChanged: (bool? value) {
-                      //         setState(() {
-                      //           valueFirst = value ?? true;
-                      //         });
-                      //       },
-                      //     ),
-                      //     Text("Agree to the terms and conditions"),
-                      //   ],
-                      // ),
-                      // SizedBox(height: 10,),
+                    
                          Padding(
                            padding: const EdgeInsets.all(12.0),
                            child: Container(
