@@ -17,7 +17,7 @@ import './step/i_should_see_an_error_message_indicating_a_missing_room_capacity.
 void main() {
   group('''Add Rooms''', () {
     testWidgets('''Successful room addition''', (tester) async {
-      // await iAmOnTheAddRoomsScreen(tester);
+      await iAmOnTheAddRoomsScreen(tester);
       // await iEnterAValidRoomName(tester);
       await iEnterAValidRoomCapacity(tester);
       await iTapTheAddRoomButton(tester);
