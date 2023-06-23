@@ -145,7 +145,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
               Container(
                 height: 698,
                 decoration: BoxDecoration(
-                  color: Colors.white70,
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),

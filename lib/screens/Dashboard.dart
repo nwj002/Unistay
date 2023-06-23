@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import 'AdminRegisterScreen.dart';
 import 'Profile.dart';
 import 'RegisterScreen.dart';
 
@@ -29,6 +30,7 @@ class _DashboardState extends State<Dashboard> {
   final List<Widget> _pages = [
     RegisterScreen(), // Keep the booking screen instead of Register Screen here
     Profile(),
+    AdminRegisterScreen(),// Keep the ticket screen instead of admin register screen here
 
   ];
 
