@@ -9,6 +9,8 @@ import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/screens/login_as_admin.dart';
 import 'package:unistay/screens/verify_screen.dart';
+import 'package:unistay/sign_in/sign_in_screen.dart';
+import 'package:unistay/splash/splash_screen.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 import 'package:unistay/screens/AddHostel.dart';
 import 'firebase_options.dart';
@@ -39,8 +41,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(),
-        initialRoute: "/addhostel",
+        initialRoute: "/splash",
         routes: {
+          '/login':(context) => SignInScreen(),
+          '/splash':(context) => SplashScreen(),
           "/loginadmin": (context) => const LoginAsAdminScreen(),
           "/register": (context) => const RegisterScreen(),
           "/adminregister": (context) => AdminRegisterScreen(),
