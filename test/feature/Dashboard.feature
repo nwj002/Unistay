@@ -1,4 +1,4 @@
-Feature: User Registration
+Feature: User Dashboard
 
   Scenario: User registration with invalid details
     Given I am on the registration screen
