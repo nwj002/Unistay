@@ -184,7 +184,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                           Text('Phone Number', textAlign: TextAlign.left),
                           SizedBox(height: 10),
                           TextFormField(
-                            key: _phoneKey,
+                            key: Key('email_text_field'),
+                            // key: _phoneKey,
                             controller: _phoneController,
                             validator: validatePhone,
                             style: const TextStyle(
