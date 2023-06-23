@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/AdminRegisterScreen.dart';
 import 'package:unistay/screens/Dashboard.dart';
+import 'package:unistay/screens/Profile.dart';
 import 'package:unistay/screens/add_rooms_screen.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
 
         ),
-        initialRoute: "/dashboard",
+        initialRoute: "/profile",
         routes: {
           // "/login-as-admin": (context) => const LoginAsAdminScreen(),
           "/register": (context) => const RegisterScreen(),
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
           "/add-rooms": (context) => AddRoomsScreen(),
+          "/profile":(context)=>Profile(),
 
         },
       ),
