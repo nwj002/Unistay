@@ -2,8 +2,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:get/get.dart';
-import '../models/hostel.dart';
-import '../viewmodels/hostel_view_model.dart';
+import 'package:unistay/models/docs.dart';
+import 'package:unistay/viewmodels/document_view_model.dart';
+
+
 
 class DocumentScreen extends StatefulWidget {
   @override
@@ -11,42 +13,35 @@ class DocumentScreen extends StatefulWidget {
 }
 
 class _DocumentState extends State<DocumentScreen> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _addressController = TextEditingController();
-  final TextEditingController _capacityController = TextEditingController();
+  // final TextEditingController _nameController = TextEditingController();
+  // final TextEditingController _addressController = TextEditingController();
+  // final TextEditingController _capacityController = TextEditingController();
   // final HostelViewModel _hostelViewModel = HostelViewModel();
+  final DocumentViewModel _documentViewModel=DocumentViewModel();
   bool _isSaving = false;
   File? pickedImage;
 
   void _submitForm(BuildContext context) async {
-    final String name = _nameController.text;
-    final String address = _addressController.text;
-    final int capacity = int.tryParse(_capacityController.text) ?? 0;
+    // final String name = _nameController.text;
+    // final String address = _addressController.text;
+    // final int capacity = int.tryParse(_capacityController.text) ?? 0;
 
-    if (name.isNotEmpty &&
-        address.isNotEmpty &&
-        capacity > 0 &&
+    if (
         pickedImage != null) {
-      final Hostel hostel = Hostel(
-          name: name, address: address, capacity: capacity, imageUrl: '');
+      final Docs docs = Docs(
+          imageUrl: '');
       setState(() {
         _isSaving = true;
       });
 
       try {
-        // await _hostelViewModel.addHostel(hostel, pickedImage!);
-
-        // Clear input fields
-        _nameController.clear();
-        _addressController.clear();
-        _capacityController.clear();
-
+        await _documentViewModel.addDocs(docs, pickedImage!);
         showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Success'),
-              content: Text('Hostel saved successfully.'),
+              title: Text('Document Saved'),
+              content: Text('Your document has been submitted sucessfully'),
               actions: [
                 TextButton(
                   onPressed: () {
@@ -68,7 +63,7 @@ class _DocumentState extends State<DocumentScreen> {
           builder: (context) {
             return AlertDialog(
               title: Text('Error'),
-              content: Text('Failed to save hostel to Firestore.'),
+              content: Text('Upload Failed'),
               actions: [
                 TextButton(
                   onPressed: () {
@@ -86,8 +81,8 @@ class _DocumentState extends State<DocumentScreen> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Invalid Data'),
-            content: Text('Please fill in all the fields and select an image.'),
+            title: Text('Image not selected'),
+            content: Text('Please select an image.'),
             actions: [
               TextButton(
                 onPressed: () {
@@ -223,7 +218,23 @@ class _DocumentState extends State<DocumentScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Please follow the given procedures:",
+                    "Please upload your genuine \n 'University profile' document.",
+                    style: TextStyle(
+                      color: Colors.grey.shade800,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 25,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "The document uploaded music be authentic \n for which in future might be used by hostel \n FOR VERIFICATION. ",
                     style: TextStyle(
                       color: Colors.grey.shade800,
                       fontWeight: FontWeight.w500,
@@ -232,23 +243,37 @@ class _DocumentState extends State<DocumentScreen> {
                   ),
                 ],
               ),
-
-
+              SizedBox(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "*for more hostel policy details, contact admin",
+                    style: TextStyle(
+                      color: Colors.grey.shade800,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _isSaving ? null : () => _submitForm(context),
-                child: _isSaving
-                    ? CircularProgressIndicator()
-                    : Text(
-                  'Save',
-                  style: TextStyle(fontSize: 20),
-                ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.orange.shade300,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                   padding: EdgeInsets.symmetric(vertical: 10),
+                ),
+                child: _isSaving
+                    ? CircularProgressIndicator()
+                    : Text(
+                  'Upload',
+                  style: TextStyle(fontSize: 20),
                 ),
               ),
             ],
