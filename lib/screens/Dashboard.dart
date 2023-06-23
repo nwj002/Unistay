@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'RegisterScreen.dart';
-// import 'package:hostel/Screen/RegisterScreen.dart';
 
-// import 'Profile.dart';
-// import 'Booking.dart';
-// import 'Ticket.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -28,7 +24,6 @@ class _DashboardState extends State<Dashboard> {
       _selectedIndex = index;
     });
   }
-
 
   final List<Widget> _pages = [
     RegisterScreen(),
@@ -111,17 +106,13 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   Container(
-                    height: 500,
+                    height: 520,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
                       ),
-                    ),
-                    child: IndexedStack(
-                      index: _selectedIndex,
-                      children: _pages,
                     ),
                   ),
                 ],
@@ -206,8 +197,18 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               ),
+
             ),
+            if (_selectedIndex >= 0)
+              Positioned.fill(
+                top: 0,
+                child: Container(
+                  // color: Colors.white,
+                  child: _pages[_selectedIndex],
+                ),
+              ),
           ],
+
         ),
       ),
       bottomNavigationBar: ClipRRect(
