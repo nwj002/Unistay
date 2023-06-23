@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/AdminRegisterScreen.dart';
 import 'package:unistay/screens/Dashboard.dart';
+import 'package:unistay/screens/DocumentScreen.dart';
 import 'package:unistay/screens/add_rooms_screen.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
           "/addrooms": (context) => AddRoomsScreen(),
+          "/documents":(context)=>DocumentScreen(),
         },
       ),
     );
