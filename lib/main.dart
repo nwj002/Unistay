@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
 
         ),
-        initialRoute: "/profile",
+        initialRoute: "/dashboard",
         routes: {
           // "/login-as-admin": (context) => const LoginAsAdminScreen(),
           "/register": (context) => const RegisterScreen(),

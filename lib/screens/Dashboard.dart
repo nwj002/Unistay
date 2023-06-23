@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import 'Profile.dart';
 import 'RegisterScreen.dart';
 
 
@@ -26,9 +27,9 @@ class _DashboardState extends State<Dashboard> {
   }
 
   final List<Widget> _pages = [
-    RegisterScreen(),
-    // Profile(),
-    // Add more pages if needed
+    RegisterScreen(), // Keep the booking screen instead of Register Screen here
+    Profile(),
+
   ];
 
   final _formKey = GlobalKey<FormState>();
