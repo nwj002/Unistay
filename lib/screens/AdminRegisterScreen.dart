@@ -124,6 +124,47 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                   ],
                 ),
               ),
+
+              Container(
+                height: 698,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Text('Email Address', textAlign: TextAlign.left),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        key: _emailKey,
+                        controller: _emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        validator: validateEmail,
+                        style: const TextStyle(
+                          fontFamily: 'WorkSansSemiBold',
+                          fontSize: 16.0,
+                          color: Colors.black,
+                        ),
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          prefixIcon: Icon(
+                            Icons.email,
+                            color: Colors.black,
+                            size: 22.0,
+                          ),
+                        ),
+=======
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -137,6 +178,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                         fontSize: 24,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
+
                       ),
                     ),
                   ),
