@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
           "/addrooms": (context) => AddRoomsScreen(),
-          "/documents":(context)=>DocumentScreen(),
+          // "/documents":(context)=>DocumentScreen(),
         },
       ),
     );
