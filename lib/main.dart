@@ -1,20 +1,11 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/AdminRegisterScreen.dart';
-<<<<<<< HEAD
-// import 'package:unistay/screens/Dashboard.dart';
-import 'package:unistay/screens/EditPersonalDetails.dart';
-import 'package:unistay/screens/Profile.dart';
-// import 'package:unistay/screens/DocumentScreen.dart';
-=======
 import 'package:unistay/screens/Dashboard.dart';import 'package:unistay/screens/Profile.dart';
 import 'package:unistay/screens/UpdatePasswordScreen.dart';
 import 'package:unistay/screens/DocumentScreen.dart';
->>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
 import 'package:unistay/screens/add_rooms_screen.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
@@ -53,12 +44,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
         ),
-<<<<<<< HEAD
         initialRoute: "/admin-register",
-
-=======
-        initialRoute: "/dashboard",
->>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
@@ -66,21 +52,6 @@ class MyApp extends StatelessWidget {
           "/register": (context) => const RegisterScreen(),
           "/admin-register": (context) => AdminRegisterScreen(),
           "/verify":(context)=>Verify(),
-<<<<<<< HEAD
-          // "/input":(context)=> BurgerMenu(),
-          // "/forget-password": (context) => const ForgotPasswordScreen(),
-          // "/dashboard": (context) => Dashboard(),
-          "/addhostel": (context) => AddHostel(),
-          "/add-rooms": (context) => AddRoomsScreen(),
-          "/profile":(context)=>Profile(),
-          "/adminregister": (context) => AdminRegisterScreen(),
-          "/verify": (context) => Verify(),
-          "/forgetpassword": (context) => const ForgotPasswordScreen(),
-          "/addrooms": (context) => AddRoomsScreen(),
-
-          "/editpersonaldetails": (context) => EditPersonalDetails(),
-          // "/documents":(context)=>Document(),
-=======
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
           "/add-rooms": (context) => AddRoomsScreen(),
@@ -89,11 +60,9 @@ class MyApp extends StatelessWidget {
           "/forgetpassword": (context) => const ForgotPasswordScreen(),
           "/dashboard": (context) => Dashboard(),
           // "/documents":(context)=>DocumentScreen(),
->>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
 
         },
       ),
     );
   }
 }
-
