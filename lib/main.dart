@@ -44,10 +44,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
 
-        title: 'Flutter Demo',
+        title: 'UNISTAY',
         theme: ThemeData(
         ),
         initialRoute: "/dashboard",
+
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
