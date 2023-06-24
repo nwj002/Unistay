@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         title: 'UNISTAY',
         theme: ThemeData(
         ),
-        initialRoute: "/dashboard",
+        initialRoute: "/splash",
 
         routes: {
           '/login':(context) => SignInScreen(),
