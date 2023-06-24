@@ -275,8 +275,8 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Image.network(
-                                      'https://w7.pngwing.com/pngs/989/129/png-transparent-google-logo-google-search-meng-meng-company-text-logo-thumbnail.png',
+                                    Image.asset(
+                                      'Assets/Images/google.png',
                                       height: 30,
                                       width: 30,
                                     ),

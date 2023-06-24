@@ -6,6 +6,7 @@ import 'package:unistay/screens/AdminRegisterScreen.dart';
 import 'package:unistay/screens/Dashboard.dart';
 import 'package:unistay/screens/add_rooms_screen.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
+import 'package:unistay/screens/admin_dashboard.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/screens/login_as_admin.dart';
 import 'package:unistay/screens/verify_screen.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Unistay',
         theme: ThemeData(),
         initialRoute: "/addhostel",
         routes: {
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
           "/addrooms": (context) => AddRoomsScreen(),
+          "/admin-dashboard":(context)=>AdminDashboard(),
         },
       ),
     );
