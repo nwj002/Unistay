@@ -5,6 +5,8 @@ import 'package:unistay/screens/admin_dashboard.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 
+import 'Dashboard.dart';
+
 class LoginAsAdminScreen extends StatefulWidget {
   const LoginAsAdminScreen({Key? key}) : super(key: key);
 
@@ -140,7 +142,6 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                       return "Password is required";
                                     }
                                     return null;
-                                    
                                   },
                                   style: const TextStyle(
                                     fontFamily: 'WorkSansSemiBold',
@@ -211,17 +212,14 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                   );
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text(res)));
+                                    SnackBar(
+                                        content: Text(
+                                            "Please enter all the details")),
+                                  );
                                 }
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content:
-                                          Text("Please enter all the details")),
-                                );
                               }
                             },
-                            child: const Text(
+                            child: Text(
                               "Sign In",
                               style: TextStyle(
                                 fontSize: 20,
@@ -233,7 +231,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 15),
+                      SizedBox(height: 15),
                       Align(
                         alignment: Alignment.center,
                         child: InkWell(

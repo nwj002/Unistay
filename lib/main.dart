@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
 
         title: 'Flutter Demo',
         theme: ThemeData(),
-        initialRoute: "/addhostel",
+        initialRoute: "/loginadmin",
         
         routes: {
           '/login':(context) => SignInScreen(),
