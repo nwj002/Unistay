@@ -129,16 +129,15 @@ class _DashboardState extends State<Dashboard> {
                             },
                             child: Container(
                               width: double.infinity,
-                              padding: EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(30.0),
                               decoration: BoxDecoration(
                                 color: Colors.grey.shade200,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
                                 children: [
-                                  //line no 138
                                   // add hostel image and name in this container
-                                  SizedBox(height: 25),
+                                  SizedBox(height: 55),
                                   // Add your desired content here
                                 ],
                               ),
