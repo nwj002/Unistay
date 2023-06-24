@@ -199,7 +199,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                           Text('Email Address', textAlign: TextAlign.left),
                           SizedBox(height: 10),
                           TextFormField(
-                            key: _emailKey,
+                            key: Key("email_text_field"),
+                            // key: _emailKey,
                             controller: _emailController,
                             keyboardType: TextInputType.emailAddress,
                             validator: validateEmail,
@@ -225,7 +226,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                           Text('Phone Number', textAlign: TextAlign.left),
                           SizedBox(height: 10),
                           TextFormField(
-                            key: _phoneKey,
+                            key: Key('email_text_field'),
+                            // key: _phoneKey,
                             controller: _phoneController,
                             validator: validatePhone,
                             style: const TextStyle(
@@ -250,7 +252,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                           Text('Password', textAlign: TextAlign.left),
                           SizedBox(height: 10),
                           TextFormField(
-                            key: _passwordKey,
+                            key: Key("password_text_field"),
+                            // key: _passwordKey,
                             controller: _passwordController,
                             obscureText: _obscureTextPassword,
                             validator: validatePassword,
@@ -291,7 +294,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                           Text('Confirm Password', textAlign: TextAlign.left),
                           SizedBox(height: 10),
                           TextFormField(
-                            key: _confirmPasswordKey,
+                            key: Key("confirm_password_text_field"),
+                            // key: _confirmPasswordKey,
                             controller: _confirmPasswordController,
                             obscureText: _obscureTextPasswordConfirm,
                             validator: validateConfirmPassword,

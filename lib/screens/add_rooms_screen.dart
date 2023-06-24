@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../viewmodels/add_rooms_view_model.dart';
+import 'package:unistay/viewmodels/add_rooms_view_model.dart';
 
 class AddRoomsScreen extends StatelessWidget {
   final TextEditingController _roomNameController = TextEditingController();
@@ -63,6 +63,7 @@ class AddRoomsScreen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.all(20),
                                 child: TextFormField(
+                                  key: Key("room_name_field"),
                                   controller: _roomNameController,
                                   decoration: InputDecoration(
                                     labelText: 'Room Name',
@@ -81,6 +82,7 @@ class AddRoomsScreen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.all(20),
                                 child: TextFormField(
+                                  key: Key("capacity_field"),
                                   controller: _capacityController,
                                   keyboardType: TextInputType.number,
                                   decoration: InputDecoration(
@@ -99,6 +101,7 @@ class AddRoomsScreen extends StatelessWidget {
                               ),
                               SizedBox(height: 40),
                               ElevatedButton(
+                                key: Key("add_room_button"),
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
                                     String roomName = _roomNameController.text;
