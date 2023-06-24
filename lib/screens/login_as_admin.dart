@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:unistay/screens/RegisterScreen.dart';
-import 'package:unistay/screens/forgot_password_screen.dart';
-import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'Dashboard.dart';
+import 'RegisterScreen.dart';
+import 'forgot_password_screen.dart';
 
 class LoginAsAdminScreen extends StatefulWidget {
   const LoginAsAdminScreen({Key? key}) : super(key: key);
@@ -14,16 +14,68 @@ class LoginAsAdminScreen extends StatefulWidget {
 }
 
 class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   final emailCtrl = TextEditingController();
   final passwordCtrl = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-   
 
   @override
   void dispose() {
     emailCtrl.dispose();
     passwordCtrl.dispose();
     super.dispose();
+  }
+
+  Future<bool> _checkIfUserIsRegistered(String email) async {
+    // Implement your logic to check if the user is registered in your system
+    // Return true if registered, false otherwise
+    // You can use Firebase Firestore or any other database to perform this check
+    // Example implementation:
+    // final QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('users').where('email', isEqualTo: email).get();
+    // return snapshot.docs.isNotEmpty;
+    return false;
+  }
+
+  Future<void> _handleGoogleSignIn() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          idToken: googleAuth.idToken,
+          accessToken: googleAuth.accessToken,
+        );
+
+        final UserCredential userCredential = await _auth.signInWithCredential(credential);
+
+        final User? user = userCredential.user;
+
+        if (user != null) {
+          // User logged in with Google successfully
+          // Check if the user is registered in your system
+          bool isRegistered = await _checkIfUserIsRegistered(user.email!);
+
+          if (isRegistered) {
+            // User is registered, navigate to the dashboard screen or perform further operations here
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => Dashboard()),
+            );
+          } else {
+            // User is not registered, show an error message
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('No account found for this email. Please register first.')),
+            );
+          }
+        }
+      }
+    } catch (e) {
+      print('Error occurred during Google Sign-In: $e');
+    }
   }
 
   @override
@@ -46,22 +98,21 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               const SizedBox(height: 30,),
-                 const Padding(
-                    padding:  EdgeInsets.all(12.0),
-                    child: Text(
-                      "Sign In As Admin",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 30,
-                        fontWeight: FontWeight.w500,
-                      ),
+                SizedBox(height: 30),
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text(
+                    "Sign In As Admin",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-               const Padding(
-                  padding:  EdgeInsets.all(8.0),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     "We are delighted to see you again - Sign in",
                     style: TextStyle(
@@ -71,10 +122,10 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                     ),
                   ),
                 ),
-               const SizedBox(height: 15),
+                SizedBox(height: 15),
                 Container(
                   height: 698,
-                  decoration:const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
@@ -88,11 +139,11 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                         child: Form(
                           key: _formKey,
                           child: Container(
-                            padding:const EdgeInsets.all(20),
+                            padding: EdgeInsets.all(20),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                              const  SizedBox(height: 20),
+                                SizedBox(height: 20),
                                 TextFormField(
                                   controller: emailCtrl,
                                   keyboardType: TextInputType.emailAddress,
@@ -101,13 +152,13 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                       return "Email is required";
                                     }
                                     if (!RegExp(
-                                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                                         .hasMatch(value)) {
                                       return "Enter a valid email";
                                     }
                                     return null;
                                   },
-                                  style:const TextStyle(
+                                  style: TextStyle(
                                     fontFamily: 'WorkSansSemiBold',
                                     fontSize: 16.0,
                                     color: Colors.black,
@@ -120,20 +171,19 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     border: InputBorder.none,
-                                    prefixIcon:const Icon(
+                                    prefixIcon: Icon(
                                       Icons.email,
                                       color: Colors.black,
                                       size: 22.0,
                                     ),
                                     hintText: 'Email Address',
-                                    hintStyle:const TextStyle(
-                                      
+                                    hintStyle: TextStyle(
                                       fontFamily: 'WorkSansSemiBold',
                                       fontSize: 17.0,
                                     ),
                                   ),
                                 ),
-                               const SizedBox(height: 20),
+                                SizedBox(height: 20),
                                 TextFormField(
                                   controller: passwordCtrl,
                                   validator: (value) {
@@ -142,7 +192,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                     }
                                     return null;
                                   },
-                                  style:const TextStyle(
+                                  style: TextStyle(
                                     fontFamily: 'WorkSansSemiBold',
                                     fontSize: 16.0,
                                     color: Colors.black,
@@ -154,13 +204,13 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    prefixIcon:const Icon(
+                                    prefixIcon: Icon(
                                       Icons.lock,
                                       size: 22.0,
                                       color: Colors.black,
                                     ),
                                     hintText: 'Password',
-                                    hintStyle:const TextStyle(
+                                    hintStyle: TextStyle(
                                       fontFamily: 'WorkSansSemiBold',
                                       fontSize: 17.0,
                                     ),
@@ -171,184 +221,114 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           ),
                         ),
                       ),
-                    
-                         Padding(
-                           padding: const EdgeInsets.all(12.0),
-                           child: Container(
-                             width: double.infinity,
-                             height: 70,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    Colors.orange.shade300),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    side: BorderSide(color: Colors.orange.shade300),
-                                  ),
-                                ),
-                                padding: MaterialStateProperty.all<EdgeInsets>(
-                                  EdgeInsets.symmetric(vertical: 20),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 70,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(Colors.orange.shade300),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  side: BorderSide(color: Colors.orange.shade300),
                                 ),
                               ),
-                              onPressed: () async {
-                                String email = emailCtrl.text.trim();
-                                String pass = passwordCtrl.text.trim();
-                                  
-                                if (_formKey.currentState!.validate()) {
-                                  final res = await context
-                                      .read<AuthProvider>()
-                                      .loginAsAdmin(email: email, password: pass);
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                          content: Text("Logged In As Admin!")));
-                                  if (res == "OK") {
-                                    // Handle success
-                                  } else {
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(SnackBar(content: Text(res)));
-                                  }
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                        content:
-                                            Text("Please enter all the details")),
-                                  );
-                                }
-
-                              },
-                              child: Text(
-                                "Sign In",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2,
-                                  color: Colors.white,
-                                ),
+                              padding: MaterialStateProperty.all<EdgeInsets>(
+                                EdgeInsets.symmetric(vertical: 20),
                               ),
                             ),
-                                                 ),
-                         ),
-                      
-                      SizedBox(height: 15),
-                      Align(
-                        alignment: Alignment.center,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ForgotPasswordScreen(),
+                            onPressed: () async {
+                              String email = emailCtrl.text.trim();
+                              String pass = passwordCtrl.text.trim();
+
+                              if (_formKey.currentState!.validate()) {
+                                // Perform regular email/password authentication here
+                                // You can use Firebase Authentication or your preferred authentication method
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(content: Text('Please enter valid credentials')),
+                                );
+                              }
+                            },
+                            child: Text(
+                              'SIGN IN',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
                               ),
-                            );
-                          },
-                          child: Text(
-                            "Forgot password?",
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: Colors.black,
-                              letterSpacing: 1,
-                              height: 1,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 15),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => ForgotPasswordScreen()),
+                          );
+                        },
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: Colors.orange.shade300,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
                       Text(
-                        "OR",
+                        "Or",
                         style: TextStyle(
                           color: Colors.black,
+                          fontSize: 15,
                         ),
                       ),
-                      SizedBox(height: 15),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              height: 50,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      'Assets/Images/google.png',
-                                      height: 30,
-                                      width: 30,
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                      "Google",
-                                      style: TextStyle(
-                                        color: Colors.blueGrey,
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 2,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                      SizedBox(height: 20),
+                      Text(
+                        "Sign in with Google",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      ElevatedButton.icon(
+                        onPressed: _handleGoogleSignIn,
+                        icon: Image.asset(
+                          'assets/google_logo.png',
+                          height: 20,
+                          width: 20,
+                        ),
+                        label: Text('Sign In with Google'),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.white),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: Colors.grey.shade400),
                             ),
                           ),
-                          SizedBox(height: 15),
-                        ],
+                        ),
                       ),
-                      SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "New Here? ",
-                            style: TextStyle(
-                              color: Colors.black,
-                              letterSpacing: 2,
-                              height: 1,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                          SizedBox(height: 15),
-                        ],
-                      ),
-                      SizedBox(height: 15),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushReplacement(
+                      SizedBox(height: 10),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(builder: (_) => RegisterScreen()),
                           );
                         },
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Container(
-                            height: 70,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Create an account",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2,
-                                ),
-                              ),
-                            ),
+                        child: Text(
+                          "Don't have an account? Sign Up",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
                           ),
                         ),
                       ),
-                      SizedBox(height: 50),
                     ],
                   ),
                 ),

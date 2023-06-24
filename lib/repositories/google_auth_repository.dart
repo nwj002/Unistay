@@ -1,89 +1,69 @@
-//
-//
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
-//
-// import '../models/google_auth_model.dart';
-//
-// class UserRepository {
-//   final FirebaseAuth _auth = FirebaseAuth.instance;
-//   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-//
-//   Future<UserModel?> signInWithGoogle() async {
-//     try {
-//       final GoogleSignInAccount? googleSignInAccount =
-//       await _googleSignIn.signIn();
-//       if (googleSignInAccount != null) {
-//         final GoogleSignInAuthentication googleSignInAuth =
-//         await googleSignInAccount.authentication;
-//
-//         final AuthCredential credential = GoogleAuthProvider.credential(
-//           accessToken: googleSignInAuth.accessToken,
-//           idToken: googleSignInAuth.idToken,
-//         );
-//
-//         final UserCredential userCredential =
-//         await _auth.signInWithCredential(credential);
-//         final User? user = userCredential.user;
-//
-//         if (user != null) {
-//           final UserModel? userModel = await _getUserByEmail(user.email);
-//           if (userModel != null) {
-//             return userModel;
-//           } else {
-//             // Save user data in Firestore
-//             await _saveUserData(
-//               user.uid,
-//               user.displayName ?? '',
-//               user.email ?? '',
-//               user.photoURL ?? '',
-//             );
-//
-//             return UserModel(
-//               uid: user.uid,
-//               name: user.displayName ?? '',
-//               email: user.email ?? '',
-//               photoUrl: user.photoURL ?? '',
-//             );
-//           }
-//         }
-//       }
-//     } catch (e) {
-//       print('Error signing in with Google: $e');
-//     }
-//     return null;
-//   }
-//
-//   Future<UserModel?> _getUserByEmail(String email) async {
-//     final QuerySnapshot snapshot = await _firestore
-//         .collection('users')
-//         .where('email', isEqualTo: email)
-//         .get();
-//
-//     if (snapshot.docs.isNotEmpty) {
-//       final user = snapshot.docs.first.data();
-//       return UserModel(
-//         uid: snapshot.docs.first.id,
-//         name: user['name'] ?? '',
-//         email: user['email'] ?? '',
-//         photoUrl: user['photoUrl'] ?? '',
-//       );
-//     }
-//     return null;
-//   }
-//
-//   Future<void> _saveUserData(
-//       String uid, String name, String email, String photoUrl) async {
-//     await _firestore.collection('users').doc(uid).set({
-//       'name': name,
-//       'email': email,
-//       'photoUrl': photoUrl,
-//     });
-//   }
-//
-//   Future<void> signOut() async {
-//     await _auth.signOut();
-//     await _googleSignIn.signOut();
-//   }
-// }
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import '../models/google_auth_model.dart';
+
+class GoogleAuthRepository {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<GoogleAuthModel?> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          idToken: googleAuth.idToken,
+          accessToken: googleAuth.accessToken,
+        );
+
+        final UserCredential userCredential = await _auth.signInWithCredential(credential);
+
+        final User? user = userCredential.user;
+
+        if (user != null) {
+          return GoogleAuthModel(
+            userId: user.uid,
+            displayName: user.displayName,
+            email: user.email,
+          );
+        }
+      }
+
+      return null;
+    } catch (e) {
+      print('Error occurred during Google Sign-In: $e');
+      return null;
+    }
+  }
+
+  Future<bool> isGoogleAccountRegistered(String email) async {
+    try {
+      // Implement the logic to check if the Google account is already registered in your app's database
+      // You can use your own database or an API call to perform the check
+      // Example: perform a GET request to your backend API to check if the email is registered
+      // Make sure to handle error cases appropriately and return false in case of errors
+      // You can use packages like http or Dio for making API calls
+      // Example using http package:
+      /*
+      final response = await http.get(Uri.parse('https://your-api.com/check?email=$email'));
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final isRegistered = data['isRegistered'] ?? false;
+        return isRegistered;
+      } else {
+        // Error occurred during the check, handle the error case
+        return false;
+      }
+      */
+
+      // Placeholder code for demo purposes
+      // Assume the email is not registered
+      return false;
+    } catch (e) {
+      print('Error occurred during Google Account Check: $e');
+      return false;
+    }
+  }
+}
