@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +7,9 @@ import '../repositories/admin_repository.dart';
 class AdminRegisterViewModel extends ChangeNotifier {
   final AdminRepository _adminRepository = AdminRepository();
   final GlobalKey<ScaffoldMessengerState> _scaffoldMessengerKeyRegister =
-  GlobalKey<ScaffoldMessengerState>();
+      GlobalKey<ScaffoldMessengerState>();
   final GlobalKey<ScaffoldMessengerState> _scaffoldMessengerKeySnackBar =
-  GlobalKey<ScaffoldMessengerState>();
+      GlobalKey<ScaffoldMessengerState>();
 
   void register(Admin admin, BuildContext context) async {
     try {

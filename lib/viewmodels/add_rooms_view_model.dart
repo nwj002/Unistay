@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../repositories/room_repository.dart';
 
-
 class AddRoomsViewModel extends ChangeNotifier {
   final RoomRepository _roomRepository = RoomRepository();
 

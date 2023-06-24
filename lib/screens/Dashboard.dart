@@ -94,7 +94,8 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   Container(
                     width: double.infinity,
-                    margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: ElevatedButton(
@@ -124,7 +125,8 @@ class _DashboardState extends State<Dashboard> {
             Positioned(
               top: 70,
               bottom: 150,
-              right: _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
+              right:
+                  _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
               width: 220,
               child: Container(
                 color: Colors.grey.shade100,
@@ -137,61 +139,71 @@ class _DashboardState extends State<Dashboard> {
                           children: [
                             CircleAvatar(
                               radius: 40,
-                              backgroundImage: AssetImage('path_to_your_photo'),
+                              // backgroundImage: AssetImage('path_to_your_photo'),
                             ),
                             SizedBox(height: 8.0),
                             Text(
                               'Your Name',
-                              style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
+                              style: TextStyle(
+                                  color: Colors.blueGrey, fontSize: 16.0),
                             ),
                           ],
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.calendar_month, color: Colors.blueGrey),
-                        title: Text('Calendar', style: TextStyle(color: Colors.blueGrey)),
+                        leading:
+                            Icon(Icons.calendar_month, color: Colors.blueGrey),
+                        title: Text('Calendar',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 1 tap
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.edit_document, color: Colors.blueGrey),
-                        title: Text('My Documents', style: TextStyle(color: Colors.blueGrey)),
+                        leading:
+                            Icon(Icons.edit_document, color: Colors.blueGrey),
+                        title: Text('My Documents',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 2 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.logo_dev, color: Colors.blueGrey),
-                        title: Text('Clubs', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Clubs',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 3 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.person_2, color: Colors.blueGrey),
-                        title: Text('Appointment', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Appointment',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 4 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.book, color: Colors.blueGrey),
-                        title: Text('Disciplinary Acts', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Disciplinary Acts',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 5 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.lock, color: Colors.blueGrey),
-                        title: Text('Privacy Policy', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Privacy Policy',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 6 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.logout, color: Colors.blueGrey),
-                        title: Text('Logout', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Logout',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 7 tap
                         },
@@ -201,6 +213,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
 
+
             ),
             if (_selectedIndex >= 0)
               Positioned.fill(
@@ -209,6 +222,122 @@ class _DashboardState extends State<Dashboard> {
                   // color: Colors.white,
                   child: _pages[_selectedIndex],
                 ),
+=======
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80.0, // Set the desired height
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 5.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.vertical(
+                top: Radius.circular(40.0), bottom: Radius.circular(40.0)),
+            child: BottomAppBar(
+              color: Colors.grey.shade300,
+              elevation: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        if (_selectedIndex == -4)
+                          Container(
+                            width: 120,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.orange.shade300,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.event),
+                            SizedBox(width: 5),
+                            if (_selectedIndex == -4) Text('Booking'),
+                          ],
+                        ),
+                        IconButton(
+                          icon: SizedBox(),
+                          onPressed: () {
+                            _onNavItemTapped(-4);
+                          },
+                          color: Colors.transparent,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        if (_selectedIndex == -5)
+                          Container(
+                            width: 120,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.orange.shade300,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.person),
+                            SizedBox(width: 5),
+                            if (_selectedIndex == -5) Text('Profile'),
+                          ],
+                        ),
+                        IconButton(
+                          icon: SizedBox(),
+                          onPressed: () {
+                            _onNavItemTapped(-5);
+                          },
+                          color: Colors.transparent,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        if (_selectedIndex == -6)
+                          Container(
+                            width: 120,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.orange.shade300,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.airplane_ticket),
+                            SizedBox(width: 5),
+                            if (_selectedIndex == -6) Text('Ticket'),
+                          ],
+                        ),
+                        IconButton(
+                          icon: SizedBox(),
+                          onPressed: () {
+                            _onNavItemTapped(-6);
+                          },
+                          color: Colors.transparent,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+
               ),
           ],
 

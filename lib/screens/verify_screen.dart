@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 
 import '../viewmodels/verify_viewmodel.dart';
 
-
 class Verify extends StatefulWidget {
   const Verify({Key? key}) : super(key: key);
 
@@ -27,12 +26,12 @@ class _VerifyState extends State<Verify> {
     _viewModel.isEmailVerified =
         _viewModel.auth.currentUser?.emailVerified ?? false;
     if (!_viewModel.isEmailVerified &&
-        !_viewModel.auth.currentUser!.providerData.any((userInfo) =>
-        userInfo.providerId == 'password')) {
+        !_viewModel.auth.currentUser!.providerData
+            .any((userInfo) => userInfo.providerId == 'password')) {
       _viewModel.sendVerificationEmail();
       _viewModel.timer = Timer.periodic(
         Duration(seconds: 3),
-            (_) => _viewModel.checkEmailVerified(),
+        (_) => _viewModel.checkEmailVerified(),
       );
     }
   }
@@ -54,10 +53,7 @@ class _VerifyState extends State<Verify> {
           child: SingleChildScrollView(
             child: Container(
               width: double.infinity,
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height,
+              height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -99,7 +95,9 @@ class _VerifyState extends State<Verify> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -113,7 +111,9 @@ class _VerifyState extends State<Verify> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 15,),
+                          SizedBox(
+                            height: 15,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -127,7 +127,9 @@ class _VerifyState extends State<Verify> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -139,7 +141,9 @@ class _VerifyState extends State<Verify> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -151,7 +155,9 @@ class _VerifyState extends State<Verify> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -163,14 +169,16 @@ class _VerifyState extends State<Verify> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 "*The link is a one-time link generated. "
-                                    "\nAfter the completion of the above procedure, "
-                                    "\nyou can log in to your UNISTAY ACCOUNT",
+                                "\nAfter the completion of the above procedure, "
+                                "\nyou can log in to your UNISTAY ACCOUNT",
                                 style: TextStyle(
                                   color: Colors.grey.shade800,
                                   fontSize: 16,
@@ -179,7 +187,9 @@ class _VerifyState extends State<Verify> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -197,23 +207,22 @@ class _VerifyState extends State<Verify> {
                           Container(
                             width: double.infinity,
                             //
-                            child:
-                            ElevatedButton(
+                            child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.orange.shade300,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                  side: BorderSide(
-                                      color: Colors.orange.shade300),
+                                  side:
+                                      BorderSide(color: Colors.orange.shade300),
                                 ),
                                 padding: EdgeInsets.symmetric(vertical: 20),
                               ),
                               onPressed: () {
-                                verifyViewModel.sendVerificationEmail();;
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(content: Text(
-                                        "The verification link has already been sent to you! Check your mail!"))
-                                );
+                                verifyViewModel.sendVerificationEmail();
+                                ;
+                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                    content: Text(
+                                        "The verification link has already been sent to you! Check your mail!")));
                               },
                               child: Text(
                                 "SEND VERIFICATION LINK",
@@ -233,5 +242,4 @@ class _VerifyState extends State<Verify> {
       ),
     );
   }
-
 }

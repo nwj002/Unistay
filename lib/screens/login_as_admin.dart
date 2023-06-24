@@ -94,7 +94,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                     return "Email is required";
                                   }
                                   if (!RegExp(
-                                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                                       .hasMatch(value)) {
                                     return "Enter a valid email";
                                   }
@@ -184,9 +184,10 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                         height: 50,
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor:
-                            MaterialStateProperty.all(Colors.orange.shade200),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                            backgroundColor: MaterialStateProperty.all(
+                                Colors.orange.shade200),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                                 side: BorderSide(color: Colors.orange.shade200),
@@ -204,8 +205,9 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                               final res = await context
                                   .read<AuthProvider>()
                                   .loginAsAdmin(email: email, password: pass);
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(SnackBar(content: Text("Logged In As Admin!")));
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                      content: Text("Logged In As Admin!")));
                               if (res == "OK") {
                                 // Handle success
                               } else {
@@ -214,7 +216,9 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                               }
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text("Please enter all the details")),
+                                SnackBar(
+                                    content:
+                                        Text("Please enter all the details")),
                               );
                             }
                           },
