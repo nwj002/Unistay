@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'AdminRegisterScreen.dart';
 import 'Profile.dart';
 import 'RegisterScreen.dart';
-
 
 class Dashboard extends StatefulWidget {
   @override
@@ -30,8 +30,7 @@ class _DashboardState extends State<Dashboard> {
   final List<Widget> _pages = [
     RegisterScreen(), // Keep the booking screen instead of Register Screen here
     Profile(),
-    AdminRegisterScreen(),// Keep the ticket screen instead of admin register screen here
-
+    AdminRegisterScreen(), // Keep the ticket screen instead of admin register screen here
   ];
 
   final _formKey = GlobalKey<FormState>();
@@ -92,34 +91,62 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                   ),
-                  Form(
-                    key: _formKey,
-                    child: Container(
-                      width: double.infinity,
-                      margin:
-                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // Handle button tap
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.orange.shade300,
-                          ),
-                          child: Text('Room Details'),
+                  Container(
+                    width: double.infinity,
+                    margin:
+                    EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Handle button tap
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.orange.shade300,
                         ),
+                        child: Text('Room Details'),
                       ),
                     ),
                   ),
-                  Container(
+                  Container(  // content to display hostel details
                     height: 520,
+                    width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
                       ),
+                    ),
+                    padding: EdgeInsets.all(20.0), // Add padding to the container
+                    child: Column(
+                      children: [
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: InkWell(
+                            onTap: () {
+                              // Handle button tap
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.all(16.0),
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade200,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Column(
+                                children: [
+                                  //line no 138
+                                  // add hostel image and name in this container
+                                  SizedBox(height: 25),
+                                  // Add your desired content here
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+
                     ),
                   ),
                 ],
@@ -128,8 +155,7 @@ class _DashboardState extends State<Dashboard> {
             Positioned(
               top: 70,
               bottom: 150,
-              right:
-              _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
+              right: _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
               width: 220,
               child: Container(
                 color: Colors.grey.shade100,
@@ -147,66 +173,56 @@ class _DashboardState extends State<Dashboard> {
                             SizedBox(height: 8.0),
                             Text(
                               'Your Name',
-                              style: TextStyle(
-                                  color: Colors.blueGrey, fontSize: 16.0),
+                              style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
                             ),
                           ],
                         ),
                       ),
                       ListTile(
-                        leading:
-                        Icon(Icons.calendar_month, color: Colors.blueGrey),
-                        title: Text('Calendar',
-                            style: TextStyle(color: Colors.blueGrey)),
+                        leading: Icon(Icons.calendar_month, color: Colors.blueGrey),
+                        title: Text('Calendar', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 1 tap
                         },
                       ),
                       ListTile(
-                        leading:
-                        Icon(Icons.edit_document, color: Colors.blueGrey),
-                        title: Text('My Documents',
-                            style: TextStyle(color: Colors.blueGrey)),
+                        leading: Icon(Icons.edit_document, color: Colors.blueGrey),
+                        title: Text('My Documents', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 2 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.logo_dev, color: Colors.blueGrey),
-                        title: Text('Clubs',
-                            style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Clubs', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 3 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.person_2, color: Colors.blueGrey),
-                        title: Text('Appointment',
-                            style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Appointment', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 4 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.book, color: Colors.blueGrey),
-                        title: Text('Disciplinary Acts',
-                            style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Disciplinary Acts', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 5 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.lock, color: Colors.blueGrey),
-                        title: Text('Privacy Policy',
-                            style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Privacy Policy', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 6 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.logout, color: Colors.blueGrey),
-                        title: Text('Logout',
-                            style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Logout', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 7 tap
                         },
@@ -215,8 +231,6 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               ),
-
-
             ),
             if (_selectedIndex >= 0)
               Positioned.fill(
@@ -225,7 +239,6 @@ class _DashboardState extends State<Dashboard> {
                   // color: Colors.white,
                   child: _pages[_selectedIndex],
                 ),
-
               ),
           ],
         ),
