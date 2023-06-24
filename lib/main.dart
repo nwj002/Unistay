@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
         ),
-        initialRoute: "/dashboard",
+        initialRoute: "/documents",
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
           "/update_pass":(context)=>UpdatePasswordScreen(),
           "/forgetpassword": (context) => const ForgotPasswordScreen(),
           "/dashboard": (context) => Dashboard(),
-          // "/documents":(context)=>DocumentScreen(),
+          "/documents":(context)=>Document(),
 
         },
       ),
