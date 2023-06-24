@@ -4,6 +4,8 @@ import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 
+import 'Dashboard.dart';
+
 class LoginAsAdminScreen extends StatefulWidget {
   const LoginAsAdminScreen({Key? key}) : super(key: key);
 
@@ -214,6 +216,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                             Text("Please enter all the details")),
                                   );
                                 }
+
                               },
                               child: Text(
                                 "Sign In",
