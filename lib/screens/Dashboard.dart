@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-import 'AdminRegisterScreen.dart';
-import 'Profile.dart';
-import 'RegisterScreen.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -26,12 +22,6 @@ class _DashboardState extends State<Dashboard> {
       _selectedIndex = index;
     });
   }
-
-  final List<Widget> _pages = [
-    RegisterScreen(), // Keep the booking screen instead of Register Screen here
-    Profile(),
-    AdminRegisterScreen(), // Keep the ticket screen instead of admin register screen here
-  ];
 
   final _formKey = GlobalKey<FormState>();
 
@@ -109,7 +99,6 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   Container(
-                    // content to display hostel details
                     height: 520,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -119,21 +108,22 @@ class _DashboardState extends State<Dashboard> {
                         topRight: Radius.circular(20),
                       ),
                     ),
-                    padding: EdgeInsets.all(20.0), // Add padding to the container
+                    padding: EdgeInsets.all(20.0),
                     child: StreamBuilder<QuerySnapshot>(
-                      stream: FirebaseFirestore.instance
-                          .collection('hostels')
-                          .snapshots(),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<QuerySnapshot> snapshot) {
+                      stream: FirebaseFirestore.instance.collection('hostels').snapshots(),
+                      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasData) {
-                          final hostels = snapshot.data!.docs;
-                          return ListView.builder(
-                            itemCount: hostels.length,
+                          return ListView.separated( // Use ListView.separated instead of ListView.builder
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: snapshot.data!.docs.length,
+                            separatorBuilder: (BuildContext context, int index) {
+                              return SizedBox(height: 20.0); // Add a gap of 20.0 between containers
+                            },
                             itemBuilder: (BuildContext context, int index) {
-                              final hostel = hostels[index];
-                              final name = hostel.get('name') ?? '';
-                              final imageUrl = hostel.get('imageUrl') ?? '';
+                              DocumentSnapshot document = snapshot.data!.docs[index];
+                              String name = document['name'];
+                              String imageUrl = document['imageUrl'];
 
                               return MouseRegion(
                                 cursor: SystemMouseCursors.click,
@@ -153,12 +143,14 @@ class _DashboardState extends State<Dashboard> {
                                       ),
                                     ),
                                     child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           name,
                                           style: TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ],
@@ -168,11 +160,8 @@ class _DashboardState extends State<Dashboard> {
                               );
                             },
                           );
-                        } else if (snapshot.hasError) {
-                          return Text('Error: ${snapshot.error}');
-                        } else {
-                          return CircularProgressIndicator();
                         }
+                        return SizedBox();
                       },
                     ),
                   ),
@@ -209,19 +198,15 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       ListTile(
-                        leading:
-                        Icon(Icons.calendar_month, color: Colors.blueGrey),
-                        title:
-                        Text('Calendar', style: TextStyle(color: Colors.blueGrey)),
+                        leading: Icon(Icons.calendar_month, color: Colors.blueGrey),
+                        title: Text('Calendar', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 1 tap
                         },
                       ),
                       ListTile(
-                        leading:
-                        Icon(Icons.edit_document, color: Colors.blueGrey),
-                        title:
-                        Text('My Documents', style: TextStyle(color: Colors.blueGrey)),
+                        leading: Icon(Icons.edit_document, color: Colors.blueGrey),
+                        title: Text('My Documents', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 2 tap
                         },
@@ -234,10 +219,8 @@ class _DashboardState extends State<Dashboard> {
                         },
                       ),
                       ListTile(
-                        leading:
-                        Icon(Icons.person_2, color: Colors.blueGrey),
-                        title:
-                        Text('Appointment', style: TextStyle(color: Colors.blueGrey)),
+                        leading: Icon(Icons.person_2, color: Colors.blueGrey),
+                        title: Text('Appointment', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 4 tap
                         },
@@ -254,6 +237,13 @@ class _DashboardState extends State<Dashboard> {
                         title: Text('Privacy Policy', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 6 tap
+                        },
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.logout, color: Colors.blueGrey),
+                        title: Text('Logout', style: TextStyle(color: Colors.blueGrey)),
+                        onTap: () {
+                          // Handle option 7 tap
                         },
                       ),
                     ],
@@ -283,16 +273,12 @@ class _DashboardState extends State<Dashboard> {
               tabBackgroundColor: Colors.orange.shade300,
               tabs: [
                 GButton(
-                  icon: Icons.home,
-                  text: 'Home',
+                  icon: Icons.calendar_today,
+                  text: 'Booking',
                 ),
                 GButton(
-                  icon: Icons.person,
-                  text: 'Profile',
-                ),
-                GButton(
-                  icon: Icons.airport_shuttle,
-                  text: 'Bookings',
+                  icon: Icons.people,
+                  text: 'Clubs',
                 ),
               ],
               selectedIndex: _selectedIndex,
@@ -303,4 +289,10 @@ class _DashboardState extends State<Dashboard> {
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: Dashboard(),
+  ));
 }
