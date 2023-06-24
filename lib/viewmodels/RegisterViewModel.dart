@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import '../models/RegisterUserModel.dart';
 
 class RegisterViewModel {
-  Future<String?> register(RegisterUserModel registerModel, BuildContext context) async {
+  Future<String?> register(
+      RegisterUserModel registerModel, BuildContext context) async {
     try {
-      final UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: registerModel.email,
         password: registerModel.password,
       );

@@ -6,9 +6,6 @@ import '../models/RegisterUserModel.dart';
 import '../viewmodels/RegisterViewModel.dart';
 import 'login_as_admin.dart';
 
-
-
-
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
@@ -38,14 +35,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
         confirmPassword: _confirmPasswordController.text,
       );
 
-      String? errorMessage = await _registerViewModel.register(registerModel, context);
+      String? errorMessage =
+          await _registerViewModel.register(registerModel, context);
 
       if (errorMessage == null) {
-        Navigator.push(context,MaterialPageRoute(builder: (context)=>Verify()) );
-
-  }
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Verify()));
+      }
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,10 +66,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ],
                 ),
               ),
-              child:Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children:<Widget> [
-                  SizedBox(height:45),
+                children: <Widget>[
+                  SizedBox(height: 45),
                   Padding(
                     padding: EdgeInsets.all(12.0),
                     child: Text(
@@ -95,7 +94,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                   ),
-                  Container(height:648,
+                  Container(
+                    height: 648,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -109,14 +109,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           Text('Email Address', textAlign: TextAlign.left),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           TextFormField(
                             controller: _emailController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Email is required';
                               }
-                              final emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,})$');
+                              final emailRegex = RegExp(
+                                  r'^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,})$');
                               if (!emailRegex.hasMatch(value)) {
                                 return 'Please enter a valid email';
                               }
@@ -142,9 +145,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                           ),
-
                           Text('Phone Number', textAlign: TextAlign.left),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           TextFormField(
                             controller: _phoneController,
                             validator: (value) {
@@ -179,9 +183,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
                           ),
-
                           Text('Password', textAlign: TextAlign.left),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           TextFormField(
                             controller: _passwordController,
                             obscureText: _obscureTextPassword,
@@ -217,20 +222,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               suffixIcon: GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _obscureTextPassword = !_obscureTextPassword;
+                                    _obscureTextPassword =
+                                        !_obscureTextPassword;
                                   });
                                 },
                                 child: Icon(
-                                  _obscureTextPassword ? Icons.visibility : Icons.visibility_off,
+                                  _obscureTextPassword
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
                                   size: 20.0,
                                   color: Colors.black,
                                 ),
                               ),
                             ),
                           ),
-
                           Text('Confirm Password', textAlign: TextAlign.left),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           TextFormField(
                             controller: _confirmPasswordController,
                             obscureText: _obscureTextPasswordConfirm,
@@ -266,93 +275,100 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               suffixIcon: GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _obscureTextPasswordConfirm = !_obscureTextPasswordConfirm;
+                                    _obscureTextPasswordConfirm =
+                                        !_obscureTextPasswordConfirm;
                                   });
                                 },
                                 child: Icon(
-                                  _obscureTextPasswordConfirm ? Icons.visibility : Icons.visibility_off,
+                                  _obscureTextPasswordConfirm
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
                                   size: 20.0,
                                   color: Colors.black,
                                 ),
                               ),
                             ),
                           ),
-
                           SizedBox(height: 20),
                           Container(
-                            width:double.infinity,
+                            width: double.infinity,
                             child: ElevatedButton(
-
                                 style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.orange.shade300),
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.orange.shade300),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-
-                                        side: BorderSide(color: Colors.orange.shade300),
-                                      )
-                                  ),
-                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 20)),
+                                    borderRadius: BorderRadius.circular(20),
+                                    side: BorderSide(
+                                        color: Colors.orange.shade300),
+                                  )),
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.symmetric(vertical: 20)),
                                 ),
-                                onPressed: (){
+                                onPressed: () {
                                   _register();
-
-
-                                }, child: Text("Sign Up", style: TextStyle(
-                                fontSize: 20
-                            ),)),
+                                },
+                                child: Text(
+                                  "Sign Up",
+                                  style: TextStyle(fontSize: 20),
+                                )),
                           ),
                           SizedBox(height: 20),
                           Container(
-                            width:double.infinity,
+                            width: double.infinity,
                             child: ElevatedButton(
-
                                 style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.orange.shade300),
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.orange.shade300),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-
-                                        side: BorderSide(color: Colors.orange.shade300),
-
-
-                                      )
-                                  ),
-                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 20)),
+                                    borderRadius: BorderRadius.circular(20),
+                                    side: BorderSide(
+                                        color: Colors.orange.shade300),
+                                  )),
+                                  padding:
+                                      MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.symmetric(vertical: 20)),
                                 ),
-                                onPressed: (){
-                                }, child: Text("Google", style: TextStyle(
-                                fontSize: 20
-                            ),)),
+                                onPressed: () {},
+                                child: Text(
+                                  "Google",
+                                  style: TextStyle(fontSize: 20),
+                                )),
                           ),
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Already have an account? ", style: TextStyle(
-                                  color: Colors.grey.shade800
-                              ),),
+                              Text(
+                                "Already have an account? ",
+                                style: TextStyle(color: Colors.grey.shade800),
+                              ),
                               InkWell(
                                 onTap: () {
                                   Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                  builder: (context) => const LoginAsAdminScreen()));
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const LoginAsAdminScreen()));
                                 },
-                                child:
-                                Text("Sign in",
-                                  style: TextStyle(color: Colors.blue),),
+                                child: Text(
+                                  "Sign in",
+                                  style: TextStyle(color: Colors.blue),
+                                ),
                               ),
-
-
                             ],
                           ),
                         ],
                       ),
                     ),
-
                   ),
                 ],
               ),

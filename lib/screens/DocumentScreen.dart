@@ -5,16 +5,16 @@ import 'package:get/get.dart';
 import '../models/hostel.dart';
 import '../viewmodels/hostel_view_model.dart';
 
-class AddHostel extends StatefulWidget {
+class DocumentScreen extends StatefulWidget {
   @override
-  _AddHostelState createState() => _AddHostelState();
+  _DocumentState createState() => _DocumentState();
 }
 
-class _AddHostelState extends State<AddHostel> {
+class _DocumentState extends State<DocumentScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
   final TextEditingController _capacityController = TextEditingController();
-  final HostelViewModel _hostelViewModel = HostelViewModel();
+  // final HostelViewModel _hostelViewModel = HostelViewModel();
   bool _isSaving = false;
   File? pickedImage;
 
@@ -34,7 +34,7 @@ class _AddHostelState extends State<AddHostel> {
       });
 
       try {
-        await _hostelViewModel.addHostel(hostel, pickedImage!);
+        // await _hostelViewModel.addHostel(hostel, pickedImage!);
 
         // Clear input fields
         _nameController.clear();
@@ -160,7 +160,7 @@ class _AddHostelState extends State<AddHostel> {
           },
         ),
         title: Text(
-          'Add Hostel',
+          'My Documents',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         centerTitle: true, // Center the title horizontally
@@ -171,12 +171,12 @@ class _AddHostelState extends State<AddHostel> {
           padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment:
-                MainAxisAlignment.start, // Align elements from top to bottom
+            MainAxisAlignment.start, // Align elements from top to bottom
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(
                 alignment:
-                    Alignment.topCenter, // Align the image to the top center
+                Alignment.topCenter, // Align the image to the top center
                 child: Stack(
                   children: [
                     Container(
@@ -188,11 +188,11 @@ class _AddHostelState extends State<AddHostel> {
                       child: ClipRect(
                         child: pickedImage != null
                             ? Image.file(
-                                pickedImage!,
-                                width: 500,
-                                height: 200,
-                                fit: BoxFit.cover,
-                              )
+                          pickedImage!,
+                          width: 500,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        )
                             : Image.asset('Assets/Images/insert_image.jpg'),
                       ),
                     ),
@@ -202,11 +202,11 @@ class _AddHostelState extends State<AddHostel> {
               SizedBox(height: 20),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                 child: ElevatedButton.icon(
                   onPressed: () => imagePickerOption(),
                   icon: const Icon(Icons.add_a_photo_sharp),
-                  label: const Text('Hostel Image'),
+                  label: const Text('Upload Image'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.orange.shade300,
                     shape: RoundedRectangleBorder(
@@ -216,52 +216,33 @@ class _AddHostelState extends State<AddHostel> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
-              TextFormField(
-                controller: _nameController,
-                decoration: InputDecoration(
-                  labelText: 'Hostel Name',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
+              SizedBox(
+                height: 15,
               ),
-              SizedBox(height: 20),
-              TextFormField(
-                controller: _addressController,
-                decoration: InputDecoration(
-                  labelText: 'Address',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Please follow the given procedures:",
+                    style: TextStyle(
+                      color: Colors.grey.shade800,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                    ),
                   ),
-                ),
+                ],
               ),
-              SizedBox(height: 20),
-              TextFormField(
-                controller: _capacityController,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Total Capacity',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
+
+
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _isSaving ? null : () => _submitForm(context),
                 child: _isSaving
                     ? CircularProgressIndicator()
                     : Text(
-                        'Save',
-                        style: TextStyle(fontSize: 20),
-                      ),
+                  'Save',
+                  style: TextStyle(fontSize: 20),
+                ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.orange.shade300,
                   shape: RoundedRectangleBorder(

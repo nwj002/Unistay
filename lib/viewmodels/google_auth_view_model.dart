@@ -1,5 +1,5 @@
-// import '../models/user_model.dart';
-// import '../repositories/user_repository.dart';
+// import '../models/google_auth_model.dart';
+// import '../repositories/google_auth_repository.dart';
 //
 // class AuthViewModel {
 //   final UserRepository _userRepository = UserRepository();

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/add_rooms_view_model.dart';
@@ -102,10 +101,9 @@ class AddRoomsScreen extends StatelessWidget {
                               ElevatedButton(
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
-                                    String roomName =
-                                        _roomNameController.text;
+                                    String roomName = _roomNameController.text;
                                     int capacity =
-                                    int.parse(_capacityController.text);
+                                        int.parse(_capacityController.text);
                                     viewModel.addRoom(roomName, capacity);
                                   }
                                 },
