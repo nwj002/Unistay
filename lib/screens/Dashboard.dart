@@ -108,7 +108,8 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                   ),
-                  Container(  // content to display hostel details
+                  Container(
+                    // content to display hostel details
                     height: 520,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -118,7 +119,7 @@ class _DashboardState extends State<Dashboard> {
                         topRight: Radius.circular(20),
                       ),
                     ),
-                    padding: EdgeInsets.all(20.0), // Add padding to the container
+                    padding: EdgeInsets.all(20.0),
                     child: Column(
                       children: [
                         MouseRegion(
@@ -136,7 +137,28 @@ class _DashboardState extends State<Dashboard> {
                               ),
                               child: Column(
                                 children: [
-                                  // add hostel image and name in this container
+                                  StreamBuilder<QuerySnapshot>(
+                                    stream: FirebaseFirestore.instance
+                                        .collection('hostels')
+                                        .snapshots(),
+                                    builder: (context, snapshot) {
+                                      if (!snapshot.hasData) {
+                                        return CircularProgressIndicator();
+                                      }
+
+                                      final hostels = snapshot.data!.docs;
+                                      final hostelName =
+                                      hostels.isNotEmpty ? hostels[0]['name'] : '';
+
+                                      return Text(
+                                        hostelName,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      );
+                                    },
+                                  ),
                                   SizedBox(height: 55),
                                   // Add your desired content here
                                 ],
@@ -145,7 +167,6 @@ class _DashboardState extends State<Dashboard> {
                           ),
                         ),
                       ],
-
                     ),
                   ),
                 ],
@@ -172,7 +193,8 @@ class _DashboardState extends State<Dashboard> {
                             SizedBox(height: 8.0),
                             Text(
                               'Your Name',
-                              style: TextStyle(color: Colors.blueGrey, fontSize: 16.0),
+                              style:
+                              TextStyle(color: Colors.blueGrey, fontSize: 16.0),
                             ),
                           ],
                         ),
