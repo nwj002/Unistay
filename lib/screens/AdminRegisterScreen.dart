@@ -233,7 +233,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                                 onTap: () {
                                   setState(() {
                                     _obscureTextPassword =
-                                        !_obscureTextPassword;
+                                    !_obscureTextPassword;
                                   });
                                 },
                                 child: Icon(
@@ -274,7 +274,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                                 onTap: () {
                                   setState(() {
                                     _obscureTextPasswordConfirm =
-                                        !_obscureTextPasswordConfirm;
+                                    !_obscureTextPasswordConfirm;
                                   });
                                 },
                                 child: Icon(
@@ -318,8 +318,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                             child: ElevatedButton(
                               style: ButtonStyle(
                                 backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.orange.shade300),
+                                MaterialStateProperty.all<Color>(
+                                    Colors.orange.shade300),
                                 shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
@@ -349,8 +349,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                             child: ElevatedButton(
                               style: ButtonStyle(
                                 backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.orange.shade300),
+                                MaterialStateProperty.all<Color>(
+                                    Colors.orange.shade300),
                                 shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
@@ -383,79 +383,3 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
     );
   }
 }
-
-//             children: [
-//               TextFormField(
-//                 key: _emailKey,
-//                 controller: _emailController,
-//                 validator: validateEmail,
-//                 decoration: InputDecoration(
-//                   labelText: 'Email',
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _phoneKey,
-//                 controller: _phoneController,
-//                 validator: validatePhone,
-//                 decoration: InputDecoration(
-//                   labelText: 'Phone',
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _passwordKey,
-//                 controller: _passwordController,
-//                 validator: validatePassword,
-//                 obscureText: _obscureTextPassword,
-//                 decoration: InputDecoration(
-//                   labelText: 'Password',
-//                   suffixIcon: IconButton(
-//                     icon: Icon(_obscureTextPassword
-//                         ? Icons.visibility_off
-//                         : Icons.visibility),
-//                     onPressed: () {
-//                       setState(() {
-//                         _obscureTextPassword = !_obscureTextPassword;
-//                       });
-//                     },
-//                   ),
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _confirmPasswordKey,
-//                 controller: _confirmPasswordController,
-//                 validator: validateConfirmPassword,
-//                 obscureText: _obscureTextPasswordConfirm,
-//                 decoration: InputDecoration(
-//                   labelText: 'Confirm Password',
-//                   suffixIcon: IconButton(
-//                     icon: Icon(_obscureTextPasswordConfirm
-//                         ? Icons.visibility_off
-//                         : Icons.visibility),
-//                     onPressed: () {
-//                       setState(() {
-//                         _obscureTextPasswordConfirm =
-//                         !_obscureTextPasswordConfirm;
-//                       });
-//                     },
-//                   ),
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _locationKey,
-//                 controller: _locationController,
-//                 validator: validateLocation,
-//                 decoration: InputDecoration(
-//                   labelText: 'Location',
-//                 ),
-//               ),
-//               ElevatedButton(
-//                 onPressed: register,
-//                 child: Text('Register'),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }

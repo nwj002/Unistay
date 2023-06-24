@@ -2,51 +2,55 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:get/get.dart';
-import '../models/hostel.dart';
-import '../viewmodels/hostel_view_model.dart';
+import 'package:unistay/models/EditPersonalDetails_model.dart';
+import '../viewmodels/editpersonaldetails_viewmodel.dart';
 
-class AddHostel extends StatefulWidget {
+
+class EditPersonalDetails extends StatefulWidget {
   @override
-  _AddHostelState createState() => _AddHostelState();
+  _EditPersonalDetailsState createState() => _EditPersonalDetailsState();
+
 }
 
-class _AddHostelState extends State<AddHostel> {
+class _EditPersonalDetailsState extends State<EditPersonalDetails> {
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _addressController = TextEditingController();
-  final TextEditingController _capacityController = TextEditingController();
-  final HostelViewModel _hostelViewModel = HostelViewModel();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _locationController = TextEditingController();
+  final EditPersonalDetailsViewModel _editPersonalDetails = EditPersonalDetailsViewModel();
   bool _isSaving = false;
   File? pickedImage;
 
   void _submitForm(BuildContext context) async {
     final String name = _nameController.text;
-    final String address = _addressController.text;
-    final int capacity = int.tryParse(_capacityController.text) ?? 0;
+    final String phone = _phoneController.text;
+    final String location = _locationController.text;
+
 
     if (name.isNotEmpty &&
-        address.isNotEmpty &&
-        capacity > 0 &&
+        phone.isNotEmpty &&
+        location.isNotEmpty &&
+
         pickedImage != null) {
-      final Hostel hostel = Hostel(
-          name: name, address: address, capacity: capacity, imageUrl: '');
+      final EditPersonalDetailsModel personalDetailsModel = EditPersonalDetailsModel(
+          name: name, phone: phone, location: location, imageUrl: '');
       setState(() {
         _isSaving = true;
       });
 
       try {
-        await _hostelViewModel.addHostel(hostel, pickedImage!);
+        await _editPersonalDetails.editDetails(personalDetailsModel, pickedImage!);
 
         // Clear input fields
         _nameController.clear();
-        _addressController.clear();
-        _capacityController.clear();
+        _phoneController.clear();
+        _locationController.clear();
 
         showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
               title: Text('Success'),
-              content: Text('Hostel saved successfully.'),
+              content: Text('Details saved successfully.'),
               actions: [
                 TextButton(
                   onPressed: () {
@@ -160,7 +164,7 @@ class _AddHostelState extends State<AddHostel> {
           },
         ),
         title: Text(
-          'Add Hostel',
+          'Edit Personal Details',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         centerTitle: true, // Center the title horizontally
@@ -171,12 +175,12 @@ class _AddHostelState extends State<AddHostel> {
           padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment:
-                MainAxisAlignment.start, // Align elements from top to bottom
+            MainAxisAlignment.start, // Align elements from top to bottom
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(
                 alignment:
-                    Alignment.topCenter, // Align the image to the top center
+                Alignment.topCenter, // Align the image to the top center
                 child: Stack(
                   children: [
                     Container(
@@ -188,11 +192,11 @@ class _AddHostelState extends State<AddHostel> {
                       child: ClipRect(
                         child: pickedImage != null
                             ? Image.file(
-                                pickedImage!,
-                                width: 500,
-                                height: 200,
-                                fit: BoxFit.cover,
-                              )
+                          pickedImage!,
+                          width: 500,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        )
                             : Image.asset('Assets/Images/insert_image.jpg'),
                       ),
                     ),
@@ -202,11 +206,11 @@ class _AddHostelState extends State<AddHostel> {
               SizedBox(height: 20),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                 child: ElevatedButton.icon(
                   onPressed: () => imagePickerOption(),
                   icon: const Icon(Icons.add_a_photo_sharp),
-                  label: const Text('Hostel Image'),
+                  label: const Text('Personal Image'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.orange.shade300,
                     shape: RoundedRectangleBorder(
@@ -218,10 +222,9 @@ class _AddHostelState extends State<AddHostel> {
               ),
               SizedBox(height: 20),
               TextFormField(
-                key: Key("hostel_name_field"),
                 controller: _nameController,
                 decoration: InputDecoration(
-                  labelText: 'Hostel Name',
+                  labelText: ' Name',
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -231,10 +234,9 @@ class _AddHostelState extends State<AddHostel> {
               ),
               SizedBox(height: 20),
               TextFormField(
-                key: Key("hostel_address_field"),
-                controller: _addressController,
+                controller: _phoneController,
                 decoration: InputDecoration(
-                  labelText: 'Address',
+                  labelText: 'Phone',
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -244,11 +246,10 @@ class _AddHostelState extends State<AddHostel> {
               ),
               SizedBox(height: 20),
               TextFormField(
-                key: Key("hostel_capacity_field"),
-                controller: _capacityController,
+                controller: _locationController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Total Capacity',
+                  labelText: 'Location',
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -262,9 +263,9 @@ class _AddHostelState extends State<AddHostel> {
                 child: _isSaving
                     ? CircularProgressIndicator()
                     : Text(
-                        'Save',
-                        style: TextStyle(fontSize: 20),
-                      ),
+                  'Save',
+                  style: TextStyle(fontSize: 20),
+                ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.orange.shade300,
                   shape: RoundedRectangleBorder(
@@ -280,3 +281,6 @@ class _AddHostelState extends State<AddHostel> {
     );
   }
 }
+
+
+
