@@ -1,9 +1,6 @@
-
-class Docs{
+class DocumentModel {
   final String imageUrl;
-
-Docs({
+  DocumentModel({
     required this.imageUrl,
-
-});
+  });
 }
