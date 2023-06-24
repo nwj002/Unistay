@@ -119,54 +119,61 @@ class _DashboardState extends State<Dashboard> {
                         topRight: Radius.circular(20),
                       ),
                     ),
-                    padding: EdgeInsets.all(20.0),
-                    child: Column(
-                      children: [
-                        MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: InkWell(
-                            onTap: () {
-                              // Handle button tap
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              padding: EdgeInsets.all(30.0),
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade200,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Column(
-                                children: [
-                                  StreamBuilder<QuerySnapshot>(
-                                    stream: FirebaseFirestore.instance
-                                        .collection('hostels')
-                                        .snapshots(),
-                                    builder: (context, snapshot) {
-                                      if (!snapshot.hasData) {
-                                        return CircularProgressIndicator();
-                                      }
+                    padding: EdgeInsets.all(20.0), // Add padding to the container
+                    child: StreamBuilder<QuerySnapshot>(
+                      stream: FirebaseFirestore.instance
+                          .collection('hostels')
+                          .snapshots(),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<QuerySnapshot> snapshot) {
+                        if (snapshot.hasData) {
+                          final hostels = snapshot.data!.docs;
+                          return ListView.builder(
+                            itemCount: hostels.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              final hostel = hostels[index];
+                              final name = hostel.get('name') ?? '';
+                              final imageUrl = hostel.get('imageUrl') ?? '';
 
-                                      final hostels = snapshot.data!.docs;
-                                      final hostelName =
-                                      hostels.isNotEmpty ? hostels[0]['name'] : '';
-
-                                      return Text(
-                                        hostelName,
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
+                              return MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: InkWell(
+                                  onTap: () {
+                                    // Handle button tap
+                                  },
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(30.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.shade200,
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                        image: NetworkImage(imageUrl),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          name,
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                      );
-                                    },
+                                      ],
+                                    ),
                                   ),
-                                  SizedBox(height: 55),
-                                  // Add your desired content here
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                                ),
+                              );
+                            },
+                          );
+                        } else if (snapshot.hasError) {
+                          return Text('Error: ${snapshot.error}');
+                        } else {
+                          return CircularProgressIndicator();
+                        }
+                      },
                     ),
                   ),
                 ],
@@ -175,7 +182,9 @@ class _DashboardState extends State<Dashboard> {
             Positioned(
               top: 70,
               bottom: 150,
-              right: _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
+              right: _isMenuOpen
+                  ? 0
+                  : -(MediaQuery.of(context).size.width - 56),
               width: 220,
               child: Container(
                 color: Colors.grey.shade100,
@@ -193,22 +202,26 @@ class _DashboardState extends State<Dashboard> {
                             SizedBox(height: 8.0),
                             Text(
                               'Your Name',
-                              style:
-                              TextStyle(color: Colors.blueGrey, fontSize: 16.0),
+                              style: TextStyle(
+                                  color: Colors.blueGrey, fontSize: 16.0),
                             ),
                           ],
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.calendar_month, color: Colors.blueGrey),
-                        title: Text('Calendar', style: TextStyle(color: Colors.blueGrey)),
+                        leading:
+                        Icon(Icons.calendar_month, color: Colors.blueGrey),
+                        title:
+                        Text('Calendar', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 1 tap
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.edit_document, color: Colors.blueGrey),
-                        title: Text('My Documents', style: TextStyle(color: Colors.blueGrey)),
+                        leading:
+                        Icon(Icons.edit_document, color: Colors.blueGrey),
+                        title:
+                        Text('My Documents', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 2 tap
                         },
@@ -221,8 +234,10 @@ class _DashboardState extends State<Dashboard> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.person_2, color: Colors.blueGrey),
-                        title: Text('Appointment', style: TextStyle(color: Colors.blueGrey)),
+                        leading:
+                        Icon(Icons.person_2, color: Colors.blueGrey),
+                        title:
+                        Text('Appointment', style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 4 tap
                         },
@@ -241,52 +256,47 @@ class _DashboardState extends State<Dashboard> {
                           // Handle option 6 tap
                         },
                       ),
-                      ListTile(
-                        leading: Icon(Icons.logout, color: Colors.blueGrey),
-                        title: Text('Logout', style: TextStyle(color: Colors.blueGrey)),
-                        onTap: () {
-                          // Handle option 7 tap
-                        },
-                      ),
                     ],
                   ),
                 ),
               ),
             ),
-            if (_selectedIndex >= 0)
-              Positioned.fill(
-                top: 0,
-                child: Container(
-                  // color: Colors.white,
-                  child: _pages[_selectedIndex],
-                ),
-              ),
           ],
         ),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40),
-          topRight: Radius.circular(30),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
+          ],
         ),
-        child: Container(
-          color: Colors.grey.shade300,
+        child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
             child: GNav(
-              backgroundColor: Colors.grey.shade300,
-              color: Colors.black,
-              activeColor: Colors.black,
-              tabBackgroundColor: Colors.orange.shade300,
-              padding: EdgeInsets.all(16),
               gap: 8,
-              onTabChange: _onNavItemTapped,
-              selectedIndex: _selectedIndex,
+              activeColor: Colors.white,
+              iconSize: 24,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              duration: Duration(milliseconds: 800),
+              tabBackgroundColor: Colors.orange.shade300,
               tabs: [
-                GButton(icon: Icons.event, text: "Booking"),
-                GButton(icon: Icons.person, text: "Profile"),
-                GButton(icon: Icons.airplane_ticket, text: "Ticket"),
+                GButton(
+                  icon: Icons.home,
+                  text: 'Home',
+                ),
+                GButton(
+                  icon: Icons.person,
+                  text: 'Profile',
+                ),
+                GButton(
+                  icon: Icons.airport_shuttle,
+                  text: 'Bookings',
+                ),
               ],
+              selectedIndex: _selectedIndex,
+              onTabChange: _onNavItemTapped,
             ),
           ),
         ),
