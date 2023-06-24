@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:unistay/screens/add_rooms_screen.dart';
 
@@ -124,6 +125,10 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                   ],
                 ),
               ),
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -143,7 +148,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                   Container(
                     height: 698,
                     decoration: BoxDecoration(
-                      color: Colors.white70,
+                      color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
@@ -232,8 +237,12 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                               suffixIcon: GestureDetector(
                                 onTap: () {
                                   setState(() {
+<<<<<<< HEAD
                                     _obscureTextPassword =
                                     !_obscureTextPassword;
+=======
+                                    _obscureTextPassword = !_obscureTextPassword;
+>>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
                                   });
                                 },
                                 child: Icon(
@@ -317,22 +326,27 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                             width: double.infinity,
                             child: ElevatedButton(
                               style: ButtonStyle(
+<<<<<<< HEAD
                                 backgroundColor:
                                 MaterialStateProperty.all<Color>(
                                     Colors.orange.shade300),
                                 shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
+=======
+                                backgroundColor: MaterialStateProperty.all<Color>(
+                                    Colors.orange.shade300),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+>>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
-                                    side: BorderSide(
-                                        color: Colors.orange.shade300),
+                                    side: BorderSide(color: Colors.orange.shade300),
                                   ),
                                 ),
                                 padding: MaterialStateProperty.all<EdgeInsets>(
                                   EdgeInsets.symmetric(vertical: 20),
                                 ),
                               ),
-                              onPressed: () {
+                              onPressed: (){
                                 Navigator.pushNamed(context, "/add-rooms");
                                 // Navigator.push(context,MaterialPageRoute(builder: (kehtxt)=>AddRoomsScreen()));
                                 register();
@@ -348,15 +362,20 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                             width: double.infinity,
                             child: ElevatedButton(
                               style: ButtonStyle(
+<<<<<<< HEAD
                                 backgroundColor:
                                 MaterialStateProperty.all<Color>(
                                     Colors.orange.shade300),
                                 shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
+=======
+                                backgroundColor: MaterialStateProperty.all<Color>(
+                                    Colors.orange.shade300),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+>>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
-                                    side: BorderSide(
-                                        color: Colors.orange.shade300),
+                                    side: BorderSide(color: Colors.orange.shade300),
                                   ),
                                 ),
                                 padding: MaterialStateProperty.all<EdgeInsets>(
@@ -383,3 +402,12 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+>>>>>>> 4dc06e2ba1b391830d57e3a6746c8e03fd87a5d3
