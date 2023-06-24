@@ -42,14 +42,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-<<<<<<< HEAD
-        theme: ThemeData(),
-        initialRoute: "/document",
-=======
         theme: ThemeData(
         ),
         initialRoute: "/admin-register",
->>>>>>> 1aab015a89153690a50e9b5eb426d67dca477bd9
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
@@ -59,11 +54,6 @@ class MyApp extends StatelessWidget {
           "/verify":(context)=>Verify(),
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
-<<<<<<< HEAD
-          "/addrooms": (context) => AddRoomsScreen(),
-
-          "/document": (context)=> Document(),
-=======
           "/add-rooms": (context) => AddRoomsScreen(),
           "/profile":(context)=>Profile(),
           "/update_pass":(context)=>UpdatePasswordScreen(),
@@ -71,7 +61,6 @@ class MyApp extends StatelessWidget {
           "/dashboard": (context) => Dashboard(),
           // "/documents":(context)=>DocumentScreen(),
 
->>>>>>> 1aab015a89153690a50e9b5eb426d67dca477bd9
         },
       ),
     );
