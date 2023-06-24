@@ -92,20 +92,23 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ),
                   ),
-                  Container(
-                    width: double.infinity,
-                    margin:
-                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Handle button tap
-                        },
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.orange.shade300,
+                  Form(
+                    key: _formKey,
+                    child: Container(
+                      width: double.infinity,
+                      margin:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            // Handle button tap
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.orange.shade300,
+                          ),
+                          child: Text('Room Details'),
                         ),
-                        child: Text('Room Details'),
                       ),
                     ),
                   ),
@@ -126,7 +129,7 @@ class _DashboardState extends State<Dashboard> {
               top: 70,
               bottom: 150,
               right:
-                  _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
+              _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
               width: 220,
               child: Container(
                 color: Colors.grey.shade100,
@@ -152,7 +155,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       ListTile(
                         leading:
-                            Icon(Icons.calendar_month, color: Colors.blueGrey),
+                        Icon(Icons.calendar_month, color: Colors.blueGrey),
                         title: Text('Calendar',
                             style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
@@ -161,7 +164,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       ListTile(
                         leading:
-                            Icon(Icons.edit_document, color: Colors.blueGrey),
+                        Icon(Icons.edit_document, color: Colors.blueGrey),
                         title: Text('My Documents',
                             style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
@@ -223,7 +226,7 @@ class _DashboardState extends State<Dashboard> {
                   child: _pages[_selectedIndex],
                 ),
 
-            ),
+              ),
           ],
         ),
       ),
@@ -254,8 +257,6 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
       ),
-
-
     );
   }
 }
