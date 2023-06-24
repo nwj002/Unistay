@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'AdminRegisterScreen.dart';
+import 'Profile.dart';
+import 'RegisterScreen.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -22,6 +25,13 @@ class _DashboardState extends State<Dashboard> {
       _selectedIndex = index;
     });
   }
+
+  final List<Widget> _pages = [
+    RegisterScreen(), // Keep the booking screen instead of Register Screen here
+    Profile(),
+    AdminRegisterScreen(),// Keep the ticket screen instead of admin register screen here
+
+  ];
 
   final _formKey = GlobalKey<FormState>();
 
@@ -171,9 +181,8 @@ class _DashboardState extends State<Dashboard> {
             Positioned(
               top: 70,
               bottom: 150,
-              right: _isMenuOpen
-                  ? 0
-                  : -(MediaQuery.of(context).size.width - 56),
+              right:
+              _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
               width: 220,
               child: Container(
                 color: Colors.grey.shade100,
@@ -198,50 +207,59 @@ class _DashboardState extends State<Dashboard> {
                         ),
                       ),
                       ListTile(
-                        leading: Icon(Icons.calendar_month, color: Colors.blueGrey),
-                        title: Text('Calendar', style: TextStyle(color: Colors.blueGrey)),
+                        leading:
+                        Icon(Icons.calendar_month, color: Colors.blueGrey),
+                        title: Text('Calendar',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 1 tap
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.edit_document, color: Colors.blueGrey),
-                        title: Text('My Documents', style: TextStyle(color: Colors.blueGrey)),
+                        leading:
+                        Icon(Icons.edit_document, color: Colors.blueGrey),
+                        title: Text('My Documents',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 2 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.logo_dev, color: Colors.blueGrey),
-                        title: Text('Clubs', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Clubs',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 3 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.person_2, color: Colors.blueGrey),
-                        title: Text('Appointment', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Appointment',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 4 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.book, color: Colors.blueGrey),
-                        title: Text('Disciplinary Acts', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Disciplinary Acts',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 5 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.lock, color: Colors.blueGrey),
-                        title: Text('Privacy Policy', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Privacy Policy',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 6 tap
                         },
                       ),
                       ListTile(
                         leading: Icon(Icons.logout, color: Colors.blueGrey),
-                        title: Text('Logout', style: TextStyle(color: Colors.blueGrey)),
+                        title: Text('Logout',
+                            style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
                           // Handle option 7 tap
                         },
@@ -250,49 +268,56 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               ),
+
+
             ),
+            if (_selectedIndex >= 0)
+              Positioned.fill(
+                top: 0,
+                child: Container(
+                  // color: Colors.white,
+                  child: _pages[_selectedIndex],
+                ),
+
+              ),
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
-          ],
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(40),
+          topRight: Radius.circular(30),
         ),
-        child: SafeArea(
+        child: Container(
+          color: Colors.grey.shade300,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
             child: GNav(
-              gap: 8,
-              activeColor: Colors.white,
-              iconSize: 24,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              duration: Duration(milliseconds: 800),
+              backgroundColor: Colors.grey.shade300,
+              color: Colors.black,
+              activeColor: Colors.black,
               tabBackgroundColor: Colors.orange.shade300,
-              tabs: [
-                GButton(
-                  icon: Icons.calendar_today,
-                  text: 'Booking',
-                ),
-                GButton(
-                  icon: Icons.people,
-                  text: 'Clubs',
-                ),
-              ],
-              selectedIndex: _selectedIndex,
+              padding: EdgeInsets.all(16),
+              gap: 8,
               onTabChange: _onNavItemTapped,
+              selectedIndex: _selectedIndex,
+              tabs: [
+                GButton(icon: Icons.event, text: "Booking"),
+                GButton(icon: Icons.person, text: "Profile"),
+                GButton(icon: Icons.airplane_ticket, text: "Ticket"),
+              ],
             ),
           ),
         ),
       ),
+
+
     );
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: Dashboard(),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     home: Dashboard(),
+//   ));
+// }
