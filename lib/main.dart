@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(),
-        initialRoute: "/addhostel",
+        initialRoute: "/document",
         routes: {
           "/loginadmin": (context) => const LoginAsAdminScreen(),
           "/register": (context) => const RegisterScreen(),
@@ -50,7 +50,8 @@ class MyApp extends StatelessWidget {
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
           "/addrooms": (context) => AddRoomsScreen(),
-          // "/documents":(context)=>DocumentScreen(),
+
+          "/document": (context)=> Document(),
         },
       ),
     );
