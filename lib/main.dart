@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
         ),
-        initialRoute: "/dashboard",
+        initialRoute: "/admin-register",
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
