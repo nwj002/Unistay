@@ -218,6 +218,7 @@ class _AddHostelState extends State<AddHostel> {
               ),
               SizedBox(height: 20),
               TextFormField(
+                key: Key("hostel_name_field"),
                 controller: _nameController,
                 decoration: InputDecoration(
                   labelText: 'Hostel Name',
@@ -230,6 +231,7 @@ class _AddHostelState extends State<AddHostel> {
               ),
               SizedBox(height: 20),
               TextFormField(
+                key: Key("hostel_address_field"),
                 controller: _addressController,
                 decoration: InputDecoration(
                   labelText: 'Address',
@@ -242,6 +244,7 @@ class _AddHostelState extends State<AddHostel> {
               ),
               SizedBox(height: 20),
               TextFormField(
+                key: Key("hostel_capacity_field"),
                 controller: _capacityController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
