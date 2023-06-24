@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:unistay/screens/add_rooms_screen.dart';
 
@@ -125,46 +126,6 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                 ),
               ),
 
-              Container(
-                height: 698,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
-                ),
-                child: Container(
-                  padding: EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Text('Email Address', textAlign: TextAlign.left),
-                      SizedBox(height: 10),
-                      TextFormField(
-                        key: _emailKey,
-                        controller: _emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        validator: validateEmail,
-                        style: const TextStyle(
-                          fontFamily: 'WorkSansSemiBold',
-                          fontSize: 16.0,
-                          color: Colors.black,
-                        ),
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          prefixIcon: Icon(
-                            Icons.email,
-                            color: Colors.black,
-                            size: 22.0,
-                          ),
-                        ),
-=======
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -178,14 +139,13 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                         fontSize: 24,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-
                       ),
                     ),
                   ),
                   Container(
                     height: 698,
                     decoration: BoxDecoration(
-                      color: Colors.white70,
+                      color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
@@ -277,8 +237,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                               suffixIcon: GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _obscureTextPassword =
-                                        !_obscureTextPassword;
+                                    _obscureTextPassword = !_obscureTextPassword;
                                   });
                                 },
                                 child: Icon(
@@ -320,7 +279,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                                 onTap: () {
                                   setState(() {
                                     _obscureTextPasswordConfirm =
-                                        !_obscureTextPasswordConfirm;
+                                    !_obscureTextPasswordConfirm;
                                   });
                                 },
                                 child: Icon(
@@ -363,22 +322,19 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                             width: double.infinity,
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.orange.shade300),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+                                backgroundColor: MaterialStateProperty.all<Color>(
+                                    Colors.orange.shade300),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
-                                    side: BorderSide(
-                                        color: Colors.orange.shade300),
+                                    side: BorderSide(color: Colors.orange.shade300),
                                   ),
                                 ),
                                 padding: MaterialStateProperty.all<EdgeInsets>(
                                   EdgeInsets.symmetric(vertical: 20),
                                 ),
                               ),
-                              onPressed: () {
+                              onPressed: (){
                                 Navigator.pushNamed(context, "/add-rooms");
                                 // Navigator.push(context,MaterialPageRoute(builder: (kehtxt)=>AddRoomsScreen()));
                                 register();
@@ -394,15 +350,12 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                             width: double.infinity,
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.orange.shade300),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+                                backgroundColor: MaterialStateProperty.all<Color>(
+                                    Colors.orange.shade300),
+                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
-                                    side: BorderSide(
-                                        color: Colors.orange.shade300),
+                                    side: BorderSide(color: Colors.orange.shade300),
                                   ),
                                 ),
                                 padding: MaterialStateProperty.all<EdgeInsets>(
@@ -430,78 +383,8 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
   }
 }
 
-//             children: [
-//               TextFormField(
-//                 key: _emailKey,
-//                 controller: _emailController,
-//                 validator: validateEmail,
-//                 decoration: InputDecoration(
-//                   labelText: 'Email',
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _phoneKey,
-//                 controller: _phoneController,
-//                 validator: validatePhone,
-//                 decoration: InputDecoration(
-//                   labelText: 'Phone',
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _passwordKey,
-//                 controller: _passwordController,
-//                 validator: validatePassword,
-//                 obscureText: _obscureTextPassword,
-//                 decoration: InputDecoration(
-//                   labelText: 'Password',
-//                   suffixIcon: IconButton(
-//                     icon: Icon(_obscureTextPassword
-//                         ? Icons.visibility_off
-//                         : Icons.visibility),
-//                     onPressed: () {
-//                       setState(() {
-//                         _obscureTextPassword = !_obscureTextPassword;
-//                       });
-//                     },
-//                   ),
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _confirmPasswordKey,
-//                 controller: _confirmPasswordController,
-//                 validator: validateConfirmPassword,
-//                 obscureText: _obscureTextPasswordConfirm,
-//                 decoration: InputDecoration(
-//                   labelText: 'Confirm Password',
-//                   suffixIcon: IconButton(
-//                     icon: Icon(_obscureTextPasswordConfirm
-//                         ? Icons.visibility_off
-//                         : Icons.visibility),
-//                     onPressed: () {
-//                       setState(() {
-//                         _obscureTextPasswordConfirm =
-//                         !_obscureTextPasswordConfirm;
-//                       });
-//                     },
-//                   ),
-//                 ),
-//               ),
-//               TextFormField(
-//                 key: _locationKey,
-//                 controller: _locationController,
-//                 validator: validateLocation,
-//                 decoration: InputDecoration(
-//                   labelText: 'Location',
-//                 ),
-//               ),
-//               ElevatedButton(
-//                 onPressed: register,
-//                 child: Text('Register'),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+
+
+
+
+

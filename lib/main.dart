@@ -3,10 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/AdminRegisterScreen.dart';
-import 'package:unistay/screen
-import 'package:unistay/screens/Profile.dart';
+import 'package:unistay/screens/Dashboard.dart';import 'package:unistay/screens/Profile.dart';
+import 'package:unistay/screens/UpdatePasswordScreen.dart';
 import 'package:unistay/screens/DocumentScreen.dart';
-
 import 'package:unistay/screens/add_rooms_screen.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
@@ -43,38 +42,25 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-
         theme: ThemeData(
-
         ),
         initialRoute: "/dashboard",
-=======
-        theme: ThemeData(),
-        initialRoute: "/addhostel",
-
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
           "/loginadmin": (context) => const LoginAsAdminScreen(),
           "/register": (context) => const RegisterScreen(),
-
           "/admin-register": (context) => AdminRegisterScreen(),
           "/verify":(context)=>Verify(),
-          // "/input":(context)=> BurgerMenu(),
-          // "/forget-password": (context) => const ForgotPasswordScreen(),
           "/dashboard": (context) => Dashboard(),
           "/addhostel": (context) => AddHostel(),
           "/add-rooms": (context) => AddRoomsScreen(),
           "/profile":(context)=>Profile(),
-
-=======
-          "/adminregister": (context) => AdminRegisterScreen(),
-          "/verify": (context) => Verify(),
+          "/update_pass":(context)=>UpdatePasswordScreen(),
           "/forgetpassword": (context) => const ForgotPasswordScreen(),
           "/dashboard": (context) => Dashboard(),
-          "/addhostel": (context) => AddHostel(),
-          "/addrooms": (context) => AddRoomsScreen(),
-          "/documents":(context)=>DocumentScreen(),
+          // "/documents":(context)=>DocumentScreen(),
+
         },
       ),
     );

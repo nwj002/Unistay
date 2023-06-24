@@ -222,125 +222,9 @@ class _DashboardState extends State<Dashboard> {
                   // color: Colors.white,
                   child: _pages[_selectedIndex],
                 ),
-=======
+
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: Container(
-        height: 80.0, // Set the desired height
-        child: Padding(
-          padding: EdgeInsets.only(bottom: 5.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.vertical(
-                top: Radius.circular(40.0), bottom: Radius.circular(40.0)),
-            child: BottomAppBar(
-              color: Colors.grey.shade300,
-              elevation: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        if (_selectedIndex == -4)
-                          Container(
-                            width: 120,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.event),
-                            SizedBox(width: 5),
-                            if (_selectedIndex == -4) Text('Booking'),
-                          ],
-                        ),
-                        IconButton(
-                          icon: SizedBox(),
-                          onPressed: () {
-                            _onNavItemTapped(-4);
-                          },
-                          color: Colors.transparent,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        if (_selectedIndex == -5)
-                          Container(
-                            width: 120,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.person),
-                            SizedBox(width: 5),
-                            if (_selectedIndex == -5) Text('Profile'),
-                          ],
-                        ),
-                        IconButton(
-                          icon: SizedBox(),
-                          onPressed: () {
-                            _onNavItemTapped(-5);
-                          },
-                          color: Colors.transparent,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        if (_selectedIndex == -6)
-                          Container(
-                            width: 120,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.airplane_ticket),
-                            SizedBox(width: 5),
-                            if (_selectedIndex == -6) Text('Ticket'),
-                          ],
-                        ),
-                        IconButton(
-                          icon: SizedBox(),
-                          onPressed: () {
-                            _onNavItemTapped(-6);
-                          },
-                          color: Colors.transparent,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-
-              ),
-          ],
-
         ),
       ),
       bottomNavigationBar: ClipRRect(
@@ -370,6 +254,8 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
       ),
+
+
     );
   }
 }
