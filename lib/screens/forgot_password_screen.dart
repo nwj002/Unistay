@@ -32,51 +32,54 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        // margin: EdgeInsets.only(left: 10,right: 10,),
-        decoration: BoxDecoration(
-            gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-          Colors.deepOrangeAccent.shade100,
-          Colors.orange.shade300,
-          Colors.orange.shade300,
-          Colors.orange.shade100,
-        ])),
-
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(
-              height: 200,
-              width: double.infinity,
-              child: Center(
-                child: Text(
-                  "Forgot Password",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
-                  ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            // margin: EdgeInsets.only(left: 10,right: 10,),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+              Colors.deepOrangeAccent.shade100,
+              Colors.orange.shade300,
+              Colors.orange.shade300,
+              Colors.orange.shade100,
+            ])),
+        
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 30,),
+                  
+                 const  Padding(
+                     padding:  EdgeInsets.all(12.0),
+                     child: Text(
+                       "Forgot Password",
+                       style: TextStyle(
+                         color: Colors.black,
+                         fontSize: 30,
+                         fontWeight: FontWeight.w500,
+                       ),
+                     ),
+                   ),
+                
+                const Padding(
+                   padding:  EdgeInsets.all(8.0),
+                   child: Text(
+                    "Reset Your Password",
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 17,
+                      fontWeight: FontWeight.normal,
+                    ),
+                                 ),
+                 ),
+                const SizedBox(
+                  height: 15,
                 ),
-              ),
-            ),
-            const Text(
-              "Reset Your Password",
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 17,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Container(
+                Container(
+                  height: 698,
                   decoration: const BoxDecoration(
-                    color: Colors.white70,
+                    color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20),
@@ -85,173 +88,177 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 270,
+                        height: 320,
                         child: Form(
                           key: _formkey,
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                controller: _emailCtrl,
-                                keyboardType: TextInputType.emailAddress,
-                                validator: (String? value) {
-                                  if (value!.isEmpty) {
-                                    return "Email is required";
-                                  }
-                                  if (!RegExp(
-                                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                      .hasMatch(value)) {
-                                    return "Enter a valid email";
-                                  }
-                                  return null;
-                                },
-                                style: const TextStyle(
-                                    fontFamily: 'WorkSansSemiBold',
-                                    fontSize: 16.0,
-                                    color: Colors.black),
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  border: InputBorder.none,
-                                  prefixIcon: const Icon(
-                                    Icons.email,
-                                    color: Colors.black,
-                                    size: 22.0,
-                                  ),
-                                  hintText: 'Email Address',
-                                  hintStyle: const TextStyle(
-                                      fontFamily: 'WorkSansSemiBold',
-                                      fontSize: 17.0),
+                          child: Container(
+                            padding:const EdgeInsets.all(20),
+                            child: Column(
+                              children: [
+                                const SizedBox(
+                                  height: 20,
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "Password is required";
-                                  }
-                                  return null;
-                                },
-                                style: const TextStyle(
-                                    fontFamily: 'WorkSansSemiBold',
-                                    fontSize: 16.0,
-                                    color: Colors.black),
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  prefixIcon: const Icon(
-                                    Icons.lock,
-                                    size: 22.0,
-                                    color: Colors.black,
-                                  ),
-                                  hintText: 'Password',
-                                  hintStyle: const TextStyle(
+                                TextFormField(
+                                  controller: _emailCtrl,
+                                  keyboardType: TextInputType.emailAddress,
+                                  validator: (String? value) {
+                                    if (value!.isEmpty) {
+                                      return "Email is required";
+                                    }
+                                    if (!RegExp(
+                                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                        .hasMatch(value)) {
+                                      return "Enter a valid email";
+                                    }
+                                    return null;
+                                  },
+                                  style: const TextStyle(
                                       fontFamily: 'WorkSansSemiBold',
-                                      fontSize: 17.0),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "Password and confirm password must be same";
-                                  }
-                                  return null;
-                                },
-                                style: const TextStyle(
-                                    fontFamily: 'WorkSansSemiBold',
-                                    fontSize: 16.0,
-                                    color: Colors.black),
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  prefixIcon: const Icon(
-                                    Icons.lock,
-                                    size: 22.0,
-                                    color: Colors.black,
+                                      fontSize: 16.0,
+                                      color: Colors.black),
+                                  decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20)),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20)),
+                                    border: InputBorder.none,
+                                    prefixIcon: const Icon(
+                                      Icons.email,
+                                      color: Colors.black,
+                                      size: 22.0,
+                                    ),
+                                    hintText: 'Email Address',
+                                    hintStyle: const TextStyle(
+                                        fontFamily: 'WorkSansSemiBold',
+                                        fontSize: 17.0),
                                   ),
-                                  hintText: 'Confirm Password',
-                                  hintStyle: const TextStyle(
-                                      fontFamily: 'WorkSansSemiBold',
-                                      fontSize: 17.0),
                                 ),
-                              ),
-                            ],
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return "Password is required";
+                                    }
+                                    return null;
+                                  },
+                                  style: const TextStyle(
+                                      fontFamily: 'WorkSansSemiBold',
+                                      fontSize: 16.0,
+                                      color: Colors.black),
+                                  decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20)),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20)),
+                                    prefixIcon: const Icon(
+                                      Icons.lock,
+                                      size: 22.0,
+                                      color: Colors.black,
+                                    ),
+                                    hintText: 'Password',
+                                    hintStyle: const TextStyle(
+                                        fontFamily: 'WorkSansSemiBold',
+                                        fontSize: 17.0),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                TextFormField(
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return "Password and confirm password must be same";
+                                    }
+                                    return null;
+                                  },
+                                  style: const TextStyle(
+                                      fontFamily: 'WorkSansSemiBold',
+                                      fontSize: 16.0,
+                                      color: Colors.black),
+                                  decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20)),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20)),
+                                    prefixIcon: const Icon(
+                                      Icons.lock,
+                                      size: 22.0,
+                                      color: Colors.black,
+                                    ),
+                                    hintText: 'Confirm Password',
+                                    hintStyle: const TextStyle(
+                                        fontFamily: 'WorkSansSemiBold',
+                                        fontSize: 17.0),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       const SizedBox(
-                        height: 30,
+                        height: 10,
                       ),
-                      SizedBox(
-                        width: 350,
-                        height: 50,
-                        child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStatePropertyAll(
-                                  Colors.orange.shade200),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      side: BorderSide(
-                                        color: Colors.orange.shade200,
-                                      ))),
-                              padding: MaterialStateProperty.all<EdgeInsets>(
-                                  const EdgeInsets.symmetric(vertical: 10)),
-                            ),
-                            onPressed: () async {
-                              if (_formkey.currentState!.validate()) {
-                                final res = await context
-                                    .read<AuthProvider>()
-                                    .forgotPassword(
-                                        email: _emailCtrl.text.trim());
-                                if (res == "OK") {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                          content: Text(
-                                              "Email link send to ${_emailCtrl.text.trim()} ")));
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text(res)));
-                                }
-                              }
-                              resetPassword();
-                            },
-                            child: const Text(
-                              "Save Changes",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 2,
-                                color: Colors.black,
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 70,
+                          child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStatePropertyAll(
+                                    Colors.orange.shade300),
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        side: BorderSide(
+                                          color: Colors.orange.shade200,
+                                        ))),
+                                padding: MaterialStateProperty.all<EdgeInsets>(
+                                    const EdgeInsets.symmetric(vertical: 20)),
                               ),
-                            )),
+                              onPressed: () async {
+                                if (_formkey.currentState!.validate()) {
+                                  final res = await context
+                                      .read<AuthProvider>()
+                                      .forgotPassword(
+                                          email: _emailCtrl.text.trim());
+                                  if (res == "OK") {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                            content: Text(
+                                                "Email link send to ${_emailCtrl.text.trim()} ")));
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(content: Text(res)));
+                                  }
+                                }
+                                resetPassword();
+                              },
+                              child: const Text(
+                                "Save Changes",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 2,
+                                  color: Colors.white,
+                                ),
+                              )),
+                        ),
                       ),
                       const SizedBox(
                         height: 15,
                       ),
-                      SizedBox(
-                        height: 500,
-                      )
+                      
                     ],
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
