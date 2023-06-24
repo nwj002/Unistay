@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
+import 'AdminRegisterScreen.dart';
+import 'Profile.dart';
+import 'RegisterScreen.dart';
+
 
 class Dashboard extends StatefulWidget {
   @override
@@ -7,7 +13,7 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   bool _isMenuOpen = false;
-  int _selectedIndex = 0;
+  int _selectedIndex = -1;
 
   void _toggleMenu() {
     setState(() {
@@ -20,6 +26,13 @@ class _DashboardState extends State<Dashboard> {
       _selectedIndex = index;
     });
   }
+
+  final List<Widget> _pages = [
+    RegisterScreen(), // Keep the booking screen instead of Register Screen here
+    Profile(),
+    AdminRegisterScreen(),// Keep the ticket screen instead of admin register screen here
+
+  ];
 
   final _formKey = GlobalKey<FormState>();
 
@@ -40,7 +53,6 @@ class _DashboardState extends State<Dashboard> {
       ),
       body: SingleChildScrollView(
         child: Stack(
-          key: _formKey,
           children: [
             Container(
               width: double.infinity,
@@ -98,7 +110,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   Container(
-                    height: 500,
+                    height: 520,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -200,125 +212,50 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               ),
+
+
+            ),
+            if (_selectedIndex >= 0)
+              Positioned.fill(
+                top: 0,
+                child: Container(
+                  // color: Colors.white,
+                  child: _pages[_selectedIndex],
+                ),
+
             ),
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 80.0, // Set the desired height
-        child: Padding(
-          padding: EdgeInsets.only(bottom: 5.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.vertical(
-                top: Radius.circular(40.0), bottom: Radius.circular(40.0)),
-            child: BottomAppBar(
-              color: Colors.grey.shade300,
-              elevation: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        if (_selectedIndex == -4)
-                          Container(
-                            width: 120,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.event),
-                            SizedBox(width: 5),
-                            if (_selectedIndex == -4) Text('Booking'),
-                          ],
-                        ),
-                        IconButton(
-                          icon: SizedBox(),
-                          onPressed: () {
-                            _onNavItemTapped(-4);
-                          },
-                          color: Colors.transparent,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        if (_selectedIndex == -5)
-                          Container(
-                            width: 120,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.person),
-                            SizedBox(width: 5),
-                            if (_selectedIndex == -5) Text('Profile'),
-                          ],
-                        ),
-                        IconButton(
-                          icon: SizedBox(),
-                          onPressed: () {
-                            _onNavItemTapped(-5);
-                          },
-                          color: Colors.transparent,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        if (_selectedIndex == -6)
-                          Container(
-                            width: 120,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade300,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.airplane_ticket),
-                            SizedBox(width: 5),
-                            if (_selectedIndex == -6) Text('Ticket'),
-                          ],
-                        ),
-                        IconButton(
-                          icon: SizedBox(),
-                          onPressed: () {
-                            _onNavItemTapped(-6);
-                          },
-                          color: Colors.transparent,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(40),
+          topRight: Radius.circular(30),
+        ),
+        child: Container(
+          color: Colors.grey.shade300,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            child: GNav(
+              backgroundColor: Colors.grey.shade300,
+              color: Colors.black,
+              activeColor: Colors.black,
+              tabBackgroundColor: Colors.orange.shade300,
+              padding: EdgeInsets.all(16),
+              gap: 8,
+              onTabChange: _onNavItemTapped,
+              selectedIndex: _selectedIndex,
+              tabs: [
+                GButton(icon: Icons.event, text: "Booking"),
+                GButton(icon: Icons.person, text: "Profile"),
+                GButton(icon: Icons.airplane_ticket, text: "Ticket"),
+              ],
             ),
           ),
         ),
       ),
+
+
     );
   }
 }
