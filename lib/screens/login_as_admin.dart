@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
+import 'package:unistay/screens/admin_dashboard.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
 import 'package:unistay/viewmodels/auth_provider_viewmodel.dart';
 
@@ -17,7 +18,6 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
   final emailCtrl = TextEditingController();
   final passwordCtrl = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-   
 
   @override
   void dispose() {
@@ -48,20 +48,22 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               const SizedBox(height: 30,),
-                 const Padding(
-                    padding:  EdgeInsets.all(12.0),
-                    child: Text(
-                      "Sign In As Admin",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 30,
-                        fontWeight: FontWeight.w500,
-                      ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text(
+                    "Sign In As Admin",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-               const Padding(
-                  padding:  EdgeInsets.all(8.0),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     "We are delighted to see you again - Sign in",
                     style: TextStyle(
@@ -71,10 +73,10 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                     ),
                   ),
                 ),
-               const SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Container(
                   height: 698,
-                  decoration:const BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
@@ -88,11 +90,11 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                         child: Form(
                           key: _formKey,
                           child: Container(
-                            padding:const EdgeInsets.all(20),
+                            padding: const EdgeInsets.all(20),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                              const  SizedBox(height: 20),
+                                const SizedBox(height: 20),
                                 TextFormField(
                                   controller: emailCtrl,
                                   keyboardType: TextInputType.emailAddress,
@@ -107,7 +109,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                     }
                                     return null;
                                   },
-                                  style:const TextStyle(
+                                  style: const TextStyle(
                                     fontFamily: 'WorkSansSemiBold',
                                     fontSize: 16.0,
                                     color: Colors.black,
@@ -120,20 +122,19 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     border: InputBorder.none,
-                                    prefixIcon:const Icon(
+                                    prefixIcon: const Icon(
                                       Icons.email,
                                       color: Colors.black,
                                       size: 22.0,
                                     ),
                                     hintText: 'Email Address',
-                                    hintStyle:const TextStyle(
-                                      
+                                    hintStyle: const TextStyle(
                                       fontFamily: 'WorkSansSemiBold',
                                       fontSize: 17.0,
                                     ),
                                   ),
                                 ),
-                               const SizedBox(height: 20),
+                                const SizedBox(height: 20),
                                 TextFormField(
                                   controller: passwordCtrl,
                                   validator: (value) {
@@ -142,7 +143,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                     }
                                     return null;
                                   },
-                                  style:const TextStyle(
+                                  style: const TextStyle(
                                     fontFamily: 'WorkSansSemiBold',
                                     fontSize: 16.0,
                                     color: Colors.black,
@@ -154,13 +155,13 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    prefixIcon:const Icon(
+                                    prefixIcon: const Icon(
                                       Icons.lock,
                                       size: 22.0,
                                       color: Colors.black,
                                     ),
                                     hintText: 'Password',
-                                    hintStyle:const TextStyle(
+                                    hintStyle: const TextStyle(
                                       fontFamily: 'WorkSansSemiBold',
                                       fontSize: 17.0,
                                     ),
@@ -171,66 +172,65 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           ),
                         ),
                       ),
-                    
-                         Padding(
-                           padding: const EdgeInsets.all(12.0),
-                           child: Container(
-                             width: double.infinity,
-                             height: 70,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    Colors.orange.shade300),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    side: BorderSide(color: Colors.orange.shade300),
-                                  ),
-                                ),
-                                padding: MaterialStateProperty.all<EdgeInsets>(
-                                  EdgeInsets.symmetric(vertical: 20),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 70,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  Colors.orange.shade300),
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  side:
+                                      BorderSide(color: Colors.orange.shade300),
                                 ),
                               ),
-                              onPressed: () async {
-                                String email = emailCtrl.text.trim();
-                                String pass = passwordCtrl.text.trim();
-                                  
-                                if (_formKey.currentState!.validate()) {
-                                  final res = await context
-                                      .read<AuthProvider>()
-                                      .loginAsAdmin(email: email, password: pass);
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                          content: Text("Logged In As Admin!")));
-                                  if (res == "OK") {
-                                    // Handle success
-                                  } else {
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(SnackBar(content: Text(res)));
-                                  }
+                              padding: MaterialStateProperty.all<EdgeInsets>(
+                                const EdgeInsets.symmetric(vertical: 20),
+                              ),
+                            ),
+                            onPressed: () async {
+                              String email = emailCtrl.text.trim();
+                              String pass = passwordCtrl.text.trim();
+
+                              if (_formKey.currentState!.validate()) {
+                                final res = await context
+                                    .read<AuthProvider>()
+                                    .loginAsAdmin(email: email, password: pass);
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content: Text("Logged In As Admin!")));
+                                if (res == "OK") {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => AdminDashboard()),
+                                  );
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
-                                        content:
-                                            Text("Please enter all the details")),
+                                        content: Text(
+                                            "Please enter all the details")),
                                   );
                                 }
-
-                              },
-                              child: Text(
-                                "Sign In",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2,
-                                  color: Colors.white,
-                                ),
+                              }
+                            },
+                            child: Text(
+                              "Sign In",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2,
+                                color: Colors.white,
                               ),
                             ),
-                                                 ),
-                         ),
-                      
+                          ),
+                        ),
+                      ),
                       SizedBox(height: 15),
                       Align(
                         alignment: Alignment.center,
@@ -239,11 +239,12 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ForgotPasswordScreen(),
+                                builder: (context) =>
+                                    const ForgotPasswordScreen(),
                               ),
                             );
                           },
-                          child: Text(
+                          child: const Text(
                             "Forgot password?",
                             style: TextStyle(
                               decoration: TextDecoration.underline,
@@ -254,14 +255,14 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15),
-                      Text(
+                      const SizedBox(height: 15),
+                      const Text(
                         "OR",
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -283,8 +284,8 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                       height: 30,
                                       width: 30,
                                     ),
-                                    SizedBox(width: 10),
-                                    Text(
+                                    const SizedBox(width: 10),
+                                    const Text(
                                       "Google",
                                       style: TextStyle(
                                         color: Colors.blueGrey,
@@ -298,11 +299,11 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 15),
+                          const SizedBox(height: 15),
                         ],
                       ),
-                      SizedBox(height: 15),
-                      Row(
+                      const SizedBox(height: 15),
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -317,12 +318,13 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           SizedBox(height: 15),
                         ],
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       InkWell(
                         onTap: () {
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (_) => RegisterScreen()),
+                            MaterialPageRoute(
+                                builder: (_) => const RegisterScreen()),
                           );
                         },
                         child: Padding(
@@ -334,7 +336,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                               color: Colors.orange.shade300,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 "Create an account",
                                 style: TextStyle(
@@ -348,7 +350,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 50),
+                      const SizedBox(height: 50),
                     ],
                   ),
                 ),
