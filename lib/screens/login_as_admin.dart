@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/forgot_password_screen.dart';
@@ -265,8 +267,34 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          InkWell(
-                            onTap: () {},
+                          TextButton(
+                            onPressed: () async {
+                              final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+                              if (googleUser != null) {
+                                final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+                                final AuthCredential credential = GoogleAuthProvider.credential(
+                                  idToken: googleAuth.idToken,
+                                  accessToken: googleAuth.accessToken,
+                                );
+
+                                try {
+                                  final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+                                  final User? user = userCredential.user;
+
+                                  if (user != null) {
+                                    // Registration successful, handle the logic accordingly
+                                  } else {
+                                    // Registration failed, handle the error case
+                                  }
+                                } catch (e) {
+                                  // Error occurred during registration, handle the error case
+                                }
+                              } else {
+                                // Google sign-in failed, handle the error case
+                              }
+                            },
                             child: Container(
                               height: 50,
                               width: 200,
@@ -278,6 +306,11 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
+                                    Image.asset(
+                                      'Assets/Images/google.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
                                     SizedBox(width: 10),
                                     Text(
                                       "Google",
@@ -296,6 +329,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           SizedBox(height: 15),
                         ],
                       ),
+
                       SizedBox(height: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
