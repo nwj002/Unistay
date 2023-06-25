@@ -245,7 +245,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     children: [
                       Container(
                         padding: const EdgeInsets.all(16.0),
-                        child: const Column(
+                        child:  Column(
                           children: [
                             CircleAvatar(
                               radius: 40,

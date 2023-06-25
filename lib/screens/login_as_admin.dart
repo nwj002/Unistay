@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/screens/RegisterScreen.dart';
 import 'package:unistay/screens/admin_dashboard.dart';
@@ -18,6 +20,7 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
   final emailCtrl = TextEditingController();
   final passwordCtrl = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+
 
   @override
   void dispose() {
@@ -128,7 +131,8 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                       size: 22.0,
                                     ),
                                     hintText: 'Email Address',
-                                    hintStyle: const TextStyle(
+                                    hintStyle:const TextStyle(
+
                                       fontFamily: 'WorkSansSemiBold',
                                       fontSize: 17.0,
                                     ),
@@ -172,44 +176,44 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 70,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(
-                                  Colors.orange.shade300),
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                  side:
-                                      BorderSide(color: Colors.orange.shade300),
+
+                         Padding(
+                           padding: const EdgeInsets.all(12.0),
+                           child: Container(
+                             width: double.infinity,
+                             height: 70,
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    Colors.orange.shade300),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    side: BorderSide(color: Colors.orange.shade300),
+                                  ),
+                                ),
+                                padding: MaterialStateProperty.all<EdgeInsets>(
+                                  EdgeInsets.symmetric(vertical: 20),
                                 ),
                               ),
-                              padding: MaterialStateProperty.all<EdgeInsets>(
-                                const EdgeInsets.symmetric(vertical: 20),
-                              ),
-                            ),
-                            onPressed: () async {
-                              String email = emailCtrl.text.trim();
-                              String pass = passwordCtrl.text.trim();
+                              onPressed: () async {
+                                String email = emailCtrl.text.trim();
+                                String pass = passwordCtrl.text.trim();
 
-                              if (_formKey.currentState!.validate()) {
-                                final res = await context
-                                    .read<AuthProvider>()
-                                    .loginAsAdmin(email: email, password: pass);
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                        content: Text("Logged In As Admin!")));
-                                if (res == "OK") {
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (_) => AdminDashboard()),
-                                  );
+                                if (_formKey.currentState!.validate()) {
+                                  final res = await context
+                                      .read<AuthProvider>()
+                                      .loginAsAdmin(email: email, password: pass);
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: Text("Logged In As Admin!")));
+                                  if (res == "OK") {
+                                    // Handle success
+                                  } else {
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(SnackBar(content: Text(res)));
+                                  }
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
@@ -217,20 +221,21 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                             "Please enter all the details")),
                                   );
                                 }
-                              }
-                            },
-                            child: Text(
-                              "Sign In",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 2,
-                                color: Colors.white,
+
+                              },
+                              child: Text(
+                                "Sign In",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 2,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      ),
+                                                 ),
+                         ),
+
                       SizedBox(height: 15),
                       Align(
                         alignment: Alignment.center,
@@ -266,8 +271,34 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          InkWell(
-                            onTap: () {},
+                          TextButton(
+                            onPressed: () async {
+                              final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+                              if (googleUser != null) {
+                                final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+                                final AuthCredential credential = GoogleAuthProvider.credential(
+                                  idToken: googleAuth.idToken,
+                                  accessToken: googleAuth.accessToken,
+                                );
+
+                                try {
+                                  final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+                                  final User? user = userCredential.user;
+
+                                  if (user != null) {
+                                    // Registration successful, handle the logic accordingly
+                                  } else {
+                                    // Registration failed, handle the error case
+                                  }
+                                } catch (e) {
+                                  // Error occurred during registration, handle the error case
+                                }
+                              } else {
+                                // Google sign-in failed, handle the error case
+                              }
+                            },
                             child: Container(
                               height: 50,
                               width: 200,
@@ -302,8 +333,9 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                           const SizedBox(height: 15),
                         ],
                       ),
-                      const SizedBox(height: 15),
-                      const Row(
+
+                      SizedBox(height: 15),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
