@@ -333,7 +333,7 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                                 ),
                               ),
                               onPressed: () {
-                                Navigator.pushNamed(context, "/add-rooms");
+                                // Navigator.pushNamed(context, "/add-rooms");
                                 // Navigator.push(context,MaterialPageRoute(builder: (kehtxt)=>AddRoomsScreen()));
                                 register();
                               },
