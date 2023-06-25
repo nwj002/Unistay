@@ -41,10 +41,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'register',
         theme: ThemeData(
         ),
-        initialRoute: "/documents",
+        initialRoute: "/forgetpassword",
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
