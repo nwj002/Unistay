@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:unistay/screens/verify_screen.dart';
 
 import '../models/RegisterUserModel.dart';
@@ -326,27 +328,50 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Container(
                               width: double.infinity,
                               child: ElevatedButton(
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.orange.shade300),
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.orange.shade300),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
-                                      side: BorderSide(
-                                          color: Colors.orange.shade300),
-                                    )),
-                                    padding:
-                                        MaterialStateProperty.all<EdgeInsets>(
-                                            EdgeInsets.symmetric(vertical: 20)),
+                                      side: BorderSide(color: Colors.orange.shade300),
+                                    ),
                                   ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    "Google",
-                                    style: TextStyle(fontSize: 20),
-                                  )),
+                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 20)),
+                                ),
+                                onPressed: () async {
+                                  final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+                                  if (googleUser != null) {
+                                    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+                                    final AuthCredential credential = GoogleAuthProvider.credential(
+                                      idToken: googleAuth.idToken,
+                                      accessToken: googleAuth.accessToken,
+                                    );
+
+                                    try {
+                                      final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+                                      final User? user = userCredential.user;
+
+                                      if (user != null) {
+                                        // Registration successful, handle the logic accordingly
+                                      } else {
+                                        // Registration failed, handle the error case
+                                      }
+                                    } catch (e) {
+                                      // Error occurred during registration, handle the error case
+                                    }
+                                  } else {
+                                    // Google sign-in failed, handle the error case
+                                  }
+                                },
+                                child: Text(
+                                  "Google",
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ),
                             ),
+
                             SizedBox(
                               height: 20,
                             ),

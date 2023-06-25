@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:unistay/screens/add_rooms_screen.dart';
 
 import '../models/admin_model.dart';
@@ -363,7 +365,33 @@ class _AdminRegisterScreenState extends State<AdminRegisterScreen> {
                                   EdgeInsets.symmetric(vertical: 20),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () async {
+                                final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+                                if (googleUser != null) {
+                                  final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+                                  final AuthCredential credential = GoogleAuthProvider.credential(
+                                    idToken: googleAuth.idToken,
+                                    accessToken: googleAuth.accessToken,
+                                  );
+
+                                  try {
+                                    final UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+                                    final User? user = userCredential.user;
+
+                                    if (user != null) {
+                                      // Registration successful, handle the logic accordingly
+                                    } else {
+                                      // Registration failed, handle the error case
+                                    }
+                                  } catch (e) {
+                                    // Error occurred during registration, handle the error case
+                                  }
+                                } else {
+                                  // Google sign-in failed, handle the error case
+                                }
+                              },
                               child: Text(
                                 "Sign Up with Google",
                                 style: TextStyle(fontSize: 20),

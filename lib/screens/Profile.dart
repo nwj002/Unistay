@@ -234,6 +234,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'EditPersonalDetails.dart';
 
+import 'UpdatePasswordScreen.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -375,6 +377,7 @@ class _ProfileState extends State<Profile> {
                             height: 60,
                             width: double.infinity,
                             child: ElevatedButton(
+<<<<<<< HEAD
                               style: ButtonStyle(
                                 backgroundColor:
                                 MaterialStateProperty.all<Color>(
@@ -396,6 +399,31 @@ class _ProfileState extends State<Profile> {
                                     fontSize: 12, color: Colors.black),
                               ),
                             ),
+=======
+
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.orange.shade300),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+
+                                        side: BorderSide(color: Colors.orange.shade300),
+
+
+                                      )
+                                  ),
+                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 20)),
+                                ),
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => UpdatePasswordScreen()),
+                                  );
+                                }, child: Text("Update Password", style: TextStyle(
+                                fontSize: 12, color: Colors.black
+                            ),)),
+>>>>>>> 0a751f4dbf7ea9cd6248b8dc6dadc35ff582bc1c
                           ),
                           SizedBox(height: 20),
                           Container(

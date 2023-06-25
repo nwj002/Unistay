@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'AdminRegisterScreen.dart';
 import 'Profile.dart';
 import 'RegisterScreen.dart';
-
 
 class Dashboard extends StatefulWidget {
   @override
@@ -111,12 +110,69 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   Container(
                     height: 520,
+                    width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
                       ),
+                    ),
+                    padding: EdgeInsets.all(20.0),
+                    child: StreamBuilder<QuerySnapshot>(
+                      stream: FirebaseFirestore.instance.collection('hostels').snapshots(),
+                      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                        if (snapshot.hasData) {
+                          return ListView.separated( // Use ListView.separated instead of ListView.builder
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            itemCount: snapshot.data!.docs.length,
+                            separatorBuilder: (BuildContext context, int index) {
+                              return SizedBox(height: 20.0); // Add a gap of 20.0 between containers
+                            },
+                            itemBuilder: (BuildContext context, int index) {
+                              DocumentSnapshot document = snapshot.data!.docs[index];
+                              String name = document['name'];
+                              String imageUrl = document['imageUrl'];
+
+                              return MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: InkWell(
+                                  onTap: () {
+                                    // Handle button tap
+                                  },
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(30.0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.shade200,
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                        image: NetworkImage(imageUrl),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          name,
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        }
+                        return SizedBox();
+                      },
                     ),
                   ),
                 ],
@@ -127,6 +183,7 @@ class _DashboardState extends State<Dashboard> {
               bottom: 150,
               right:
               _isMenuOpen ? 0 : -(MediaQuery.of(context).size.width - 56),
+             
               width: 220,
               child: Container(
                 color: Colors.grey.shade100,
@@ -153,6 +210,7 @@ class _DashboardState extends State<Dashboard> {
                       ListTile(
                         leading:
                         Icon(Icons.calendar_month, color: Colors.blueGrey),
+                        
                         title: Text('Calendar',
                             style: TextStyle(color: Colors.blueGrey)),
                         onTap: () {
@@ -223,7 +281,7 @@ class _DashboardState extends State<Dashboard> {
                   child: _pages[_selectedIndex],
                 ),
 
-              ),
+                ),
           ],
         ),
       ),
@@ -259,3 +317,8 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 }
+// void main() {
+//   runApp(MaterialApp(
+//     home: Dashboard(),
+//   ));
+// }
