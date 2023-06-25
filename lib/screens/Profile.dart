@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'UpdatePasswordScreen.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
   @override
@@ -128,6 +130,10 @@ class _ProfileState extends State<Profile> {
                                   padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(vertical: 20)),
                                 ),
                                 onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => UpdatePasswordScreen()),
+                                  );
                                 }, child: Text("Update Password", style: TextStyle(
                                 fontSize: 12, color: Colors.black
                             ),)),
