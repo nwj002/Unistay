@@ -48,6 +48,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
         ),
         initialRoute: "/documents",
+        
         routes: {
           '/login':(context) => SignInScreen(),
           '/splash':(context) => SplashScreen(),
