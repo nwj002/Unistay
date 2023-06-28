@@ -27,6 +27,7 @@ class AuthProvider with ChangeNotifier {
       final res = await _repo!.loginAsAdmin(email: email, password: password);
       print(res);
     } catch (e) {
+      print(e);
       result = e.toString();
     }
     _isLoading = false;

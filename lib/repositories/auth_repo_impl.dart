@@ -10,9 +10,16 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<UserCredential> loginAsAdmin(
       {required String email, required String password}) async {
-    final res = await _firebaseAuth!
+    try{
+      final res = await _firebaseAuth!
+
         .signInWithEmailAndPassword(email: email, password: password);
     return res;
+
+    } on FirebaseAuthException {
+          rethrow;
+    }
+    
   }
 
   @override

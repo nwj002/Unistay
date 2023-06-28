@@ -88,7 +88,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 320,
+                        height: 250,
                         child: Form(
                           key: _formkey,
                           child: Container(
@@ -96,7 +96,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             child: Column(
                               children: [
                                 const SizedBox(
-                                  height: 20,
+                                  height: 100,
                                 ),
                                 TextFormField(
                                   controller: _emailCtrl,
@@ -133,74 +133,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                         fontSize: 17.0),
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return "Password is required";
-                                    }
-                                    return null;
-                                  },
-                                  style: const TextStyle(
-                                      fontFamily: 'WorkSansSemiBold',
-                                      fontSize: 16.0,
-                                      color: Colors.black),
-                                  decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(20)),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(20)),
-                                    prefixIcon: const Icon(
-                                      Icons.lock,
-                                      size: 22.0,
-                                      color: Colors.black,
-                                    ),
-                                    hintText: 'Password',
-                                    hintStyle: const TextStyle(
-                                        fontFamily: 'WorkSansSemiBold',
-                                        fontSize: 17.0),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return "Password and confirm password must be same";
-                                    }
-                                    return null;
-                                  },
-                                  style: const TextStyle(
-                                      fontFamily: 'WorkSansSemiBold',
-                                      fontSize: 16.0,
-                                      color: Colors.black),
-                                  decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(20)),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(20)),
-                                    prefixIcon: const Icon(
-                                      Icons.lock,
-                                      size: 22.0,
-                                      color: Colors.black,
-                                    ),
-                                    hintText: 'Confirm Password',
-                                    hintStyle: const TextStyle(
-                                        fontFamily: 'WorkSansSemiBold',
-                                        fontSize: 17.0),
-                                  ),
-                                ),
+                                
+                                
+                                
                               ],
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                      
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Container(
@@ -239,7 +180,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 resetPassword();
                               },
                               child: const Text(
-                                "Save Changes",
+                                "Verify",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,

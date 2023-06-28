@@ -205,10 +205,18 @@ class _LoginAsAdminScreenState extends State<LoginAsAdminScreen> {
                                   final res = await context
                                       .read<AuthProvider>()
                                       .loginAsAdmin(email: email, password: pass);
-                                  ScaffoldMessenger.of(context).showSnackBar(
+                                  print("response");
+                                  print(res);
+                                  
+                                  if (res == "OK") {
+                                    ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                           content: Text("Logged In As Admin!")));
-                                  if (res == "OK") {
+                                     Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) =>  AdminDashboard()),
+                          );
                                     // Handle success
                                   } else {
                                     ScaffoldMessenger.of(context)
