@@ -1,12 +1,15 @@
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:unistay/logic/modules/user_model.dart';
+
+import '../../modules/user_model.dart';
+import 'auth_error.dart';
 
 class AuthService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
   FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  getcurrentUser()  {
+   getcurrentUser()  {
     return  _firebaseAuth.currentUser;
   }
 
@@ -29,7 +32,7 @@ class AuthService {
       return _userFromFirebase(credential.user);
     } on auth.FirebaseAuthException catch (error) {
       final errorMessage =
-      ErrorHangling().throwErrorMesg(errorCode: error.code);
+          ErrorHangling().throwErrorMesg(errorCode: error.code);
       throw errorMessage;
     }
   }
@@ -42,7 +45,7 @@ class AuthService {
       return _userFromFirebase(credential.user);
     } on auth.FirebaseAuthException catch (error) {
       final errorMessage =
-      ErrorHangling().throwErrorMesg(errorCode: error.code);
+          ErrorHangling().throwErrorMesg(errorCode: error.code);
       throw errorMessage;
     }
   }
