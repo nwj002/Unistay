@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hostelapplication/logic/modules/service_model.dart';
+import 'package:unistay/logic/modules/service_model.dart';
+
 
 class ServiceFirestoreService {
   FirebaseFirestore _db = FirebaseFirestore.instance;
