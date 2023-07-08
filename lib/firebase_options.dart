@@ -56,7 +56,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDnutxPlKBbxedNxWz-osOjPR7-r2O_l4o',
-    appId: '1:233117944548:android:e240b6599d97043d4fbaf1',
+    appId: '1:233117944548:android:74e94220a28cb8ce4fbaf1',
     messagingSenderId: '233117944548',
     projectId: 'unistay-68d5e',
     databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
@@ -65,29 +65,25 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCO8eQS2eqY6tt71-NZJYZqdt1uOwzVKgA',
-    appId: '1:233117944548:ios:7f21b154c801c9d94fbaf1',
+    appId: '1:233117944548:ios:65396188937629584fbaf1',
     messagingSenderId: '233117944548',
     projectId: 'unistay-68d5e',
     databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
-    androidClientId:
-        '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
-    iosClientId:
-        '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
+    androidClientId: '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
+    iosClientId: '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
     iosBundleId: 'com.example.unistay',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCO8eQS2eqY6tt71-NZJYZqdt1uOwzVKgA',
-    appId: '1:233117944548:ios:7f21b154c801c9d94fbaf1',
+    appId: '1:233117944548:ios:65396188937629584fbaf1',
     messagingSenderId: '233117944548',
     projectId: 'unistay-68d5e',
     databaseURL: 'https://unistay-68d5e-default-rtdb.firebaseio.com',
     storageBucket: 'unistay-68d5e.appspot.com',
-    androidClientId:
-        '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
-    iosClientId:
-        '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
+    androidClientId: '233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com',
+    iosClientId: '233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com',
     iosBundleId: 'com.example.unistay',
   );
 }
