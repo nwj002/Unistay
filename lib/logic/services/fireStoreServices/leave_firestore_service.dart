@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../logic/modules/leave_model.dart';
+
+import '../../modules/leave_model.dart';
+
 
 class LeaveFirestoreService {
   FirebaseFirestore _db = FirebaseFirestore.instance;
