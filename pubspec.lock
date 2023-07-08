@@ -1123,12 +1123,9 @@ packages:
     dependency: transitive
     description:
       name: typed_data
-      sha256: facc8d6582f16042dd49f2463ff1bd6e2c9ef9f3d5da3d9b087e244a7b564b3c
+      sha256: "26f87ade979c47a150c9eaab93ccd2bebe70a27dc0b4b29517f2904f04eb11a5"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "1.3.2"
-=======
     version: "1.3.1"
   url_launcher:
     dependency: "direct main"
@@ -1202,7 +1199,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.7"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   vector_math:
     dependency: transitive
     description:
@@ -1268,13 +1264,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-<<<<<<< HEAD
-<<<<<<< HEAD
   dart: ">=3.0.0 <4.0.0"
-=======
-  dart: ">=2.19.6 <3.0.0"
->>>>>>> 0a751f4dbf7ea9cd6248b8dc6dadc35ff582bc1c
-=======
-  dart: ">=3.0.0 <4.0.0"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   flutter: ">=3.3.0"

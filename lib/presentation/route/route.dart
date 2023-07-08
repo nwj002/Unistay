@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:unistay/presentation/screen/auth/registration_screen.dart';
 
 import '../../core/constant/string.dart';
 import '../screen/auth/logInScreen.dart';
@@ -15,7 +16,9 @@ class Routes {
     switch (settings.name) {
       case logInScreenRoute:
         return MaterialPageRoute(builder: (context) => LogInScreen());
-
+      case registrationScreenRoute:
+        return MaterialPageRoute(
+            builder: (context) => const RegistrationScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
