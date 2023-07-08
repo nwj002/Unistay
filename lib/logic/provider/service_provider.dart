@@ -1,16 +1,17 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/foundation.dart';
+import 'package:hostelapplication/logic/modules/service_model.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/service_firestore_service.dart';
+import 'package:uuid/uuid.dart';
 
-class ServiceProvider extends StatefulWidget {
-  const ServiceProvider({super.key});
+class ServiceProvider with ChangeNotifier {
+  final service = ServiceFirestoreService();
 
-  @override
-  State<ServiceProvider> createState() => _ServiceProviderState();
-}
+  late String _serviceDes;
+  late List _repairDeviceList;
+  late String _name;
+  late String _roomNo;
+  late String _studentUid;
+  late String _serviceTitle;
+  DateTime _time = DateTime.now();
+  var uuid = Uuid();
 
-class _ServiceProviderState extends State<ServiceProvider> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
