@@ -2,7 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
-import '../../modules/user_model.dart';
+import 'package:unistay/logic/modules/user_model.dart';
 import 'auth_error.dart';
 
 class AuthService {

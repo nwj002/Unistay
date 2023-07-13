@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../core/constant/string.dart';
-import '../screen/auth/login_screen.dart';
+import 'package:unistay/core/constant/string.dart';
+import 'package:unistay/presentation/screen/auth/login_screen.dart';
 
 class Routes {
   late int initScreen;
