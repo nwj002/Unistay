@@ -39,7 +39,7 @@ class UserDataFirestoreService {
 
     );
   }
-
+//logout
    Future<void> removeUser(String userId) {
     return _db.collection('User').doc(userId).delete();
   }
