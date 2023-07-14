@@ -109,3 +109,19 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(":"),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        isBedChecked ? 'Bed,' : '',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        isChairChecked ? 'Table,' : '',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold),
+                                      ),
