@@ -73,3 +73,15 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                           isBedChecked = value!;
                         });
                       },
+                      
+                      item2Fun: (value) {
+                        setState(() {
+                          isChairChecked = value!;
+                        });
+                      },
+                      item3Fun: (value) {
+                        setState(() {
+                          isDoorChecked = value!;
+                        });
+                      },
+                    ),
