@@ -125,3 +125,14 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                                             color: Colors.red,
                                             fontWeight: FontWeight.bold),
                                       ),
+                                      Text(
+                                        isDoorChecked ? 'Door,' : '',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
