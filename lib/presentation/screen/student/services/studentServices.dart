@@ -67,3 +67,41 @@ class _StudentServicesScreenState extends State<StudentServicesScreen> {
               onTap: () {
                 Navigator.pushNamed(context, navigatorRoute[index]);
               },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    side: BorderSide(color: Colors.black, width: 0.1)),
+                elevation: 1,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        images[index],
+                        height: 70,
+                        width: 70,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 25,
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        imagesText[index].toString(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.orangeAccent),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
