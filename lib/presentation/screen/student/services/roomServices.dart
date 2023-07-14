@@ -136,3 +136,13 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                                   ),
                                 ],
                               ),
+                               ServiceTextField(onServiceDecChange: (value) {
+                                serviceProvider.changeServiceDes(value);
+                              }),
+                              const SizedBox(
+                                height: 20,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
