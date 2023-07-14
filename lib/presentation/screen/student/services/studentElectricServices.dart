@@ -109,3 +109,31 @@ class _StudentElectricityServicesState
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
+                                   Text(":"),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        isLightChecked ? 'Light,' : '',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        isFanChecked ? 'Fan,' : '',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        isPlugChecked ? 'Plug,' : '',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
