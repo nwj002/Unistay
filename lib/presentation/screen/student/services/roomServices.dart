@@ -146,3 +146,45 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                           ),
                         ),
                       ),
+                      Positioned(
+                        right: 0,
+                        left: 0,
+                        bottom: 22,
+                        child: FloatingActionButton(
+                          backgroundColor: Colors.orangeAccent,
+                            onPressed: () {
+                              isBedChecked ? repairDeviceList.add('Bed') : null;
+                              isChairChecked
+                                  ? repairDeviceList.add('Table')
+                                  : null;
+                              isDoorChecked
+                                  ? repairDeviceList.add('Door')
+                                  : null;
+                              serviceProvider.changeName(
+                                  userData.first.firstName +
+                                      ' ' +
+                                      userData.first.lastName);
+                              serviceProvider
+                                  .changeRepairDeviceList(repairDeviceList);
+                              serviceProvider
+                                  .changeRoomNo(userData.first.roomNo);
+                              serviceProvider.changeStudentUid(user.uid);
+                              serviceProvider.changeServiceTitle('Room');
+                              serviceProvider.saveService();
+                              repairDeviceList.clear();
+                              Navigator.pop(context);
+                            },
+                            child: const Icon(
+                              Icons.done,
+                              size: 30,
+                              color: Colors.white,
+                            )),
+                      ),
+                    ]),
+                  ],
+                ),
+              ),
+      ),
+    );
+  }
+}
