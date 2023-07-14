@@ -39,3 +39,20 @@ class _StudentElectricityServicesState
         backgroundColor: Colors.orangeAccent,
         title: const Text("Connection Service"),
       ),
+        body: SingleChildScrollView(
+        child: userData == null
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : Container(
+                margin: EdgeInsets.all(10),
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(width: 2, color: Colors.grey),
+                ),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
