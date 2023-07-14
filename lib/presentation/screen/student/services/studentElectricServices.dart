@@ -175,3 +175,17 @@ class _StudentElectricityServicesState
                               repairDeviceList.clear();
                               Navigator.pop(context);
                             },
+                             child: const Icon(
+                              Icons.done,
+                              size: 30,
+                              color: Colors.white,
+                            )),
+                      ),
+                    ]),
+                  ],
+                ),
+              ),
+      ),
+    );
+  }
+}
