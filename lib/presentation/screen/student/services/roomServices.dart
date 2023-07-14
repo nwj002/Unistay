@@ -49,3 +49,8 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(width: 2, color: Colors.grey),
                 ),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
