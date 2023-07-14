@@ -24,3 +24,10 @@ class _StudentServicesScreenState extends State<StudentServicesScreen> {
     'Electricity',
     'Other'
   ];
+  List navigatorRoute = [
+    studentRoomServiceRoute,
+    studentMessServiceRoute,
+    studentBathRoomServiceRoute,
+    studentElectricityServiceRoute,
+    studentOtherServiceRoute,
+  ];
