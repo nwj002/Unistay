@@ -56,3 +56,22 @@ class _StudentElectricityServicesState
                     const SizedBox(
                       height: 10,
                     ),
+                    UserTable(
+                        tablepadding: tablepadding,
+                        userData: userData,
+                        now: now),
+                    RepairDeviceWidget(
+                      isItem1Checked: isLightChecked,
+                      isItem2Checked: isPlugChecked,
+                      isItem3Checked: isFanChecked,
+                      item1Img: "assets/images/light.png",
+                      item2Img: "assets/images/plug.png",
+                      item3Img: "assets/images/fan.png",
+                      item1Name: "Light",
+                      item2Name: "Plug",
+                      item3Name: "Fan",
+                      item1Fun: (value) {
+                        setState(() {
+                          isLightChecked = value!;
+                        });
+                      },
