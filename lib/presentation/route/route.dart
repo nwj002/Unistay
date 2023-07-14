@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:unistay/core/constant/string.dart';
-import 'package:unistay/presentation/screen/auth/login_screen.dart';
+import 'package:unistay/presentation/screen/auth/forgotpasswordScreen.dart';
+import 'package:unistay/presentation/screen/auth/loginScreen.dart';
 
 class Routes {
   late int initScreen;
@@ -15,6 +16,10 @@ class Routes {
     switch (settings.name) {
       case logInScreenRoute:
         return MaterialPageRoute(builder: (context) => LogInScreen());
+
+      case forgotPasswordScreenRoute:
+        return MaterialPageRoute(builder: (context) => ForgotPasswordScreen());
+
 
       default:
         return MaterialPageRoute(

@@ -43,4 +43,8 @@ class UserDataFirestoreService {
    Future<void> removeUser(String userId) {
     return _db.collection('User').doc(userId).delete();
   }
+
+  Future<void> forgotPassword(String userEmail, String? password) {
+    return _db.collection('User').doc(userEmail).update({"password": password});
+  }
 }
