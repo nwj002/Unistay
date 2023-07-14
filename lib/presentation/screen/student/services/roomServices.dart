@@ -37,3 +37,15 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
         backgroundColor: Colors.orangeAccent,
         title: const Text("Room Service"),
       ),
+      body: SingleChildScrollView(
+        child: userData == null
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+              : Container(
+                margin: EdgeInsets.all(10),
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(width: 2, color: Colors.grey),
+                ),
