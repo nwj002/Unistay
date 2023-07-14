@@ -54,3 +54,22 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                     const SizedBox(
                       height: 10,
                     ),
+                     UserTable(
+                        tablepadding: tablepadding,
+                        userData: userData,
+                        now: now),
+                    RepairDeviceWidget(
+                      isItem1Checked: isBedChecked,
+                      isItem2Checked: isChairChecked,
+                      isItem3Checked: isDoorChecked,
+                      item1Img: "assets/images/bed.png",
+                      item2Img: "assets/images/chair.png",
+                      item3Img: "assets/images/door.png",
+                      item1Name: "Bed  ",
+                      item2Name: "Table",
+                      item3Name: "Door ",
+                      item1Fun: (value) {
+                        setState(() {
+                          isBedChecked = value!;
+                        });
+                      },
