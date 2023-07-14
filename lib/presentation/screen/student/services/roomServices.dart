@@ -99,3 +99,13 @@ class _StudentRoomServicesState extends State<StudentRoomServices> {
                               const SizedBox(
                                 height: 15,
                               ),
+                               Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Service ",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(":"),
