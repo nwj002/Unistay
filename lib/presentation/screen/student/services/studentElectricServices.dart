@@ -137,3 +137,19 @@ class _StudentElectricityServicesState
                                   ),
                                 ],
                               ),
+                              ServiceTextField(onServiceDecChange: (value) {
+                                serviceProvider.changeServiceDes(value);
+                              }),
+                              const SizedBox(
+                                height: 20,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        right: 0,
+                        left: 0,
+                        bottom: 22,
+                        child: FloatingActionButton(
+                          backgroundColor: Colors.orangeAccent,
