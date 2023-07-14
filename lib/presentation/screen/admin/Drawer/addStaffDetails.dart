@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:unistay/logic/modules/staff_model.dart';
 import 'package:unistay/logic/provider/staff_provider.dart';
+import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
 
 class AddStaffDetails extends StatefulWidget {
   @override
@@ -63,10 +64,10 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                   },
                   child: InkWell(
                       onTap: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => StaffDetails()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => StaffDetails()));
                       },
                       child: Text(
                         'OK',

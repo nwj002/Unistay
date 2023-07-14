@@ -9,3 +9,5 @@ const String forgotPasswordScreenRoute= '/forgotpasswordScreenRoute';
 //Admin
 
 const String addStaffDetailsScreenRoute = "/addStaffDetails";
+const String staffDetailsScreenRoute = "/staffDetails";
+
