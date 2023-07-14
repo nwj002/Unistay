@@ -75,3 +75,14 @@ class _StudentElectricityServicesState
                           isLightChecked = value!;
                         });
                       },
+                       item2Fun: (value) {
+                        setState(() {
+                          isPlugChecked = value!;
+                        });
+                      },
+                      item3Fun: (value) {
+                        setState(() {
+                          isFanChecked = value!;
+                        });
+                      },
+                    ),
