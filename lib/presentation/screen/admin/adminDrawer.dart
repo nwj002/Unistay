@@ -116,6 +116,7 @@ class AdminDrawer extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
+            //logout
             ListTile(
               title: Row(
                 children: [
@@ -135,7 +136,7 @@ class AdminDrawer extends StatelessWidget {
               onTap: () {
                 authService.signOut();
                 Navigator.pushNamedAndRemoveUntil(
-                    context, logInScreenRoute, (route) => false);
+                    context, logInScreenRoute, (route) => false);  //navigate to login screen
               },
             ),
             const SizedBox(width: 50, child: Divider()),
