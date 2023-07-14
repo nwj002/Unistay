@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/logic/modules/userData_model.dart';
 import 'package:unistay/logic/provider/service_provider.dart';
-import 'package:unistay/logic/services/auth_services/auth_services.dart';
+import 'package:unistay/logic/services/auth_services/auth_service.dart';
 import 'package:unistay/presentation/screen/student/services/widget/repairDeviceWidget.dart';
 import 'package:unistay/presentation/screen/student/services/widget/serviceTextField.dart';
 import 'package:unistay/presentation/screen/student/services/widget/userTable.dart';
@@ -35,7 +35,7 @@ class _StudentBathroomServicesState extends State<StudentBathroomServices> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Colors.orangeAccent,
         title: const Text("Electricity Service"),
       ),
       body: SingleChildScrollView(
@@ -151,7 +151,7 @@ class _StudentBathroomServicesState extends State<StudentBathroomServices> {
                   left: 0,
                   bottom: 22,
                   child: FloatingActionButton(
-                      backgroundColor: Colors.blue.shade900,
+                      backgroundColor: Colors.orangeAccent,
                       onPressed: () {
                         isShowerChecked
                             ? repairDeviceList.add('Shower')
