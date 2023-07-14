@@ -153,3 +153,25 @@ class _StudentElectricityServicesState
                         bottom: 22,
                         child: FloatingActionButton(
                           backgroundColor: Colors.orangeAccent,
+                            onPressed: () {
+                              isPlugChecked
+                                  ? repairDeviceList.add('Plug')
+                                  : null;
+                              isFanChecked ? repairDeviceList.add('Fan') : null;
+                              isLightChecked
+                                  ? repairDeviceList.add('Light')
+                                  : null;
+                              serviceProvider.changeName(
+                                  userData.first.firstName +
+                                      ' ' +
+                                      userData.first.lastName);
+                              serviceProvider
+                                  .changeRepairDeviceList(repairDeviceList);
+                              serviceProvider
+                                  .changeRoomNo(userData.first.roomNo);
+                              serviceProvider.changeStudentUid(user.uid);
+                              serviceProvider.changeServiceTitle('Electricity');
+                              serviceProvider.saveService();
+                              repairDeviceList.clear();
+                              Navigator.pop(context);
+                            },
