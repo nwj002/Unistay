@@ -86,3 +86,26 @@ class _StudentElectricityServicesState
                         });
                       },
                     ),
+                     Stack(children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 20, left: 18, right: 18, bottom: 50),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(width: 1),
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Service ",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
