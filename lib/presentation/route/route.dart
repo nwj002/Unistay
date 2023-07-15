@@ -5,6 +5,7 @@ import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/presentation/screen/admin/Drawer/addStaffDetails.dart';
 import 'package:unistay/presentation/screen/auth/forgotpasswordScreen.dart';
 import 'package:unistay/presentation/screen/auth/loginScreen.dart';
+import 'package:unistay/presentation/screen/student/detailspage/studentdetails.dart';
 
 class Routes {
   late int initScreen;
@@ -20,6 +21,10 @@ class Routes {
 
       case forgotPasswordScreenRoute:
         return MaterialPageRoute(builder: (context) => ForgotPasswordScreen());
+
+      case studentDetailScreenRoute:
+        return MaterialPageRoute(
+            builder: (context) => const StudentDetailScreen());
 
 
       case addStaffDetailsScreenRoute:
