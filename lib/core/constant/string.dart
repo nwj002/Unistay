@@ -3,6 +3,7 @@
 
 //Authentication
 const String logInScreenRoute = '/logInScreenRoute';
+
 const String forgotPasswordScreenRoute = '/forgotpasswordScreenRoute';
 
 
@@ -21,5 +22,6 @@ const String studentDetailScreenRoute = "/studentDetails";
 
 
 //admin
+const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
 const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
 const String staffDetailsScreenRoute = "/staffdetailsScreen";
