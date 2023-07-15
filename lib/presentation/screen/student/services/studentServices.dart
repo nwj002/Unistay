@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hostelapplication/core/constant/string.dart';
-import 'package:hostelapplication/presentation/screen/student/services/StudentPastService.dart';
-import 'package:hostelapplication/presentation/screen/student/studentDrawer.dart';
+import 'package:unistay/core/constant/string.dart';
+import 'package:unistay/presentation/screen/student/studentDrawer.dart';
+
 
 class StudentServicesScreen extends StatefulWidget {
   const StudentServicesScreen({Key? key}) : super(key: key);
@@ -44,10 +44,10 @@ class _StudentServicesScreenState extends State<StudentServicesScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orangeAccent,
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => StudentPastServiceScreen()));
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //         builder: (context) => StudentPastServiceScreen()));
         },
         child: Icon(Icons.comment),
       ),

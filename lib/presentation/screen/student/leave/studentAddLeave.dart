@@ -3,10 +3,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:unistay/core/constant/string.dart';
 
-import '../../../../core/constant/string.dart';
-import '../../../../logic/modules/userData_model.dart';
-import '../../../../logic/provider/leave_provider.dart';
+
+import 'package:unistay/logic/modules/userData_model.dart';
+import 'package:unistay/logic/provider/leave_provider.dart';
 
 class StudentAddLeave extends StatefulWidget {
   const StudentAddLeave({Key? key}) : super(key: key);
