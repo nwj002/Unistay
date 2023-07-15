@@ -3,6 +3,25 @@
 
 //Authentication
 const String logInScreenRoute = '/logInScreenRoute';
+const String registrationScreenRoute = '/registrationScreenRoute';
+
+
+//admin
+const String complaintListScreenRoute = '/AdminComplainListScreen';
+const String approveDenyComplainListRoute ='/AdminApproveDenyComplainListScreen';
+
+
+//student
+const String studentAddComplaintRoute = "/studentAddcomplaintscreen";
+const String electricitycomplaintscreenRoute = "/electricitycomplaint";
+const String studentComplaintListScreenRoute = "/studentComplaintListScreen";
+const String studentDetailScreenRoute = "/studentDetails";
+//drawer
+const String helpscreenRoute = "/help";
+
+const String logInScreenRoute = '/logInScreenRoute'
+const String registrationScreenRoute = '/registrationScreenRoute';
+
 
 const String forgotPasswordScreenRoute = '/forgotpasswordScreenRoute';
 
@@ -15,6 +34,7 @@ const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
 const String studentOtherServiceRoute = "/studentOtherServiceScreen";
 
 
+
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
 const String studentDashboardScreenRoute = "/studentdashboardScreen";
 
@@ -25,3 +45,4 @@ const String studentDetailScreenRoute = "/studentDetails";
 const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
 const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
 const String staffDetailsScreenRoute = "/staffdetailsScreen";
+
