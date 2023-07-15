@@ -3,11 +3,10 @@
 
 //Authentication
 const String logInScreenRoute = '/logInScreenRoute';
-const String forgotPasswordScreenRoute= '/forgotpasswordScreenRoute';
 
 
-//Admin
-
-const String addStaffDetailsScreenRoute = "/addStaffDetails";
-const String staffDetailsScreenRoute = "/staffDetails";
-
+//student
+const String studentRoomServiceRoute = "/studentRoomServiceScreen";
+const String studentMessServiceRoute = "/studentMessServiceScreen";
+const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
+const String studentOtherServiceRoute = "/studentOtherServiceScreen";

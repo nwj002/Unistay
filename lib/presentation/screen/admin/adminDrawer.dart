@@ -2,9 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:provider/provider.dart';
-import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
+
+import 'package:unistay/core/constant/string.dart';
+
 
 class AdminDrawer extends StatelessWidget {
   const AdminDrawer({Key? key}) : super(key: key);
@@ -29,9 +32,8 @@ class AdminDrawer extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 25,
-                          backgroundColor: Colors.orangeAccent,
+                          backgroundColor: Colors.blue.shade900,
                           child: Icon(Icons.account_circle_rounded),
-                          
                         ),
                         const SizedBox(
                           width: 15,
@@ -51,56 +53,12 @@ class AdminDrawer extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 50, child: Divider()),
-
-            ListTile(
-              title: Row(
-                children: [
-                  Icon(
-                    FontAwesomeIcons.plus,
-                    color: Colors.orangeAccent,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    'Add staff details',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, addStaffDetailsScreenRoute);
-                // Navigator.pop(context);
-              },
-            ),
-
-             ListTile(
-              title: Row(
-                children: [
-                  Icon(
-                    FontAwesomeIcons.file,
-                    color: Colors.orangeAccent,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    'Staff details',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-              onTap: () {
-                Navigator.pushNamed(context, staffDetailsScreenRoute);
-                // Navigator.pop(context);
-              },
-            ),
             ListTile(
               title: Row(
                 children: [
                   Icon(
                     FontAwesomeIcons.question,
-                    color: Colors.orangeAccent,
+                    color: Colors.blue.shade900,
                   ),
                   SizedBox(
                     width: 30,
@@ -113,16 +71,15 @@ class AdminDrawer extends StatelessWidget {
               ),
               onTap: () {
                 // Navigator.pushNamed(context, helpscreenRoute);
-                Navigator.pop(context);
+                // Navigator.pop(context);
               },
             ),
-            //logout
             ListTile(
               title: Row(
                 children: [
                   Icon(
                     FontAwesomeIcons.signOut,
-                    color: Colors.orangeAccent,
+                    color: Colors.blue.shade900,
                   ),
                   SizedBox(
                     width: 30,
@@ -136,7 +93,7 @@ class AdminDrawer extends StatelessWidget {
               onTap: () {
                 authService.signOut();
                 Navigator.pushNamedAndRemoveUntil(
-                    context, logInScreenRoute, (route) => false);  //navigate to login screen
+                    context, logInScreenRoute, (route) => false);
               },
             ),
             const SizedBox(width: 50, child: Divider()),
