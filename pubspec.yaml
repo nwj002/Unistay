@@ -28,27 +28,52 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter:
-    sdk: flutter
-
-
+ 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
-  firebase_core: ^2.14.0
-  firebase_auth: ^4.6.2
-  cloud_firestore: ^4.8.0
-  font_awesome_flutter: 10.1.0
-  intl: ^0.18.1
-  provider: ^6.0.5
-  email_auth: ^1.0.0
-  google_sign_in: ^6.1.4
-  image_picker: ^0.8.9
-  firebase_storage: ^11.2.3
-  get: ^4.3.8
-  google_nav_bar: ^5.0.6
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.0.15
+  firebase_core: ^1.18.0
+  firebase_auth: ^3.3.20
+  cloud_firestore: ^3.1.18
+  firebase_storage: ^10.2.18
   uuid: ^3.0.6
+  provider: ^6.0.3
+  rflutter_alert:
+  date_time_picker:
+  image_picker: ^0.8.5+3
+  file_picker:
+  image_downloader: ^0.31.0
+  file: ^6.1.4
+  auto_size_text: 3.0.0
+  cached_network_image: 3.2.1
+  flutter_animate: 4.1.1+1
+  flutter_cache_manager: 3.3.0
+  font_awesome_flutter: 10.1.0
+  from_css_color: 2.0.0
+  google_fonts: 4.0.3
+  intl: 0.17.0
+  json_path: 0.4.1
+  page_transition: 2.0.4
+  path_provider: 2.0.14
+  path_provider_android: 2.0.25
+  path_provider_foundation: 2.2.2
+  path_provider_platform_interface: 2.0.6
+  shared_preferences_android: 2.1.0
+  shared_preferences_ios: 2.1.1
+  shared_preferences_platform_interface: 2.2.0
+  shared_preferences_web: 2.1.0
+  smooth_page_indicator: 1.0.1
+  sqflite: 2.2.6
+  timeago: 3.2.2
+  url_launcher: 6.1.10
+  url_launcher_android: 6.0.27
+  url_launcher_ios: 6.1.4
+  url_launcher_platform_interface: 2.1.2
+  grouped_list: ^5.1.2
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +108,7 @@ flutter:
   assets:
     - Assets/Images/
     - assets/images/
+    - assets/onboard/
 
 
 
@@ -111,5 +137,11 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: Brazila
+      fonts:
+        - asset: assets/onboard/Cirka_regular.ttf
+        - asset: assets/onboard/Cirka_blod.otf
+        - asset: assets/onboard/Cirka_light.otf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
