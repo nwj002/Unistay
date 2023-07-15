@@ -22,9 +22,7 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const RegistrationScreen());
 
-      case studentDashboardScreenRoute:
-        return MaterialPageRoute(
-            builder: (context) => const StudentDashboardScreen());
+
 
       default:
         return MaterialPageRoute(
