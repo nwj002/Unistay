@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/presentation/screen/admin/Drawer/addStaffDetails.dart';
+import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
 import 'package:unistay/presentation/screen/auth/forgotpasswordScreen.dart';
 import 'package:unistay/presentation/screen/auth/loginScreen.dart';
 import 'package:unistay/presentation/screen/student/detailspage/studentdetails.dart';
@@ -30,6 +31,10 @@ class Routes {
       case addStaffDetailsScreenRoute:
         return MaterialPageRoute(builder: (context) => AddStaffDetails());
         
+
+      case staffDetailsScreenRoute:
+        return MaterialPageRoute(builder: (context) => StaffDetails());
+
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
