@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import '../modules/user_data_model.dart';
-import '../services/fireStoreServices/user_firestore_service.dart';
+import 'package:unistay/logic/modules/user_data_model.dart';
+import 'package:unistay/logic/services/fireStoreServices/user_firestore_service.dart';
 
 class UsereDataProvider with ChangeNotifier {
   final service = UserDataFirestoreService();
