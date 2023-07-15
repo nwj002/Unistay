@@ -19,6 +19,9 @@ const String studentDetailScreenRoute = "/studentDetails";
 //drawer
 const String helpscreenRoute = "/help";
 
+const String logInScreenRoute = '/logInScreenRoute'
+const String registrationScreenRoute = '/registrationScreenRoute';
+
 
 
 //student
