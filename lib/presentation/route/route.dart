@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/constant/string.dart';
 import '../screen/auth/logInScreen.dart';
 import '../screen/auth/registrationScreen.dart';
+import '../screen/student/studentDashboard.dart';
 
 class Routes {
   late int initScreen;
@@ -20,6 +21,10 @@ class Routes {
       case registrationScreenRoute:
         return MaterialPageRoute(
             builder: (context) => const RegistrationScreen());
+
+      case studentDashboardScreenRoute:
+        return MaterialPageRoute(
+            builder: (context) => const StudentDashboardScreen());
 
       default:
         return MaterialPageRoute(
