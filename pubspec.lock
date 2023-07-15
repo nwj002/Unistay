@@ -40,11 +40,7 @@ packages:
       sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "2.10.0"
-=======
     version: "2.11.0"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   auto_size_text:
     dependency: "direct main"
     description:
@@ -305,17 +301,10 @@ packages:
     dependency: "direct main"
     description:
       name: file_picker
-<<<<<<< HEAD
-      sha256: "9d6e95ec73abbd31ec54d0e0df8a961017e165aba1395e462e5b31ea0c165daf"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.3.1"
-=======
       sha256: b1729fc96627dd44012d0a901558177418818d6bd428df59dcfeb594e5f66432
       url: "https://pub.dev"
     source: hosted
     version: "5.3.2"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   file_selector_linux:
     dependency: transitive
     description:
@@ -788,11 +777,7 @@ packages:
       sha256: "8829d8a55c13fc0e37127c29fedf290c102f4e40ae94ada574091fe0ff96c917"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "1.8.2"
-=======
     version: "1.8.3"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   path_provider:
     dependency: "direct main"
     description:
@@ -853,17 +838,10 @@ packages:
     dependency: transitive
     description:
       name: petitparser
-<<<<<<< HEAD
-      sha256: "49392a45ced973e8d94a85fdb21293fbb40ba805fc49f2965101ae748a3683b4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.1.0"
-=======
       sha256: cb3798bef7fc021ac45b308f4b51208a152792445cce0448c9a4ba5879dd8750
       url: "https://pub.dev"
     source: hosted
     version: "5.4.0"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   platform:
     dependency: transitive
     description:
@@ -1124,11 +1102,7 @@ packages:
       sha256: eb6ac1540b26de412b3403a163d919ba86f6a973fe6cc50ae3541b80092fdcfb
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "0.4.16"
-=======
     version: "0.5.1"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   timeago:
     dependency: "direct main"
     description:
@@ -1264,26 +1238,15 @@ packages:
       sha256: "3c923e918918feeb90c4c9fdf1fe39220fa4c0e8e2c0fffaded174498ef86c49"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "3.0.1"
-=======
     version: "3.0.2"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   win32:
     dependency: transitive
     description:
       name: win32
-<<<<<<< HEAD
-      sha256: "5a751eddf9db89b3e5f9d50c20ab8612296e4e8db69009788d6c8b060a84191c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.4"
-=======
       sha256: dfdf0136e0aa7a1b474ea133e67cb0154a0acd2599c4f3ada3b49d38d38793ee
       url: "https://pub.dev"
     source: hosted
     version: "5.0.5"
->>>>>>> a448916bf7bc0bd6ada7b34b7acdaf943a0ec8ae
   xdg_directories:
     dependency: transitive
     description:
