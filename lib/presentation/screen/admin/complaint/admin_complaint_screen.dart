@@ -28,7 +28,7 @@ class _AdminComplaintScreenState extends State<AdminComplaintScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Colors.orange.shade300,
         title: const Text(
           'Complaint',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -79,7 +79,7 @@ class _AdminComplaintScreenState extends State<AdminComplaintScreen> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
-                                  color: Colors.blue.shade900),
+                                  color: Colors.orange.shade300),
                             ),
                           ),
                           SizedBox(

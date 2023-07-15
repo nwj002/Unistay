@@ -30,7 +30,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     }
   }
 
-  final colors = Color(0xff96C3E2);
+  final colors = Color.fromARGB(255, 213, 168, 43);
   @override
   Widget build(BuildContext context) {
     authService = Provider.of<AuthService>(context);
