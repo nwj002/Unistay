@@ -10,6 +10,7 @@ const String registrationScreenRoute = '/registrationScreenRoute';
 //admin
 const String complaintListScreenRoute = '/AdminComplainListScreen';
 const String approveDenyComplainListRoute ='/AdminApproveDenyComplainListScreen';
+const String addNoticeScreenRoute = '/adminAddNoticeScreenRoute';
 
 
 //student
