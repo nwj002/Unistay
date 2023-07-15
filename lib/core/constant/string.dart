@@ -17,7 +17,7 @@ const String studentOtherServiceRoute = "/studentOtherServiceScreen";
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
 const String studentDashboardScreenRoute = "/studentdashboardScreen";
 
-
+const String studentDetailScreenRoute = "/studentDetails";
 
 
 //admin
