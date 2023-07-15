@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:unistay/presentation/screen/auth/registration_screen.dart';
-
 import '../../core/constant/string.dart';
+import '../screen/admin/notice/add_notice_screen.dart';
 import '../screen/auth/logInScreen.dart';
 import '../screen/auth/registrationScreen.dart';
 import '../screen/student/Drawer/updatePassword.dart';
@@ -25,6 +24,9 @@ class Routes {
 
       case updatepasswordRoute:
         return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
+      case addNoticeScreenRoute:
+        return MaterialPageRoute(builder: (context) => AddNoticeScreen());
+
 
       default:
         return MaterialPageRoute(
