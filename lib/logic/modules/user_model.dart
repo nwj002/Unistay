@@ -7,3 +7,4 @@ class FireBaseUser {
     this.email,
   });
 }
+

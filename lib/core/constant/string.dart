@@ -7,3 +7,13 @@ const String registrationScreenRoute = '/registrationScreenRoute';
 
 
 
+
+
+//student
+const String studentRoomServiceRoute = "/studentRoomServiceScreen";
+const String studentMessServiceRoute = "/studentMessServiceScreen";
+const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
+const String studentOtherServiceRoute = "/studentOtherServiceScreen";
+
+//drawer
+const String updatepasswordRoute = "/updatepassword";
