@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:provider/provider.dart';
+import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
-import '../../../core/constant/string.dart';
-import '../../../service/fireStoreService/auth_service.dart';
+import 'package:unistay/core/constant/string.dart';
+
 
 class AdminDrawer extends StatelessWidget {
   const AdminDrawer({Key? key}) : super(key: key);
@@ -69,7 +70,7 @@ class AdminDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                Navigator.pushNamed(context, helpscreenRoute);
+                // Navigator.pushNamed(context, helpscreenRoute);
                 // Navigator.pop(context);
               },
             ),

@@ -24,6 +24,10 @@ class Routes {
 
       case updatepasswordRoute:
         return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
+<<<<<<< HEAD
+=======
+
+>>>>>>> dab521792960e73b959fb3c23e2c57cd7d32b518
 
       default:
         return MaterialPageRoute(
