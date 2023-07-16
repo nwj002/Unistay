@@ -112,3 +112,39 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            TableRow(
+                              children: [
+                                Padding(
+                                  padding: tablepadding,
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        'Date',
+                                        style: TextStyle(fontSize: 18),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: tablepadding,
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        service.time.day.toString() +
+                                            '/' +
+                                            service.time.month.toString() +
+                                            '/' +
+                                            service.time.year.toString(),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 18),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
