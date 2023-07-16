@@ -148,3 +148,30 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                         ),
                       ),
                     ),
+                     // Expanded(
+                    //   child: ListView.builder(
+                    //             itemCount: service.repairDeviceList.length,
+                    //             itemBuilder: (context, index) {
+                    //               return Text(service.repairDeviceList[index]);
+                    //             }
+                    //             ),
+                    // ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Service ",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        Text(": "),
+                        Text(
+                          service.serviceTitle,
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
