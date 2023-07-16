@@ -77,3 +77,20 @@ class PrivacyPolicyPage extends StatelessWidget {
     Text('Types of Data Collected'),
     SizedBox(height: 4.0),
     Text('Personal Data'),
+    SizedBox(height: 4.0),
+    Text(
+    'While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:',
+    ),
+    SizedBox(height: 4.0),
+    Text('- Email address'),
+    Text('- First name and last name'),
+    Text('- Phone number'),
+    SizedBox(height: 4.0),
+    Text('Usage Data'),
+    SizedBox(height: 4.0),
+    Text(
+    'Usage Data is collected automatically when using the Service.'),
+    SizedBox(height: 4.0),
+    Text(
+    'Usage Data may include information such as Your Device\'s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.'),
+    SizedBox(height: 4.0),
