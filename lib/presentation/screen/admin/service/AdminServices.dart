@@ -72,3 +72,24 @@ class _AdminServicesScreenState extends State<AdminServicesScreen> {
                               width: 70,
                             ),
                           ),
+                          SizedBox(
+                            height: 25,
+                            child: Text(
+                              textAlign: TextAlign.center,
+                              imagesText[index].toString(),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                  color: Colors.orangeAccent),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
