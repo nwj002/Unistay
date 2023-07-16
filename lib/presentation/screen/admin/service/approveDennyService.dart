@@ -233,3 +233,41 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                             ),
                           ),
                         ),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: () {
+                              serviceProvider.changeStatus(1, service.id);
+                              Navigator.pop(context);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.green[400],
+                                  borderRadius: const BorderRadius.only(
+                                      bottomRight: Radius.circular(20))),
+                              margin: const EdgeInsets.all(1),
+                              height: 50,
+                              child: const Center(
+                                child: Text(
+                                  'Approve',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
