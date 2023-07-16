@@ -36,3 +36,20 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        child: Table(
+                          // defaultColumnWidth: FixedColumnWidth(120.0),
+                          columnWidths: const {
+                            0: FixedColumnWidth(120),
+                            1: FlexColumnWidth(),
+                          },
+                          border: TableBorder.all(
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1,
+                          ),
