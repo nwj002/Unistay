@@ -93,3 +93,12 @@ class _AdminServicesScreenState extends State<AdminServicesScreen> {
                 },
               ),
             ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DeclineApproveServiceList(1),
+                  ),
+                );
+              },
