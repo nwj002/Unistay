@@ -175,3 +175,33 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                         ),
                       ],
                     ),
+                     Card(
+                      child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            service.repairDeviceList.toString(),
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.red,
+                                fontWeight: FontWeight.w700),
+                          )),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                            width: 2,
+                            color: const Color.fromARGB(157, 158, 158, 158)),
+                      ),
+                      child: Text(service.serviceDes),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
