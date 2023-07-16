@@ -66,3 +66,21 @@ class DeclineApproveServiceList extends StatelessWidget {
                                       fontSize: 20,
                                     ),
                                   ),
+                                   Text('Room - ${complaintList[index].roomNo}'),
+                                  Text(
+                                    complaintList[index].time.day.toString() +
+                                        '/' +
+                                        complaintList[index]
+                                            .time
+                                            .month
+                                            .toString() +
+                                        '/' +
+                                        complaintList[index]
+                                            .time
+                                            .year
+                                            .toString(),
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.grey),
+                                  ),
+                                ],
+                              ),
