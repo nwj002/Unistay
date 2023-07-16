@@ -19,3 +19,25 @@ class AdminPendingServiceListScreen extends StatelessWidget {
         ;
       },
     );
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+          backgroundColor: Colors.blue.shade900,
+          title: Text(
+            'Pending Services',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          )),
+      body: serviceList.length != 0
+          ? Container(
+              padding: EdgeInsets.all(8),
+              child: ListView.builder(
+                itemCount: serviceList.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ApproveDennyServiceSceen(
+                                  serviceList[index])));
+                    },
