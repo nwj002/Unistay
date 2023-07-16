@@ -139,3 +139,18 @@ class PrivacyPolicyPage extends StatelessWidget {
     Text('- For business transfers: We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.'),
     Text('- For other purposes: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.'),
     SizedBox(height: 16.0),
+      // Add more sections as needed
+      Text(
+        'Contact Us',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      SizedBox(height: 8.0),
+      Text('If you have any questions about this Privacy Policy, You can contact us:'),
+      SizedBox(height: 4.0),
+      Text('- By email: unistay@hostel.com'),
+    ],
+    ),
+        ),
+    );
+  }
+}
