@@ -45,3 +45,30 @@ class _AdminServicesScreenState extends State<AdminServicesScreen> {
                   crossAxisSpacing: 4.0,
                   mainAxisSpacing: 4.0,
                 ),
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  AdminPendingServiceListScreen(
+                                      imagesText[index])));
+                    },
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                          side: BorderSide(
+                            color: Colors.black,
+                            width: 0.1,
+                          )),
+                      elevation: 1,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Image.asset(
+                              images[index],
+                              height: 70,
+                              width: 70,
+                            ),
+                          ),
