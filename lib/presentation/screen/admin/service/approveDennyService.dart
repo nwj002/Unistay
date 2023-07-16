@@ -205,3 +205,31 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: GestureDetector(
+                            onDoubleTap: () {
+                              serviceProvider.changeStatus(2, service.id);
+                              Navigator.pop(context);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.red[400],
+                                  borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(20))),
+                              margin: const EdgeInsets.all(1),
+                              height: 50,
+                              child: const Center(
+                                child: Text(
+                                  'Denny',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
