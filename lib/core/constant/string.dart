@@ -22,7 +22,7 @@ const String helpscreenRoute = "/help";
 // const String logInScreenRoute = '/logInScreenRoute'
 // const String registrationScreenRoute = '/registrationScreenRoute';
 const String approveDennyLeaveScreenRoute = '/approveDennyLeaveScreen';
-
+const String privacyRoute="/privacypolicy";
 
 
 //student

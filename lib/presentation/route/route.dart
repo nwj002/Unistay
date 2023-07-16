@@ -6,6 +6,7 @@ import '../../core/constant/string.dart';
 import '../screen/auth/logInScreen.dart';
 import '../screen/auth/registrationScreen.dart';
 import '../screen/student/Drawer/updatePassword.dart';
+import '../screen/student/leave/studentAddLeave.dart';
 
 class Routes {
   late int initScreen;
@@ -31,6 +32,9 @@ class Routes {
 
       case studentLeaveScreenRoute:
         return MaterialPageRoute(builder: (context) => const StudentAddLeave());
+      case privacyRoute:
+        return MaterialPageRoute(builder: (context) =>  PrivacyPolicyPage());
+
 
 
       default:
