@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:unistay/core/constant/string.dart';
-
 import 'package:unistay/core/constant/text_controller.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
