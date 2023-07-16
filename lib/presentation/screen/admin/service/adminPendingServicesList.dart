@@ -117,3 +117,23 @@ class AdminPendingServiceListScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
+          : Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/nodata.jpg',
+                    height: 250,
+                    width: 250,
+                  ),
