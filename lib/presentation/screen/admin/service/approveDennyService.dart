@@ -53,3 +53,34 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                             style: BorderStyle.solid,
                             width: 1,
                           ),
+                          children: [
+                            TableRow(
+                              children: [
+                                Padding(
+                                  padding: tablepadding,
+                                  child: Column(
+                                    children: const [
+                                      Center(
+                                        child: Text(
+                                          'Name',
+                                          style: TextStyle(fontSize: 18),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: tablepadding,
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        service.name,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 18),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
