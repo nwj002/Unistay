@@ -15,3 +15,24 @@ class ApproveDennyServiceSceen extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),)
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 18.0,
+                left: 18,
+                right: 18,
+                bottom: 50,
+              ),
+              child: Container(
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(width: 2, color: Colors.grey),
+                ),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 15,
+                    ),
