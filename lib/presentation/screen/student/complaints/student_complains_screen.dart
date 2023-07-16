@@ -1,77 +1,78 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:unistay/presentation/screen/student/complaints/student_add_complaints.dart';
+import 'package:unistay/presentation/screen/student/complaints/student_past_complain.dart';
+import 'package:unistay/presentation/screen/student/student_drawer.dart';
 
-import '../../../../core/constant/string.dart';
-import '../studentDrawer.dart';
 
-
-class StudentServicesScreen extends StatefulWidget {
-  const StudentServicesScreen({Key? key}) : super(key: key);
+class StudentComplainScreen extends StatefulWidget {
+  const StudentComplainScreen({Key? key}) : super(key: key);
 
   @override
-  State<StudentServicesScreen> createState() => _StudentServicesScreenState();
+  State<StudentComplainScreen> createState() => _StudentComplainScreenState();
 }
-class _StudentServicesScreenState extends State<StudentServicesScreen> {
+
+class _StudentComplainScreenState extends State<StudentComplainScreen> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
   List<String> images = [
-    'assets/images/room.png',
-    'assets/images/dinner.png',
-    'assets/images/bath.png',
-    'assets/images/thunderbolt.png',
+    'assets/images/water-bottle.png',
+    'assets/images/electrical-energy.png',
+    'assets/images/chef.png',
+    'assets/images/insects.png',
     'assets/images/other.png'
   ];
   List<String> imagesText = [
-    'Room',
-    'Mess',
-    'Bathroom',
+    'Water',
     'Electricity',
+    'Worker',
+    'Bugs & Insects',
     'Other'
   ];
-  List navigatorRoute = [
-    studentRoomServiceRoute,
-    studentMessServiceRoute,
-    studentBathRoomServiceRoute,
-    studentElectricityServiceRoute,
-    studentOtherServiceRoute,
-  ];
-   @override
+  @override
   Widget build(BuildContext context) {
+    User? user = auth.currentUser;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
           backgroundColor: Colors.orangeAccent,
           title: const Text(
-            'Services',
+            'Complain',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           )),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.orangeAccent,
         onPressed: () {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => StudentPastServiceScreen()));
+                  builder: (context) => StudentPastComplaintScreen()));
         },
+        backgroundColor: Colors.orangeAccent,
         child: Icon(Icons.comment),
       ),
       drawer: const StudentDrawer(),
       body: Container(
-        color: Colors.white,
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
           itemCount: images.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            crossAxisSpacing: 4.0,
-            mainAxisSpacing: 4.0,
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0,
           ),
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, navigatorRoute[index]);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => StudentAddComplaintScreen(
+                            imagesText[index], user!.uid)));
               },
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                     side: BorderSide(color: Colors.black, width: 0.1)),
+                color: Colors.white,
                 elevation: 1,
                 child: Column(
                   children: [

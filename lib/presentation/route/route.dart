@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:unistay/presentation/screen/auth/registration_screen.dart';
 
 import '../../core/constant/string.dart';
 import '../screen/auth/logInScreen.dart';
+import '../screen/auth/registrationScreen.dart';
+import '../screen/student/Drawer/updatePassword.dart';
+import '../screen/student/leave/studentAddLeave.dart';
 
 class Routes {
   late int initScreen;
@@ -15,6 +19,23 @@ class Routes {
     switch (settings.name) {
       case logInScreenRoute:
         return MaterialPageRoute(builder: (context) => LogInScreen());
+      case registrationScreenRoute:
+        return MaterialPageRoute(
+            builder: (context) => const RegistrationScreen());
+
+      case registrationScreenRoute:
+        return MaterialPageRoute(
+            builder: (context) => const RegistrationScreen());
+
+      case updatepasswordRoute:
+        return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
+
+      case studentLeaveScreenRoute:
+        return MaterialPageRoute(builder: (context) => const StudentAddLeave());
+      case privacyRoute:
+        return MaterialPageRoute(builder: (context) =>  PrivacyPolicyPage());
+
+
 
       default:
         return MaterialPageRoute(
