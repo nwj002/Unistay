@@ -41,3 +41,29 @@ class AdminPendingServiceListScreen extends StatelessWidget {
                               builder: (context) => ApproveDennyServiceSceen(
                                   serviceList[index])));
                     },
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                        side: BorderSide(
+                          color: Colors.black,
+                          width: 0.1,
+                        ),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      serviceList[index].name,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 20,
+                                      ),
+                                    ),
