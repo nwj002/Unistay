@@ -102,3 +102,26 @@ class _AdminServicesScreenState extends State<AdminServicesScreen> {
                   ),
                 );
               },
+               child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Apporoved Services',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.check_circle,
+                        color: Colors.green,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
