@@ -85,3 +85,35 @@ class AdminPendingServiceListScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                Spacer(),
+                                serviceList[index].status == 0
+                                    ? Text(
+                                        'Pending',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Color.fromARGB(
+                                            255,
+                                            214,
+                                            108,
+                                            22,
+                                          ),
+                                        ),
+                                      )
+                                    : serviceList[index].status == 1
+                                        ? Text('Approved',
+                                            style: TextStyle(
+                                              color: Colors.green,
+                                              fontWeight: FontWeight.bold,
+                                            ))
+                                        : Text(
+                                            'Declined',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.red,
+                                            ),
+                                          ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                              ],
+                            ),
