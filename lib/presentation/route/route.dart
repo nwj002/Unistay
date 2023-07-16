@@ -5,7 +5,8 @@ import 'package:unistay/presentation/screen/auth/registration_screen.dart';
 import '../../core/constant/string.dart';
 import '../screen/auth/logInScreen.dart';
 import '../screen/auth/registrationScreen.dart';
-import '../screen/student/Drawer/updatePassword.dart';
+import '../screen/student/Drawer/privacypolicy.dart';
+
 import '../screen/student/leave/studentAddLeave.dart';
 
 class Routes {
