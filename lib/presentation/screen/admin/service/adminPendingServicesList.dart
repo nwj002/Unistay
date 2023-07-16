@@ -67,3 +67,21 @@ class AdminPendingServiceListScreen extends StatelessWidget {
                                         fontSize: 20,
                                       ),
                                     ),
+                                    Text('Room - ${serviceList[index].roomNo}'),
+                                    Text(
+                                      serviceList[index].time.day.toString() +
+                                          '/' +
+                                          serviceList[index]
+                                              .time
+                                              .month
+                                              .toString() +
+                                          '/' +
+                                          serviceList[index]
+                                              .time
+                                              .year
+                                              .toString(),
+                                      style: TextStyle(
+                                          fontSize: 12, color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
