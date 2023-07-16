@@ -1,3 +1,9 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:unistay/logic/modules/service_model.dart';
+import 'package:unistay/logic/provider/service_provider.dart';
+
 class ApproveDennyServiceSceen extends StatelessWidget {
   ApproveDennyServiceSceen(this.service, {Key? key}) : super(key: key);
   Service service;
