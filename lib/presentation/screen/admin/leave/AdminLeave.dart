@@ -104,40 +104,7 @@ class _AdminLeaveScreenState extends State<AdminLeaveScreen> {
                                     DeclineApproveLeaveListScreen(1),
                               ),
                             );
-                          },
-                          child: Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Apporoved Leaves',
-                                    style: TextStyle(
-                                      color: Colors.green,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Icon(
-                                    Icons.check_circle,
-                                    color: Colors.green,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    DeclineApproveLeaveListScreen(2),
-                              ),
-                            );
-                          },
+
                           child: Card(
                             child: Padding(
                               padding: const EdgeInsets.all(12.0),
