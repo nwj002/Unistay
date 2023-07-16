@@ -84,3 +84,38 @@ class DeclineApproveServiceList extends StatelessWidget {
                                   ),
                                 ],
                               ),
+                              Spacer(),
+                              complaintList[index].status == 0
+                                  ? Text(
+                                      'Pending',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color.fromARGB(
+                                          255,
+                                          214,
+                                          108,
+                                          22,
+                                        ),
+                                      ),
+                                    )
+                                  : complaintList[index].status == 1
+                                      ? Text('Approved',
+                                          style: TextStyle(
+                                            color: Colors.green,
+                                            fontWeight: FontWeight.bold,
+                                          ))
+                                      : Text(
+                                          'Declined',
+                                          style: TextStyle(
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
