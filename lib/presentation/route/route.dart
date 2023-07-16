@@ -29,6 +29,9 @@ class Routes {
       case updatepasswordRoute:
         return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
 
+      case studentLeaveScreenRoute:
+        return MaterialPageRoute(builder: (context) => const StudentAddLeave());
+
 
       default:
         return MaterialPageRoute(
