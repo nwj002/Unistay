@@ -84,3 +84,31 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            TableRow(
+                              children: [
+                                Padding(
+                                  padding: tablepadding,
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        'Room No.',
+                                        style: TextStyle(fontSize: 18),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: tablepadding,
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        service.roomNo,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 18),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
