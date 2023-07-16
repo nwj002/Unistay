@@ -1,3 +1,8 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:unistay/logic/modules/service_model.dart';
+
 class DeclineApproveServiceList extends StatelessWidget {
   DeclineApproveServiceList(this.serviceStatus, {Key? key}) : super(key: key);
   int serviceStatus;
@@ -119,3 +124,57 @@ class DeclineApproveServiceList extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
+                          Divider(),
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(
+                                87,
+                                238,
+                                238,
+                                238,
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(
+                                width: 1,
+                                color: const Color.fromARGB(
+                                  157,
+                                  158,
+                                  158,
+                                  158,
+                                ),
+                              ),
+                            ),
+                            child: Text(
+                              complaintList[index].serviceDes,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
+          : Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/nodata.jpg',
+                    height: 250,
+                    width: 250,
+                  ),
+                  Text(
+                    'No Complaints :)',
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+    );
+  }
+}

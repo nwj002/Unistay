@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:unistay/presentation/screen/admin/adminDrawer.dart';
 import 'package:unistay/presentation/screen/admin/service/adminPendingServicesList.dart';
+import 'package:unistay/presentation/screen/admin/service/declinedApprovedServiceList.dart';
 
 class AdminServicesScreen extends StatefulWidget {
   const AdminServicesScreen({Key? key}) : super(key: key);
