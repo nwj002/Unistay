@@ -7,7 +7,7 @@ class AdminPendingServiceListScreen extends StatelessWidget {
 
   String serviceTitle;
 
-@override
+  @override
   Widget build(BuildContext context) {
     List<Service> serviceList = [];
     final serviceListRaw = Provider.of<List<Service>?>(context);
@@ -137,3 +137,16 @@ class AdminPendingServiceListScreen extends StatelessWidget {
                     height: 250,
                     width: 250,
                   ),
+                  Text(
+                    'No Complaints :)',
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+    );
+  }
+}
