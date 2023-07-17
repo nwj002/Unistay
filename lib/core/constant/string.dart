@@ -3,8 +3,8 @@
 
 //Authentication
 const String logInScreenRoute = '/logInScreenRoute';
-
-const String forgotPasswordScreenRoute = '/forgotpasswordScreenRoute';
+const String registrationScreenRoute = '/registrationScreenRoute';
+const String forgotPasswordScreenRoute = '/forgotPasswordScreenRoute';
 
 
 //student
@@ -13,15 +13,6 @@ const String studentMessServiceRoute = "/studentMessServiceScreen";
 const String studentElectricityServiceRoute = "/studentElectricityServiceScreen";
 const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
 const String studentOtherServiceRoute = "/studentOtherServiceScreen";
-
-
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
-const String studentDashboardScreenRoute = "/studentdashboardScreen";
 
-const String studentDetailScreenRoute = "/studentDetails";
-
-
-//admin
-const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
-const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
-const String staffDetailsScreenRoute = "/staffdetailsScreen";
+const String privacyPolicyRoute = "/privacyPolicyScreen";

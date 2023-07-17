@@ -308,8 +308,8 @@ class _StudentAddLeaveState extends State<StudentAddLeave> {
                                         userData.first.id);
 
                                     leaveProvider.saveLeave();
-                                    Navigator.pushNamed(context,
-                                        studentDashboardScreenRoute);
+                                    // Navigator.pushNamed(context,
+                                    //     studentDashboardScreenRoute);
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(

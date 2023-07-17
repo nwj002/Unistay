@@ -5,13 +5,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:unistay/core/constant/string.dart';
+import 'package:unistay/logic/modules/user_data_model.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
-
-import '../../../core/constant/string.dart';
-import '../../../logic/modules/userData_model.dart';
-import '../../../logic/services/auth_services/auth_service.dart';
-import 'Drawer/my_complain.dart';
-import 'Drawer/myleave.dart';
+import 'package:unistay/presentation/screen/student/Drawer/my_complain.dart';
 
 class StudentDrawer extends StatelessWidget {
   const StudentDrawer({Key? key}) : super(key: key);
@@ -110,7 +107,7 @@ class StudentDrawer extends StatelessWidget {
                 children: [
                   Icon(
                     FontAwesomeIcons.book,
-                    color: Colors.orangeAccent,
+                    color: Colors.blue.shade900,
                   ),
                   SizedBox(
                     width: 30,
@@ -122,10 +119,10 @@ class StudentDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => Mycomplaints()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Mycomplaints()));
               },
             ),
             const SizedBox(width: 50, child: Divider()),
@@ -134,7 +131,7 @@ class StudentDrawer extends StatelessWidget {
                 children: [
                   Icon(
                     CupertinoIcons.person_crop_circle_badge_minus,
-                    color: Colors.orangeAccent,
+                    color: Colors.blue.shade900,
                   ),
                   SizedBox(
                     width: 30,
@@ -145,10 +142,10 @@ class StudentDrawer extends StatelessWidget {
                   ),
                 ],
               ),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyLeave()));
-              },
+              // onTap: () {
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (context) => MyLeave()));
+              // },
             ),
             const SizedBox(width: 50, child: Divider()),
             ListTile(
@@ -156,7 +153,7 @@ class StudentDrawer extends StatelessWidget {
                 children: [
                   Icon(
                     CupertinoIcons.wrench,
-                    color: Colors.orangeAccent,
+                    color: Colors.blue.shade900,
                   ),
                   SizedBox(
                     width: 30,
@@ -167,12 +164,12 @@ class StudentDrawer extends StatelessWidget {
                   ),
                 ],
               ),
-              onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => Myservicesrequest()));
-              },
+              // onTap: () {
+              //   Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //           builder: (context) => Myservicesrequest()));
+              // },
             ),
             const SizedBox(width: 50, child: Divider()),
             ListTile(
@@ -180,7 +177,7 @@ class StudentDrawer extends StatelessWidget {
                 children: [
                   Icon(
                     FontAwesomeIcons.question,
-                    color: Colors.orangeAccent,
+                    color: Colors.blue.shade900,
                   ),
                   SizedBox(
                     width: 30,
@@ -191,9 +188,9 @@ class StudentDrawer extends StatelessWidget {
                   ),
                 ],
               ),
-              onTap: () {
-                // Navigator.pushNamed(context, helpscreenRoute);
-              },
+              // onTap: () {
+              //   Navigator.pushNamed(context, helpscreenRoute);
+              // },
             ),
             Divider(),
             ListTile(
@@ -201,7 +198,7 @@ class StudentDrawer extends StatelessWidget {
                 children: [
                   Icon(
                     FontAwesomeIcons.signOut,
-                    color: Colors.orangeAccent,
+                    color: Colors.blue.shade900,
                   ),
                   SizedBox(
                     width: 30,

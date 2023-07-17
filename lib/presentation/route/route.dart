@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:unistay/core/constant/string.dart';
-import 'package:unistay/presentation/screen/admin/Drawer/addStaffDetails.dart';
-import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
-import 'package:unistay/presentation/screen/admin/adminDashboard.dart';
 import 'package:unistay/presentation/screen/auth/forgotpasswordScreen.dart';
-import 'package:unistay/presentation/screen/auth/loginScreen.dart';
-import 'package:unistay/presentation/screen/student/detailspage/studentdetails.dart';
+import 'package:unistay/presentation/screen/auth/registration_screen.dart';
+import 'package:unistay/presentation/screen/student/Drawer/privacypolicy.dart';
+
+import '../../core/constant/string.dart';
+import '../screen/auth/logInScreen.dart';
+
+import '../screen/student/leave/studentAddLeave.dart';
 
 class Routes {
   late int initScreen;
@@ -20,27 +20,26 @@ class Routes {
     switch (settings.name) {
       case logInScreenRoute:
         return MaterialPageRoute(builder: (context) => LogInScreen());
-
+      
       case forgotPasswordScreenRoute:
-        return MaterialPageRoute(builder: (context) => ForgotPasswordScreen());
-
-
-      case adminDashbordScreenRoute:
         return MaterialPageRoute(
-            builder: (context) => const AdminDashbordScreen());
-      
-      
-      case studentDetailScreenRoute:
+            builder: (context) => const ForgotPasswordScreen());
+
+
+      case registrationScreenRoute:
         return MaterialPageRoute(
-            builder: (context) => const StudentDetailScreen());
+            builder: (context) => const RegistrationScreen());
+
+      // case updatepasswordRoute:
+      //   return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
+
+      case studentLeaveScreenRoute:
+        return MaterialPageRoute(builder: (context) => const StudentAddLeave());
+
+      case privacyPolicyRoute:
+        return MaterialPageRoute(builder: (context) =>  PrivacyPolicyPage());
 
 
-      case addStaffDetailsScreenRoute:
-        return MaterialPageRoute(builder: (context) => AddStaffDetails());
-        
-
-      case staffDetailsScreenRoute:
-        return MaterialPageRoute(builder: (context) => StaffDetails());
 
       default:
         return MaterialPageRoute(
