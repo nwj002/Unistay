@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hostelapplication/core/constant/string.dart';
-import 'package:hostelapplication/presentation/screen/student/services/StudentPastService.dart';
-import 'package:hostelapplication/presentation/screen/student/studentDrawer.dart';
+
+import '../../../../core/constant/string.dart';
+import '../studentDrawer.dart';
+
 
 class StudentServicesScreen extends StatefulWidget {
   const StudentServicesScreen({Key? key}) : super(key: key);
