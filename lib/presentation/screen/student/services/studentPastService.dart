@@ -116,3 +116,14 @@ class StudentPastServiceScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            child: Text(
+                              serviceList[index].serviceDes,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
