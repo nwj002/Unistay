@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:unistay/logic/provider/leave_provider.dart';
+import 'package:unistay/logic/provider/service_provider.dart';
+import 'package:unistay/logic/services/fireStoreServices/leave_firestore_service.dart';
+import 'package:unistay/logic/services/fireStoreServices/service_firestore_service.dart';
+
 import 'package:unistay/logic/provider/complaint_provider.dart';
 import 'package:unistay/logic/services/fireStoreServices/complaint_firestore_service.dart';
+
 import 'package:unistay/presentation/route/route.dart';
 import 'firebase_options.dart';
 import 'logic/provider/user_data_provider.dart';
@@ -39,6 +46,39 @@ Future<void> main() async {
         ChangeNotifierProvider.value(
           value: ComplaintProvider(),
         ),
+
+
+
+        StreamProvider.value(
+          value: ServiceFirestoreService().getService(),
+          initialData: null,
+        ),
+
+        StreamProvider.value(
+          value: LeaveFirestoreService().getLeave(),
+          initialData: null,
+        ),
+
+        // StreamProvider.value(
+        //   value: NoticeFirestoreService().getNotice(),
+        //   initialData: null,
+        // ),
+
+        // StreamProvider.value(
+        //   value: ComplaintFirestoreService().getComplaintForAdmin(),
+        //   initialData: null,
+        // ),
+
+        ChangeNotifierProvider.value(
+          value: LeaveProvider(),
+        ),
+
+        ChangeNotifierProvider.value(
+          value: ServiceProvider(),
+        ),
+
+
+
 
 
         ChangeNotifierProvider.value(

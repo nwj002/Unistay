@@ -13,6 +13,16 @@ const String studentMessServiceRoute = "/studentMessServiceScreen";
 const String studentElectricityServiceRoute = "/studentElectricityServiceScreen";
 const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
 const String studentOtherServiceRoute = "/studentOtherServiceScreen";
+
+
+
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
 
-const String privacyPolicyRoute = "/privacyPolicyScreen";
+const String studentDetailScreenRoute = "/studentDetails";
+
+
+//admin
+const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
+const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
+const String staffDetailsScreenRoute = "/staffdetailsScreen";
+

@@ -161,10 +161,9 @@ class _LogInScreenState extends State<LogInScreen> {
                           height: 20,
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             Navigator.pushNamed(
-                                      context, forgotPasswordScreenRoute);
-
+                                context, forgotPasswordScreenRoute);
                           },
                           child: Text(
                             "Forgot Password ? ",
@@ -228,7 +227,6 @@ class _LogInScreenState extends State<LogInScreen> {
                                 onTap: () {
                                   emailController.clear();
                                   passwordController.clear();
-                                  
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -289,10 +287,7 @@ class _LogInScreenState extends State<LogInScreen> {
       await authService.signInWithEmailAndPassword(
           emailController.text.toString(), passwordController.text.toString());
       if (emailController.text.toString() == 'admin@gmail.com') {
-       
-      } else {
-        
-      }
+      } else {}
     } catch (e) {
       return alertBox(context, e);
     }
