@@ -26,3 +26,27 @@ class StudentPastServiceScreen extends StatelessWidget {
         backgroundColor: Colors.orangeAccent,
         title: Text('Past Service'),
       ),
+       body: serviceList.length != 0
+          ? Container(
+              padding: EdgeInsets.all(8),
+              child: ListView.builder(
+                itemCount: serviceList.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    serviceList[index].name,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 20,
+                                    ),
+                                  ),
