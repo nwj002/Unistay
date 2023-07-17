@@ -127,3 +127,25 @@ class StudentPastServiceScreen extends StatelessWidget {
                 },
               ),
             )
+            : Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/nodata.jpg',
+                    height: 250,
+                    width: 250,
+                  ),
+                  Text(
+                    'No Complaints :)',
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+    );
+  }
+}
