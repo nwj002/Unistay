@@ -1,3 +1,5 @@
+import 'package:flutter/animation.dart';
+
 class AnimationInfo {
   final AnimationTrigger trigger;
   final List<AnimationEffect> effects;
@@ -16,4 +18,20 @@ class VisibilityEffect extends AnimationEffect {
   final Duration duration;
 
   VisibilityEffect({required this.duration});
+}
+
+class FadeEffect extends AnimationEffect {
+  final Curve curve;
+  final Duration delay;
+  final Duration duration;
+  final double begin;
+  final double end;
+
+   FadeEffect({
+    required this.curve,
+    required this.delay,
+    required this.duration,
+    required this.begin,
+    required this.end,
+  });
 }
