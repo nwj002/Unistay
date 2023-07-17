@@ -91,3 +91,28 @@ class StudentPastServiceScreen extends StatelessWidget {
                                 width: 5,
                               ),
                             ],
+                            ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Divider(),
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(
+                                87,
+                                238,
+                                238,
+                                238,
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                              border: Border.all(
+                                width: 1,
+                                color: const Color.fromARGB(
+                                  157,
+                                  158,
+                                  158,
+                                  158,
+                                ),
+                              ),
+                            ),
