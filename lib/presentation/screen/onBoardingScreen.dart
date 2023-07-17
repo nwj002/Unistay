@@ -11,3 +11,9 @@ enum AnimationTrigger {
   onActionTrigger,
 }
 abstract class AnimationEffect {}
+
+class VisibilityEffect extends AnimationEffect {
+  final Duration duration;
+
+  VisibilityEffect({required this.duration});
+}
