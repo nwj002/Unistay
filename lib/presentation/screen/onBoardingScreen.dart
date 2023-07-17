@@ -51,3 +51,20 @@ class MoveEffect extends AnimationEffect {
     required this.end,
   });
 }
+
+
+class ScaleEffect extends AnimationEffect {
+  final Curve curve;
+  final Duration delay;
+  final Duration duration;
+  final Offset begin;
+  final Offset end;
+
+  ScaleEffect({
+    required this.curve,
+    required this.delay,
+    required this.duration,
+    required this.begin,
+    required this.end,
+  });
+}
