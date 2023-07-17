@@ -38,7 +38,7 @@ class StudentDrawer extends StatelessWidget {
             // _createHeader(),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, studentDetailScreenRoute);
+                // Navigator.pushNamed(context, studentDetailScreenRoute);
               },
               title: Padding(
                 padding: const EdgeInsets.all(8.0),
