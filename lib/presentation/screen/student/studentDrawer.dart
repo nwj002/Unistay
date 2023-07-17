@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 import '../../../core/constant/string.dart';
 import '../../../logic/modules/userData_model.dart';
@@ -42,7 +43,7 @@ class StudentDrawer extends StatelessWidget {
             // _createHeader(),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, studentDetailScreenRoute);
+                // Navigator.pushNamed(context, studentDetailScreenRoute);
               },
               title: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -121,10 +122,10 @@ class StudentDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Mycomplaints()));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => Mycomplaints()));
               },
             ),
             const SizedBox(width: 50, child: Divider()),
@@ -167,10 +168,10 @@ class StudentDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Myservicesrequest()));
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => Myservicesrequest()));
               },
             ),
             const SizedBox(width: 50, child: Divider()),
@@ -191,7 +192,7 @@ class StudentDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                Navigator.pushNamed(context, helpscreenRoute);
+                // Navigator.pushNamed(context, helpscreenRoute);
               },
             ),
             Divider(),
