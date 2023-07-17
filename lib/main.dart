@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hostelapplication/logic/provider/complaint_provider.dart';
-import 'package:hostelapplication/logic/provider/leave_provider.dart';
-import 'package:hostelapplication/logic/provider/notice_provider.dart';
-import 'package:hostelapplication/logic/provider/service_provider.dart';
-import 'package:hostelapplication/logic/provider/userData_provider.dart';
-import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
-import 'package:hostelapplication/logic/service/fireStoreServices/complaint_firestore_service.dart';
-import 'package:hostelapplication/logic/service/fireStoreServices/leave_firestore_service.dart';
-import 'package:hostelapplication/logic/service/fireStoreServices/notice_firestore_service.dart';
-import 'package:hostelapplication/logic/service/fireStoreServices/service_firestore_service.dart';
-import 'package:hostelapplication/logic/service/fireStoreServices/user_firestore_services.dart';
-import 'package:hostelapplication/presentation/router/route.dart';
-import 'package:hostelapplication/presentation/screen/onBordingScreen.dart';
-import 'package:hostelapplication/presentation/screen/onboard_model.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:unistay/presentation/route/route.dart';
 
 import 'firebase_options.dart';
+import 'logic/provider/complaint_provider.dart';
+import 'logic/provider/leave_provider.dart';
+import 'logic/provider/service_provider.dart';
+import 'logic/provider/user_data_provider.dart';
+import 'logic/services/auth_services/auth_service.dart';
+import 'logic/services/fireStoreServices/complaint_firestore_service.dart';
+import 'logic/services/fireStoreServices/leave_firestore_service.dart';
+import 'logic/services/fireStoreServices/service_firestore_service.dart';
+import 'logic/services/fireStoreServices/user_firestore_service.dart';
 
 Future<void> main() async {
   int? initScreen;
