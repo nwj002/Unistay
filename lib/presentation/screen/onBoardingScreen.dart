@@ -35,3 +35,19 @@ class FadeEffect extends AnimationEffect {
     required this.end,
   });
 }
+
+class MoveEffect extends AnimationEffect {
+  final Curve curve;
+  final Duration delay;
+  final Duration duration;
+  final Offset begin;
+  final Offset end;
+
+  MoveEffect({
+    required this.curve,
+    required this.delay,
+    required this.duration,
+    required this.begin,
+    required this.end,
+  });
+}
