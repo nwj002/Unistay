@@ -19,3 +19,10 @@ class StudentPastServiceScreen extends StatelessWidget {
         ;
       },
     );
+    return Scaffold(
+      backgroundColor:
+          serviceList.length != 0 ? Colors.grey[200] : Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
+        title: Text('Past Service'),
+      ),
