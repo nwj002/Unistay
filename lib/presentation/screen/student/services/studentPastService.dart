@@ -1,3 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:unistay/logic/modules/service_model.dart';
+import 'package:unistay/logic/services/auth_services/auth_service.dart';
+
 class StudentPastServiceScreen extends StatelessWidget {
   StudentPastServiceScreen({Key? key}) : super(key: key);
 
