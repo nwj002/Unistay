@@ -1,9 +1,10 @@
-//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
-import '../../modules/user_model.dart';
-import 'auth_error.dart';
+
+
+import 'package:unistay/logic/modules/user_model.dart';
+import 'package:unistay/logic/services/auth_services/authError.dart';
 
 class AuthService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;

@@ -18,3 +18,12 @@ const String studentComplaintListScreenRoute = "/studentComplaintListScreen";
 const String studentDetailScreenRoute = "/studentDetails";
 //drawer
 const String helpscreenRoute = "/help";
+
+
+
+//student
+const String studentRoomServiceRoute = "/studentRoomServiceScreen";
+const String studentMessServiceRoute = "/studentMessServiceScreen";
+const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
+const String studentOtherServiceRoute = "/studentOtherServiceScreen";
+
