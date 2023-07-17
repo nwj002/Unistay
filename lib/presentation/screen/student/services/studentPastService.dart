@@ -65,3 +65,29 @@ class StudentPastServiceScreen extends StatelessWidget {
                                   ),
                                 ],
                               ),
+                               Spacer(),
+                              serviceList[index].status == 0
+                                  ? Text(
+                                      'Pending',
+                                      style: TextStyle(
+                                        color: Color.fromARGB(
+                                          255,
+                                          214,
+                                          108,
+                                          22,
+                                        ),
+                                      ),
+                                    )
+                                  : serviceList[index].status == 1
+                                      ? Text('Approved',
+                                          style: TextStyle(color: Colors.green))
+                                      : Text(
+                                          'Declined',
+                                          style: TextStyle(
+                                            color: Colors.red,
+                                          ),
+                                        ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                            ],
