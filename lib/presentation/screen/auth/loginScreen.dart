@@ -19,6 +19,7 @@ class _LogInScreenState extends State<LogInScreen> {
   bool showLoading = false;
   bool showAlert = false;
 
+//global key
   final _formkey = GlobalKey<FormState>();
   final colors = Color.fromARGB(255, 230, 176, 95);
   bool showPassword = true;
