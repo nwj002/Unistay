@@ -283,6 +283,7 @@ class _LogInScreenState extends State<LogInScreen> {
       return null;
   }
 
+//login by role
   loginByRole() async {
     try {
       await authService.signInWithEmailAndPassword(
