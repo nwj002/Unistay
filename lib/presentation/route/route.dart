@@ -55,6 +55,7 @@ class Routes {
       case addStaffDetailsScreenRoute:
         return MaterialPageRoute(builder: (context) => AddStaffDetails());
 
+//staff details
       case staffDetailsScreenRoute:
         return MaterialPageRoute(builder: (context) => StaffDetails());
 
