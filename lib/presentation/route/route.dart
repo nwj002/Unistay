@@ -29,6 +29,7 @@ class Routes {
       case onboardingScreen:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
 
+//login screen
       case logInScreenRoute:
         return MaterialPageRoute(builder: (context) => LogInScreen());
       case registrationScreenRoute:
