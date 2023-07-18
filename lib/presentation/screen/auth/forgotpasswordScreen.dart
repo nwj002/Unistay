@@ -16,6 +16,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void resetPassword() async {
+    //exception handling
     try {
       await _auth.sendPasswordResetEmail(email: _emailCtrl.text);
 //snackbar
