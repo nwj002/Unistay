@@ -1,5 +1,7 @@
 // routes in flow
 
+const String splashScreenRoute = '/';
+
 
 //Authentication
 const String logInScreenRoute = '/logInScreenRoute';
