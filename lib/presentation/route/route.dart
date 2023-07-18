@@ -25,6 +25,7 @@ class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
 
+//onboarding screen
       case onboardingScreen:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
 
