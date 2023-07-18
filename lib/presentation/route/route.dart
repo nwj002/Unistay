@@ -9,6 +9,7 @@ import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
 import 'package:unistay/presentation/screen/admin/adminDashboard.dart';
 
 import 'package:unistay/presentation/screen/auth/loginScreen.dart';
+import 'package:unistay/presentation/screen/onBoardingScreen.dart';
 import 'package:unistay/presentation/screen/student/detailspage/studentdetails.dart';
 
 
@@ -23,6 +24,10 @@ class Routes {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+
+      case onboardingScreen:
+        return MaterialPageRoute(builder: (context) => OnboardingScreen());
+
       case logInScreenRoute:
         return MaterialPageRoute(builder: (context) => LogInScreen());
       case registrationScreenRoute:

@@ -16,11 +16,7 @@ const String studentMessServiceRoute = "/studentMessServiceScreen";
 const String studentElectricityServiceRoute = "/studentElectricityServiceScreen";
 const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
 const String studentOtherServiceRoute = "/studentOtherServiceScreen";
-
-
-
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
-
 const String studentDetailScreenRoute = "/studentDetails";
 
 
