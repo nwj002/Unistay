@@ -1,3 +1,4 @@
+//user model
 class FireBaseUser {
   final String uid;
   final String? email;
