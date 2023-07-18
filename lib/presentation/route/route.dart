@@ -51,6 +51,7 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const StudentDetailScreen());
 
+//add staff details
       case addStaffDetailsScreenRoute:
         return MaterialPageRoute(builder: (context) => AddStaffDetails());
 
