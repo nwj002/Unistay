@@ -34,7 +34,7 @@ class _LogInScreenState extends State<LogInScreen> {
           child: Stack(
             children: [
               Image.asset(
-                'assets/onboard/image_001.png',
+                'assets/onboard/mainbg.jpg',
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,
