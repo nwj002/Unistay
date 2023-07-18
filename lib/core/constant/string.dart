@@ -26,7 +26,7 @@ const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
 const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
 const String staffDetailsScreenRoute = "/staffdetailsScreen";
 
-
+//end routes
 String studentname = "Student Name";
 String studentenroll = "Student Enroll";
 String hostelname = "Hostel Name";
