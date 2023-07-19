@@ -26,6 +26,8 @@ class ErrorHangling {
       case "user-not-found":
         errorMessage = "User not found.\nPlease Register yourself !";
         break;
+
+        //for too many requests
       case "ERROR_TOO_MANY_REQUESTS":
         errorMessage = "Too many requests. Try again later.";
         break;
