@@ -28,6 +28,7 @@ class VisibilityEffect extends AnimationEffect {
   VisibilityEffect({required this.duration});
 }
 
+//fade effect
 class FadeEffect extends AnimationEffect {
   final Curve curve;
   final Duration delay;
