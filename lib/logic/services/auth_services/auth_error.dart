@@ -11,6 +11,8 @@ class ErrorHangling {
       case "weak-password":
         errorMessage = "Your password is too short !!";
         break;
+
+        //for invalid email
       case "invalid-email":
         errorMessage = "Please enter valid E-mail.";
         break;
