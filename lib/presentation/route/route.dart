@@ -21,7 +21,7 @@ class Routes {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     initScreen = prefs.getInt("initScreen")!;
   }
-
+//generate route
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
 
