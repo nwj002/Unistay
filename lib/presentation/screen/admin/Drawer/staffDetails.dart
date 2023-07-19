@@ -56,7 +56,7 @@ class _StaffDetailsState extends State<StaffDetails> {
                         String imageUrl = document['imageUrl']; //image url
 
                         return MouseRegion(
-                          cursor: SystemMouseCursors.click,
+                          cursor: SystemMouseCursors.click, //cursor
                           child: InkWell(
                             onTap: () {
                               // Handle button tap
