@@ -120,7 +120,7 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen>
     with TickerProviderStateMixin {
        final animationsMap = {
-
+//animationmap
     'imageOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -403,7 +403,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           begin: 0,
           end: 1,
         ),
-        MoveEffect(
+        MoveEffect(  
           curve: Curves.elasticOut,
           delay: 550.ms,
           duration: 900.ms,
