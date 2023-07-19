@@ -15,6 +15,7 @@ class AnimationInfo {
 
   AnimationInfo({required this.trigger, required this.effects});
 }
+//enum
 enum AnimationTrigger {
   onPageLoad,
   onTap,
