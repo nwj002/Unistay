@@ -44,6 +44,7 @@ class FadeEffect extends AnimationEffect {
   });
 }
 
+//move effect
 class MoveEffect extends AnimationEffect {
   final Curve curve;
   final Duration delay;
