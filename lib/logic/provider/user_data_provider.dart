@@ -36,6 +36,7 @@ class UsereDataProvider with ChangeNotifier {
     _firstName = value;
   }
 
+//change lastname
   void changeLastName(String value) {
     _lastName = value;
   }
