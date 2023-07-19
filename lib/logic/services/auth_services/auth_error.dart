@@ -1,4 +1,4 @@
-
+//Error handling
 class ErrorHangling {
    late String errorMessage;
   throwErrorMesg({required String errorCode}) {
