@@ -36,6 +36,7 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const RegistrationScreen());
 
+//registration
       case registrationScreenRoute:
         return MaterialPageRoute(
             builder: (context) => const RegistrationScreen());
