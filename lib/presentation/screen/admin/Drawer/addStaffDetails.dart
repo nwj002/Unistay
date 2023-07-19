@@ -151,7 +151,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
       },
     );
   }
-
+//pick image
   pickImage(ImageSource imageType) async {
     try {
       final photo = await ImagePicker().pickImage(source: imageType);
