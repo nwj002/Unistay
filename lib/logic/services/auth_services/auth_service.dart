@@ -77,6 +77,7 @@ class AuthService {
     return await _firebaseAuth.signOut();
   }
 
+//forgot password
   Future forgotPassword( {required email}) async {
     return _firebaseAuth!.sendPasswordResetEmail(email: email);
     
