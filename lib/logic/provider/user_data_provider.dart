@@ -77,6 +77,7 @@ class UsereDataProvider with ChangeNotifier {
     service.saveUser(newUserData);
   }
 
+//delete user data
   void deleteUserData(userId) {
     service.removeUser(userId);
   }
