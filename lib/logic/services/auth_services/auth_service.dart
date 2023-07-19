@@ -46,6 +46,7 @@ class AuthService {
 //create user with email and password
   Future<FireBaseUser?> createUserWithEmailAndPassword(
       String email, String password) async {
+        //exception
     try {
       final credential = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -57,6 +58,8 @@ class AuthService {
     }
   }
 
+
+//add user to firestore
   Future<void> addUserToFirestore(
       {uid, firstname, lastname, roomNo, email, enrollment}) {
     return _db.collection('User').doc(uid).set({
