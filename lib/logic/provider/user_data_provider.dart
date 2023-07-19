@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:unistay/logic/modules/user_data_model.dart';
 import 'package:unistay/logic/services/fireStoreServices/user_firestore_service.dart';
 
+//entends changenotifier class
 class UsereDataProvider with ChangeNotifier {
   final service = UserDataFirestoreService();
   late String _id;
