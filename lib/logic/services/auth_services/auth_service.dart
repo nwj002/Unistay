@@ -31,6 +31,7 @@ class AuthService {
 //sign in with email and password
   Future<FireBaseUser?> signInWithEmailAndPassword(
       String email, String password) async {
+        //exception handling for user credential
     try {
       final credential = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
