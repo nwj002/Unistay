@@ -21,6 +21,8 @@ class ErrorHangling {
       case "wrong-password":
         errorMessage = "Please enter currect password.";
         break;
+
+        //for user not found
       case "user-not-found":
         errorMessage = "User not found.\nPlease Register yourself !";
         break;
