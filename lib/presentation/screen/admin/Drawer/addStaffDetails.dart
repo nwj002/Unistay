@@ -119,6 +119,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
     }
   }
 
+//imagepicker
   void imagePickerOption() {
     showDialog(
       context: context,
