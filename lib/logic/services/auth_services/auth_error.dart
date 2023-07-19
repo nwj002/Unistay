@@ -35,6 +35,6 @@ class ErrorHangling {
       default:
         errorMessage = "Process failed. Please try again.";
     }
-    return errorMessage;
+    return errorMessage; //return error message
   }
 }
