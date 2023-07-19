@@ -3,6 +3,7 @@ class ErrorHangling {
    late String errorMessage;
   throwErrorMesg({required String errorCode}) {
     switch (errorCode) {
+      //for same email
        case "email-already-in-use":
         errorMessage = "This e-mail address is already in use, please use a different e-mail address.";
         break;
