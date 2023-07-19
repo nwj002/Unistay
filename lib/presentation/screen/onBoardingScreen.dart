@@ -20,6 +20,8 @@ enum AnimationTrigger {
   onHover,
   onActionTrigger,
 }
+
+//abstract
 abstract class AnimationEffect {}
 
 //visibilityeffect
