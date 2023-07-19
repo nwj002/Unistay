@@ -135,7 +135,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                   Navigator.pop(context); // Close the dialog
                 },
                 icon: Icon(Icons.image),
-                label: Text("Gallery"),
+                label: Text("Gallery"), //gallery
               ),
               ElevatedButton.icon( //elevated button
                 onPressed: () {
