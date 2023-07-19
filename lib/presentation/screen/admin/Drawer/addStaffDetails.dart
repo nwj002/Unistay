@@ -137,7 +137,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                 icon: Icon(Icons.image),
                 label: Text("Gallery"),
               ),
-              ElevatedButton.icon(
+              ElevatedButton.icon( //elevated button
                 onPressed: () {
                   pickImage(ImageSource.camera);
                   Navigator.pop(context); // Close the dialog
