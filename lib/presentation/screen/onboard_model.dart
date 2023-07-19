@@ -15,6 +15,7 @@ class SplashModel {
 
   void initState(BuildContext context) {}
 
+//dispose
   void dispose() {}
 
   /// Action blocks are added here.
