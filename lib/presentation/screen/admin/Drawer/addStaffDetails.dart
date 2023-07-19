@@ -39,6 +39,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
         _isSaving = true;
       });
 
+//exception handling
       try {
         await _staffViewModel.addStaff(staff, pickedImage!);
 
