@@ -52,7 +52,7 @@ class _StaffDetailsState extends State<StaffDetails> {
                       },
                       itemBuilder: (BuildContext context, int index) {
                         DocumentSnapshot document = snapshot.data!.docs[index];
-                        String name = document['name'];
+                        String name = document['name'];  //name
                         String imageUrl = document['imageUrl']; //image url
 
                         return MouseRegion(
