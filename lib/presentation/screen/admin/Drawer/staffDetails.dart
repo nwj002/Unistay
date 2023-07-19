@@ -38,7 +38,7 @@ class _StaffDetailsState extends State<StaffDetails> {
                 stream:
                     FirebaseFirestore.instance.collection('staffs').snapshots(),
                 builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                    AsyncSnapshot<QuerySnapshot> snapshot) {  //snapshot
                   if (snapshot.hasData) {
                     return ListView.separated(
                       // Use ListView.separated instead of ListView.builder
