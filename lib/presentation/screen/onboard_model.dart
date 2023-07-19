@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//splash model
 class SplashModel {
   ///  State fields for stateful widgets in this page.
 
