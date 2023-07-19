@@ -7,6 +7,7 @@ class ErrorHangling {
        case "email-already-in-use":
         errorMessage = "This e-mail address is already in use, please use a different e-mail address.";
         break;
+        //for weak password
       case "weak-password":
         errorMessage = "Your password is too short !!";
         break;
