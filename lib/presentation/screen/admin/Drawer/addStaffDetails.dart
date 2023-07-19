@@ -24,7 +24,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
     final String address = _addressController.text;
     final String department = _departmentController.text;
     final int phonenumber = int.tryParse(_phonenumberController.text) ?? 0;
-
+//condition
     if (name.isNotEmpty &&
         address.isNotEmpty &&
         phonenumber > 0 &&
