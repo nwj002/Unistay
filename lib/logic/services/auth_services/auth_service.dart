@@ -15,6 +15,7 @@ class AuthService {
     return  _firebaseAuth.currentUser;
   }
 
+//firebase user
   FireBaseUser? _userFromFirebase(auth.User? user) {
     if (user == null) {
       return null;
