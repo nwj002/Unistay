@@ -76,6 +76,7 @@ class ScaleEffect extends AnimationEffect {
     required this.end,
   });
 }
+//animation class
 
 extension AnimationExtensions on Widget {
   Widget animateOnPageLoad(AnimationInfo animationInfo) {
