@@ -22,6 +22,7 @@ enum AnimationTrigger {
 }
 abstract class AnimationEffect {}
 
+//visibilityeffect
 class VisibilityEffect extends AnimationEffect {
   final Duration duration;
 
