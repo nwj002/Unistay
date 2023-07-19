@@ -60,7 +60,7 @@ class MoveEffect extends AnimationEffect {
   });
 }
 
-
+//scale effect
 class ScaleEffect extends AnimationEffect {
   final Curve curve;
   final Duration delay;
