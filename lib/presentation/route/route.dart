@@ -14,7 +14,7 @@ import 'package:unistay/presentation/screen/student/detailspage/studentdetails.d
 
 
 
-
+//routes
 class Routes {
   late int initScreen;
   Future<void> checkForOnBordScreen() async {
