@@ -16,6 +16,8 @@ class ErrorHangling {
       case "invalid-email":
         errorMessage = "Please enter valid E-mail.";
         break;
+
+        //for wrong password
       case "wrong-password":
         errorMessage = "Please enter currect password.";
         break;
