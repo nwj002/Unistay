@@ -43,6 +43,7 @@ class AuthService {
     }
   }
 
+//create user with email and password
   Future<FireBaseUser?> createUserWithEmailAndPassword(
       String email, String password) async {
     try {
