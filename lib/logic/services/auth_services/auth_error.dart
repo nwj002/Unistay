@@ -31,6 +31,7 @@ class ErrorHangling {
       case "ERROR_TOO_MANY_REQUESTS":
         errorMessage = "Too many requests. Try again later.";
         break;
+        //default
       default:
         errorMessage = "Process failed. Please try again.";
     }
