@@ -69,7 +69,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => StaffDetails()));
+                                builder: (context) => StaffDetails()));  // navigation
                       },
                       child: Text(
                         'OK',
