@@ -143,7 +143,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                   Navigator.pop(context); // Close the dialog
                 },
                 icon: Icon(Icons.camera),
-                label: Text("Camera"),
+                label: Text("Camera"), //camera
               ),
             ],
           ),
