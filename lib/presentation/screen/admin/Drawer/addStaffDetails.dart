@@ -48,6 +48,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
         _addressController.clear();
         _departmentController.clear();
 
+//dialog box
         showDialog(
           context: context,
           builder: (context) {
