@@ -58,6 +58,7 @@ class UsereDataProvider with ChangeNotifier {
     _mobileNo = value;
   }
 
+//change user image
   void changeUserimage(String value) {
     _userimage = value;
   }
