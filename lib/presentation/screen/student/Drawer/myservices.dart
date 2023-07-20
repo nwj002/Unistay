@@ -83,3 +83,9 @@ class MyServiceListModel extends StatelessWidget {
   String servicedesc;
   Function deleteservice;
   @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 8.0, left: 5, right: 5, bottom: 10),
+        child: Card(
+          shape:
