@@ -97,3 +97,9 @@ class MyServiceListModel extends StatelessWidget {
                 padding: const EdgeInsets.only(
                     top: 18.0, left: 18, right: 18, bottom: 5),
                 child: Container(
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 2, color: Colors.grey),
+                  ),
