@@ -140,6 +140,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           begin: 0,
           end: 1,
         ),
+        //move effect
         MoveEffect(
           curve: Curves.elasticOut,
           delay: 50.ms,
