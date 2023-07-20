@@ -153,3 +153,18 @@ class MyServiceListModel extends StatelessWidget {
                           ),
                         ],
                       ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                              width: 2,
+                              color: Color.fromARGB(157, 158, 158, 158)),
+                        ),
+                        child: Text(servicedesc),
+                      ),
