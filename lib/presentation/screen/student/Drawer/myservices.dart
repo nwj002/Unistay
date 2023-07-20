@@ -11,3 +11,14 @@ class Myservicesrequest extends StatelessWidget {
         servicesList.add(element);
       }
       ;
+      });
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.orangeAccent,
+            title: Text(
+              "My Service Request",
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
