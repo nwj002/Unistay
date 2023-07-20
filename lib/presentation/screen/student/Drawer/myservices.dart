@@ -1,5 +1,6 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/logic/modules/service_model.dart';
@@ -7,7 +8,8 @@ import 'package:unistay/logic/provider/service_provider.dart';
 
 class Myservicesrequest extends StatelessWidget {
   const Myservicesrequest({Key? key}) : super(key: key);
- @override
+
+  @override
   Widget build(BuildContext context) {
     final FirebaseAuth auth = FirebaseAuth.instance;
     List<Service> servicesList = [];
@@ -18,7 +20,7 @@ class Myservicesrequest extends StatelessWidget {
         servicesList.add(element);
       }
       ;
-      });
+    });
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.orangeAccent,
@@ -29,14 +31,14 @@ class Myservicesrequest extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             )),
-            body: servicesList != []
+        body: servicesList != []
             ? Padding(
                 padding: EdgeInsets.all(8),
                 child: ListView.builder(
                   itemCount: servicesList.length,
                   itemBuilder: (context, index) {
                     return MyServiceListModel(
-                       servicedate: servicesList[index].time,
+                      servicedate: servicesList[index].time,
                       repaireddevicelist: servicesList[index].repairDeviceList,
                       servicedesc: servicesList[index].serviceDes,
                       deleteservice: () {
@@ -53,7 +55,7 @@ class Myservicesrequest extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                              )
+                              ),
                               TextButton(
                                 child: Text(
                                   "Delete",
@@ -73,7 +75,7 @@ class Myservicesrequest extends StatelessWidget {
                   },
                 ),
               )
-               : Center(
+            : Center(
                 child: CircularProgressIndicator(),
               ));
   }
@@ -85,7 +87,7 @@ class MyServiceListModel extends StatelessWidget {
       required this.repaireddevicelist,
       required this.servicedesc,
       required this.deleteservice});
-        DateTime servicedate;
+  DateTime servicedate;
   List repaireddevicelist;
   String servicedesc;
   Function deleteservice;
@@ -125,7 +127,7 @@ class MyServiceListModel extends StatelessWidget {
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.bold),
                               ),
-                                Text(": "),
+                              Text(": "),
                               Text(
                                 servicedate.day.toString() +
                                     '/' +
@@ -204,7 +206,7 @@ class MyServiceListModel extends StatelessWidget {
                                         fontSize: 18,
                                         fontWeight: FontWeight.w700),
                                   ),
-                                      ),
+                                ),
                               ),
                             ),
                           ),
