@@ -8,6 +8,10 @@ import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 import '../../../core/constant/string.dart';
 
+import 'package:unistay/core/constant/string.dart';
+
+
+
 class AdminDrawer extends StatelessWidget {
   const AdminDrawer({Key? key}) : super(key: key);
 
@@ -69,7 +73,7 @@ class AdminDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                Navigator.pushNamed(context, helpscreenRoute);
+                // Navigator.pushNamed(context, helpscreenRoute);
                 // Navigator.pop(context);
               },
             ),

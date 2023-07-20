@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:unistay/core/constant/string.dart';
 
-import '../../../core/constant/text_controller.dart';
-import '../../../logic/services/auth_services/auth_service.dart';
+import 'package:unistay/core/constant/text_controller.dart';
+import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -158,6 +159,22 @@ class _LogInScreenState extends State<LogInScreen> {
                         ),
                         const SizedBox(
                           height: 20,
+                        ),
+                        InkWell(
+                          onTap: (){
+                            Navigator.pushNamed(
+                                      context, forgotPasswordScreenRoute);
+
+                          },
+                          child: Text(
+                            "Forgot Password ? ",
+                            style: TextStyle(
+                              color: Colors.white,
+                              letterSpacing: 2,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 30,

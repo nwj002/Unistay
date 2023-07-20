@@ -3,8 +3,13 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 
 
+
 import 'package:unistay/logic/modules/user_model.dart';
 import 'package:unistay/logic/services/auth_services/authError.dart';
+
+import 'package:unistay/logic/modules/user_model.dart';
+
+import 'authError.dart';
 
 class AuthService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
@@ -63,7 +68,13 @@ class AuthService {
     });
   }
 
+//Logout
   Future<void> signOut() async {
     return await _firebaseAuth.signOut();
+  }
+
+  Future forgotPassword( {required email}) async {
+    return _firebaseAuth!.sendPasswordResetEmail(email: email);
+    
   }
 }
