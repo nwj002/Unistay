@@ -168,3 +168,13 @@ class MyServiceListModel extends StatelessWidget {
                         ),
                         child: Text(servicedesc),
                       ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                deleteservice();
+                              },
