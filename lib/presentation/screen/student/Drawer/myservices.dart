@@ -103,3 +103,18 @@ class MyServiceListModel extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(width: 2, color: Colors.grey),
                   ),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Date ",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
