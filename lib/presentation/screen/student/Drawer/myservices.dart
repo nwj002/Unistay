@@ -71,3 +71,10 @@ class Myservicesrequest extends StatelessWidget {
               ));
   }
 }
+
+class MyServiceListModel extends StatelessWidget {
+  MyServiceListModel(
+      {required this.servicedate,
+      required this.repaireddevicelist,
+      required this.servicedesc,
+      required this.deleteservice});
