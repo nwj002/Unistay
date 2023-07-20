@@ -78,3 +78,8 @@ class MyServiceListModel extends StatelessWidget {
       required this.repaireddevicelist,
       required this.servicedesc,
       required this.deleteservice});
+        DateTime servicedate;
+  List repaireddevicelist;
+  String servicedesc;
+  Function deleteservice;
+  @override
