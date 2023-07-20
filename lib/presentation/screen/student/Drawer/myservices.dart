@@ -52,3 +52,17 @@ class Myservicesrequest extends StatelessWidget {
                                   "Delete",
                                   style: TextStyle(color: Colors.red),
                                 ),
+                                onPressed: () {
+                                  serviceProvider
+                                      .deleteService(servicesList[index].id);
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              )
