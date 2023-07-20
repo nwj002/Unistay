@@ -89,3 +89,11 @@ class MyServiceListModel extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0, left: 5, right: 5, bottom: 10),
         child: Card(
           shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          color: const Color.fromARGB(157, 241, 241, 241),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 18.0, left: 18, right: 18, bottom: 5),
+                child: Container(
