@@ -118,3 +118,17 @@ class MyServiceListModel extends StatelessWidget {
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.bold),
                               ),
+                                Text(": "),
+                              Text(
+                                servicedate.day.toString() +
+                                    '/' +
+                                    servicedate.month.toString() +
+                                    '/' +
+                                    servicedate.year.toString(),
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
