@@ -34,3 +34,12 @@ class Myservicesrequest extends StatelessWidget {
                       servicedesc: servicesList[index].serviceDes,
                       deleteservice: () {
                         showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            content: Text("Are you sure you want to delete ?"),
+                            actions: [
+                              TextButton(
+                                child: Text(
+                                  "Cancel",
+                                  style: TextStyle(color: Colors.black),
+                                ),
