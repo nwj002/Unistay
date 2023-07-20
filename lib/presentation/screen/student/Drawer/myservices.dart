@@ -178,3 +178,22 @@ class MyServiceListModel extends StatelessWidget {
                               onTap: () {
                                 deleteservice();
                               },
+                              child: Container(
+                                margin: const EdgeInsets.only(
+                                    left: 1, right: 1, bottom: 2),
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Colors.red[400],
+                                  borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(20),
+                                      bottomRight: Radius.circular(20)),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    'Remove',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700),
+                                  ),
