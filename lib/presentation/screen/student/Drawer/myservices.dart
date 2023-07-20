@@ -46,3 +46,9 @@ class Myservicesrequest extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
+                              )
+                              TextButton(
+                                child: Text(
+                                  "Delete",
+                                  style: TextStyle(color: Colors.red),
+                                ),
