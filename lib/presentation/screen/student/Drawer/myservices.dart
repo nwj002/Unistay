@@ -29,3 +29,8 @@ class Myservicesrequest extends StatelessWidget {
                   itemCount: servicesList.length,
                   itemBuilder: (context, index) {
                     return MyServiceListModel(
+                       servicedate: servicesList[index].time,
+                      repaireddevicelist: servicesList[index].repairDeviceList,
+                      servicedesc: servicesList[index].serviceDes,
+                      deleteservice: () {
+                        showDialog(
