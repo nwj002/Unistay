@@ -43,3 +43,6 @@ class Myservicesrequest extends StatelessWidget {
                                   "Cancel",
                                   style: TextStyle(color: Colors.black),
                                 ),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
