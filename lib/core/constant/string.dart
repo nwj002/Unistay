@@ -39,7 +39,7 @@ const String studentOtherServiceRoute = "/studentOtherServiceScreen";
 
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
 
-const String studentDetailScreenRoute = "/studentDetails";
+// const String studentDetailScreenRoute = "/studentDetails";
 
 
 //admin

@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unistay/presentation/screen/auth/registration_screen.dart';
 import 'package:unistay/presentation/screen/student/Drawer/privacypolicy.dart';
-
-
-import '../../core/constant/string.dart';
-import '../screen/auth/logInScreen.dart';
-import '../screen/auth/registrationScreen.dart';
-import '../screen/student/leave/studentAddLeave.dart';
-
-
 import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/presentation/screen/admin/Drawer/addStaffDetails.dart';
 import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
