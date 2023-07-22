@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:unistay/core/constant/string.dart';
-
 import 'package:unistay/core/constant/text_controller.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
@@ -161,10 +159,10 @@ class _LogInScreenState extends State<LogInScreen> {
                           height: 20,
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             Navigator.pushNamed(
-                                      context, forgotPasswordScreenRoute);
-
+                                context, forgotPasswordScreenRoute
+                            );
                           },
                           child: Text(
                             "Forgot Password ? ",
@@ -228,7 +226,6 @@ class _LogInScreenState extends State<LogInScreen> {
                                 onTap: () {
                                   emailController.clear();
                                   passwordController.clear();
-                                  
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -289,10 +286,7 @@ class _LogInScreenState extends State<LogInScreen> {
       await authService.signInWithEmailAndPassword(
           emailController.text.toString(), passwordController.text.toString());
       if (emailController.text.toString() == 'admin@gmail.com') {
-       
-      } else {
-        
-      }
+      } else {}
     } catch (e) {
       return alertBox(context, e);
     }
