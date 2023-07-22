@@ -38,7 +38,7 @@ class _StaffDetailsState extends State<StaffDetails> {
                 stream:
                     FirebaseFirestore.instance.collection('staffs').snapshots(),
                 builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                    AsyncSnapshot<QuerySnapshot> snapshot) {  //snapshot
                   if (snapshot.hasData) {
                     return ListView.separated(
                       // Use ListView.separated instead of ListView.builder
@@ -52,11 +52,11 @@ class _StaffDetailsState extends State<StaffDetails> {
                       },
                       itemBuilder: (BuildContext context, int index) {
                         DocumentSnapshot document = snapshot.data!.docs[index];
-                        String name = document['name'];
-                        String imageUrl = document['imageUrl'];
+                        String name = document['name'];  //name
+                        String imageUrl = document['imageUrl']; //image url
 
                         return MouseRegion(
-                          cursor: SystemMouseCursors.click,
+                          cursor: SystemMouseCursors.click, //cursor
                           child: InkWell(
                             onTap: () {
                               // Handle button tap
