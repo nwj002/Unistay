@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'complaints/student_complains_screen.dart';
 import 'notice/student_notice_screen.dart';
 
 class StudentDashboardScreen extends StatefulWidget {
