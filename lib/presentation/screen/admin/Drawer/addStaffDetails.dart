@@ -24,7 +24,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
     final String address = _addressController.text;
     final String department = _departmentController.text;
     final int phonenumber = int.tryParse(_phonenumberController.text) ?? 0;
-
+//condition
     if (name.isNotEmpty &&
         address.isNotEmpty &&
         phonenumber > 0 &&
@@ -39,6 +39,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
         _isSaving = true;
       });
 
+//exception handling
       try {
         await _staffViewModel.addStaff(staff, pickedImage!);
 
@@ -47,6 +48,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
         _addressController.clear();
         _departmentController.clear();
 
+//dialog box
         showDialog(
           context: context,
           builder: (context) {
@@ -67,7 +69,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => StaffDetails()));
+                                builder: (context) => StaffDetails()));  // navigation
                       },
                       child: Text(
                         'OK',
@@ -77,7 +79,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
             );
           },
         );
-      } catch (error) {
+      } catch (error) {  //error
         showDialog(
           context: context,
           builder: (context) {
@@ -117,6 +119,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
     }
   }
 
+//imagepicker
   void imagePickerOption() {
     showDialog(
       context: context,
@@ -132,15 +135,15 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                   Navigator.pop(context); // Close the dialog
                 },
                 icon: Icon(Icons.image),
-                label: Text("Gallery"),
+                label: Text("Gallery"), //gallery
               ),
-              ElevatedButton.icon(
+              ElevatedButton.icon( //elevated button
                 onPressed: () {
                   pickImage(ImageSource.camera);
                   Navigator.pop(context); // Close the dialog
                 },
                 icon: Icon(Icons.camera),
-                label: Text("Camera"),
+                label: Text("Camera"), //camera
               ),
             ],
           ),
@@ -148,7 +151,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
       },
     );
   }
-
+//pick image
   pickImage(ImageSource imageType) async {
     try {
       final photo = await ImagePicker().pickImage(source: imageType);

@@ -11,14 +11,16 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  //controller
   final _emailCtrl = TextEditingController();
   final _formkey = GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void resetPassword() async {
+    //exception handling
     try {
       await _auth.sendPasswordResetEmail(email: _emailCtrl.text);
-
+//snackbar
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text("Please check your email")));
     } on FirebaseAuthException catch (err) {

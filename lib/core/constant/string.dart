@@ -1,4 +1,7 @@
 // routes in flow
+//start routes
+const String splashScreenRoute = '/';
+const String onboardingScreen = '/onBordingScreenRoute';
 
 
 //Authentication
@@ -34,11 +37,7 @@ const String studentMessServiceRoute = "/studentMessServiceScreen";
 const String studentElectricityServiceRoute = "/studentElectricityServiceScreen";
 const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
 const String studentOtherServiceRoute = "/studentOtherServiceScreen";
-
-
-
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
-
 const String studentDetailScreenRoute = "/studentDetails";
 
 
@@ -47,4 +46,12 @@ const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
 const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
 const String staffDetailsScreenRoute = "/staffdetailsScreen";
 
+
+//end routes
+String studentname = "Student Name";
+String studentenroll = "Student Enroll";
+String hostelname = "Hostel Name";
+String roomno = "Room No";
+String department = "Department";
+String phoneno = "Phone No";
 
