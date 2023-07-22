@@ -5,6 +5,7 @@ import 'package:unistay/presentation/screen/student/Drawer/privacypolicy.dart';
 
 
 import '../../core/constant/string.dart';
+import '../screen/admin/notice/add_notice_screen.dart';
 import '../screen/auth/logInScreen.dart';
 import '../screen/auth/registrationScreen.dart';
 import '../screen/student/leave/studentAddLeave.dart';
@@ -47,6 +48,12 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const RegistrationScreen());
 
+
+      case updatepasswordRoute:
+        return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
+      case addNoticeScreenRoute:
+        return MaterialPageRoute(builder: (context) => AddNoticeScreen());
+=======
 //registration
       case registrationScreenRoute:
         return MaterialPageRoute(
