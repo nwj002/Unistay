@@ -16,7 +16,7 @@ class ApproveDenyComplainList extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-          backgroundColor: Colors.blue.shade900,
+          backgroundColor: Colors.orangeAccent,
           title: const Text('Approve/Denny Complaint' , style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,

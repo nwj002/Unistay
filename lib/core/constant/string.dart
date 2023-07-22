@@ -4,7 +4,28 @@
 //Authentication
 const String logInScreenRoute = '/logInScreenRoute';
 const String registrationScreenRoute = '/registrationScreenRoute';
+
+
+
+//admin
+const String complaintListScreenRoute = '/AdminComplainListScreen';
+const String approveDenyComplainListRoute ='/AdminApproveDenyComplainListScreen';
+
+
+//student
+const String studentAddComplaintRoute = "/studentAddcomplaintscreen";
+const String electricitycomplaintscreenRoute = "/electricitycomplaint";
+const String studentComplaintListScreenRoute = "/studentComplaintListScreen";
+const String studentDetailScreenRoute = "/studentDetails";
+//drawer
+const String helpscreenRoute = "/help";
+// const String logInScreenRoute = '/logInScreenRoute'
+// const String registrationScreenRoute = '/registrationScreenRoute';
+const String approveDennyLeaveScreenRoute = '/approveDennyLeaveScreen';
+const String privacyRoute="/privacypolicy";
 const String forgotPasswordScreenRoute = '/forgotPasswordScreenRoute';
+
+
 
 
 //student
@@ -25,4 +46,5 @@ const String studentDetailScreenRoute = "/studentDetails";
 const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
 const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
 const String staffDetailsScreenRoute = "/staffdetailsScreen";
+
 
