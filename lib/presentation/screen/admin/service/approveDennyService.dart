@@ -1,26 +1,25 @@
-
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/complaint_model.dart';
-import 'package:unistay/logic/provider/complaint_provider.dart';
+import 'package:unistay/logic/modules/service_model.dart';
+import 'package:unistay/logic/provider/service_provider.dart';
 
-class ApproveDenyComplainList extends StatelessWidget {
-  ApproveDenyComplainList(this.complaint, {Key? key}) : super(key: key);
-  Complaint complaint;
+class ApproveDennyServiceSceen extends StatelessWidget {
+  ApproveDennyServiceSceen(this.service, {Key? key}) : super(key: key);
+  Service service;
 
   @override
   Widget build(BuildContext context) {
-    final complaintProvider = Provider.of<ComplaintProvider>(context);
+    final serviceProvider = Provider.of<ServiceProvider>(context);
     const tablepadding = EdgeInsets.all(15);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-          backgroundColor: Colors.orangeAccent,
-          title: const Text('Approve/Denny Complaint' , style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),)
+        backgroundColor: Colors.blue.shade900,
+        title: const Text('Approve/Denny Service' , style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),)
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -81,7 +80,7 @@ class ApproveDenyComplainList extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Text(
-                                        complaint.name,
+                                        service.name,
                                         style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18),
@@ -109,7 +108,7 @@ class ApproveDenyComplainList extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Text(
-                                        complaint.roomNo,
+                                        service.roomNo,
                                         style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18),
@@ -137,11 +136,11 @@ class ApproveDenyComplainList extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Text(
-                                        complaint.time.day.toString() +
+                                        service.time.day.toString() +
                                             '/' +
-                                            complaint.time.month.toString() +
+                                            service.time.month.toString() +
                                             '/' +
-                                            complaint.time.year.toString(),
+                                            service.time.year.toString(),
                                         style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18),
@@ -155,17 +154,26 @@ class ApproveDenyComplainList extends StatelessWidget {
                         ),
                       ),
                     ),
+                     // Expanded(
+                    //   child: ListView.builder(
+                    //             itemCount: service.repairDeviceList.length,
+                    //             itemBuilder: (context, index) {
+                    //               return Text(service.repairDeviceList[index]);
+                    //             }
+                    //             ),
+                    // ),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Complaint ",
+                          "Service ",
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         Text(": "),
                         Text(
-                          complaint.complaintTitle,
+                          service.serviceTitle,
                           style: TextStyle(
                               fontSize: 18,
                               color: Colors.red,
@@ -173,9 +181,21 @@ class ApproveDenyComplainList extends StatelessWidget {
                         ),
                       ],
                     ),
+                     Card(
+                      child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            service.repairDeviceList.toString(),
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.red,
+                                fontWeight: FontWeight.w700),
+                          )),
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
+
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 20),
                       padding: const EdgeInsets.all(16),
@@ -186,7 +206,7 @@ class ApproveDenyComplainList extends StatelessWidget {
                             width: 2,
                             color: const Color.fromARGB(157, 158, 158, 158)),
                       ),
-                      child: Text(complaint.complaint),
+                      child: Text(service.serviceDes),
                     ),
                     const SizedBox(
                       height: 20,
@@ -196,7 +216,7 @@ class ApproveDenyComplainList extends StatelessWidget {
                         Expanded(
                           child: GestureDetector(
                             onDoubleTap: () {
-                              complaintProvider.changeStatus(2, complaint.id);
+                              serviceProvider.changeStatus(2, service.id);
                               Navigator.pop(context);
                             },
                             child: Container(
@@ -222,7 +242,7 @@ class ApproveDenyComplainList extends StatelessWidget {
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                              complaintProvider.changeStatus(1, complaint.id);
+                              serviceProvider.changeStatus(1, service.id);
                               Navigator.pop(context);
                             },
                             child: Container(
