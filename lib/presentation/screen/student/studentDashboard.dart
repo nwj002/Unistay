@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'notice/student_notice_screen.dart';
+
 class StudentDashboardScreen extends StatefulWidget {
   const StudentDashboardScreen({Key? key}) : super(key: key);
 
