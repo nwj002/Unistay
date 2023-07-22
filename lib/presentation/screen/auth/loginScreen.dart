@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:unistay/core/constant/string.dart';
-
 import 'package:unistay/core/constant/text_controller.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
@@ -19,6 +17,7 @@ class _LogInScreenState extends State<LogInScreen> {
   bool showLoading = false;
   bool showAlert = false;
 
+//global key
   final _formkey = GlobalKey<FormState>();
   final colors = Color.fromARGB(255, 230, 176, 95);
   bool showPassword = true;
@@ -33,7 +32,7 @@ class _LogInScreenState extends State<LogInScreen> {
           child: Stack(
             children: [
               Image.asset(
-                'assets/onboard/image_001.png',
+                'assets/onboard/mainbg.jpg',
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,
@@ -161,10 +160,9 @@ class _LogInScreenState extends State<LogInScreen> {
                           height: 20,
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             Navigator.pushNamed(
-                                      context, forgotPasswordScreenRoute);
-
+                                context, forgotPasswordScreenRoute);//navigation
                           },
                           child: Text(
                             "Forgot Password ? ",
@@ -206,7 +204,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                   setState(() {
                                     showLoading = true;
                                   });
-
+//state management
                                   progressIndicater(
                                       context, showLoading = true);
                                   await loginByRole();
@@ -228,7 +226,6 @@ class _LogInScreenState extends State<LogInScreen> {
                                 onTap: () {
                                   emailController.clear();
                                   passwordController.clear();
-                                  
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -284,20 +281,19 @@ class _LogInScreenState extends State<LogInScreen> {
       return null;
   }
 
+//login by role
   loginByRole() async {
     try {
       await authService.signInWithEmailAndPassword(
           emailController.text.toString(), passwordController.text.toString());
       if (emailController.text.toString() == 'admin@gmail.com') {
-       
-      } else {
-        
-      }
+      } else {}
     } catch (e) {
       return alertBox(context, e);
     }
   }
 
+//alert box
   Future<void> alertBox(BuildContext context, e) {
     setState(() {
       showLoading = false;
