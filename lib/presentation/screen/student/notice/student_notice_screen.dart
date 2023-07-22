@@ -7,8 +7,9 @@ import 'package:image_downloader/image_downloader.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../logic/modules/notice_model.dart';
-import '../studentDrawer.dart';
+import 'package:unistay/logic/modules/notice_model.dart';
+import 'package:unistay/presentation/screen/student/student_drawer.dart';
+
 
 class StudentHome extends StatefulWidget {
   const StudentHome({Key? key}) : super(key: key);

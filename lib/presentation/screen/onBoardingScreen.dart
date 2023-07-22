@@ -6,7 +6,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:unistay/presentation/screen/auth/logInScreen.dart';
-import 'package:unistay/presentation/screen/auth/registration_screen.dart';
+import 'package:unistay/presentation/screen/auth/registrationScreen.dart';
 
 //animationinfo
 class AnimationInfo {
