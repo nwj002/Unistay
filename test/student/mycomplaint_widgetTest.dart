@@ -86,8 +86,6 @@ void main() {
     // Verify that the list view contains two items (two mock complaints).
     expect(find.byType(MycomplaintsListModel), findsNWidgets(2));
 
-    // TODO: You can add more specific tests here based on the expected behavior of the screen.
-    // For example, you can simulate tapping on the "Remove" button and verify if the complaint is deleted.
 
     // For demonstration purposes, I'm adding a delay to let the ListView fully scroll.
     await tester.drag(find.byType(SingleChildScrollView), Offset(0, -600));

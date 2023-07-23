@@ -75,8 +75,6 @@ void main() {
     // Verify that the loading indicator is shown after tapping "Save".
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
 
-    // TODO: You can add more tests here based on the expected behavior of the screen.
-    // For example, verifying the user data display, and more interactions.
 
     // For demonstration purposes, I'm adding a delay to let the loading indicator disappear.
     await tester.pump(Duration(seconds: 2));

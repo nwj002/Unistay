@@ -60,8 +60,6 @@ void main() {
     expect(find.text('Here you can apply for leave'), findsOneWidget);
     expect(find.text('if the leave were accepted, you\'ll get a notification'), findsOneWidget);
 
-    // TODO: You can add more specific tests here based on the expected behavior of the screen.
-    // For example, you can simulate tapping on each GestureDetector and verify if the respective screen is opened.
 
     // For demonstration purposes, I'm adding a delay to let the ListView fully scroll.
     await tester.drag(find.byType(SingleChildScrollView), Offset(0, -600));

@@ -82,9 +82,6 @@ void main() {
     expect(find.text('John Doe'), findsOneWidget);
     expect(find.text('Jane Smith'), findsOneWidget);
 
-    // TODO: Add more specific tests here based on the expected behavior of the page.
-    // For example, you can verify the status texts and other UI elements based on the mock data.
-
     // For demonstration purposes, I'm adding a delay to let the ListView fully scroll.
     await tester.drag(find.byType(ListView), Offset(0, -800));
     await tester.pumpAndSettle();

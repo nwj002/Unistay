@@ -62,8 +62,6 @@ void main() {
     expect(find.text('(Rule 9) Non-Discrimination'), findsOneWidget);
     expect(find.text('(Rule 10) Hostel Property'), findsOneWidget);
 
-    // TODO: You can add more specific tests here based on the expected behavior of the screen.
-    // For example, checking the content of each rule and ensuring they are displayed correctly.
 
     // For demonstration purposes, I'm adding a delay to let the ListView fully scroll.
     await tester.drag(find.byType(ListView), Offset(0, -600));
