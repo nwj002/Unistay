@@ -12,7 +12,7 @@ class _DisciplinaryState extends State<Disciplinary> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.orangeAccent,
         title: Text('Disciplinary Act'),
     ),
     body: SingleChildScrollView(
