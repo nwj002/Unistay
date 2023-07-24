@@ -1,27 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:unistay/presentation/screen/student/Drawer/diciplinary_act.dart';
 import 'package:unistay/presentation/screen/student/Drawer/privacypolicy.dart';
 import 'package:unistay/presentation/screen/student/Drawer/updatePassword.dart';
-
-
 import '../../core/constant/string.dart';
-
 import '../screen/auth/logInScreen.dart';
-
-
-
 import '../screen/admin/notice/add_notice_screen.dart';
 import '../screen/auth/logInScreen.dart';
-
-
 import '../screen/student/leave/studentAddLeave.dart';
-
-
 import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/presentation/screen/admin/Drawer/addStaffDetails.dart';
 import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
 import 'package:unistay/presentation/screen/admin/adminDashboard.dart';
-
 import 'package:unistay/presentation/screen/auth/loginScreen.dart';
 import 'package:unistay/presentation/screen/onBoardingScreen.dart';
 import 'package:unistay/presentation/screen/student/detailspage/studentdetails.dart';
@@ -70,7 +60,10 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const AdminDashbordScreen());
 
-      case studentDetailScreenRoute:
+        case disciplinaryRoute:
+        return MaterialPageRoute(builder: (context) => const Disciplinary());
+
+        case studentDetailScreenRoute:
         return MaterialPageRoute(
             builder: (context) => const StudentDetailScreen());
 
