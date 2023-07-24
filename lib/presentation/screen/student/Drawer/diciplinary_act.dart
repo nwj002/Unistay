@@ -45,6 +45,9 @@ class _DisciplinaryState extends State<Disciplinary> {
       ListTile(
         title: Text ('(Rule 9) Non-Discrimination: \n  a. Treat all individuals equally, regardless of their background, race, gender, religion, nationality, or any other characteristic. \n b. Refrain from engaging in any form of discriminatory behavior or speech.'),
       ),
+      ListTile(
+        title: Text ('(Rule 10) Hostel Property: \n a. Respect and take care of hostel property, including furniture, appliances, and common areas. \n b. Any damages or losses caused by a resident may result in financial liability.'),
+      ),
 
     ],
     ),
