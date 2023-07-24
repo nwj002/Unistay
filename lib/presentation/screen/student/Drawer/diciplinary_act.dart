@@ -30,6 +30,9 @@ class _DisciplinaryState extends State<Disciplinary> {
       ListTile(
         title: Text ('(Rule 4) Room Maintenance: \n a. Keep your room clean, tidy, and free from any health or safety hazards. \n b. Report any maintenance issues or damages to the hostel management promptly. '),
       ),
+      ListTile(
+        title: Text ('(Rule 5) Prohibited Items: \n  a. Do not possess or use any illegal substances, drugs, or weapons within the hostel premises. \n  b. Observe the hostel policies on prohibited items, including but not limited to candles, incense, fireworks, and flammable materials.'),
+      ),
 
     ],
     ),
