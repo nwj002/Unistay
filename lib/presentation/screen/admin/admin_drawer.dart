@@ -29,7 +29,7 @@ class AdminDrawer extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 25,
-                          backgroundColor: Colors.blue.shade900,
+                          backgroundColor: Colors.orangeAccent,
                           child: Icon(Icons.account_circle_rounded),
                         ),
                         const SizedBox(
