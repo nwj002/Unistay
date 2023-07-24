@@ -39,6 +39,9 @@ class _DisciplinaryState extends State<Disciplinary> {
       ListTile(
         title: Text ('(Rule 7) Personal Responsibility: \n  a. Assume responsibility for your own actions and their consequences. \n b. Comply with all local laws and regulations while residing in the hostel.'),
       ),
+      ListTile(
+        title: Text ('(Rule 8) Compliance with Staff Instructions: \n a. Follow instructions given by hostel staff promptly and respectfully. \n b. Refrain from engaging in any form of confrontation or disrespectful behavior towards staff members.'),
+      ),
 
     ],
     ),
