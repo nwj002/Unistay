@@ -42,6 +42,9 @@ class _DisciplinaryState extends State<Disciplinary> {
       ListTile(
         title: Text ('(Rule 8) Compliance with Staff Instructions: \n a. Follow instructions given by hostel staff promptly and respectfully. \n b. Refrain from engaging in any form of confrontation or disrespectful behavior towards staff members.'),
       ),
+      ListTile(
+        title: Text ('(Rule 9) Non-Discrimination: \n  a. Treat all individuals equally, regardless of their background, race, gender, religion, nationality, or any other characteristic. \n b. Refrain from engaging in any form of discriminatory behavior or speech.'),
+      ),
 
     ],
     ),
