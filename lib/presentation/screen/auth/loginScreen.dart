@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/core/constant/text_controller.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
@@ -162,12 +163,13 @@ class _LogInScreenState extends State<LogInScreen> {
                         InkWell(
                           onTap: () {
                             Navigator.pushNamed(
-<<<<<<< HEAD
+
                                 context, forgotPasswordScreenRoute
                             );
-=======
-                                context, forgotPasswordScreenRoute);//navigation
->>>>>>> c5aff8ab2376c68eb452b0616e96302371eff2cf
+
+                                context, forgotPasswordScreenRoute
+                            );//navigation
+
                           },
                           child: Text(
                             "Forgot Password ? ",
