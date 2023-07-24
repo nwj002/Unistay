@@ -17,6 +17,7 @@ class _LogInScreenState extends State<LogInScreen> {
   bool showLoading = false;
   bool showAlert = false;
 
+//global key
   final _formkey = GlobalKey<FormState>();
   final colors = Color.fromARGB(255, 230, 176, 95);
   bool showPassword = true;
@@ -31,7 +32,7 @@ class _LogInScreenState extends State<LogInScreen> {
           child: Stack(
             children: [
               Image.asset(
-                'assets/onboard/image_001.png',
+                'assets/onboard/mainbg.jpg',
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,
@@ -161,8 +162,12 @@ class _LogInScreenState extends State<LogInScreen> {
                         InkWell(
                           onTap: () {
                             Navigator.pushNamed(
+<<<<<<< HEAD
                                 context, forgotPasswordScreenRoute
                             );
+=======
+                                context, forgotPasswordScreenRoute);//navigation
+>>>>>>> c5aff8ab2376c68eb452b0616e96302371eff2cf
                           },
                           child: Text(
                             "Forgot Password ? ",
@@ -204,7 +209,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                   setState(() {
                                     showLoading = true;
                                   });
-
+//state management
                                   progressIndicater(
                                       context, showLoading = true);
                                   await loginByRole();
@@ -281,6 +286,7 @@ class _LogInScreenState extends State<LogInScreen> {
       return null;
   }
 
+//login by role
   loginByRole() async {
     try {
       await authService.signInWithEmailAndPassword(
@@ -292,6 +298,7 @@ class _LogInScreenState extends State<LogInScreen> {
     }
   }
 
+//alert box
   Future<void> alertBox(BuildContext context, e) {
     setState(() {
       showLoading = false;

@@ -20,7 +20,7 @@ class StudentAddComplaintScreen extends StatelessWidget {
     const tablepadding = EdgeInsets.all(15);
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: Colors.blueAccent,
           title: const Text(
             "Add Complaint",
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

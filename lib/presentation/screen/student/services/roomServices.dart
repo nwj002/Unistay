@@ -2,6 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
+import 'package:unistay/logic/modules/user_data_model.dart';
+
+
 import 'package:unistay/logic/modules/userData_model.dart';
 
 import 'package:unistay/logic/provider/service_provider.dart';

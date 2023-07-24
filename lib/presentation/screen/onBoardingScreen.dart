@@ -6,28 +6,34 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:unistay/presentation/screen/auth/logInScreen.dart';
-import 'package:unistay/presentation/screen/auth/registration_screen.dart';
 
+
+//animationinfo
 class AnimationInfo {
   final AnimationTrigger trigger;
   final List<AnimationEffect> effects;
 
   AnimationInfo({required this.trigger, required this.effects});
 }
+//enum
 enum AnimationTrigger {
   onPageLoad,
   onTap,
   onHover,
   onActionTrigger,
 }
+
+//abstract
 abstract class AnimationEffect {}
 
+//visibilityeffect
 class VisibilityEffect extends AnimationEffect {
   final Duration duration;
 
   VisibilityEffect({required this.duration});
 }
 
+//fade effect
 class FadeEffect extends AnimationEffect {
   final Curve curve;
   final Duration delay;
@@ -44,6 +50,7 @@ class FadeEffect extends AnimationEffect {
   });
 }
 
+//move effect
 class MoveEffect extends AnimationEffect {
   final Curve curve;
   final Duration delay;
@@ -60,7 +67,7 @@ class MoveEffect extends AnimationEffect {
   });
 }
 
-
+//scale effect
 class ScaleEffect extends AnimationEffect {
   final Curve curve;
   final Duration delay;
@@ -76,6 +83,7 @@ class ScaleEffect extends AnimationEffect {
     required this.end,
   });
 }
+//animation class
 
 extension AnimationExtensions on Widget {
   Widget animateOnPageLoad(AnimationInfo animationInfo) {
@@ -110,7 +118,7 @@ extension AnimationExtensions on Widget {
     );
   }
 }
-final colors = Color.fromARGB(255, 233, 148, 43);
+final colors = Color.fromARGB(255, 233, 148, 43); // final colors
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -120,7 +128,7 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen>
     with TickerProviderStateMixin {
        final animationsMap = {
-
+//animationmap
     'imageOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -132,6 +140,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           begin: 0,
           end: 1,
         ),
+        //move effect
         MoveEffect(
           curve: Curves.elasticOut,
           delay: 50.ms,
@@ -403,7 +412,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
           begin: 0,
           end: 1,
         ),
-        MoveEffect(
+        MoveEffect(  
           curve: Curves.elasticOut,
           delay: 550.ms,
           duration: 900.ms,
