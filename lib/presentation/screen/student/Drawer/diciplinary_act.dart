@@ -27,6 +27,9 @@ class _DisciplinaryState extends State<Disciplinary> {
       ListTile(
         title: Text('(Rule 3)  Guest Policy: \n a. Adhere to the hostels guest policy, which may include limitations on the number of guests allowed, visitation hours, and registration procedures.\n  b. Ensure that your guests comply with the hostels rules and regulations during their visit. '),
       ),
+      ListTile(
+        title: Text ('(Rule 4) Room Maintenance: \n a. Keep your room clean, tidy, and free from any health or safety hazards. \n b. Report any maintenance issues or damages to the hostel management promptly. '),
+      ),
 
     ],
     ),
