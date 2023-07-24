@@ -36,6 +36,9 @@ class _DisciplinaryState extends State<Disciplinary> {
       ListTile(
         title: Text ('(Rule 6) Fire Safety: \n  a. Familiarize yourself with the fire safety procedures and emergency exits within the hostel. \n b. Do not tamper with fire alarms, extinguishers, or any fire safety equipment.'),
       ),
+      ListTile(
+        title: Text ('(Rule 7) Personal Responsibility: \n  a. Assume responsibility for your own actions and their consequences. \n b. Comply with all local laws and regulations while residing in the hostel.'),
+      ),
 
     ],
     ),
