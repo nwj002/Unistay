@@ -26,7 +26,7 @@ class StudentComplaintListScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.orangeAccent,
         appBar: AppBar(
-            backgroundColor: Colors.blue.shade900,
+            backgroundColor: Colors.orangeAccent,
             title: Text(
               'My Complaint',
               style:
