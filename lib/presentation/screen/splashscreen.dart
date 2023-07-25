@@ -13,3 +13,6 @@ class SplashScreen1 extends StatefulWidget {
   @override
   _SplashScreen1State createState() => _SplashScreen1State();
 }
+class _SplashScreen1State extends State<SplashScreen1> {
+  int loginNum = 0;
+  var emailAddress;
