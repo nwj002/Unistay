@@ -156,12 +156,12 @@ class MyLeaveListModel extends StatelessWidget {
                             ),
                               Text(": "),
                               Text(
-    commingdate.day.toString() +
-    '/' +
-    commingdate.month.toString() +
-    '/' +
-    commingdate.year.toString() +
-    " ",
+                                commingdate.day.toString() +
+                                '/' +
+                                commingdate.month.toString() +
+                                '/' +
+                                commingdate.year.toString() +
+                                " ",
     style: TextStyle(
     fontSize: 16, fontWeight: FontWeight.bold),
     ),
