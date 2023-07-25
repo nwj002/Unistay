@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
-import '../../../../logic/modules/leave_model.dart';
-import '../adminDrawer.dart';
+import 'package:unistay/logic/modules/leave_model.dart';
+import 'package:unistay/presentation/screen/admin/admin_drawer.dart';
 import 'approveDenyLeave.dart';
 import 'declineApproveLeaveListScreen.dart';
 

@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:unistay/presentation/screen/student/student_drawer.dart';
 
-import '../../../../core/constant/string.dart';
-import '../../../../logic/modules/leave_model.dart';
-import '../studentDrawer.dart';
+import 'package:unistay/core/constant/string.dart';
+import 'package:unistay/logic/modules/leave_model.dart';
 
 class StudentApproveDennyLeaveList extends StatelessWidget {
   const StudentApproveDennyLeaveList({Key? key}) : super(key: key);
