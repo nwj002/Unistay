@@ -29,6 +29,7 @@ const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
 const String studentOtherServiceRoute = "/studentOtherServiceScreen";
 //drawer
 const String helpscreenRoute = "/help";
+const String disciplinaryRoute="/disciplinary";
 const String updatepasswordRoute = "/updatepassword";
 
 
@@ -37,6 +38,7 @@ const String updatepasswordRoute = "/updatepassword";
 // const String registrationScreenRoute = '/registrationScreenRoute';
 const String approveDennyLeaveScreenRoute = '/approveDennyLeaveScreen';
 const String privacyRoute="/privacypolicy";
+
 const String forgotPasswordScreenRoute = '/forgotPasswordScreenRoute';
 
 
@@ -50,10 +52,18 @@ const String studentLeaveScreenRoute = "/studentLeaveScreen";
 
 
 
+
+
+const String studentDetailScreenRoute = "/studentDetails";
+
+
 //admin
 const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
 const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
 const String staffDetailsScreenRoute = "/staffdetailsScreen";
+
+
+
 
 
 //end routes
@@ -63,5 +73,6 @@ String hostelname = "Hostel Name";
 String roomno = "Room No";
 String department = "Department";
 String phoneno = "Phone No";
+
 
 
