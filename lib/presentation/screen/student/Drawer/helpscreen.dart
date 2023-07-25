@@ -31,3 +31,10 @@ class HelpScreen extends StatelessWidget {
     child: Text.rich(
     TextSpan(
     children: [
+    WidgetSpan(
+    child: Icon(
+    Icons.home_outlined,
+    color: Colors.blue.shade900,
+    ),
+    ),
+    TextSpan(text: '   Home ', style: helpstyle),
