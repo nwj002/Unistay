@@ -247,3 +247,14 @@ class MyLeaveListModel extends StatelessWidget {
                         decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         ),
+                  child: const Text(
+                    'Please wait atleast one days to approve/denny the leave by Management.',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                ],
+                ),
+          ),
+        ));
+  }
+}
