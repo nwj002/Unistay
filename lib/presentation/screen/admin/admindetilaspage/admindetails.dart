@@ -43,3 +43,12 @@ class AdminDetailsScreen extends StatelessWidget {
     const SizedBox(
     height: 20,
     ),
+    Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: const [
+    Text(
+    "$studentname ",
+    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+    ),
+    ],
+    ),
