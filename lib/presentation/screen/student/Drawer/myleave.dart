@@ -116,26 +116,26 @@ class MyLeaveListModel extends StatelessWidget {
                       ),
                       child: Column(
                       children: [
-    const SizedBox(
-    height: 15,
-    ),
-    Column(
-    children: [
-    Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    Text(
-    "Leaving Date ",
-    style: TextStyle(
-    fontSize: 16, fontWeight: FontWeight.bold),
-    ),
-    Text(": "),
-    Text(
-    leavingdate.day.toString() +
-    '/' +
-    leavingdate.month.toString() +
-    '/' +
-    leavingdate.year.toString(),
-    style: TextStyle(
-    fontSize: 16, fontWeight: FontWeight.bold),
-    ),
+                            const SizedBox(
+                            height: 15,
+                            ),
+                            Column(
+                            children: [
+                            Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                            Text(
+                            "Leaving Date ",
+                            style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            Text(": "),
+                            Text(
+                            leavingdate.day.toString() +
+                            '/' +
+                            leavingdate.month.toString() +
+                            '/' +
+                            leavingdate.year.toString(),
+                            style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
