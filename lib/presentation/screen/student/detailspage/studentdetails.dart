@@ -230,6 +230,18 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                         style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
                                Colors.orange.shade300),
+                                shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+
+                                RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+
+                                side: BorderSide(
+                                color: Colors.orange.shade300),
+
+
+                          )
+                        ),
                     ],
                   ),
                 ])),
