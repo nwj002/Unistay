@@ -204,3 +204,10 @@ class MyLeaveListModel extends StatelessWidget {
                           const SizedBox(
                           height: 10,
                           ),
+    Row(
+    children: [
+    Expanded(
+    child: GestureDetector(
+    onTap: () {
+    deleteleave();
+    },
