@@ -154,8 +154,8 @@ class MyLeaveListModel extends StatelessWidget {
                             style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                             ),
-    Text(": "),
-    Text(
+                              Text(": "),
+                              Text(
     commingdate.day.toString() +
     '/' +
     commingdate.month.toString() +
