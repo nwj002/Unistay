@@ -141,3 +141,30 @@ class HelpScreen extends StatelessWidget {
     //       children: const [
     //         Text("Onboarding Screens",
     //             style: TextStyle(
+      color: Colors.blue.shade900,
+      //                 fontWeight: FontWeight.bold,
+      //                 fontSize: 16)),
+      //         Icon(
+      //           Icons.arrow_forward,
+      //           color: Colors.blue.shade900,
+      //           size: 20,
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+      const SizedBox(
+        height: 20,
+      )
+    ],
+    ),
+    ),
+    );
+  }
+}
+
+class BulletList extends StatelessWidget {
+  final List<String> strings;
+
+  BulletList(this.strings);
+
