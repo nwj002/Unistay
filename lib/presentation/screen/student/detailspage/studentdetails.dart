@@ -273,6 +273,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                         'Account deleted successfully.');
 
                                         }
+                                        Navigator.of(context).pop();
+                                        Navigator.pushReplacementNamed(context, registrationScreenRoute);
+                                        }
                     ],
                   ),
                 ])),
