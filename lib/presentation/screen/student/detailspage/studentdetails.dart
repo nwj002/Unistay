@@ -248,6 +248,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                             onPressed: () async {
                               showDialog(
                                 context: context,
+                              builder: (BuildContext context) {
+                              return AlertDialog(
+                              title: Text('Delete Account'),
                     ],
                   ),
                 ])),
