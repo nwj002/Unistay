@@ -66,3 +66,17 @@ class AdminDetailsScreen extends StatelessWidget {
     borderRadius: BorderRadius.all(Radius.circular(10)),
     color: Color.fromARGB(183, 235, 237, 237),
     ),
+    child: DataTable(
+    columns: const [
+    DataColumn(
+    label: Text(
+    'Hostel',
+    style: TextStyle(fontWeight: FontWeight.normal),
+    ),
+    ),
+    DataColumn(
+    label: Text(
+    ':   Abdul Kalam illam',
+    style: TextStyle(fontWeight: FontWeight.normal),
+    )),
+    ],
