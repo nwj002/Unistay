@@ -30,3 +30,9 @@ class AdminDetailsScreen extends StatelessWidget {
     height: MediaQuery.of(context).size.width / 3,
     decoration: BoxDecoration(
     border: Border.all(color: Colors.black, width: 1),
+    shape: BoxShape.circle,
+    color: Colors.white,
+    image: const DecorationImage(
+    fit: BoxFit.cover,
+    image: AssetImage("assets/images/profileimage.jpg"),
+    ),
