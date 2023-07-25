@@ -114,3 +114,5 @@ class MyLeaveListModel extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(width: 2, color: Colors.grey),
                       ),
+                      child: Column(
+                      children: [
