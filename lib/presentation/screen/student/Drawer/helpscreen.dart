@@ -68,3 +68,10 @@ class HelpScreen extends StatelessWidget {
     ),
     ),
     BulletList(const [
+    "Here you are able to post your complaints you are facing in your hostel",
+    "if the complaints were accepted and the problems were solved, you'll get a notification"
+    ]),
+    const Divider(thickness: 1),
+    const SizedBox(
+    height: 5,
+    ),
