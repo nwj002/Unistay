@@ -284,21 +284,30 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                         print(
                                         'Account deletion failed: $e');
                                         }
-                                        },
-                                        ),
-                                        ],
-                                        );
-                                      },
-                                      );
                                     },
-                    ],
-                  ),
-                ])),
-      ),
-    );
-  }
+                                  ),
+                                ],
+                               );
+                              },
+                            );
+                          },
+                            child: Text(
+                              'Delete Account',
+                            style: TextStyle(fontSize: 12, color: Colors.red),
+                                ),
+                                )
+                                ),
+                                ],
+                          ),
+                          ],
+                          ),
+                        ),
+                          ),
+                          );
+                          }
 
-  Future selectFile() async {
+
+Future selectFile() async {
     final result = await FilePicker.platform.pickFiles();
     if (result == null) return;
     setState(() {
