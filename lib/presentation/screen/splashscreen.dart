@@ -7,3 +7,4 @@ import 'package:hostelapplication/presentation/screen/admin/adminDashbord.dart';
 import 'package:hostelapplication/presentation/screen/student/studentDashbord.dart';
 
 import 'onBordingScreen.dart';
+irebaseFirestore firestore = FirebaseFirestore.instance;
