@@ -81,3 +81,10 @@ class MyLeave extends StatelessWidget {
                       }
 class MyLeaveListModel extends StatelessWidget {
   MyLeaveListModel(
+      {required this.leavingdate,
+        required this.commingdate,
+        required this.leavereason,
+        required this.totalday,
+        required this.deleteleave,
+        Key? key})
+      : super(key: key);
