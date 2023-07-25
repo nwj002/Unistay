@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hostelapplication/logic/modules/notice_model.dart';
-import 'package:hostelapplication/logic/service/fireStoreServices/notice_firestore_service.dart';
+import 'package:unistay/logic/modules/notice_model.dart';
+import 'package:unistay/logic/services/fireStoreServices/notice_firestore_service.dart';
+
 import 'package:uuid/uuid.dart';
 
 class NoticeProvider with ChangeNotifier {
