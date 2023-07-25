@@ -1,19 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import '../../../../core/constant/string.dart';
-import '../../../../logic/modules/leave_model.dart';
-import '../studentDrawer.dart';
-
-class StudentApproveDennyLeaveList extends StatelessWidget {
-  const StudentApproveDennyLeaveList({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final FirebaseAuth auth = FirebaseAuth.instance;
-    List<Leave> leaveList = [];
-    final leaveListRaw = Provider.of<List<Leave>?>(context);
 
     leaveListRaw?.forEach(
           (element) {
