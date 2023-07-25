@@ -32,3 +32,6 @@ class MyLeave extends StatelessWidget {
     body: Leavelist != []
     ? Padding(
     padding: EdgeInsets.all(8),
+    child: ListView.builder(
+    itemCount: Leavelist.length,
+    itemBuilder: (context, index)
