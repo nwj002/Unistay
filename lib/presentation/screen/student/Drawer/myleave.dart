@@ -178,3 +178,11 @@ class MyLeaveListModel extends StatelessWidget {
                                       style: TextStyle(
                                       fontSize: 18, fontWeight: FontWeight.bold),
                                       ),
+    Text("   :   "),
+    Text(
+    "$totalday     ",
+    style: TextStyle(
+    fontSize: 18, fontWeight: FontWeight.bold),
+    ),
+    ],
+    ),
