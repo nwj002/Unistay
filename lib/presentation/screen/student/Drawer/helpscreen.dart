@@ -60,3 +60,11 @@ class HelpScreen extends StatelessWidget {
     color: Colors.blue.shade900,
     ),
     ),
+    TextSpan(
+    text: '   Complaint Screen ',
+    style: helpstyle),
+    ],
+    ),
+    ),
+    ),
+    BulletList(const [
