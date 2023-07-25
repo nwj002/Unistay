@@ -110,3 +110,47 @@ class PrivacyPolicyPage extends StatelessWidget {
     Text('- Instagram'),
     Text('- Twitter'),
     Text('- LinkedIn'),
+      SizedBox(height: 4.0),
+      Text(
+          'If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service\'s account, such as Your name, Your email address, Your activities or Your contact list associated with that account.'),
+      SizedBox(height: 4.0),
+      Text(
+          'You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service\'s account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.'),
+      SizedBox(height: 4.0),
+      Text('Information Collected while Using the Application'),
+      SizedBox(height: 4.0),
+      Text(
+          'While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission:'),
+      SizedBox(height: 4.0),
+      Text(
+          '- Pictures and other information from your Device\'s camera and photo library'),
+      SizedBox(height: 4.0),
+      Text(
+          'We use this information to provide features of Our Service, to improve and customize Our Service. The information may be uploaded to the Company\'s servers and/or a Service Provider\'s'),
+      SizedBox(height: 8.0),
+      Text('The Company may use Personal Data for the following purposes:'),
+      SizedBox(height: 4.0),
+      Text('- To provide and maintain our Service, including to monitor the usage of our Service.'),
+      Text('- To manage Your Account: to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.'),
+      Text('- For the performance of a contract: the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.'),
+      Text('- To contact You: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application\'s push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.'),
+      Text('- To provide You with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.'),
+      Text('- To manage Your requests: To attend and manage Your requests to Us.'),
+      Text('- For business transfers: We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.'),
+      Text('- For other purposes: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.'),
+      SizedBox(height: 16.0),
+      // Add more sections as needed
+      Text(
+        'Contact Us',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      SizedBox(height: 8.0),
+      Text('If you have any questions about this Privacy Policy, You can contact us:'),
+      SizedBox(height: 4.0),
+      Text('- By email: unistay@hostel.com'),
+    ],
+    ),
+        ),
+    );
+  }
+}
