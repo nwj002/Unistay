@@ -86,3 +86,15 @@ class HelpScreen extends StatelessWidget {
     color: Colors.blue.shade900,
     ),
     ),
+    TextSpan(
+    text: '   Service Screen ', style: helpstyle),
+    ],
+    ),
+    ),
+    ),
+    BulletList(const [
+    "Here you are able to post about your repaired devices like fan, light, taps and doors.",
+    "if the complaints were accepted and the problems were solved, you'll get a notification"
+    ]),
+    const Divider(thickness: 1),
+    const SizedBox(
