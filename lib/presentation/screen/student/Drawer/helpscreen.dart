@@ -98,3 +98,16 @@ class HelpScreen extends StatelessWidget {
     ]),
     const Divider(thickness: 1),
     const SizedBox(
+      height: 5,
+    ),
+        GestureDetector(
+        onTap: () {},
+    child: Text.rich(
+    TextSpan(
+    children: [
+    WidgetSpan(
+    child: Icon(
+    Icons.leave_bags_at_home,
+    color: Colors.blue.shade900,
+    ),
+    ),
