@@ -44,3 +44,20 @@ class _SplashScreen1State extends State<SplashScreen1> {
             setState(() {
               loginNum = 1;
             });
+          }
+        } else {
+          if (this.mounted) {
+            setState(() {
+              loginNum = 2;
+            });
+          }
+        }
+      } else {
+        if (this.mounted) {
+          setState(() {
+            loginNum = 3;
+          });
+        }
+      }
+    });
+  }
