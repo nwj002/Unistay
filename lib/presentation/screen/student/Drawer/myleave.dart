@@ -221,15 +221,15 @@ class MyLeaveListModel extends StatelessWidget {
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20)),
                               ),
-    child: const Center(
-    child: Text(
-    'Remove',
-    textAlign: TextAlign.center,
-    style: TextStyle(
-    color: Colors.white,
-    fontSize: 18,
-    fontWeight: FontWeight.w700),
-    ),
+                                      child: const Center(
+                                      child: Text(
+                                      'Remove',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700),
+                                      ),
     ),
     ),
     ),
