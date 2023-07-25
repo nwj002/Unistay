@@ -254,6 +254,12 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                 content: Text(
                                     'Are you sure you want to delete your account?'),
                                    actions: <Widget>[
+                                    TextButton(
+                                    child: Text('Cancel'),
+                                    onPressed: () {
+                                    Navigator.of(context).pop();
+                                    },
+                                    ),
                     ],
                   ),
                 ])),
