@@ -1,22 +1,25 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:unistay/presentation/screen/student/services/studentServices.dart';
 
+import 'complaints/student_complains_screen.dart';
+import 'leave/studentLeaveList.dart';
+import 'notice/student_notice_screen.dart';
 
-class AdminDashbordScreen extends StatefulWidget {
-  const AdminDashbordScreen({Key? key}) : super(key: key);
+class StudentDashboardScreen extends StatefulWidget {
+  const StudentDashboardScreen({Key? key}) : super(key: key);
 
   @override
-  State<AdminDashbordScreen> createState() => _AdminDashbordScreenState();
+  State<StudentDashboardScreen> createState() => _StudentDashboardScreenState();
 }
 
-class _AdminDashbordScreenState extends State<AdminDashbordScreen> {
+class _StudentDashboardScreenState extends State<StudentDashboardScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    // AdminHome(),
-    // AdminComplaintScreen(),
-    // AdminServicesScreen(),
-    // AdminLeaveScreen(),
+    StudentHome(),
+    StudentComplainScreen(),
+    StudentServicesScreen(),
+    StudentApproveDennyLeaveList()
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -27,20 +30,15 @@ class _AdminDashbordScreenState extends State<AdminDashbordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orangeAccent,
-      ),
-      
-      
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.white,
           elevation: 10,
           currentIndex: _selectedIndex,
-          selectedIconTheme: IconThemeData(color: Colors.orangeAccent),
+          selectedIconTheme: IconThemeData(color: Colors.blue.shade900),
           selectedLabelStyle: TextStyle(
-              color: Colors.orangeAccent, fontWeight: FontWeight.bold),
-          selectedItemColor: Colors.orangeAccent,
+              color: Colors.blue.shade900, fontWeight: FontWeight.bold),
+          selectedItemColor: Colors.blue.shade900,
           onTap: _onItemTapped,
           items: const [
             BottomNavigationBarItem(
@@ -50,7 +48,7 @@ class _AdminDashbordScreenState extends State<AdminDashbordScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.description_outlined),
-              label: 'Complaint',
+              label: 'Complain',
               backgroundColor: Colors.green,
             ),
             BottomNavigationBarItem(
@@ -64,13 +62,7 @@ class _AdminDashbordScreenState extends State<AdminDashbordScreen> {
               backgroundColor: Colors.pink,
             ),
           ]),
-          
-     body: SafeArea(
-         child: _widgetOptions.elementAt(_selectedIndex),
-     
-      ),
-    
+      body: SafeArea(child: _widgetOptions.elementAt(_selectedIndex)),
     );
   }
 }
- 

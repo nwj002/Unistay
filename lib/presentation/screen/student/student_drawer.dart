@@ -1,5 +1,3 @@
-// ignore_for_file: unused_local_variable, deprecated_member_use
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +38,7 @@ class StudentDrawer extends StatelessWidget {
             // _createHeader(),
             ListTile(
               onTap: () {
-                Navigator.pushNamed(context, studentDetailScreenRoute);
+                // Navigator.pushNamed(context, studentDetailScreenRoute);
               },
               title: Padding(
                 padding: const EdgeInsets.all(8.0),
