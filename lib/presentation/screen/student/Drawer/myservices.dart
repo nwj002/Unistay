@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 // ignore_for_file: must_be_immutable
 
 import 'package:firebase_auth/firebase_auth.dart';
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+
+
+import 'package:flutter/cupertino.dart';
+
+>>>>>>> 956e15fc668ca4f52a31609196c1b3ee66c0d975
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/logic/modules/service_model.dart';

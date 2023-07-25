@@ -1,24 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-
-
-
-
 import 'package:unistay/logic/modules/user_model.dart';
-import 'package:unistay/logic/services/auth_services/authError.dart';
-
-import 'package:unistay/logic/modules/user_model.dart';
-
-import 'authError.dart';
+import 'package:unistay/logic/services/auth_services/auth_error.dart';
 
 //auth services
 class AuthService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
-  FirebaseFirestore _db = FirebaseFirestore.instance;  //firebse firestore
+  FirebaseFirestore _db = FirebaseFirestore.instance; //firebse firestore
 
 //get current user
-   getcurrentUser()  {
-    return  _firebaseAuth.currentUser;
+  getcurrentUser() {
+    return _firebaseAuth.currentUser;
   }
 
 //firebase user
@@ -37,7 +29,7 @@ class AuthService {
 //sign in with email and password
   Future<FireBaseUser?> signInWithEmailAndPassword(
       String email, String password) async {
-        //exception handling for user credential
+    //exception handling for user credential
     try {
       final credential = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -52,7 +44,7 @@ class AuthService {
 //create user with email and password
   Future<FireBaseUser?> createUserWithEmailAndPassword(
       String email, String password) async {
-        //exception
+    //exception
     try {
       final credential = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -63,7 +55,6 @@ class AuthService {
       throw errorMessage;
     }
   }
-
 
 //add user to firestore
   Future<void> addUserToFirestore(
@@ -84,8 +75,7 @@ class AuthService {
   }
 
 //forgot password
-  Future forgotPassword( {required email}) async {
+  Future forgotPassword({required email}) async {
     return _firebaseAuth!.sendPasswordResetEmail(email: email);
-    
   }
 }

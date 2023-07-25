@@ -18,6 +18,7 @@ const String addNoticeScreenRoute = '/adminAddNoticeScreenRoute';
 
 
 //student
+const String studentDashboardScreenRoute = "/stuDash";
 const String studentAddComplaintRoute = "/studentAddcomplaintscreen";
 const String electricitycomplaintscreenRoute = "/electricitycomplaint";
 const String studentComplaintListScreenRoute = "/studentComplaintListScreen";
@@ -28,6 +29,7 @@ const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
 const String studentOtherServiceRoute = "/studentOtherServiceScreen";
 //drawer
 const String helpscreenRoute = "/help";
+const String disciplinaryRoute="/disciplinary";
 const String updatepasswordRoute = "/updatepassword";
 
 
@@ -36,25 +38,36 @@ const String updatepasswordRoute = "/updatepassword";
 // const String registrationScreenRoute = '/registrationScreenRoute';
 const String approveDennyLeaveScreenRoute = '/approveDennyLeaveScreen';
 const String privacyRoute="/privacypolicy";
+
 const String forgotPasswordScreenRoute = '/forgotPasswordScreenRoute';
 
 
 
 
 //student
-const String studentRoomServiceRoute = "/studentRoomServiceScreen";
-const String studentMessServiceRoute = "/studentMessServiceScreen";
+
 const String studentElectricityServiceRoute = "/studentElectricityServiceScreen";
-const String studentBathRoomServiceRoute = "/studentBathRoomServiceScreen";
-const String studentOtherServiceRoute = "/studentOtherServiceScreen";
+
 const String studentLeaveScreenRoute = "/studentLeaveScreen";
+<<<<<<< HEAD
 // const String studentDetailScreenRoute = "/studentDetails";
+=======
+
+
+
+
+
+const String studentDetailScreenRoute = "/studentDetails";
+>>>>>>> 956e15fc668ca4f52a31609196c1b3ee66c0d975
 
 
 //admin
 const String adminDashbordScreenRoute = '/adminDashbordScreenRoute';
 const String addStaffDetailsScreenRoute = "/addstaffdetailsScreen";
 const String staffDetailsScreenRoute = "/staffdetailsScreen";
+
+
+
 
 
 //end routes
@@ -64,5 +77,6 @@ String hostelname = "Hostel Name";
 String roomno = "Room No";
 String department = "Department";
 String phoneno = "Phone No";
+
 
 
