@@ -21,3 +21,13 @@ class HelpScreen extends StatelessWidget {
     Column(
     children: [
     Padding(
+    padding:
+        const EdgeInsets.only(top: 18.0, left: 18, right: 18),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    GestureDetector(
+    onTap: () {},
+    child: Text.rich(
+    TextSpan(
+    children: [
