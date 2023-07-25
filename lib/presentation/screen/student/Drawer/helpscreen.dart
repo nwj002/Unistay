@@ -46,3 +46,17 @@ class HelpScreen extends StatelessWidget {
     "Here you can see the all updates about your hostel. The information posted here is officially approved by management."
     ]),
     const Divider(thickness: 1),
+        const SizedBox(
+          height: 5,
+        ),
+        GestureDetector(
+        onTap: () {},
+    child: Text.rich(
+    TextSpan(
+    children: [
+    WidgetSpan(
+    child: Icon(
+    Icons.content_paste_go_sharp,
+    color: Colors.blue.shade900,
+    ),
+    ),
