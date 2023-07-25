@@ -188,4 +188,7 @@ class MyLeaveListModel extends StatelessWidget {
                                       ),
                                       const SizedBox(
                                       height: 10,
-    ),
+                                        ),
+    Container(
+    margin: const EdgeInsets.symmetric(horizontal: 20),
+    padding: const EdgeInsets.all(16),
