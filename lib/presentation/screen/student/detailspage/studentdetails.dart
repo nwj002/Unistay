@@ -10,6 +10,8 @@ import 'package:unistay/logic/modules/userData_model.dart';
 import 'package:unistay/logic/provider/user_data_provider.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
+import '../../../../core/constant/string.dart';
+
 class StudentDetailScreen extends StatefulWidget {
   const StudentDetailScreen({Key? key}) : super(key: key);
 
@@ -276,6 +278,19 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                         Navigator.of(context).pop();
                                         Navigator.pushReplacementNamed(context, registrationScreenRoute);
                                         }
+                                        } // Close the dialog
+                                        } catch (e) {
+                                        // Handle any errors that occur during the account deletion
+                                        print(
+                                        'Account deletion failed: $e');
+                                        }
+                                        },
+                                        ),
+                                        ],
+                                        );
+                                      },
+                                      );
+                                    },
                     ],
                   ),
                 ])),
