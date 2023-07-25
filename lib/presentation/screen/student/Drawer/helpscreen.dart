@@ -123,3 +123,21 @@ class HelpScreen extends StatelessWidget {
     ],
     ),
     ),
+      ],
+    ),
+    const Divider(
+    thickness: 1,
+    ),
+    const SizedBox(
+    height: 10,
+    ),
+    // GestureDetector(
+    //   onTap: (){
+    //     Navigator.pushNamed(context, onboardingScreen);
+    //   },
+    //   child: Center(
+    //     child: Row(
+    //       mainAxisAlignment: MainAxisAlignment.center,
+    //       children: const [
+    //         Text("Onboarding Screens",
+    //             style: TextStyle(
