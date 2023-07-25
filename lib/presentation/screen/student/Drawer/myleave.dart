@@ -195,9 +195,9 @@ class MyLeaveListModel extends StatelessWidget {
                                 decoration: BoxDecoration(
                                 color: Colors.grey[200],
                                 borderRadius: BorderRadius.circular(10),
-    border: Border.all(
-    width: 2,
-    color: Color.fromARGB(157, 158, 158, 158)),
-    ),
-    child: Text(leavereason),
-    ),
+                                    border: Border.all(
+                                    width: 2,
+                                    color: Color.fromARGB(157, 158, 158, 158)),
+                                    ),
+                                    child: Text(leavereason),
+                                    ),
