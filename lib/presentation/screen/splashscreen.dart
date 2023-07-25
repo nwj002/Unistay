@@ -7,4 +7,9 @@ import 'package:hostelapplication/presentation/screen/admin/adminDashbord.dart';
 import 'package:hostelapplication/presentation/screen/student/studentDashbord.dart';
 
 import 'onBordingScreen.dart';
-irebaseFirestore firestore = FirebaseFirestore.instance;
+FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+class SplashScreen1 extends StatefulWidget {
+  @override
+  _SplashScreen1State createState() => _SplashScreen1State();
+}
