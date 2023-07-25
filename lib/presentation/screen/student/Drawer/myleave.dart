@@ -43,3 +43,6 @@ class MyLeave extends StatelessWidget {
     deleteleave: () {
     showDialog(
     context: context,
+    builder: (_) => AlertDialog(
+    content: Text("Are you sure you want to delete ?"),
+    actions: [
