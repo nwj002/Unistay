@@ -7,6 +7,8 @@ import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/core/constant/text_controller.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
+import '../../../core/constant/string.dart';
+
 class LogInScreen extends StatefulWidget {
   @override
   State<LogInScreen> createState() => _LogInScreenState();
