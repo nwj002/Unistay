@@ -38,3 +38,11 @@ class HelpScreen extends StatelessWidget {
     ),
     ),
     TextSpan(text: '   Home ', style: helpstyle),
+    ],
+    ),
+    ),
+    ),
+    BulletList(const [
+    "Here you can see the all updates about your hostel. The information posted here is officially approved by management."
+    ]),
+    const Divider(thickness: 1),
