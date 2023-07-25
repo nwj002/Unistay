@@ -124,3 +124,8 @@ class MyLeaveListModel extends StatelessWidget {
     Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
+    Text(
+    "Leaving Date ",
+    style: TextStyle(
+    fontSize: 16, fontWeight: FontWeight.bold),
+    ),
