@@ -1,37 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-
-
-import '../../core/constant/string.dart';
-
+import 'package:unistay/core/constant/string.dart';
+import 'package:unistay/presentation/screen/admin/admindetilaspage/admindetails.dart';
+import 'package:unistay/presentation/screen/admin/notice/add_notice_screen.dart';
+import 'package:unistay/presentation/screen/auth/forgotpasswordScreen.dart';
+import 'package:unistay/presentation/screen/auth/registrationScreen.dart';
+import 'package:unistay/presentation/screen/splashscreen.dart';
 import 'package:unistay/presentation/screen/student/Drawer/diciplinary_act.dart';
+import 'package:unistay/presentation/screen/student/Drawer/helpscreen.dart';
 import 'package:unistay/presentation/screen/student/Drawer/privacypolicy.dart';
-import 'package:unistay/presentation/screen/student/Drawer/updatePassword.dart';
-import '../screen/auth/forgotpasswordScreen.dart';
-import '../screen/auth/logInScreen.dart';
-import '../screen/admin/notice/add_notice_screen.dart';
-
-import '../screen/auth/registrationScreen.dart';
-import '../screen/student/Drawer/helpscreen.dart';
-import '../screen/student/Drawer/privacypolicy.dart';
-
-import '../screen/student/leave/studentAddLeave.dart';
-
 import 'package:unistay/presentation/screen/admin/Drawer/addStaffDetails.dart';
 import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
 import 'package:unistay/presentation/screen/admin/adminDashboard.dart';
 import 'package:unistay/presentation/screen/auth/logInScreen.dart';
 import 'package:unistay/presentation/screen/onBoardingScreen.dart';
-
 import 'package:unistay/presentation/screen/student/detailspage/studentdetails.dart';
-
-import '../screen/student/services/bathroomServices.dart';
-import '../screen/student/services/messService.dart';
-import '../screen/student/services/otherServices.dart';
-import '../screen/student/services/roomServices.dart';
-import '../screen/student/services/studentElectricServices.dart';
-import '../screen/student/studentDashboard.dart';
+import 'package:unistay/presentation/screen/student/leave/studentAddLeave.dart';
+import 'package:unistay/presentation/screen/student/services/bathroomServices.dart';
+import 'package:unistay/presentation/screen/student/services/messService.dart';
+import 'package:unistay/presentation/screen/student/services/otherServices.dart';
+import 'package:unistay/presentation/screen/student/services/roomServices.dart';
+import 'package:unistay/presentation/screen/student/services/studentElectricServices.dart';
+import 'package:unistay/presentation/screen/student/studentDashboard.dart';
 
 
 class Routes {
@@ -44,7 +34,7 @@ class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashScreenRoute:
-        // return MaterialPageRoute(builder: (context) => SplashScreen());
+        return MaterialPageRoute(builder: (context) => SplashScreen1());
 
       case onboardingScreen:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
@@ -108,9 +98,9 @@ class Routes {
       case staffDetailsScreenRoute:
         return MaterialPageRoute(builder: (context) => StaffDetails());
 
-      // case adminDetailsScreenRoute:
-      //   return MaterialPageRoute(
-      //       builder: (context) => const AdminDetailsScreen());
+      case adminDetailsScreenRoute:
+        return MaterialPageRoute(
+            builder: (context) => const AdminDetailsScreen());
 
       case studentLeaveScreenRoute:
         return MaterialPageRoute(builder: (context) => const StudentAddLeave());
