@@ -95,3 +95,6 @@ class MyLeaveListModel extends StatelessWidget {
   int totalday;
   Function deleteleave;
   @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+        child: Padding(
