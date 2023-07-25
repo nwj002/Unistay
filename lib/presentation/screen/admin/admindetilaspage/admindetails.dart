@@ -52,3 +52,17 @@ class AdminDetailsScreen extends StatelessWidget {
     ),
     ],
     ),
+    const SizedBox(
+    height: 10,
+    ),
+    Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Card(
+    elevation: 1,
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(10)),
+    child: Container(
+    decoration: const BoxDecoration(
+    borderRadius: BorderRadius.all(Radius.circular(10)),
+    color: Color.fromARGB(183, 235, 237, 237),
+    ),
