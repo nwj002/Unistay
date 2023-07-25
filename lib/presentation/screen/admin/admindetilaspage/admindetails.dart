@@ -18,3 +18,9 @@ class AdminDetailsScreen extends StatelessWidget {
     child: Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+    Column(
+    children: [
+    const SizedBox(
+    height: 30,
+    ),
