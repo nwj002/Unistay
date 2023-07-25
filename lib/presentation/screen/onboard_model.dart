@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//splash model
 class SplashModel {
   ///  State fields for stateful widgets in this page.
 
@@ -15,6 +15,7 @@ class SplashModel {
 
   void initState(BuildContext context) {}
 
+//dispose
   void dispose() {}
 
   /// Action blocks are added here.

@@ -7,6 +7,7 @@ import 'package:unistay/logic/services/fireStoreServices/staff_firestore.dart';
 class StaffViewModel extends ChangeNotifier {
   final StaffRepository _repository = StaffRepository();
 
+//location of collection of firestore
   Future<void> addStaff(Staff staff, File imageFile) async {
     try {
       await _repository.addstaff(staff, imageFile);

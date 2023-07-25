@@ -24,7 +24,7 @@ class DeclineApproveListScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Colors.orangeAccent,
         title: complainStatus == 1
             ? Text('Approved complaints',
                 style: TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:unistay/core/constant/string.dart';
@@ -30,7 +31,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     }
   }
 
-  final colors = Color.fromARGB(255, 213, 168, 43);
+  final colors = Color(0xff96C3E2);
   @override
   Widget build(BuildContext context) {
     authService = Provider.of<AuthService>(context);
