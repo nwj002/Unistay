@@ -33,3 +33,14 @@ class _SplashScreen1State extends State<SplashScreen1> {
             ),
     );
   }
+  checkUserType() {
+    var auth = FirebaseAuth.instance;
+    auth.authStateChanges().listen((user) {
+      if (user != null) {
+        user = auth.currentUser;
+        emailAddress = user!.email;
+        if (emailAddress == 'admin@gmail.com') {
+          if (this.mounted) {
+            setState(() {
+              loginNum = 1;
+            });
