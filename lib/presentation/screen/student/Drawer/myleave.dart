@@ -149,8 +149,21 @@ class MyLeaveListModel extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                          children: [
+                            Text(
+                            "Comming Date ",
+                            style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+    Text(": "),
     Text(
-    "Comming Date ",
+    commingdate.day.toString() +
+    '/' +
+    commingdate.month.toString() +
+    '/' +
+    commingdate.year.toString() +
+    " ",
     style: TextStyle(
     fontSize: 16, fontWeight: FontWeight.bold),
+    ),
+    ],
     ),
