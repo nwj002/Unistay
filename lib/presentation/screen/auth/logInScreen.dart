@@ -5,6 +5,7 @@ import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/core/constant/text_controller.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
+
 class LogInScreen extends StatefulWidget {
   @override
   State<LogInScreen> createState() => _LogInScreenState();
@@ -15,9 +16,8 @@ class _LogInScreenState extends State<LogInScreen> {
   bool showLoading = false;
   bool showAlert = false;
 
-//global key
   final _formkey = GlobalKey<FormState>();
-  final colors = Color.fromARGB(255, 230, 176, 95);
+  final colors = Color(0xfff19932);
   bool showPassword = true;
   @override
   Widget build(BuildContext context) {
@@ -57,18 +57,18 @@ class _LogInScreenState extends State<LogInScreen> {
                           height: 20,
                         ),
                         const Text(
-                          'My\nHostel',
+                          'UNISTAY',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.orange,
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
                               fontFamily: 'Brazila'),
                         ),
                         Text(
-                          'WELCOME.',
+                          'a place to call home',
                           style: TextStyle(
                               fontSize: 30,
-                              color: colors,
+                              color: Colors.orangeAccent,
                               fontFamily: "Brazila",
                               fontWeight: FontWeight.bold),
                         ),
@@ -81,7 +81,7 @@ class _LogInScreenState extends State<LogInScreen> {
                             controller: emailController,
                             keyboardType: TextInputType.emailAddress,
                             textInputAction: TextInputAction.next,
-                            cursorColor: Colors.white,
+                            cursorColor: Colors.orange,
                             style: const TextStyle(
                                 color: Colors.white, fontFamily: 'Brazila'),
                             decoration: InputDecoration(
@@ -116,7 +116,7 @@ class _LogInScreenState extends State<LogInScreen> {
                             keyboardType: TextInputType.visiblePassword,
                             obscureText: showPassword ? true : false,
                             textInputAction: TextInputAction.done,
-                            cursorColor: Colors.white,
+                            cursorColor: Colors.orange,
                             style: const TextStyle(
                                 color: Colors.white, fontFamily: 'Brazila'),
                             decoration: InputDecoration(
@@ -155,17 +155,12 @@ class _LogInScreenState extends State<LogInScreen> {
                           ),
                         ),
                         const SizedBox(
-                          height: 20,
+                          height: 50,
                         ),
                         InkWell(
-                          onTap: () {
+                          onTap: (){
                             Navigator.pushNamed(
-
-                                context, forgotPasswordScreenRoute
-                            );
-
-                                context, forgotPasswordScreenRoute
-                            );//navigation
+                                context, forgotPasswordScreenRoute);
 
                           },
                           child: Text(
@@ -179,7 +174,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           ),
                         ),
                         const SizedBox(
-                          height: 30,
+                          height: 90,
                         ),
                         Center(
                           child: Column(
@@ -189,9 +184,9 @@ class _LogInScreenState extends State<LogInScreen> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 80, vertical: 10),
                                   decoration: BoxDecoration(
-                                      color: colors,
+                                      color: Colors.orangeAccent,
                                       border: Border.all(
-                                        color: colors,
+                                        color: Colors.orangeAccent,
                                       ),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(10))),
@@ -208,14 +203,14 @@ class _LogInScreenState extends State<LogInScreen> {
                                   setState(() {
                                     showLoading = true;
                                   });
-//state management
+
                                   progressIndicater(
                                       context, showLoading = true);
                                   await loginByRole();
                                   await showAlert == true
                                       ? null
                                       : progressIndicater(
-                                          context, showLoading = true);
+                                      context, showLoading = true);
                                   emailController.clear();
                                   passwordController.clear();
                                   Navigator.pop(context);
@@ -230,6 +225,8 @@ class _LogInScreenState extends State<LogInScreen> {
                                 onTap: () {
                                   emailController.clear();
                                   passwordController.clear();
+                                  Navigator.pushNamed(
+                                      context, registrationScreenRoute);
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -243,11 +240,12 @@ class _LogInScreenState extends State<LogInScreen> {
                                     ),
                                     SizedBox(
                                       width: 5,
+                                      height: 80,
                                     ),
                                     const Text(
                                       'Sign Up',
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.deepOrange,
                                           fontFamily: 'Brazila',
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -285,19 +283,22 @@ class _LogInScreenState extends State<LogInScreen> {
       return null;
   }
 
-//login by role
   loginByRole() async {
     try {
       await authService.signInWithEmailAndPassword(
           emailController.text.toString(), passwordController.text.toString());
       if (emailController.text.toString() == 'admin@gmail.com') {
-      } else {}
+        Navigator.pushNamedAndRemoveUntil(
+            context, adminDashbordScreenRoute, (route) => false);
+      } else {
+        Navigator.pushNamedAndRemoveUntil(
+            context, studentDashboardScreenRoute, (route) => false);
+      }
     } catch (e) {
       return alertBox(context, e);
     }
   }
 
-//alert box
   Future<void> alertBox(BuildContext context, e) {
     setState(() {
       showLoading = false;

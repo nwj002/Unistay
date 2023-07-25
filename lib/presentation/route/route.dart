@@ -44,7 +44,7 @@ class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashScreenRoute:
-        return MaterialPageRoute(builder: (context) => SplashScreen());
+        // return MaterialPageRoute(builder: (context) => SplashScreen());
 
       case onboardingScreen:
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
@@ -108,9 +108,9 @@ class Routes {
       case staffDetailsScreenRoute:
         return MaterialPageRoute(builder: (context) => StaffDetails());
 
-      case adminDetailsScreenRoute:
-        return MaterialPageRoute(
-            builder: (context) => const AdminDetailsScreen());
+      // case adminDetailsScreenRoute:
+      //   return MaterialPageRoute(
+      //       builder: (context) => const AdminDetailsScreen());
 
       case studentLeaveScreenRoute:
         return MaterialPageRoute(builder: (context) => const StudentAddLeave());
