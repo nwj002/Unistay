@@ -46,3 +46,18 @@ class PrivacyPolicyPage extends StatelessWidget {
     SizedBox(height: 4.0),
     Text('For the purposes of this Privacy Policy:'),
     SizedBox(height: 4.0),
+    Text(
+    '- Account means a unique account created for You to access our Service or parts of our Service.'),
+    Text(
+    '- Affiliate means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.'),
+    Text(
+    '- Application refers to UniStay, the software program provided by the Company.'),
+    Text(
+    '- Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to UniStay.'),
+    Text('- Country refers to: Nepal'),
+    Text(
+    '- Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.'),
+    Text(
+    '- Personal Data is any information that relates to an identified or identifiable individual.'),
+    Text('- Service refers to the Application.'),
+    Text(
