@@ -22,3 +22,8 @@ class _SplashScreen1State extends State<SplashScreen1> {
     checkUserType();
     Timer(
         Duration(seconds: 3),
+            () => Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+            builder: (BuildContext context) => loginNum == 1
+        ? AdminDashbordScreen()
+        : loginNum == 2
