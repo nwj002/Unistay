@@ -173,8 +173,8 @@ class MyLeaveListModel extends StatelessWidget {
                                 Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-    Text(
-    "TotalDay ",
-    style: TextStyle(
-    fontSize: 18, fontWeight: FontWeight.bold),
-    ),
+                                      Text(
+                                      "TotalDay ",
+                                      style: TextStyle(
+                                      fontSize: 18, fontWeight: FontWeight.bold),
+                                      ),
