@@ -73,3 +73,9 @@ class MyLeave extends StatelessWidget {
                          },
                       ),
                        )
+                       : Center(
+                           child: CircularProgressIndicator(),
+                         ),
+                        );
+                    }
+                      }
