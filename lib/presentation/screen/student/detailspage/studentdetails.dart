@@ -222,9 +222,14 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                         height: 20,
                       ),
                       SizedBox(height: 20),
-            Container(
-              width: double.infinity,
-              height: 60,
+                      Container(
+                        width: double.infinity,
+                        height: 60,
+                        child: ElevatedButton(
+
+                        style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                               Colors.orange.shade300),
                     ],
                   ),
                 ])),
