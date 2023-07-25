@@ -129,3 +129,13 @@ class MyLeaveListModel extends StatelessWidget {
     style: TextStyle(
     fontSize: 16, fontWeight: FontWeight.bold),
     ),
+    Text(": "),
+    Text(
+    leavingdate.day.toString() +
+    '/' +
+    leavingdate.month.toString() +
+    '/' +
+    leavingdate.year.toString(),
+    style: TextStyle(
+    fontSize: 16, fontWeight: FontWeight.bold),
+    ),
