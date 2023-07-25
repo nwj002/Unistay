@@ -102,3 +102,7 @@ class MyLeaveListModel extends StatelessWidget {
           child: Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               color: const Color.fromARGB(157, 241, 241, 241),
+                child: Column(
+                children: [
+                  Padding(
+                padding: const EdgeInsets.only(
