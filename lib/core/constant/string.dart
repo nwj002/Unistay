@@ -18,6 +18,7 @@ const String addNoticeScreenRoute = '/adminAddNoticeScreenRoute';
 
 
 //student
+const String studentDashboardScreenRoute = "/stuDash";
 const String studentAddComplaintRoute = "/studentAddcomplaintscreen";
 const String electricitycomplaintscreenRoute = "/electricitycomplaint";
 const String studentComplaintListScreenRoute = "/studentComplaintListScreen";
