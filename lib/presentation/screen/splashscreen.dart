@@ -20,3 +20,5 @@ class _SplashScreen1State extends State<SplashScreen1> {
   void initState() {
     super.initState();
     checkUserType();
+    Timer(
+        Duration(seconds: 3),
