@@ -30,3 +30,5 @@ class MyLeave extends StatelessWidget {
           ),
         )),
     body: Leavelist != []
+    ? Padding(
+    padding: EdgeInsets.all(8),
