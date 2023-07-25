@@ -88,6 +88,10 @@ class MyLeaveListModel extends StatelessWidget {
         required this.deleteleave,
         Key? key})
       : super(key: key);
+
   DateTime leavingdate;
   DateTime commingdate;
   String leavereason;
+  int totalday;
+  Function deleteleave;
+  @override
