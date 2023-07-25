@@ -12,9 +12,13 @@ import 'package:unistay/logic/provider/complaint_provider.dart';
 import 'package:unistay/logic/services/fireStoreServices/complaint_firestore_service.dart';
 
 import 'package:unistay/presentation/route/route.dart';
+import 'package:unistay/presentation/screen/onBoardingScreen.dart';
+import 'package:unistay/presentation/screen/onboard_model.dart';
 import 'firebase_options.dart';
+import 'logic/provider/notice_provider.dart';
 import 'logic/provider/userData_provider.dart';
 import 'logic/services/auth_services/auth_service.dart';
+import 'logic/services/fireStoreServices/notice_firestore_service.dart';
 import 'logic/services/fireStoreServices/user_firestore_service.dart';
 
 
@@ -25,7 +29,6 @@ Future<void> main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   initScreen = prefs.getInt("initScreen");
   await prefs.setInt("initScreen", 1);
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -34,66 +37,48 @@ Future<void> main() async {
     MultiProvider(
       providers: [
         StreamProvider.value(
-          value: UserDataFirestoreService().getUserData(),
-          initialData: null,
-        ),
-
-        StreamProvider.value(
-          value: ComplaintFirestoreService().getComplaintForAdmin(),
-          initialData: null,
-        ),
-
-        ChangeNotifierProvider.value(
-          value: ComplaintProvider(),
-        ),
-
-
-
-        StreamProvider.value(
           value: ServiceFirestoreService().getService(),
           initialData: null,
         ),
-
         StreamProvider.value(
           value: LeaveFirestoreService().getLeave(),
           initialData: null,
         ),
-
-        // StreamProvider.value(
-        //   value: NoticeFirestoreService().getNotice(),
-        //   initialData: null,
-        // ),
-
-        // StreamProvider.value(
-        //   value: ComplaintFirestoreService().getComplaintForAdmin(),
-        //   initialData: null,
-        // ),
-
-        ChangeNotifierProvider.value(
-          value: LeaveProvider(),
+        StreamProvider.value(
+          value: NoticeFirestoreService().getNotice(),
+          initialData: null,
         ),
-
-        ChangeNotifierProvider.value(
-          value: ServiceProvider(),
+        StreamProvider.value(
+          value: ComplaintFirestoreService().getComplaintForAdmin(),
+          initialData: null,
         ),
-
-
-
-
-
+        StreamProvider.value(
+          value: UserDataFirestoreService().getUserData(),
+          initialData: null,
+        ),
+        ChangeNotifierProvider.value(
+          value: NoticeProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: ComplaintProvider(),
+        ),
         ChangeNotifierProvider.value(
           value: UsereDataProvider(),
         ),
-
+        ChangeNotifierProvider.value(
+          value: LeaveProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: ServiceProvider(),
+        ),
         Provider<AuthService>(
           create: (_) => AuthService(),
-        ), 
-
+        ),
         Provider<UserDataFirestoreService>(
           create: (_) => UserDataFirestoreService(),
         ),
-
-        // Provider(create: (_) => SplashModel())
+        Provider(create: (_) => OnboardingScreen()),
+        Provider(create: (_) => SplashModel())
       ],
       child: const MyApp(),
     ),
@@ -107,12 +92,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Color.fromARGB(255, 232, 159, 49),
+        primaryColor: Colors.orangeAccent,
         fontFamily: "Brazila",
       ),
       debugShowCheckedModeBanner: false,
-       onGenerateRoute: Routes.generateRoute,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
-
 }
