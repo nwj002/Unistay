@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:unistay/presentation/screen/student/student_drawer.dart';
 
-import '../../../../core/constant/string.dart';
-import '../studentDrawer.dart';
+import 'package:unistay/core/constant/string.dart';
 
 
 class StudentServicesScreen extends StatefulWidget {

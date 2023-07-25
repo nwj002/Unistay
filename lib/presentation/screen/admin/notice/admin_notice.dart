@@ -5,10 +5,12 @@ import 'package:grouped_list/grouped_list.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../core/constant/string.dart';
-import '../../../../logic/modules/notice_model.dart';
-import '../../../../logic/provider/notice_provider.dart';
-import '../adminDrawer.dart';
+import 'package:unistay/core/constant/string.dart';
+import 'package:unistay/logic/modules/notice_model.dart';
+
+import 'package:unistay/logic/provider/notice_provider.dart';
+import 'package:unistay/presentation/screen/admin/admin_drawer.dart';
+
 
 class AdminHome extends StatefulWidget {
   const AdminHome({Key? key}) : super(key: key);
