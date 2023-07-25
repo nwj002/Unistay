@@ -7,10 +7,10 @@ class HelpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final helpstyle = TextStyle(
-        color: Colors.blue.shade900, fontWeight: FontWeight.bold, fontSize: 20);
+        color: Colors.orangeAccent, fontWeight: FontWeight.bold, fontSize: 20);
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue.shade900,
+          backgroundColor: Colors.orangeAccent,
           title: const Text(
             "Help",
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -35,7 +35,7 @@ class HelpScreen extends StatelessWidget {
                               WidgetSpan(
                                 child: Icon(
                                   Icons.home_outlined,
-                                  color: Colors.blue.shade900,
+                                  color: Colors.orangeAccent,
                                 ),
                               ),
                               TextSpan(text: '   Home ', style: helpstyle),
@@ -58,7 +58,7 @@ class HelpScreen extends StatelessWidget {
                               WidgetSpan(
                                 child: Icon(
                                   Icons.content_paste_go_sharp,
-                                  color: Colors.blue.shade900,
+                                  color: Colors.orangeAccent,
                                 ),
                               ),
                               TextSpan(
@@ -84,7 +84,7 @@ class HelpScreen extends StatelessWidget {
                               WidgetSpan(
                                 child: Icon(
                                   CupertinoIcons.wrench,
-                                  color: Colors.blue.shade900,
+                                  color: Colors.orangeAccent,
                                 ),
                               ),
                               TextSpan(
@@ -109,7 +109,7 @@ class HelpScreen extends StatelessWidget {
                               WidgetSpan(
                                 child: Icon(
                                   Icons.leave_bags_at_home,
-                                  color: Colors.blue.shade900,
+                                  color: Colors.orangeAccent,
                                 ),
                               ),
                               TextSpan(text: '   Leave ', style: helpstyle),
