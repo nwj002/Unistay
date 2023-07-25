@@ -245,6 +245,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                           padding: MaterialStateProperty.all<EdgeInsets>(
                               EdgeInsets.symmetric(vertical: 20)),
                         ),
+                            onPressed: () async {
+                              showDialog(
+                                context: context,
                     ],
                   ),
                 ])),
