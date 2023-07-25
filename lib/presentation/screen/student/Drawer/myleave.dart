@@ -46,3 +46,8 @@ class MyLeave extends StatelessWidget {
     builder: (_) => AlertDialog(
     content: Text("Are you sure you want to delete ?"),
     actions: [
+      TextButton(
+    child: Text(
+    "Cancel",
+    style: TextStyle(color: Colors.black),
+    ),
