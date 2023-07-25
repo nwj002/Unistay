@@ -19,3 +19,7 @@ class MyLeave extends StatelessWidget {
       }
       ;
     });
+    return Scaffold(
+        appBar: AppBar(
+        backgroundColor: Colors.blue.shade900,
+        title:
