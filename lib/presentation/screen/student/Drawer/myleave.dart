@@ -22,4 +22,10 @@ class MyLeave extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
         backgroundColor: Colors.blue.shade900,
-        title:
+        title: const Text(
+          "My Leaves Request",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        )),
