@@ -34,4 +34,9 @@ class MyLeave extends StatelessWidget {
     padding: EdgeInsets.all(8),
     child: ListView.builder(
     itemCount: Leavelist.length,
-    itemBuilder: (context, index)
+    itemBuilder: (context, index){
+    return MyLeaveListModel(
+    leavingdate: Leavelist[index].dateOfLeave,
+    commingdate: Leavelist[index].dateOfComing,
+    leavereason: Leavelist[index].leaveReason,
+    totalday: Leavelist[index].totalDay,
