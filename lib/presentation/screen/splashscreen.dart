@@ -27,3 +27,9 @@ class _SplashScreen1State extends State<SplashScreen1> {
             builder: (BuildContext context) => loginNum == 1
         ? AdminDashbordScreen()
         : loginNum == 2
+                ? StudentDashboardScreen()
+                : OnboardingScreen()  ,
+            ),
+            ),
+    );
+  }
