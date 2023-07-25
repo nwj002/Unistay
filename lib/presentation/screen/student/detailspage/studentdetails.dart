@@ -222,6 +222,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                         height: 20,
                       ),
                       SizedBox(height: 20),
+            Container(
+              width: double.infinity,
+              height: 60,
                     ],
                   ),
                 ])),
