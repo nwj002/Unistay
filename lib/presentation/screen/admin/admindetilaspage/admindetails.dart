@@ -36,3 +36,10 @@ class AdminDetailsScreen extends StatelessWidget {
     fit: BoxFit.cover,
     image: AssetImage("assets/images/profileimage.jpg"),
     ),
+    ),
+    ),
+    ],
+    ),
+    const SizedBox(
+    height: 20,
+    ),
