@@ -35,6 +35,8 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const StudentAddLeave());
       case privacyRoute:
         return MaterialPageRoute(builder: (context) =>  PrivacyPolicyPage());
+      case helpscreenRoute:
+        return MaterialPageRoute(builder: (context) => const HelpScreen());
 
 
 
