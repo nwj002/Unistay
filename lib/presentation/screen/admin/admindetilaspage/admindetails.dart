@@ -12,3 +12,9 @@ class AdminDetailsScreen extends StatelessWidget {
         "Details",
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
     )),
+    body: SingleChildScrollView(
+    child: Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.stretch,
