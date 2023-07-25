@@ -16,3 +16,7 @@ class SplashScreen1 extends StatefulWidget {
 class _SplashScreen1State extends State<SplashScreen1> {
   int loginNum = 0;
   var emailAddress;
+  @override
+  void initState() {
+    super.initState();
+    checkUserType();
