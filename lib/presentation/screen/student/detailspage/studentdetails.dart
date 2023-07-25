@@ -260,6 +260,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                     Navigator.of(context).pop();
                                     },
                                     ),
+                                    TextButton(
+                                    child: Text('Delete'),
+                                    onPressed: () async {
                     ],
                   ),
                 ])),
