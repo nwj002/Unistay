@@ -111,3 +111,15 @@ class HelpScreen extends StatelessWidget {
     color: Colors.blue.shade900,
     ),
     ),
+    TextSpan(text: '   Leave ', style: helpstyle),
+    ],
+    ),
+    ),
+    ),
+    BulletList(const [
+    "Here you can apply for leave",
+    "if the leave were accepted, you'll get a notification"
+    ]),
+    ],
+    ),
+    ),
