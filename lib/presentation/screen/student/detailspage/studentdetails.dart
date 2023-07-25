@@ -251,6 +251,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                               builder: (BuildContext context) {
                               return AlertDialog(
                               title: Text('Delete Account'),
+                                content: Text(
+                                    'Are you sure you want to delete your account?'),
+                                   actions: <Widget>[
                     ],
                   ),
                 ])),
