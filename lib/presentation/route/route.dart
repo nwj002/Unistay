@@ -8,6 +8,7 @@ import '../../core/constant/string.dart';
 import '../screen/admin/notice/add_notice_screen.dart';
 import '../screen/auth/logInScreen.dart';
 import '../screen/auth/registrationScreen.dart';
+import '../screen/student/Drawer/updatePassword.dart';
 import '../screen/student/leave/studentAddLeave.dart';
 
 
@@ -19,6 +20,8 @@ import 'package:unistay/presentation/screen/admin/adminDashboard.dart';
 import 'package:unistay/presentation/screen/auth/loginScreen.dart';
 import 'package:unistay/presentation/screen/onBoardingScreen.dart';
 import 'package:unistay/presentation/screen/student/detailspage/studentdetails.dart';
+
+import '../screen/student/studentDashboard.dart';
 
 
 
@@ -48,12 +51,16 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const RegistrationScreen());
 
+        case studentDashboardScreenRoute:
+        return MaterialPageRoute(
+          builder: (context) => const StudentDashboardScreen());
 
-      case updatepasswordRoute:
+
+
+    case updatepasswordRoute:
         return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
       case addNoticeScreenRoute:
         return MaterialPageRoute(builder: (context) => AddNoticeScreen());
-=======
 //registration
       case registrationScreenRoute:
         return MaterialPageRoute(
