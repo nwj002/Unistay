@@ -97,3 +97,16 @@ class PrivacyPolicyPage extends StatelessWidget {
     Text(
     'When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.'),
     SizedBox(height: 4.0),
+    Text(
+    'We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.'),
+    SizedBox(height: 4.0),
+    Text('Information from Third-Party Social Media Services'),
+    SizedBox(height: 4.0),
+    Text(
+    'The Company allows You to create an account and log in to use the Service through the following Third-party Social Media Services:'),
+    SizedBox(height: 4.0),
+    Text('- Google'),
+    Text('- Facebook'),
+    Text('- Instagram'),
+    Text('- Twitter'),
+    Text('- LinkedIn'),
