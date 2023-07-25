@@ -75,3 +75,14 @@ class HelpScreen extends StatelessWidget {
     const SizedBox(
     height: 5,
     ),
+        GestureDetector(
+        onTap: () {},
+    child: Text.rich(
+    TextSpan(
+    children: [
+    WidgetSpan(
+    child: Icon(
+    CupertinoIcons.wrench,
+    color: Colors.blue.shade900,
+    ),
+    ),
