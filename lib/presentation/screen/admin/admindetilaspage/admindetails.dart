@@ -80,3 +80,11 @@ class AdminDetailsScreen extends StatelessWidget {
     style: TextStyle(fontWeight: FontWeight.normal),
     )),
     ],
+    rows: const [
+    DataRow(cells: [
+    DataCell(Text('Department')),
+    DataCell(Text(':   CSE')),
+    ]),
+    DataRow(cells: [
+    DataCell(Text('Role')),
+    DataCell(Text(':   Rector')),
