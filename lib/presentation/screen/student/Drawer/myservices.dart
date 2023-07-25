@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-// ignore_for_file: must_be_immutable
-
 import 'package:firebase_auth/firebase_auth.dart';
-=======
-import 'package:firebase_auth/firebase_auth.dart';
-
-
-import 'package:flutter/cupertino.dart';
-
->>>>>>> 956e15fc668ca4f52a31609196c1b3ee66c0d975
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:unistay/logic/modules/service_model.dart';
@@ -41,60 +31,60 @@ class Myservicesrequest extends StatelessWidget {
             )),
         body: servicesList != []
             ? Padding(
-                padding: EdgeInsets.all(8),
-                child: ListView.builder(
-                  itemCount: servicesList.length,
-                  itemBuilder: (context, index) {
-                    return MyServiceListModel(
-                      servicedate: servicesList[index].time,
-                      repaireddevicelist: servicesList[index].repairDeviceList,
-                      servicedesc: servicesList[index].serviceDes,
-                      deleteservice: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            content: Text("Are you sure you want to delete ?"),
-                            actions: [
-                              TextButton(
-                                child: Text(
-                                  "Cancel",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                              TextButton(
-                                child: Text(
-                                  "Delete",
-                                  style: TextStyle(color: Colors.red),
-                                ),
-                                onPressed: () {
-                                  serviceProvider
-                                      .deleteService(servicesList[index].id);
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                            ],
+          padding: EdgeInsets.all(8),
+          child: ListView.builder(
+            itemCount: servicesList.length,
+            itemBuilder: (context, index) {
+              return MyServiceListModel(
+                servicedate: servicesList[index].time,
+                repaireddevicelist: servicesList[index].repairDeviceList,
+                servicedesc: servicesList[index].serviceDes,
+                deleteservice: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) => AlertDialog(
+                      content: Text("Are you sure you want to delete ?"),
+                      actions: [
+                        TextButton(
+                          child: Text(
+                            "Cancel",
+                            style: TextStyle(color: Colors.black),
                           ),
-                        );
-                      },
-                    );
-                  },
-                ),
-              )
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                        TextButton(
+                          child: Text(
+                            "Delete",
+                            style: TextStyle(color: Colors.red),
+                          ),
+                          onPressed: () {
+                            serviceProvider
+                                .deleteService(servicesList[index].id);
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+          ),
+        )
             : Center(
-                child: CircularProgressIndicator(),
-              ));
+          child: CircularProgressIndicator(),
+        ));
   }
 }
 
 class MyServiceListModel extends StatelessWidget {
   MyServiceListModel(
       {required this.servicedate,
-      required this.repaireddevicelist,
-      required this.servicedesc,
-      required this.deleteservice});
+        required this.repaireddevicelist,
+        required this.servicedesc,
+        required this.deleteservice});
   DateTime servicedate;
   List repaireddevicelist;
   String servicedesc;
@@ -106,7 +96,7 @@ class MyServiceListModel extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0, left: 5, right: 5, bottom: 10),
         child: Card(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           color: const Color.fromARGB(157, 241, 241, 241),
           child: Column(
             children: [
