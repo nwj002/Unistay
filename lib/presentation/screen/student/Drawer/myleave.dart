@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +24,8 @@ class MyLeave extends StatelessWidget {
     });
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: Colors.orange
+          ,
           title: const Text(
             "My Leaves Request",
             style: TextStyle(
@@ -61,7 +62,7 @@ class MyLeave extends StatelessWidget {
                       TextButton(
                         child: Text(
                           "Delete",
-                          style: TextStyle(color: Colors.red),
+                          style: TextStyle(color: Colors.orangeAccent),
                         ),
                         onPressed: () {
                           leaveprovider.deleteLeave(Leavelist[index].id);
@@ -85,21 +86,7 @@ class MyLeave extends StatelessWidget {
 
 class MyLeaveListModel extends StatelessWidget {
   MyLeaveListModel(
-      {required this.leavingdate,
-        required this.commingdate,
-        required this.leavereason,
-        required this.totalday,
-        required this.deleteleave,
-        Key? key})
-      : super(key: key);
-
-  DateTime leavingdate;
-  DateTime commingdate;
-  String leavereason;
-  int totalday;
-  Function deleteleave;
-  @override
-  Widget build(BuildContext context) {
+      {re
     return SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 5, right: 5, bottom: 10),
