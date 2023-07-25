@@ -13,7 +13,7 @@ import 'package:unistay/logic/services/fireStoreServices/complaint_firestore_ser
 
 import 'package:unistay/presentation/route/route.dart';
 import 'firebase_options.dart';
-import 'logic/provider/user_data_provider.dart';
+import 'logic/provider/userData_provider.dart';
 import 'logic/services/auth_services/auth_service.dart';
 import 'logic/services/fireStoreServices/user_firestore_service.dart';
 

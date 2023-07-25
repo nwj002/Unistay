@@ -5,7 +5,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:unistay/core/constant/string.dart';
 import 'package:unistay/core/constant/text_controller.dart';
 import 'package:unistay/logic/modules/user_model.dart';
-import 'package:unistay/logic/provider/user_data_provider.dart';
+import 'package:unistay/logic/provider/userData_provider.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 class RegistrationScreen extends StatefulWidget {

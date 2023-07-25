@@ -6,8 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/user_data_model.dart';
-import 'package:unistay/logic/provider/user_data_provider.dart';
+import 'package:unistay/logic/modules/userData_model.dart';
+import 'package:unistay/logic/provider/userData_provider.dart';
 import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 import '../../../../core/constant/string.dart';
