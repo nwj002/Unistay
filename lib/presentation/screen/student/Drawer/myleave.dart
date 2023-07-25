@@ -40,3 +40,6 @@ class MyLeave extends StatelessWidget {
     commingdate: Leavelist[index].dateOfComing,
     leavereason: Leavelist[index].leaveReason,
     totalday: Leavelist[index].totalDay,
+    deleteleave: () {
+    showDialog(
+    context: context,
