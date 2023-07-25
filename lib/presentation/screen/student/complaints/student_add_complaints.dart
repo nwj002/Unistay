@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/user_data_model.dart';
+import 'package:unistay/logic/modules/userData_model.dart';
 import 'package:unistay/logic/provider/complaint_provider.dart';
 
 class StudentAddComplaintScreen extends StatelessWidget {
