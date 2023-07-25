@@ -263,6 +263,16 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                     TextButton(
                                     child: Text('Delete'),
                                     onPressed: () async {
+                                        try {
+                                        // Delete the user from Firebase Authentication
+                                        User? user = FirebaseAuth.instance
+                                            .currentUser;
+                                        if (user != null) {
+                                        await user.delete();
+                                        print(
+                                        'Account deleted successfully.');
+
+                                        }
                     ],
                   ),
                 ])),
