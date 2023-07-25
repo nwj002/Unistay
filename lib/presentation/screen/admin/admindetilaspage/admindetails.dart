@@ -88,3 +88,19 @@ class AdminDetailsScreen extends StatelessWidget {
     DataRow(cells: [
     DataCell(Text('Role')),
     DataCell(Text(':   Rector')),
+    ]),
+      DataRow(cells: [
+        DataCell(Text('Phone No')),
+        DataCell(Text(':   9991001999')),
+      ]),
+    ],
+    ),
+    ),
+    ),
+    )
+    ],
+    ),
+    )),
+    );
+  }
+}
