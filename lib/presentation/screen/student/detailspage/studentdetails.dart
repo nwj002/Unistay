@@ -273,12 +273,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                         await user.delete();
                                         print(
                                         'Account deleted successfully.');
-
-                                        }
                                         Navigator.of(context).pop();
                                         Navigator.pushReplacementNamed(context, registrationScreenRoute);
-                                        }
-                                        } // Close the dialog
+                                        }// Close the dialog
                                         } catch (e) {
                                         // Handle any errors that occur during the account deletion
                                         print(
