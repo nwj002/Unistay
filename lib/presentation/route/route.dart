@@ -8,7 +8,9 @@ import '../../core/constant/string.dart';
 import '../screen/admin/notice/add_notice_screen.dart';
 import '../screen/auth/logInScreen.dart';
 import '../screen/auth/registrationScreen.dart';
-import '../screen/student/Drawer/updatePassword.dart';
+import '../screen/student/Drawer/helpscreen.dart';
+import '../screen/student/Drawer/privacypolicy.dart';
+
 import '../screen/student/leave/studentAddLeave.dart';
 
 
@@ -51,23 +53,18 @@ class Routes {
         return MaterialPageRoute(
             builder: (context) => const RegistrationScreen());
 
-        case studentDashboardScreenRoute:
-        return MaterialPageRoute(
-          builder: (context) => const StudentDashboardScreen());
 
-
-
-    case updatepasswordRoute:
-        return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
-      case addNoticeScreenRoute:
-        return MaterialPageRoute(builder: (context) => AddNoticeScreen());
-//registration
-      case registrationScreenRoute:
-        return MaterialPageRoute(
-            builder: (context) => const RegistrationScreen());
 
       // case updatepasswordRoute:
       //   return MaterialPageRoute(builder: (context) => UpdatePasswordScreen());
+
+
+      case studentLeaveScreenRoute:
+        return MaterialPageRoute(builder: (context) => const StudentAddLeave());
+      case privacyRoute:
+        return MaterialPageRoute(builder: (context) =>  PrivacyPolicyPage());
+      case helpscreenRoute:
+        return MaterialPageRoute(builder: (context) => const HelpScreen());
 
       case adminDashbordScreenRoute:
         return MaterialPageRoute(
@@ -76,6 +73,7 @@ class Routes {
       case studentDetailScreenRoute:
         return MaterialPageRoute(
             builder: (context) => const StudentDetailScreen());
+
 
 //add staff details
       case addStaffDetailsScreenRoute:
