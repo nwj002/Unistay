@@ -38,16 +38,16 @@ void main() {
         // Verify that the navigation occurred and the correct screen is displayed
         expect(find.byType(DeclineApproveListScreen), findsOneWidget);
       });
-//
-//   testWidgets('Navigation test for Declined Complaints',
-//           (WidgetTester tester) async {
-//         await tester.pumpWidget(MaterialApp(home: AdminComplaintScreen()));
-//
-//         // Tap the 'Declined Complaints' button
-//         await tester.tap(find.text('Declined Complaints'));
-//         await tester.pumpAndSettle();
-//
-//         // Verify that the navigation occurred and the correct screen is displayed
-//         expect(find.byType(DeclineApproveListScreen), findsOneWidget);
-//       });
+
+  testWidgets('Navigation test for Declined Complaints',
+          (WidgetTester tester) async {
+        await tester.pumpWidget(MaterialApp(home: AdminComplaintScreen()));
+
+        // Tap the 'Declined Complaints' button
+        await tester.tap(find.text('Declined Complaints'));
+        await tester.pumpAndSettle();
+
+        // Verify that the navigation occurred and the correct screen is displayed
+        expect(find.byType(DeclineApproveListScreen), findsOneWidget);
+      });
 }
