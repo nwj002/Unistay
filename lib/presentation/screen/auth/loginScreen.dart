@@ -168,8 +168,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                 context, forgotPasswordScreenRoute
                             );
 
-                                context, forgotPasswordScreenRoute
-                            );//navigation
+//navigation
 
                           },
                           child: Text(
