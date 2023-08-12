@@ -1,11 +1,9 @@
-// ignore_for_file: unnecessary_const
-
 import 'package:flutter/material.dart';
-import 'package:hostelapplication/core/constant/string.dart';
-import 'package:hostelapplication/core/constant/textController.dart';
-import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:unistay/core/constant/string.dart';
+import 'package:unistay/core/constant/text_controller.dart';
+import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -161,7 +159,7 @@ class _LogInScreenState extends State<LogInScreen> {
                         InkWell(
                           onTap: (){
                             Navigator.pushNamed(
-                                      context, forgotPasswordScreenRoute);
+                                context, forgotPasswordScreenRoute);
 
                           },
                           child: Text(
@@ -211,7 +209,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                   await showAlert == true
                                       ? null
                                       : progressIndicater(
-                                          context, showLoading = true);
+                                      context, showLoading = true);
                                   emailController.clear();
                                   passwordController.clear();
                                   Navigator.pop(context);
