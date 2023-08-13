@@ -1,45 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:unistay/logic/modules/leave_model.dart';
-import 'package:unistay/logic/provider/leave_provider.dart';
-import 'package:unistay/presentation/screen/admin/leave/declineApproveLeaveListScreen.dart';
+import 'package:hostelapplication/logic/modules/leave_model.dart';
+import 'package:hostelapplication/logic/provider/leave_provider.dart';
+import 'package:hostelapplication/presentation/screen/admin/leave/declineApproveLeaveListScreen.dart';
 import 'package:provider/provider.dart';
-import 'package:firebase_storage_mocks/firebase_storage_mocks.dart';
-import 'package:unistay/logic/service/firebase_service.dart';
-import 'dart:io';
-import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
 
 void main() {
-  setUpAll(() async {
-    TestWidgetsFlutterBinding.ensureInitialized();
-    // setup mock firebase core
-    setupFirebaseCoreMocks();
-    // dummy config for firebase
-    await Firebase.initializeApp(
-      name: 'test',
-      options: const FirebaseOptions(
-        apiKey: 'test',
-        appId: 'test',
-        messagingSenderId: 'test',
-        projectId: 'test',
-      ),
-    );
-    // mock instances
-    final auth = MockFirebaseAuth();
-    final firestore = FakeFirebaseFirestore();
-    final storage = MockFirebaseStorage();
-
-    // set firebase service to mock instances
-    FirebaseService.db = firestore;
-    FirebaseService.auth = auth;
-    FirebaseService.storage = storage.ref();
-
-    // network/http fix
-    HttpOverrides.global = null;
-  });
   testWidgets('DeclineApproveLeaveListScreen Widget Test', (WidgetTester tester) async {
     // Create a mock list of Leave objects for testing
     final mockLeaveList = [

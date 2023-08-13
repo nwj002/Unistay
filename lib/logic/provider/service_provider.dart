@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:unistay/logic/modules/service_model.dart';
-import 'package:unistay/logic/services/fireStoreServices/service_firestore_service.dart';
+import 'package:hostelapplication/logic/modules/service_model.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/service_firestore_service.dart';
 import 'package:uuid/uuid.dart';
-
 
 class ServiceProvider with ChangeNotifier {
   final service = ServiceFirestoreService();
@@ -28,22 +27,22 @@ class ServiceProvider with ChangeNotifier {
 
   // setter
   void changeServiceDes (String value) {
-    _serviceDes = value;
+   _serviceDes = value;
   }
 
-  void changeRoomNo (String value) {
-    _roomNo  = value;
+    void changeRoomNo (String value) {
+  _roomNo  = value;
   }
 
-  void changeName (String value) {
+    void changeName (String value) {
     _name= value;
   }
 
-  void changeStudentUid (String value) {
-    _studentUid = value;
+    void changeStudentUid (String value) {
+   _studentUid = value;
   }
 
-  void changeRepairDeviceList (List value) {
+    void changeRepairDeviceList (List value) {
     _repairDeviceList= value;
   }
 
@@ -53,16 +52,16 @@ class ServiceProvider with ChangeNotifier {
 
   void saveService() {
     var newService = Service(
-        id: uuid.v4(),
-        name: _name,
-        studentUid: _studentUid,
-        serviceDes: _serviceDes,
-        repairDeviceList: _repairDeviceList,
-        time: _time,
-        status: 0,
-        serviceTitle: _serviceTitle,
-        roomNo: _roomNo);
-    service.saveService(newService);
+      id: uuid.v4(), 
+      name: _name, 
+      studentUid: _studentUid, 
+      serviceDes: _serviceDes, 
+      repairDeviceList: _repairDeviceList, 
+      time: _time, 
+      status: 0, 
+      serviceTitle: _serviceTitle,
+      roomNo: _roomNo);
+      service.saveService(newService);
   }
 
   void deleteService(serviceId) {

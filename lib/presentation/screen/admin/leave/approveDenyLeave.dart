@@ -1,10 +1,9 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/logic/modules/leave_model.dart';
+import 'package:hostelapplication/logic/provider/leave_provider.dart';
 import 'package:provider/provider.dart';
-
-import '../../../../logic/modules/leave_model.dart';
-import '../../../../logic/provider/leave_provider.dart';
 
 class ApproveDennyLeaveScreen extends StatelessWidget {
   ApproveDennyLeaveScreen(this.leave, {Key? key}) : super(key: key);

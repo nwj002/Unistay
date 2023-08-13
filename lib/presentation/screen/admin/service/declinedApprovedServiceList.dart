@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/logic/modules/service_model.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/service_model.dart';
 
 class DeclineApproveServiceList extends StatelessWidget {
   DeclineApproveServiceList(this.serviceStatus, {Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class DeclineApproveServiceList extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-          backgroundColor: Colors.blue.shade900,
+          backgroundColor: Colors.orangeAccent,
           title: serviceStatus == 1
               ? Text(
                   'Approved Service',
@@ -71,7 +72,7 @@ class DeclineApproveServiceList extends StatelessWidget {
                                       fontSize: 20,
                                     ),
                                   ),
-                                   Text('Room - ${complaintList[index].roomNo}'),
+                                  Text('Room - ${complaintList[index].roomNo}'),
                                   Text(
                                     complaintList[index].time.day.toString() +
                                         '/' +

@@ -1,6 +1,6 @@
 {
-    "name": "unistay",
-    "short_name": "unistay",
+    "name": "hostelapplication",
+    "short_name": "hostelapplication",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

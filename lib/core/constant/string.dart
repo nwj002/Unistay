@@ -1,3 +1,5 @@
+//****************Start-Routes***********************
+
 //splashScreen
 const String splashScreenRoute = '/';
 const String onboardingScreen = '/onBordingScreenRoute';
@@ -17,6 +19,7 @@ const String approveDennyLeaveScreenRoute = '/approveDennyLeaveScreen';
 const String adminDetailsScreenRoute = "/adminDetails";
 const String addStaffDetailsScreenRoute = "/addStaffDetails";
 const String staffDetailsScreenRoute = "/staffDetails";
+const String adminLeaveScreenRoute = "/adminLeaveScreen";
 
 //student
 const String studentDashboardScreenRoute = "/stuDash";
@@ -36,6 +39,7 @@ const String studentOtherServiceRoute = "/studentOtherServiceScreen";
 const String helpscreenRoute = "/help";
 const String disciplinaryRoute="/disciplinary";
 const String privacyRoute="/privacypolicy";
+const String updatepasswordRoute = "/updatepassword";
 
 //****************End-Routes***********************
 

@@ -2,13 +2,13 @@ class Notice {
   String id;
   String notice;
   DateTime time;
-  String? url;
+   String? url;
   Notice(
-      this.url, {
-        required this.id,
-        required this.notice,
-        required this.time,
-      });
+    this.url, {
+    required this.id,
+    required this.notice,
+    required this.time,
+  });
 
   Map<String, dynamic> createMap() {
     return {'Id': id, 'notice': notice, 'time': time, 'url': url};

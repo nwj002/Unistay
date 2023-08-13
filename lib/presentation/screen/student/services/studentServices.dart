@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unistay/presentation/screen/student/student_drawer.dart';
-
-import 'package:unistay/core/constant/string.dart';
-
+import 'package:hostelapplication/core/constant/string.dart';
+import 'package:hostelapplication/presentation/screen/student/services/StudentPastService.dart';
+import 'package:hostelapplication/presentation/screen/student/studentDrawer.dart';
 
 class StudentServicesScreen extends StatefulWidget {
   const StudentServicesScreen({Key? key}) : super(key: key);
@@ -10,6 +9,7 @@ class StudentServicesScreen extends StatefulWidget {
   @override
   State<StudentServicesScreen> createState() => _StudentServicesScreenState();
 }
+
 class _StudentServicesScreenState extends State<StudentServicesScreen> {
   List<String> images = [
     'assets/images/room.png',
@@ -25,6 +25,7 @@ class _StudentServicesScreenState extends State<StudentServicesScreen> {
     'Electricity',
     'Other'
   ];
+
   List navigatorRoute = [
     studentRoomServiceRoute,
     studentMessServiceRoute,
@@ -32,7 +33,7 @@ class _StudentServicesScreenState extends State<StudentServicesScreen> {
     studentElectricityServiceRoute,
     studentOtherServiceRoute,
   ];
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -45,10 +46,10 @@ class _StudentServicesScreenState extends State<StudentServicesScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orangeAccent,
         onPressed: () {
-          // Navigator.push(
-          //     context,
-          //     MaterialPageRoute(
-          //         builder: (context) => StudentPastServiceScreen()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => StudentPastServiceScreen()));
         },
         child: Icon(Icons.comment),
       ),

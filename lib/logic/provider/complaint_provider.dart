@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:unistay/logic/modules/complaint_model.dart';
-import 'package:unistay/logic/services/fireStoreServices/complaint_firestore_service.dart';
+import 'package:hostelapplication/logic/modules/complaint_model.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/complaint_firestore_service.dart';
 import 'package:uuid/uuid.dart';
 
 class ComplaintProvider with ChangeNotifier {
@@ -33,11 +33,11 @@ class ComplaintProvider with ChangeNotifier {
     _studentUid = value;
   }
 
-  void changeRoomNo(String value) {
+   void changeRoomNo(String value) {
     _roomNo = value;
   }
 
-  void changeName(String value) {
+   void changeName(String value) {
     _name = value;
   }
 

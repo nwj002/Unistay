@@ -2,16 +2,26 @@ import 'package:firebase_storage_mocks/firebase_storage_mocks.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:unistay/core/constant/string.dart';
-import 'package:unistay/logic/service/firebase_service.dart';
-import 'package:unistay/main.dart';
-import 'package:unistay/presentation/screen/admin/complaint/declineApproveListScreen.dart';
-import 'package:unistay/presentation/screen/admin/complaint/pendingComplaintListScreen.dart';
+import 'package:hostelapplication/core/constant/string.dart';
+import 'package:hostelapplication/logic/service/firebase_service.dart';
+import 'package:hostelapplication/main.dart';
+import 'package:hostelapplication/presentation/screen/admin/adminDashbord.dart';
+import 'package:hostelapplication/presentation/screen/admin/complaint/AdmincomplaintScreen.dart';
+import 'package:hostelapplication/presentation/screen/admin/complaint/declineApproveListScreen.dart';
+import 'package:hostelapplication/presentation/screen/admin/complaint/pendingComplaintListScreen.dart';
+import 'package:hostelapplication/presentation/screen/admin/leave/AdminLeave.dart';
+import 'package:hostelapplication/presentation/screen/admin/notice/adminNotice.dart';
+import 'package:hostelapplication/presentation/screen/admin/service/AdminServices.dart';
 import 'dart:io';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
+import 'package:hostelapplication/presentation/screen/onBordingScreen.dart';
+
+import 'package:hostelapplication/presentation/screen/student/studentDashbord.dart';
 
 void main() {
   setUpAll(() async {
@@ -51,10 +61,8 @@ void main() {
     expect(find.text('Complaint'), findsOneWidget);
 
     // Check if the grid items are displayed correctly
-    expect(find.byType(GestureDetector), findsNWidgets(9)); //PASS
-      // expect(find.byType(GestureDetector), findsNWidgets(5)); //FAIL
-    expect(find.byType(Card), findsNWidgets(6));
-      // expect(find.byType(Card), findsNWidgets(3));  // FAIL
+    expect(find.byType(GestureDetector), findsNWidgets(5));
+    expect(find.byType(Card), findsNWidgets(5));
 
     // Tap on a grid item and check if it navigates to the PendingComplainListScreen
     await tester.tap(find.byType(GestureDetector).first);

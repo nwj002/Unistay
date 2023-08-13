@@ -1,9 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/logic/modules/staff_model.dart';
+import 'package:hostelapplication/logic/provider/staff_provider.dart';
+import 'package:hostelapplication/presentation/screen/admin/Drawer/staffDetails.dart';
+import 'package:hostelapplication/presentation/screen/admin/adminDashbord.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:unistay/logic/modules/staff_model.dart';
-import 'package:unistay/logic/provider/staff_provider.dart';
-import 'package:unistay/presentation/screen/admin/Drawer/staffDetails.dart';
 
 class AddStaffDetails extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
     final String address = _addressController.text;
     final String department = _departmentController.text;
     final int phonenumber = int.tryParse(_phonenumberController.text) ?? 0;
-//condition
+
     if (name.isNotEmpty &&
         address.isNotEmpty &&
         phonenumber > 0 &&
@@ -39,7 +40,6 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
         _isSaving = true;
       });
 
-//exception handling
       try {
         await _staffViewModel.addStaff(staff, pickedImage!);
 
@@ -48,7 +48,6 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
         _addressController.clear();
         _departmentController.clear();
 
-//dialog box
         showDialog(
           context: context,
           builder: (context) {
@@ -69,7 +68,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => StaffDetails()));  // navigation
+                                builder: (context) => StaffDetails()));
                       },
                       child: Text(
                         'OK',
@@ -79,7 +78,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
             );
           },
         );
-      } catch (error) {  //error
+      } catch (error) {
         showDialog(
           context: context,
           builder: (context) {
@@ -119,7 +118,6 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
     }
   }
 
-//imagepicker
   void imagePickerOption() {
     showDialog(
       context: context,
@@ -135,15 +133,15 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
                   Navigator.pop(context); // Close the dialog
                 },
                 icon: Icon(Icons.image),
-                label: Text("Gallery"), //gallery
+                label: Text("Gallery"),
               ),
-              ElevatedButton.icon( //elevated button
+              ElevatedButton.icon(
                 onPressed: () {
                   pickImage(ImageSource.camera);
                   Navigator.pop(context); // Close the dialog
                 },
                 icon: Icon(Icons.camera),
-                label: Text("Camera"), //camera
+                label: Text("Camera"),
               ),
             ],
           ),
@@ -151,7 +149,7 @@ class _AddStaffDetailsState extends State<AddStaffDetails> {
       },
     );
   }
-//pick image
+
   pickImage(ImageSource imageType) async {
     try {
       final photo = await ImagePicker().pickImage(source: imageType);

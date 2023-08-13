@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unistay/presentation/screen/admin/admin_drawer.dart';
-import 'package:unistay/presentation/screen/admin/service/adminPendingServicesList.dart';
-import 'package:unistay/presentation/screen/admin/service/declinedApprovedServiceList.dart';
+import 'package:hostelapplication/presentation/screen/admin/AdminDrawer.dart';
+import 'package:hostelapplication/presentation/screen/admin/service/adminPendingServiceList.dart';
+import 'package:hostelapplication/presentation/screen/admin/service/declinedApprovedServiceList.dart';
 
 class AdminServicesScreen extends StatefulWidget {
   const AdminServicesScreen({Key? key}) : super(key: key);
@@ -25,7 +25,6 @@ class _AdminServicesScreenState extends State<AdminServicesScreen> {
     'Electricity',
     'Other'
   ];
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,7 +106,7 @@ class _AdminServicesScreenState extends State<AdminServicesScreen> {
                   ),
                 );
               },
-               child: Card(
+              child: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Row(

@@ -1,9 +1,7 @@
-//user data provider
 import 'package:flutter/cupertino.dart';
-import 'package:unistay/logic/modules/userData_model.dart';
-import 'package:unistay/logic/services/fireStoreServices/user_firestore_service.dart';
+import 'package:hostelapplication/logic/modules/userData_model.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/user_firestore_services.dart';
 
-//entends changenotifier class
 class UsereDataProvider with ChangeNotifier {
   final service = UserDataFirestoreService();
   late String _id;
@@ -25,45 +23,34 @@ class UsereDataProvider with ChangeNotifier {
   String get getEnrollment => _mobileNo;
 
   // setter
-
-  //change id
   void changeId(String value) {
     _id = value;
   }
 
-//change firstname
   void changeFirstName(String value) {
     _firstName = value;
   }
 
-//change lastname
   void changeLastName(String value) {
     _lastName = value;
   }
 
-//change romm no.
   void changeRoomNo(String value) {
     _roomNo = value;
   }
 
-
-//change email
   void changeEmail(String value) {
     _email = value;
   }
 
-
-//change mobile no.
   void changeMobileNo(String value) {
     _mobileNo = value;
   }
 
-//change user image
   void changeUserimage(String value) {
     _userimage = value;
   }
 
-//save user data
   void saveUserData() {
     var newUserData = UserData(
         email: getEmail,
@@ -77,13 +64,13 @@ class UsereDataProvider with ChangeNotifier {
     service.saveUser(newUserData);
   }
 
-//delete user data
   void deleteUserData(userId) {
     service.removeUser(userId);
   }
 
-//update profile picture
   void updateProfileImg(studentntID) {
     service.upadateProfileImg(_userimage, studentntID);
   }
+
+  
 }

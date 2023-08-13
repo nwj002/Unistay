@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/logic/provider/complaint_provider.dart';
+import 'package:hostelapplication/logic/provider/leave_provider.dart';
+import 'package:hostelapplication/logic/provider/notice_provider.dart';
+import 'package:hostelapplication/logic/provider/service_provider.dart';
+import 'package:hostelapplication/logic/provider/userData_provider.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/complaint_firestore_service.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/leave_firestore_service.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/notice_firestore_service.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/service_firestore_service.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/user_firestore_services.dart';
+import 'package:hostelapplication/presentation/router/route.dart';
+import 'package:hostelapplication/presentation/screen/onBordingScreen.dart';
+import 'package:hostelapplication/presentation/screen/onboard_model.dart';
 import 'package:provider/provider.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-import 'package:unistay/logic/provider/leave_provider.dart';
-import 'package:unistay/logic/provider/service_provider.dart';
-import 'package:unistay/logic/services/fireStoreServices/leave_firestore_service.dart';
-import 'package:unistay/logic/services/fireStoreServices/service_firestore_service.dart';
-
-import 'package:unistay/logic/provider/complaint_provider.dart';
-import 'package:unistay/logic/services/fireStoreServices/complaint_firestore_service.dart';
-
-import 'package:unistay/presentation/route/route.dart';
-import 'package:unistay/presentation/screen/onBoardingScreen.dart';
-import 'package:unistay/presentation/screen/onboard_model.dart';
 import 'firebase_options.dart';
-import 'logic/provider/notice_provider.dart';
-import 'logic/provider/userData_provider.dart';
-import 'logic/services/auth_services/auth_service.dart';
-import 'logic/services/fireStoreServices/notice_firestore_service.dart';
-import 'logic/services/fireStoreServices/user_firestore_service.dart';
-
 
 Future<void> main() async {
   int? initScreen;
@@ -33,8 +30,17 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(
-    MultiProvider(
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key, this.home}) : super(key: key);
+  String? home;
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
       providers: [
         StreamProvider.value(
           value: ServiceFirestoreService().getService(),
@@ -80,23 +86,14 @@ Future<void> main() async {
         Provider(create: (_) => OnboardingScreen()),
         Provider(create: (_) => SplashModel())
       ],
-      child: const MyApp(),
-    ),
-  );
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.orangeAccent,
-        fontFamily: "Brazila",
+      child: MaterialApp(
+        theme: ThemeData(
+          primaryColor: Colors.orangeAccent,
+          fontFamily: "Brazila",
+        ),
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: (route) => Routes.generateRoute(route, home),
       ),
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: Routes.generateRoute,
     );
   }
 }

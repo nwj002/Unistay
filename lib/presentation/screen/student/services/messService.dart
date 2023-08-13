@@ -1,12 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/repairDeviceWidget.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/serviceTextField.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/userTable.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/userData_model.dart';
-import 'package:unistay/logic/provider/service_provider.dart';
-import 'package:unistay/logic/services/auth_services/auth_service.dart';
-import 'package:unistay/presentation/screen/student/services/widget/repairDeviceWidget.dart';
-import 'package:unistay/presentation/screen/student/services/widget/serviceTextField.dart';
-import 'package:unistay/presentation/screen/student/services/widget/userTable.dart';
+
+import 'package:hostelapplication/logic/modules/userData_model.dart';
+import 'package:hostelapplication/logic/provider/service_provider.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
 
 class StudentMessServices extends StatefulWidget {
   const StudentMessServices({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class _StudentMessServicesState extends State<StudentMessServices> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.orangeAccent,
-        title: const Text("Electricity Service"),
+        title: const Text("Mess Service"),
       ),
       body: SingleChildScrollView(
         child: userData == null

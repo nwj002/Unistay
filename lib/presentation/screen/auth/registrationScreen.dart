@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'package:hostelapplication/core/constant/string.dart';
+import 'package:hostelapplication/core/constant/textController.dart';
+import 'package:hostelapplication/logic/modules/user_model.dart';
+import 'package:hostelapplication/logic/provider/userData_provider.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:unistay/core/constant/string.dart';
-import 'package:unistay/core/constant/text_controller.dart';
-import 'package:unistay/logic/modules/user_model.dart';
-import 'package:unistay/logic/provider/userData_provider.dart';
-import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -43,7 +42,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           child: Stack(
             children: [
               Image.asset(
-                'assets/onboard/image_001.png',
+                'assets/onboard/mainbg.jpg',
                 width: double.infinity,
                 height: double.infinity,
                 fit: BoxFit.cover,
@@ -71,7 +70,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               width: 15,
                             ),
                             const Text(
-                              'My Hostel',
+                              'UNISTAY',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -84,7 +83,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           height: 20,
                         ),
                         const Text(
-                          'WELCOME',
+                          'a place to call home',
                           style: TextStyle(
                               fontSize: 30,
                               color: Colors.white,
@@ -283,7 +282,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         const SizedBox(
                           height: 10,
                         ),
-                        TextField(
+                        TextFormField(
                           onChanged: (((value) =>
                               userDataProvider.changeEmail(value))),
                           controller: emailController,
@@ -368,18 +367,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 60, vertical: 10),
                                   decoration: BoxDecoration(
-                                      color: colors,
+                                      color: Colors.orangeAccent,
                                       border: Border.all(
-                                        color: colors,
+                                        color: Colors.orangeAccent,
                                       ),
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(10))),
                                   child: const Text(
                                     'Register',
                                     style: TextStyle(
-                                        fontFamily: "Brazila",
                                         color: Colors.white,
-                                        fontSize: 20),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: "Brazila"),
                                   ),
                                 ),
                                 onTap: () async {
@@ -410,7 +410,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 child: const Text(
                                   'Already Registred?',
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.deepOrange,
                                       fontFamily: "Brazila",
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -526,3 +526,12 @@ class TopWaveClipper extends CustomClipper<Path> {
   @override
   dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
+
+
+
+
+
+
+
+
+

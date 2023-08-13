@@ -34,14 +34,14 @@ class Service {
     };
   }
 
-  Service.fromFirestore(Map<String,dynamic> firestoreMap)
-      : id = firestoreMap['id'],
-        name = firestoreMap['Name'],
-        roomNo = firestoreMap['RoomNo'],
-        studentUid = firestoreMap['StudentUid'],
-        time = firestoreMap['Time'].toDate(),
-        status = firestoreMap['Status'],
-        serviceDes = firestoreMap['ServiceDes'],
-        serviceTitle = firestoreMap['ServiceTitle'],
-        repairDeviceList = firestoreMap['RepairDeviceList'];
+  Service.fromFirestore(Map<String,dynamic> firestoreMap) 
+   : id = firestoreMap['id'],
+      name = firestoreMap['Name'],
+      roomNo = firestoreMap['RoomNo'],
+      studentUid = firestoreMap['StudentUid'],
+      time = firestoreMap['Time'].toDate(),
+      status = firestoreMap['Status'],
+      serviceDes = firestoreMap['ServiceDes'],
+      serviceTitle = firestoreMap['ServiceTitle'],
+      repairDeviceList = firestoreMap['RepairDeviceList'];
 }

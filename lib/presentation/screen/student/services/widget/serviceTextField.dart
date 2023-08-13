@@ -15,21 +15,21 @@ class ServiceTextField extends StatelessWidget {
       child: TextFormField(
         onChanged: ((value) {
           onServiceDecChange(value);
-          //
+          // 
         }
-        ),
+            ),
         decoration: InputDecoration(
             focusedBorder: const OutlineInputBorder(
                 borderSide:
-                BorderSide(color: Colors.grey)),
+                    BorderSide(color: Colors.grey)),
             hintText:
-            "Type about repair devices here...... 🖍",
+                "Type about repair devices here...... 🖍",
             border: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: Colors.grey,
                 ),
                 borderRadius:
-                BorderRadius.circular(10))),
+                    BorderRadius.circular(10))),
         maxLines: 5,
         keyboardType: TextInputType.multiline,
         maxLength: 1000,
