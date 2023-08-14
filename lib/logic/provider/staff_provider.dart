@@ -1,13 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:unistay/logic/modules/staff_model.dart';
-import 'package:unistay/logic/services/fireStoreServices/staff_firestore.dart';
+import 'package:hostelapplication/logic/modules/staff_model.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/staff_firestore_service.dart';
 
 
 class StaffViewModel extends ChangeNotifier {
   final StaffRepository _repository = StaffRepository();
 
-//location of collection of firestore
   Future<void> addStaff(Staff staff, File imageFile) async {
     try {
       await _repository.addstaff(staff, imageFile);

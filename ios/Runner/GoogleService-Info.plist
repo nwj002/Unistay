@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2.apps.googleusercontent.com</string>
+	<string>233117944548-tv093o46snlrr2cuh186rra5jg4t4sjb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.233117944548-v2v3u2kl90r97dkd8k87b1ec2u82edq2</string>
+	<string>com.googleusercontent.apps.233117944548-tv093o46snlrr2cuh186rra5jg4t4sjb</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>233117944548-3ieoe5gelksap9fko9ku9m5ascs27ac0.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.unistay</string>
+	<string>com.iycreateapp.myhostel</string>
 	<key>PROJECT_ID</key>
 	<string>unistay-68d5e</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:233117944548:ios:7f21b154c801c9d94fbaf1</string>
+	<string>1:233117944548:ios:dcf24b2511af1f584fbaf1</string>
+	<key>DATABASE_URL</key>
+	<string>https://unistay-68d5e-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

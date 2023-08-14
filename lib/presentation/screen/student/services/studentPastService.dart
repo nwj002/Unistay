@@ -1,19 +1,20 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/logic/modules/service_model.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/service_model.dart';
-import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
 class StudentPastServiceScreen extends StatelessWidget {
   StudentPastServiceScreen({Key? key}) : super(key: key);
 
- @override
+  @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
     User user = authService.getcurrentUser();
 
- List<Service> serviceList = [];
+    List<Service> serviceList = [];
     final serviceListRaw = Provider.of<List<Service>?>(context);
 
     serviceListRaw?.forEach(
@@ -33,7 +34,7 @@ class StudentPastServiceScreen extends StatelessWidget {
         backgroundColor: Colors.orangeAccent,
         title: Text('Past Service'),
       ),
-       body: serviceList.length != 0
+      body: serviceList.length != 0
           ? Container(
               padding: EdgeInsets.all(8),
               child: ListView.builder(
@@ -72,7 +73,7 @@ class StudentPastServiceScreen extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                               Spacer(),
+                              Spacer(),
                               serviceList[index].status == 0
                                   ? Text(
                                       'Pending',
@@ -98,7 +99,7 @@ class StudentPastServiceScreen extends StatelessWidget {
                                 width: 5,
                               ),
                             ],
-                            ),
+                          ),
                           SizedBox(
                             height: 10,
                           ),
@@ -134,7 +135,7 @@ class StudentPastServiceScreen extends StatelessWidget {
                 },
               ),
             )
-            : Center(
+          : Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -1,21 +1,16 @@
+// ignore_for_file: unused_local_variable, deprecated_member_use
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hostelapplication/core/constant/string.dart';
+import 'package:hostelapplication/logic/modules/userData_model.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
+import 'package:hostelapplication/presentation/screen/student/Drawer/mycomplaint.dart';
+import 'package:hostelapplication/presentation/screen/student/Drawer/myleave.dart';
+import 'package:hostelapplication/presentation/screen/student/Drawer/myservices.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/services/auth_services/auth_service.dart';
-
-import 'package:unistay/presentation/screen/student/Drawer/my_complain.dart';
-import 'package:unistay/presentation/screen/student/Drawer/myservices.dart';
-
-
-import '../../../core/constant/string.dart';
-import '../../../logic/modules/userData_model.dart';
-import '../../../logic/services/auth_services/auth_service.dart';
-import 'Drawer/my_complain.dart';
-import 'Drawer/myleave.dart';
-import 'Drawer/myservices.dart';
 
 class StudentDrawer extends StatelessWidget {
   const StudentDrawer({Key? key}) : super(key: key);
@@ -35,196 +30,259 @@ class StudentDrawer extends StatelessWidget {
       ;
     });
     const studentDrawerText =
-    TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
+        TextStyle(fontSize: 14, fontWeight: FontWeight.bold);
     return Drawer(
       width: MediaQuery.of(context).size.width * 0.8,
       child: SafeArea(
         child: complaintList.length == 0
             ? Container()
             : ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            // _createHeader(),
-            ListTile(
-              onTap: () {
-                // Navigator.pushNamed(context, studentDetailScreenRoute);
-              },
-              title: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  complaintList.first.userimage),
-                            ),
+                padding: EdgeInsets.zero,
+                children: <Widget>[
+                  // _createHeader(),
+                  ListTile(
+                    onTap: () {
+                      Navigator.pushNamed(context, studentDetailScreenRoute);
+                    },
+                    title: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 15,
                           ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                        complaintList.first.userimage),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    complaintList.first.firstName +
+                                        ' ' +
+                                        complaintList.first.lastName,
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    "View Profile",
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(width: 50, child: Divider()),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.book,
+                          color: Colors.orangeAccent,
                         ),
-                        const SizedBox(
-                          width: 10,
+                        SizedBox(
+                          width: 30,
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              complaintList.first.firstName +
-                                  ' ' +
-                                  complaintList.first.lastName,
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              "View Profile",
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                        Text(
+                          'My Complaints',
+                          style: studentDrawerText,
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 10,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Mycomplaints()));
+                    },
+                  ),
+                  const SizedBox(width: 50, child: Divider()),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          CupertinoIcons.person_crop_circle_badge_minus,
+                          color: Colors.orangeAccent,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          'My Leaves',
+                          style: studentDrawerText,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(width: 50, child: Divider()),
-            ListTile(
-              title: Row(
-                children: [
-                  Icon(
-                    FontAwesomeIcons.book,
-                    color: Colors.orangeAccent,
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MyLeave()));
+                    },
                   ),
-                  SizedBox(
-                    width: 30,
+                  const SizedBox(width: 50, child: Divider()),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          CupertinoIcons.wrench_fill,
+                          color: Colors.orangeAccent,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          'My Services',
+                          style: studentDrawerText,
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Myservicesrequest()));
+                    },
                   ),
-                  Text(
-                    'My Complaints',
-                    style: studentDrawerText,
+                  const SizedBox(width: 50, child: Divider()),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.solidFlag,
+                          color: Colors.orangeAccent,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          'Disciplinary Act',
+                          style: studentDrawerText,
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, disciplinaryRoute);
+                    },
                   ),
+                   const SizedBox(width: 50, child: Divider()),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.exchange,
+                          color: Colors.orangeAccent,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          ' Update Password',
+                          style: studentDrawerText,
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, updatepasswordRoute);
+                    },
+                  ),
+                  const SizedBox(width: 50, child: Divider()),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.lock,
+                          color: Colors.orangeAccent,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          'Privacy Policy',
+                          style: studentDrawerText,
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, privacyRoute);
+                    },
+                  ),
+                  const SizedBox(width: 50, child: Divider()),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.question,
+                          color: Colors.orangeAccent,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          'Help',
+                          style: studentDrawerText,
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, helpscreenRoute);
+                    },
+                  ),
+                  Divider(),
+                  ListTile(
+                    title: Row(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.signOut,
+                          color: Colors.redAccent,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          'Log out',
+                          style: studentDrawerText,
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      authService.signOut();
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, logInScreenRoute, (route) => false);
+                    },
+                  ),
+                  const SizedBox(width: 50, child: Divider()),
                 ],
               ),
-              onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => Mycomplaints()));
-              },
-            ),
-            const SizedBox(width: 50, child: Divider()),
-            ListTile(
-              title: Row(
-                children: [
-                  Icon(
-                    CupertinoIcons.person_crop_circle_badge_minus,
-                    color: Colors.orangeAccent,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    'My Leaves',
-                    style: studentDrawerText,
-                  ),
-                ],
-              ),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyLeave()));
-              },
-            ),
-            const SizedBox(width: 50, child: Divider()),
-            ListTile(
-              title: Row(
-                children: [
-                  Icon(
-                    CupertinoIcons.wrench,
-                    color: Colors.orangeAccent,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    'My Services',
-                    style: studentDrawerText,
-                  ),
-                ],
-              ),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Myservicesrequest()));
-              },
-            ),
-            const SizedBox(width: 50, child: Divider()),
-            ListTile(
-              title: Row(
-                children: [
-                  Icon(
-                    FontAwesomeIcons.question,
-                    color: Colors.orangeAccent,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    'Help',
-                    style: studentDrawerText,
-                  ),
-                ],
-              ),
-              onTap: () {
-                // Navigator.pushNamed(context, helpscreenRoute);
-              },
-            ),
-            Divider(),
-            ListTile(
-              title: Row(
-                children: [
-                  Icon(
-                    FontAwesomeIcons.signOut,
-                    color: Colors.orangeAccent,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Text(
-                    'Log out',
-                    style: studentDrawerText,
-                  ),
-                ],
-              ),
-              onTap: () {
-                authService.signOut();
-                Navigator.pushNamedAndRemoveUntil(
-                    context, logInScreenRoute, (route) => false);
-              },
-            ),
-            const SizedBox(width: 50, child: Divider()),
-          ],
-        ),
       ),
     );
   }

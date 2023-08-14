@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unistay/logic/modules/userData_model.dart';
-
+import 'package:hostelapplication/logic/modules/userData_model.dart';
 
 class UserTable extends StatelessWidget {
   const UserTable({

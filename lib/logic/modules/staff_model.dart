@@ -1,4 +1,3 @@
-//staff model
 class Staff {
   final String name;
   final String address;

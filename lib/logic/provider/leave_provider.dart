@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hostelapplication/logic/modules/leave_model.dart';
+import 'package:hostelapplication/logic/service/fireStoreServices/leave_firestore_service.dart';
 import 'package:uuid/uuid.dart';
-
-import '../modules/leave_model.dart';
-import '../services/fireStoreServices/leave_firestore_service.dart';
 
 class LeaveProvider with ChangeNotifier {
   final service = LeaveFirestoreService();

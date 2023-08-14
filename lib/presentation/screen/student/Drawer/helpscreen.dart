@@ -23,7 +23,7 @@ class HelpScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding:
-                  const EdgeInsets.only(top: 18.0, left: 18, right: 18),
+                      const EdgeInsets.only(top: 18.0, left: 18, right: 18),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -142,12 +142,12 @@ class HelpScreen extends StatelessWidget {
             //       children: const [
             //         Text("Onboarding Screens",
             //             style: TextStyle(
-            //                 color: Colors.blue.shade900,
+            //                 color: Colors.orangeAccent,
             //                 fontWeight: FontWeight.bold,
             //                 fontSize: 16)),
             //         Icon(
             //           Icons.arrow_forward,
-            //           color: Colors.blue.shade900,
+            //           color: Colors.orangeAccent,
             //           size: 20,
             //         ),
             //       ],

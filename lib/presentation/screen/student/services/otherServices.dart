@@ -1,23 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/repairDeviceWidget.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/serviceTextField.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/userTable.dart';
 import 'package:provider/provider.dart';
 
-import 'package:unistay/presentation/screen/student/services/widget/repairDeviceWidget.dart';
-import 'package:unistay/presentation/screen/student/services/widget/serviceTextField.dart';
-import 'package:unistay/presentation/screen/student/services/widget/userTable.dart';
-
-import '../../../../logic/modules/userData_model.dart';
-import '../../../../logic/provider/service_provider.dart';
-import '../../../../logic/services/auth_services/auth_service.dart';
-
-import 'package:unistay/logic/modules/userData_model.dart';
-import 'package:unistay/logic/provider/service_provider.dart';
-import 'package:unistay/logic/services/auth_services/auth_service.dart';
-import 'package:unistay/presentation/screen/student/services/widget/repairDeviceWidget.dart';
-import 'package:unistay/presentation/screen/student/services/widget/serviceTextField.dart';
-import 'package:unistay/presentation/screen/student/services/widget/userTable.dart';
-
-
+import 'package:hostelapplication/logic/modules/userData_model.dart';
+import 'package:hostelapplication/logic/provider/service_provider.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
 
 class StudentOtherServices extends StatefulWidget {
   const StudentOtherServices({Key? key}) : super(key: key);
@@ -32,8 +22,7 @@ class _StudentOtherServicesState extends State<StudentOtherServices> {
   bool isOther2Checked = false;
   bool isOther3Checked = false;
   List repairDeviceList = [];
-
-   @override
+  @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
     User user = authService.getcurrentUser();
@@ -70,7 +59,7 @@ class _StudentOtherServicesState extends State<StudentOtherServices> {
                         tablepadding: tablepadding,
                         userData: userData,
                         now: now),
-                         RepairDeviceWidget(
+                    RepairDeviceWidget(
                       isItem1Checked: isOther1Checked,
                       isItem2Checked: isOther2Checked,
                       isItem3Checked: isOther3Checked,
@@ -96,7 +85,7 @@ class _StudentOtherServicesState extends State<StudentOtherServices> {
                         });
                       },
                     ),
-                     Stack(children: [
+                    Stack(children: [
                       Padding(
                         padding: const EdgeInsets.only(
                             top: 20, left: 18, right: 18, bottom: 50),
@@ -110,7 +99,7 @@ class _StudentOtherServicesState extends State<StudentOtherServices> {
                               const SizedBox(
                                 height: 15,
                               ),
-                               Row(
+                              Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
@@ -119,7 +108,7 @@ class _StudentOtherServicesState extends State<StudentOtherServices> {
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                   Text(":"),
+                                  Text(":"),
                                   Row(
                                     children: [
                                       Text(
@@ -129,7 +118,7 @@ class _StudentOtherServicesState extends State<StudentOtherServices> {
                                             color: Colors.red,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                       Text(
+                                      Text(
                                         isOther2Checked ? 'Other 2,' : '',
                                         style: TextStyle(
                                             fontSize: 18,
@@ -187,7 +176,6 @@ class _StudentOtherServicesState extends State<StudentOtherServices> {
                               repairDeviceList.clear();
                               Navigator.pop(context);
                             },
-                            
                             child: const Icon(
                               Icons.done,
                               size: 30,

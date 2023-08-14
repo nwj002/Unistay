@@ -1,13 +1,11 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-
+import 'package:hostelapplication/logic/modules/leave_model.dart';
+import 'package:hostelapplication/presentation/screen/admin/AdminDrawer.dart';
+import 'package:hostelapplication/presentation/screen/admin/leave/approveDenyLeave.dart';
+import 'package:hostelapplication/presentation/screen/admin/leave/declineApproveLeaveListScreen.dart';
 import 'package:provider/provider.dart';
-
-import 'package:unistay/logic/modules/leave_model.dart';
-import 'package:unistay/presentation/screen/admin/admin_drawer.dart';
-import 'approveDenyLeave.dart';
-import 'declineApproveLeaveListScreen.dart';
 
 class AdminLeaveScreen extends StatefulWidget {
   const AdminLeaveScreen({Key? key}) : super(key: key);
@@ -22,7 +20,7 @@ class _AdminLeaveScreenState extends State<AdminLeaveScreen> {
     List<Leave> leaveList = [];
     final leaveListRaw = Provider.of<List<Leave>?>(context);
     leaveListRaw?.forEach(
-          (element) {
+      (element) {
         if (element.status == 0) {
           leaveList.add(element);
         } else
@@ -47,45 +45,45 @@ class _AdminLeaveScreenState extends State<AdminLeaveScreen> {
             children: [
               leaveList.length == 0
                   ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/nodata.jpg',
-                      height: 250,
-                      width: 250,
-                    ),
-                    Text(
-                      'No Leave Request :)',
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey),
-                    ),
-                  ],
-                ),
-              )
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/nodata.jpg',
+                            height: 250,
+                            width: 250,
+                          ),
+                          Text(
+                            'No Leave Request :)',
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    )
                   : Container(
-                padding: EdgeInsets.only(bottom: 120),
-                child: ListView.builder(
-                  itemCount: leaveList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ApproveDennyLeaveScreen(
-                                        leaveList[index])));
-                      },
-                      child: adminleavelistmodel(
-                          studentname: leaveList[index].name,
-                          roomno: leaveList[index].roomNo),
-                    );
-                  },
-                ),
-              ),
+                      padding: EdgeInsets.only(bottom: 120),
+                      child: ListView.builder(
+                        itemCount: leaveList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ApproveDennyLeaveScreen(
+                                              leaveList[index])));
+                            },
+                            child: adminleavelistmodel(
+                                studentname: leaveList[index].name,
+                                roomno: leaveList[index].roomNo),
+                          );
+                        },
+                      ),
+                    ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

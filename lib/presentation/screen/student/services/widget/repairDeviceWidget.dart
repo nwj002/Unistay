@@ -30,7 +30,7 @@ class RepairDeviceWidget extends StatelessWidget {
   final String item3Img;
 
   final Function item1Fun;
-  final  Function item2Fun;
+ final  Function item2Fun;
   final Function item3Fun;
 
   @override
@@ -70,8 +70,8 @@ class RepairDeviceWidget extends StatelessWidget {
                       value: isItem1Checked,
                       onChanged: (bool? value) {
                         item1Fun(value);
-                        // isLightChecked = value!;
-
+                          // isLightChecked = value!;
+                       
                       },
                     )
                   ],

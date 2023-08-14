@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/presentation/screen/admin/adminDashbord.dart';
+import 'package:hostelapplication/presentation/screen/student/studentDashbord.dart';
 
-import 'package:unistay/presentation/screen/student/studentDashboard.dart';
-
-import 'admin/adminDashboard.dart';
-import 'onBoardingScreen.dart';
+import 'onBordingScreen.dart';
 
 FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -15,6 +14,7 @@ class SplashScreen1 extends StatefulWidget {
   @override
   _SplashScreen1State createState() => _SplashScreen1State();
 }
+
 class _SplashScreen1State extends State<SplashScreen1> {
   int loginNum = 0;
   var emailAddress;
@@ -23,18 +23,19 @@ class _SplashScreen1State extends State<SplashScreen1> {
     super.initState();
     checkUserType();
     Timer(
-        Duration(seconds: 3),
-            () => Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-            builder: (BuildContext context) => loginNum == 1
-        ? AdminDashbordScreen()
-        : loginNum == 2
-                ? StudentDashboardScreen()
-                : OnboardingScreen()  ,
-            ),
-            ),
+      Duration(seconds: 3),
+      () => Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (BuildContext context) => loginNum == 1
+              ? AdminDashbordScreen()
+              : loginNum == 2
+                  ? StudentDashboardScreen()
+                  : OnboardingScreen()  ,
+        ),
+      ),
     );
   }
+
   checkUserType() {
     var auth = FirebaseAuth.instance;
     auth.authStateChanges().listen((user) {
@@ -63,6 +64,7 @@ class _SplashScreen1State extends State<SplashScreen1> {
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

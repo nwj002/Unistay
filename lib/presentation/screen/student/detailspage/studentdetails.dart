@@ -5,12 +5,10 @@ import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/logic/modules/userData_model.dart';
+import 'package:hostelapplication/logic/provider/userData_provider.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/userData_model.dart';
-import 'package:unistay/logic/provider/userData_provider.dart';
-import 'package:unistay/logic/services/auth_services/auth_service.dart';
-
-import '../../../../core/constant/string.dart';
 
 class StudentDetailScreen extends StatefulWidget {
   const StudentDetailScreen({Key? key}) : super(key: key);
@@ -223,88 +221,14 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                       const SizedBox(
                         height: 20,
                       ),
-                      SizedBox(height: 20),
-                      Container(
-                        width: double.infinity,
-                        height: 60,
-                        child: ElevatedButton(
+                    ],
+                  ),
+                ])),
+      ),
+    );
+  }
 
-                        style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                               Colors.orange.shade300),
-                                shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-
-                                RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-
-                                side: BorderSide(
-                                color: Colors.orange.shade300),
-
-
-                          )
-                        ),
-                          padding: MaterialStateProperty.all<EdgeInsets>(
-                              EdgeInsets.symmetric(vertical: 20)),
-                        ),
-                            onPressed: () async {
-                              showDialog(
-                                context: context,
-                              builder: (BuildContext context) {
-                              return AlertDialog(
-                              title: Text('Delete Account'),
-                                content: Text(
-                                    'Are you sure you want to delete your account?'),
-                                   actions: <Widget>[
-                                    TextButton(
-                                    child: Text('Cancel'),
-                                    onPressed: () {
-                                    Navigator.of(context).pop();
-                                    },
-                                    ),
-                                    TextButton(
-                                    child: Text('Delete'),
-                                    onPressed: () async {
-                                        try {
-                                        // Delete the user from Firebase Authentication
-                                        User? user = FirebaseAuth.instance
-                                            .currentUser;
-                                        if (user != null) {
-                                        await user.delete();
-                                        print(
-                                        'Account deleted successfully.');
-                                        Navigator.of(context).pop();
-                                        Navigator.pushReplacementNamed(context, registrationScreenRoute);
-                                        }// Close the dialog
-                                        } catch (e) {
-                                        // Handle any errors that occur during the account deletion
-                                        print(
-                                        'Account deletion failed: $e');
-                                        }
-                                    },
-                                  ),
-                                ],
-                               );
-                              },
-                            );
-                          },
-                            child: Text(
-                              'Delete Account',
-                            style: TextStyle(fontSize: 12, color: Colors.red),
-                                ),
-                                )
-                                ),
-                                ],
-                          ),
-                          ],
-                          ),
-                        ),
-                          ),
-                          );
-                          }
-
-
-Future selectFile() async {
+  Future selectFile() async {
     final result = await FilePicker.platform.pickFiles();
     if (result == null) return;
     setState(() {

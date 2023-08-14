@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/repairDeviceWidget.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/serviceTextField.dart';
+import 'package:hostelapplication/presentation/screen/student/services/widget/userTable.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/userData_model.dart';
-import 'package:unistay/logic/provider/service_provider.dart';
-import 'package:unistay/presentation/screen/student/services/widget/repairDeviceWidget.dart';
-import 'package:unistay/presentation/screen/student/services/widget/serviceTextField.dart';
-import 'package:unistay/presentation/screen/student/services/widget/userTable.dart';
-import 'package:unistay/logic/services/auth_services/auth_service.dart';
 
+import 'package:hostelapplication/logic/modules/userData_model.dart';
+import 'package:hostelapplication/logic/provider/service_provider.dart';
+import 'package:hostelapplication/logic/service/auth_services/auth_service.dart';
 
 class StudentElectricityServices extends StatefulWidget {
   const StudentElectricityServices({Key? key}) : super(key: key);
@@ -16,6 +16,7 @@ class StudentElectricityServices extends StatefulWidget {
   State<StudentElectricityServices> createState() =>
       _StudentElectricityServicesState();
 }
+
 class _StudentElectricityServicesState
     extends State<StudentElectricityServices> {
   Map<String, bool> values = {};
@@ -39,7 +40,7 @@ class _StudentElectricityServicesState
         backgroundColor: Colors.orangeAccent,
         title: const Text("Connection Service"),
       ),
-        body: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: userData == null
             ? Center(
                 child: CircularProgressIndicator(),
@@ -75,7 +76,7 @@ class _StudentElectricityServicesState
                           isLightChecked = value!;
                         });
                       },
-                       item2Fun: (value) {
+                      item2Fun: (value) {
                         setState(() {
                           isPlugChecked = value!;
                         });
@@ -86,7 +87,7 @@ class _StudentElectricityServicesState
                         });
                       },
                     ),
-                     Stack(children: [
+                    Stack(children: [
                       Padding(
                         padding: const EdgeInsets.only(
                             top: 20, left: 18, right: 18, bottom: 50),
@@ -109,7 +110,7 @@ class _StudentElectricityServicesState
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                   Text(":"),
+                                  Text(":"),
                                   Row(
                                     children: [
                                       Text(
@@ -175,7 +176,7 @@ class _StudentElectricityServicesState
                               repairDeviceList.clear();
                               Navigator.pop(context);
                             },
-                             child: const Icon(
+                            child: const Icon(
                               Icons.done,
                               size: 30,
                               color: Colors.white,

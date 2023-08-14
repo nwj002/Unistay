@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
+import 'package:hostelapplication/logic/modules/service_model.dart';
+import 'package:hostelapplication/logic/provider/service_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:unistay/logic/modules/service_model.dart';
-import 'package:unistay/logic/provider/service_provider.dart';
 
 class ApproveDennyServiceSceen extends StatelessWidget {
   ApproveDennyServiceSceen(this.service, {Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class ApproveDennyServiceSceen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Colors.orangeAccent,
         title: const Text('Approve/Denny Service' , style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
@@ -154,7 +155,7 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                         ),
                       ),
                     ),
-                     // Expanded(
+                    // Expanded(
                     //   child: ListView.builder(
                     //             itemCount: service.repairDeviceList.length,
                     //             itemBuilder: (context, index) {
@@ -181,7 +182,7 @@ class ApproveDennyServiceSceen extends StatelessWidget {
                         ),
                       ],
                     ),
-                     Card(
+                    Card(
                       child: Container(
                           padding: EdgeInsets.all(10),
                           child: Text(
